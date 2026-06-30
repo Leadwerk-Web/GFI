@@ -26,7 +26,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css?v=20250630o" />
+  <style>
+    /* Kritisches Layout – sichtbar auch bei Cache-/file://-Problemen */
+    :root { --hero-frame-margin: 20px; --hero-frame-radius: clamp(18px, 2.2vw, 26px); }
+    body { background: linear-gradient(180deg, #eef7f2 0%, #eef5f1 100%); }
+    .hero-frame {
+      background: #ffffff;
+      padding: var(--hero-frame-margin) var(--hero-frame-margin) 0;
+    }
+    .hero-shell {
+      margin: 0;
+      border-radius: var(--hero-frame-radius);
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(23, 59, 54, 0.1);
+    }
+    .site-header {
+      position: fixed;
+      top: var(--hero-frame-margin);
+      left: var(--hero-frame-margin);
+      right: var(--hero-frame-margin);
+      width: calc(100% - (var(--hero-frame-margin) * 2));
+      z-index: 1000;
+    }
+    .site-header.scrolled {
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.76);
+      -webkit-backdrop-filter: blur(22px) saturate(170%);
+      backdrop-filter: blur(22px) saturate(170%);
+    }
+    .to-top {
+      position: fixed;
+      right: calc(var(--hero-frame-margin) + 12px);
+      bottom: calc(var(--hero-frame-margin) + 12px);
+      z-index: 1100;
+    }
+  </style>
 
   <!-- Structured Data: Organization -->
   <script type="application/ld+json">
@@ -35,7 +74,7 @@
     "@type": "Organization",
     "name": "GFI – Baden GmbH",
     "url": "https://www.gfi-baden.de/",
-    "logo": "https://www.gfi-baden.de/assets/img/Logo.svg",
+    "logo": "https://www.gfi-baden.de/assets/img/GFI-Logo.svg",
     "description": "Sozialunternehmen für Schulbegleitung, Sozialpädagogische Familienhilfe und ambulante Angebote für Menschen mit Behinderung in Karlsruhe und Umgebung.",
     "telephone": "+49 721 61930339",
     "email": "info@gfi-baden.de",
@@ -85,58 +124,55 @@
     <div class="loader-line"><span></span></div>
   </div>
 
-  <!-- ============================================================ -->
-  <!-- 1. HEADER / NAVIGATION                                       -->
-  <!-- ============================================================ -->
-  <header class="site-header" id="site-header" data-theme="light">
-    <div class="container header-inner">
-      <a class="brand" href="https://www.gfi-baden.de/" aria-label="GFI Baden, zur Startseite">
-        <img src="assets/img/Logo.svg" width="200" height="56" alt="GFI Baden Logo" class="brand-logo" />
-      </a>
-
-      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-        <ul>
-          <li><a href="https://www.gfi-baden.de/unser-angebot-2/">Unser Angebot</a></li>
-          <li><a href="https://www.gfi-baden.de/ueber-uns/">Wir über uns</a></li>
-          <li><a href="https://www.gfi-baden.de/jobs/">Jobs</a></li>
-          <li><a href="https://www.gfi-baden.de/qualitaet/">Qualität</a></li>
-          <li><a href="https://www.gfi-baden.de/aktuelles/">Aktuelles</a></li>
-          <li><a href="https://www.gfi-baden.de/home-6/">Kontakt</a></li>
-        </ul>
-        <div class="nav-cta-mobile">
-          <a class="btn btn-accent" href="https://www.gfi-baden.de/home-6/"><span>Jetzt Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
-        </div>
-      </nav>
-
-      <div class="header-cta">
-        <a class="btn btn-accent" href="https://www.gfi-baden.de/home-6/"><span>Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
-      </div>
-
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen">
-        <span></span><span></span>
-      </button>
-    </div>
-  </header>
-
   <main id="main">
 
-    <!-- ============================================================ -->
-    <!-- 2. HERO                                                      -->
-    <!-- ============================================================ -->
-    <section class="hero" id="hero" aria-labelledby="hero-title" data-cursor="dark">
+    <header class="site-header" id="site-header" data-theme="light">
+      <div class="header-inner">
+        <a class="brand" href="https://www.gfi-baden.de/" aria-label="GFI Baden, zur Startseite">
+          <img src="assets/img/GFI-Logo.svg" width="200" height="56" alt="GFI Baden Logo" class="brand-logo" />
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="https://www.gfi-baden.de/unser-angebot-2/">Unser Angebot</a></li>
+            <li><a href="https://www.gfi-baden.de/ueber-uns/">Wir über uns</a></li>
+            <li><a href="https://www.gfi-baden.de/jobs/">Jobs</a></li>
+            <li><a href="https://www.gfi-baden.de/qualitaet/">Qualität</a></li>
+            <li><a href="https://www.gfi-baden.de/aktuelles/">Aktuelles</a></li>
+            <li><a href="https://www.gfi-baden.de/home-6/">Kontakt</a></li>
+          </ul>
+          <div class="nav-cta-mobile">
+            <a class="btn btn-accent" href="https://www.gfi-baden.de/home-6/"><span>Jetzt Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          </div>
+        </nav>
+
+        <div class="header-cta">
+          <a class="btn btn-accent" href="https://www.gfi-baden.de/home-6/"><span>Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero-Rahmen (Inset) -->
+    <div class="hero-frame">
+    <div class="hero-shell">
+      <section class="hero" id="hero" aria-labelledby="hero-title" data-cursor="dark">
       <div class="hero-bg" aria-hidden="true" data-parallax="0.1">
         <div class="hero-slider" id="hero-slider">
           <div class="hero-slide is-active">
-            <img src="assets/img/hero-kinder.jpeg" width="1024" height="683" alt="" fetchpriority="high" decoding="async" />
+            <img src="assets/img/begleitung.jpeg" width="600" height="400" alt="" fetchpriority="high" decoding="async" />
+          </div>
+          <div class="hero-slide">
+            <img src="assets/img/High5.jpeg" width="1024" height="683" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="hero-slide">
             <img src="assets/img/kids.jpg" width="1024" height="683" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="hero-slide">
-            <img src="assets/img/begleitung.jpeg" width="600" height="400" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="hero-slide">
-            <img src="assets/img/familie.jpeg" width="600" height="524" alt="" loading="lazy" decoding="async" />
+            <img src="assets/img/Schule2.jpg" width="1024" height="683" alt="" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -144,19 +180,15 @@
 
       <nav class="hero-slider-nav" id="hero-slider-nav" aria-label="Hero-Hintergrund">
         <button type="button" class="hero-slider-nav-btn is-active" aria-label="Bild 1 von 4" aria-current="true" data-slide="0">
-          <span class="hero-slider-num" aria-hidden="true">01</span>
           <span class="hero-slider-line" aria-hidden="true"><span class="hero-slider-line-fill"></span></span>
         </button>
         <button type="button" class="hero-slider-nav-btn" aria-label="Bild 2 von 4" data-slide="1">
-          <span class="hero-slider-num" aria-hidden="true">02</span>
           <span class="hero-slider-line" aria-hidden="true"><span class="hero-slider-line-fill"></span></span>
         </button>
         <button type="button" class="hero-slider-nav-btn" aria-label="Bild 3 von 4" data-slide="2">
-          <span class="hero-slider-num" aria-hidden="true">03</span>
           <span class="hero-slider-line" aria-hidden="true"><span class="hero-slider-line-fill"></span></span>
         </button>
         <button type="button" class="hero-slider-nav-btn" aria-label="Bild 4 von 4" data-slide="3">
-          <span class="hero-slider-num" aria-hidden="true">04</span>
           <span class="hero-slider-line" aria-hidden="true"><span class="hero-slider-line-fill"></span></span>
         </button>
       </nav>
@@ -204,7 +236,9 @@
           <p>Enge Kommunikation, hohe Transparenz und regelmäßige Gespräche mit allen Beteiligten.</p>
         </li>
       </ul>
-    </section>
+      </section>
+    </div>
+    </div>
 
     <!-- ============================================================ -->
     <!-- 3. AUDIENCE / DREI WEGE                                      -->
@@ -260,50 +294,57 @@
     <!-- 4. INTRO / DAS SIND WIR                                      -->
     <!-- ============================================================ -->
     <section class="intro section" aria-labelledby="intro-title">
-      <div class="container intro-grid">
-        <div class="intro-media reveal">
-          <figure class="vc-photo">
-            <img src="assets/img/kids.jpg" width="1024" height="683" alt="Kinder im gemeinsamen Schulalltag" loading="lazy" />
-          </figure>
-        </div>
-        <div class="intro-copy">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Das sind wir</p>
-          <h2 id="intro-title" class="reveal">Teilhabe ermöglichen – <em>mit Zeit und Respekt.</em></h2>
-          <p class="lead reveal">
+      <div class="container intro-shell">
+        <header class="intro-head">
+          <div class="intro-head-copy">
+            <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Das sind wir</p>
+            <h2 id="intro-title" class="reveal">Teilhabe ermöglichen – <em>mit Zeit und Respekt.</em></h2>
+          </div>
+          <p class="intro-head-lead lead reveal">
             Inklusion beginnt im Kopf! Als Sozialunternehmen in Karlsruhe unterstützen wir Kinder, Jugendliche
             und Familien in der Eingliederungshilfe und Kinder- und Jugendhilfe – von der Schulbegleitung
             bis zur Sozialpädagogischen Familienhilfe. Wir begleiten Sie von Anfang an.
           </p>
+        </header>
 
-          <div class="values-manifest">
-            <p class="values-manifest-label">Was uns antreibt</p>
-            <dl class="values-list" aria-label="Unsere Werte">
-              <div class="values-row reveal">
-                <span class="values-index" aria-hidden="true">01</span>
+        <div class="intro-body">
+          <div class="intro-media reveal">
+            <figure class="vc-photo">
+              <img src="assets/img/kids.jpg" width="1024" height="683" alt="Kinder im gemeinsamen Schulalltag" loading="lazy" />
+            </figure>
+          </div>
+
+          <div class="intro-panel-slot">
+          <div class="intro-panel">
+            <dl class="values-list" aria-label="Was uns antreibt">
+              <div class="values-row">
+                <span class="values-ico" aria-hidden="true"><svg class="ico"><use href="#i-family"/></svg></span>
                 <div class="values-body">
                   <dt>Menschlich</dt>
                   <dd>Raum geben, zuhören und allen Beteiligten respektvoll begegnen.</dd>
                 </div>
               </div>
-              <div class="values-row reveal">
-                <span class="values-index" aria-hidden="true">02</span>
+              <div class="values-row">
+                <span class="values-ico" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span>
                 <div class="values-body">
                   <dt>Engagiert</dt>
                   <dd>Hohe Fachlichkeit, Weiterbildung und Arbeit, die mehr ist als ein Job.</dd>
                 </div>
               </div>
-              <div class="values-row reveal">
-                <span class="values-index" aria-hidden="true">03</span>
+              <div class="values-row">
+                <span class="values-ico" aria-hidden="true"><svg class="ico"><use href="#i-eye"/></svg></span>
                 <div class="values-body">
                   <dt>Auf Augenhöhe</dt>
                   <dd>Familien beraten, Begegnung ermöglichen, den Gesamtprozess stärken.</dd>
                 </div>
               </div>
             </dl>
+            <a class="btn btn-line intro-panel-cta" href="https://www.gfi-baden.de/ueber-uns/"><span>Mehr über uns</span><svg class="ico"><use href="#i-arrow"/></svg></a>
           </div>
-
-          <a class="btn btn-line reveal" href="https://www.gfi-baden.de/ueber-uns/"><span>Mehr über uns</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          </div>
         </div>
+
+        <p class="intro-foot reveal">Sie möchten uns kennenlernen? Rufen Sie uns an: <a href="tel:+4972161930339">0721/61930339</a></p>
       </div>
     </section>
 
@@ -312,7 +353,7 @@
     <!-- ============================================================ -->
     <section class="statement" aria-label="Unsere Haltung" data-cursor="dark">
       <div class="statement-bg" data-parallax="0.14">
-        <img src="assets/img/kids.jpg" width="1024" height="683" alt="Kinder im gemeinsamen Schulalltag" loading="lazy" />
+        <img src="assets/img/Betreuung.jpeg" width="1024" height="683" alt="Betreuung und Begleitung im Alltag" loading="lazy" />
       </div>
       <div class="statement-veil" aria-hidden="true"></div>
       <div class="container statement-inner">
@@ -385,8 +426,6 @@
     <!-- 5b. IMPACT / ZAHLEN                                          -->
     <!-- ============================================================ -->
     <section class="impact section" aria-labelledby="impact-title">
-      <div class="impact-bloom impact-bloom-a" aria-hidden="true"></div>
-      <div class="impact-bloom impact-bloom-b" aria-hidden="true"></div>
       <div class="container impact-shell">
         <header class="impact-head sec-head center">
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> In Zahlen</p>
@@ -462,8 +501,9 @@
             <a class="btn btn-line" href="https://www.gfi-baden.de/home-6/"><span>Kontakt aufnehmen</span></a>
           </div>
         </div>
-        <div class="career-media">
+        <div class="career-media reveal">
           <figure class="frame-soft"><img src="assets/img/team-event.png" width="1024" height="674" alt="Team der GFI Baden bei einem gemeinsamen Einführungstag" loading="lazy" /></figure>
+          <div class="quality-badge" data-depth="30"><img src="assets/img/badge-gptw.png" width="84" height="84" alt="Great Place to Work Auszeichnung 2024" loading="lazy" /></div>
         </div>
       </div>
     </section>
@@ -526,7 +566,6 @@
       <div class="container quality-grid">
         <div class="quality-media">
           <figure class="frame-arch dark" data-tilt><img src="assets/img/team-portrait.jpg" width="500" height="500" alt="Standortverantwortliche der GFI Baden, Suzanne Mack und Franziska Lang" loading="lazy" /></figure>
-          <div class="quality-badge" data-depth="30"><img src="assets/img/badge-gptw.png" width="84" height="84" alt="Great Place to Work Auszeichnung 2024" loading="lazy" /></div>
         </div>
         <div class="quality-copy">
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Qualität &amp; Vertrauen</p>
@@ -565,39 +604,39 @@
 
           <div class="voices-stage" id="voices-stage" aria-live="polite" aria-atomic="true">
             <div class="voices-track" id="voices-track">
-              <article class="voices-slide is-active" data-img="assets/img/begleitung.jpeg" data-rail="Schnelle Hilfe, auch in schwierigen Zeiten" data-initial="V">
+              <article class="voices-slide is-active" data-img="assets/img/begleitung.jpeg" data-rail="Schnelle Hilfe, auch in schwierigen Zeiten" data-initial="V" data-stars="5">
                 <blockquote class="voices-slide-quote"><p>Wir hatten Probleme mit unserem alten Schulbegleiter, der durch einen anderen Anbieter gestellt worden war. Es wurde sich auf unsere Kontaktanfrage direkt bei uns gemeldet und uns schnell ein neuer Schulbegleiter organisiert. All dies trotz Corona!</p></blockquote>
                 <footer class="voices-slide-role">Vater eines 9-jährigen Schülers</footer>
               </article>
-              <article class="voices-slide" data-img="assets/img/kids.jpg" data-rail="Wöchentlicher Austausch, echte Zufriedenheit" data-initial="S">
+              <article class="voices-slide" data-img="assets/img/kids.jpg" data-rail="Wöchentlicher Austausch, echte Zufriedenheit" data-initial="S" data-stars="5">
                 <blockquote class="voices-slide-quote"><p>Die Eltern und ich sind mit den Leistungen unserer Inklusionsbegleiterin sehr zufrieden. Wir stehen im wöchentlichen Austausch. G. mag sie und freut sich über ihre Begleitung, über die gemeinsamen Aktivitäten.</p></blockquote>
                 <footer class="voices-slide-role">Sorgeberechtigte eines 8-jährigen Schülers</footer>
               </article>
-              <article class="voices-slide" data-img="assets/img/hero-kinder.jpeg" data-rail="Anliegen werden schnell bearbeitet" data-initial="M">
+              <article class="voices-slide" data-img="assets/img/hero-kinder.jpeg" data-rail="Anliegen werden schnell bearbeitet" data-initial="M" data-stars="4">
                 <blockquote class="voices-slide-quote"><p>Wir sind mit den Leistungen der Schulbegleitung sehr zufrieden. Unsere Anliegen werden immer schnell bearbeitet und eine Lösung gefunden. Im Krankheitsfall wurde immer eine Ersatzkraft gefunden!</p></blockquote>
                 <footer class="voices-slide-role">Mutter eines 11-jährigen Schülers</footer>
               </article>
-              <article class="voices-slide" data-img="assets/img/familie.jpeg" data-rail="Sorgfältig ausgewählt und passgenau" data-initial="M">
+              <article class="voices-slide" data-img="assets/img/familie.jpeg" data-rail="Sorgfältig ausgewählt und passgenau" data-initial="M" data-stars="5">
                 <blockquote class="voices-slide-quote"><p>Wir sind insgesamt sehr zufrieden. Unsere Schulbegleitung wurde sorgfältig ausgewählt und passt gut zu unserem Kind. Wir empfehlen Euch uneingeschränkt weiter und sind froh, so gut betreut zu werden.</p></blockquote>
                 <footer class="voices-slide-role">Mutter eines 8-jährigen Kindes</footer>
               </article>
-              <article class="voices-slide" data-img="assets/img/kids.jpg" data-rail="Viel Herz und volle Empfehlung" data-initial="P">
+              <article class="voices-slide" data-img="assets/img/kids.jpg" data-rail="Viel Herz und volle Empfehlung" data-initial="P" data-stars="5">
                 <blockquote class="voices-slide-quote"><p>Die Firma hat ganz viel Herz. Wir können sie uneingeschränkt weiterempfehlen!</p></blockquote>
                 <footer class="voices-slide-role">Personensorgeberechtigte eines 14-jährigen Mädchens</footer>
               </article>
-              <article class="voices-slide" data-img="assets/img/begleitung.jpeg" data-rail="Gutes Zusammenspiel aller Beteiligten" data-initial="M">
+              <article class="voices-slide" data-img="assets/img/begleitung.jpeg" data-rail="Gutes Zusammenspiel aller Beteiligten" data-initial="M" data-stars="5">
                 <blockquote class="voices-slide-quote"><p>Unser Sohn braucht seit vielen Jahren eine Inklusionsassistenz und wir hatten noch nie ein so gutes Zusammenspiel zwischen Anbieter, Eltern, Schule und I-Helferin. Es wird stets Kontakt gehalten und versucht, Lösungen und Entlastungen zu finden.</p></blockquote>
                 <footer class="voices-slide-role">Mutter eines 8-jährigen Sohnes mit med. Bedarfen</footer>
               </article>
-              <article class="voices-slide" data-img="assets/img/schule.jpeg" data-rail="Ernsthafte Arbeit mit Freude" data-initial="P">
+              <article class="voices-slide" data-img="assets/img/schule.jpeg" data-rail="Ernsthafte Arbeit mit Freude" data-initial="P" data-stars="4">
                 <blockquote class="voices-slide-quote"><p>Ich habe den Eindruck, dass unsere Schulbegleitung ihre Arbeit sehr ernst nimmt und Freude an ihrer Tätigkeit hat.</p></blockquote>
                 <footer class="voices-slide-role">Pflegeeltern eines Kindes mit geistiger Behinderung</footer>
               </article>
-              <article class="voices-slide" data-img="assets/img/team-portrait.jpg" data-rail="Herausragendes Engagement" data-initial="G">
+              <article class="voices-slide" data-img="assets/img/team-portrait.jpg" data-rail="Herausragendes Engagement" data-initial="G" data-stars="5">
                 <blockquote class="voices-slide-quote"><p>Herausragendes Engagement, setzen sich sehr für eine passende I-Kraft ein.</p></blockquote>
                 <footer class="voices-slide-role">Gruppenleitung einer Wohngruppe für Kinder und Jugendliche</footer>
               </article>
-              <article class="voices-slide" data-img="assets/img/hero-kinder.jpeg" data-rail="Passgenaue Auswahl auch in schwierigen Fällen" data-initial="B">
+              <article class="voices-slide" data-img="assets/img/hero-kinder.jpeg" data-rail="Passgenaue Auswahl auch in schwierigen Fällen" data-initial="B" data-stars="5">
                 <blockquote class="voices-slide-quote"><p>Passgenaue Auswahl der Inklusionsassistenz und guter Blick für die Bedürfnisse. Herausragendes Engagement, setzen sich für eine passende I-Kraft auch in einem besonders schwierigen Fall ein.</p></blockquote>
                 <footer class="voices-slide-role">Betreuerin eines 7-jährigen Kitakindes</footer>
               </article>
@@ -608,6 +647,7 @@
             <div class="voices-author">
               <span class="voices-author-avatar" id="voices-avatar" aria-hidden="true">V</span>
               <div class="voices-author-meta">
+                <div class="voices-stars" id="voices-stars" role="img" aria-label="5 von 5 Sternen"></div>
                 <strong class="voices-author-name" id="voices-author">Vater eines 9-jährigen Schülers</strong>
                 <span class="voices-author-label">Kundenstimme</span>
               </div>
@@ -756,39 +796,57 @@
   <!-- 13. FOOTER                                                   -->
   <!-- ============================================================ -->
   <footer class="site-footer" data-cursor="dark">
-    <div class="container footer-grid">
+    <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <img src="assets/img/Logo.svg" width="200" height="56" alt="GFI Baden Logo" loading="lazy" />
+        <img src="assets/img/GFI-Logo.svg" width="200" height="56" alt="GFI Baden Logo" loading="lazy" />
         <p>Sozialunternehmen für Schulbegleitung, Sozialpädagogische Familienhilfe und ambulante Angebote in Karlsruhe und Umgebung.</p>
+        <div class="footer-social" aria-label="Social Media">
+          <a href="https://www.facebook.com/profile.php?id=61550116466430" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.youtube.com/@gesellschaftfurinklusion2586" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+          <a href="https://de.linkedin.com/company/gesellschaft-f%C3%BCr-inklusion" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
       <div class="footer-col">
-        <h3>Kontakt</h3>
-        <address>
-          GFI – Baden GmbH<br />Hirschstraße 12-14<br />76133 Karlsruhe<br />
-          <a href="tel:+4972161930339">0721/61930339</a><br />
-          <a href="mailto:info@gfi-baden.de">info@gfi-baden.de</a>
-        </address>
-      </div>
-      <div class="footer-col">
-        <h3>Unternehmen &amp; Angebote</h3>
+        <h3>Navigation</h3>
         <ul>
           <li><a href="https://www.gfi-baden.de/unser-angebot-2/">Unser Angebot</a></li>
           <li><a href="https://www.gfi-baden.de/ueber-uns/">Wir über uns</a></li>
           <li><a href="https://www.gfi-baden.de/qualitaet/">Qualität</a></li>
           <li><a href="https://www.gfi-baden.de/aktuelles/">Aktuelles</a></li>
+          <li><a href="https://www.gfi-baden.de/home-6/">Kontakt</a></li>
+        </ul>
+        <h3 class="footer-subhead">Karriere</h3>
+        <ul>
+          <li><a href="https://www.gfi-baden.de/jobs/">Jobs</a></li>
+          <li><a href="https://www.karriere-gfi.de/" target="_blank" rel="noopener noreferrer">Karriereseite für Führungskräfte</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Karriere &amp; Service</h3>
+        <h3>Unternehmen und Angebote</h3>
         <ul>
-          <li><a href="https://www.gfi-baden.de/jobs/">Jobs &amp; Karriere</a></li>
-          <li><a href="https://www.gfi-baden.de/home-6/">Kontakt</a></li>
-          <li><a href="https://www.gfi-baden.de/datenschutz/">Datenschutz</a></li>
-          <li><a href="https://www.gfi-baden.de/impressum/">Impressum</a></li>
+          <li><a href="https://www.gfi-baden.de/" target="_blank" rel="noopener noreferrer">Homepage GFI – Baden GmbH</a></li>
+          <li><a href="https://gfi-rheinland.de/" target="_blank" rel="noopener noreferrer">Homepage GFI – Rheinland GmbH</a></li>
+          <li><a href="https://gfi-rhein-main.de/" target="_blank" rel="noopener noreferrer">Homepage GFI – Rhein-Main GmbH</a></li>
+          <li><a href="https://gfi-rhein-neckar.de/" target="_blank" rel="noopener noreferrer">Homepage GFI – Rhein-Neckar GmbH</a></li>
+          <li><a href="https://www.gfi-autismus-therapie-zentrum.de/" target="_blank" rel="noopener noreferrer">Homepage GFI – Autismus Therapie Zentrum</a></li>
         </ul>
       </div>
+      <div class="footer-col footer-col-contact">
+        <h3>Kontakt</h3>
+        <address>
+          Hirschstraße 12-14<br />76133 Karlsruhe<br />
+          <a href="tel:+4972161909913">0721/61909913</a><br />
+          <a href="mailto:info@gesellschaft-fuer-inklusion.de">info@gesellschaft-fuer-inklusion.de</a>
+        </address>
+      </div>
     </div>
-    <div class="footer-bottom"><div class="container"><p>© <span id="year">2026</span> GFI – Baden GmbH. Alle Rechte vorbehalten.</p><p class="footer-made">Inklusion beginnt im Kopf.</p></div></div>
+    <div class="footer-bottom"><div class="footer-bottom-inner"><p>© <span id="year">2026</span> EAS Holding GmbH</p><p class="footer-bottom-links"><a href="https://gfi.hinweis.digital/" target="_blank" rel="noopener noreferrer">Hinweisgeberplattform</a><span>/</span><a href="https://gesellschaft-fuer-inklusion.de/datenschutz/">Datenschutz</a><span>/</span><a href="https://gesellschaft-fuer-inklusion.de/impressum/">Impressum</a></p></div></div>
   </footer>
 
   <!-- FAQ Structured Data -->
@@ -807,6 +865,10 @@
   }
   </script>
 
-  <script src="js/main.js"></script>
+  <button type="button" class="to-top" id="to-top" aria-label="Nach oben scrollen" hidden>
+    <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
+  </button>
+
+  <script src="js/main.js?v=20250630j"></script>
 </body>
 </html>
