@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="de" class="no-motion handout-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GFI Baden – UI &amp; Design Handout</title>
+  <meta name="description" content="Visuelles Style- und Komponenten-Manual der GFI Baden Homepage." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="assets/img/Favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/design-handout.css" />
+</head>
+<body class="handout-body">
+
+  <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false" style="position:absolute">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-family" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="8.5" r="2.3"/><path d="M3 20c0-3.3 2.2-5.5 5-5.5s5 2.2 5 5.5M14.5 20c0-2.6 1.4-4.3 3.5-4.3 1.7 0 3 1.1 3.4 3"/></g></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 3.7 1.8 5 5.5 5.5C13.8 9 12.6 10.3 12 14c-.6-3.7-1.8-5-5.5-5.5C10.2 8 11.4 6.7 12 3ZM18 14c.3 1.9.9 2.6 2.8 2.9-1.9.3-2.5.9-2.8 2.8-.3-1.9-.9-2.5-2.8-2.8 1.9-.3 2.5-1 2.8-2.9Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l6-3.5V21M19 21V11l-8-4M8.5 10v.01M8.5 13.5v.01M8.5 17v.01"/></g></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5.5-5 2 2-5.5 5-2Z"/></g></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></g></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v4.5c0 1.2 2.7 2.8 6 2.8s6-1.6 6-2.8V11M20 9.5V15"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.8 4.5L7.8 10a11 11 0 0 0 6.2 6.2l1.5-2.5L20 15.5V19a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-checkc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></g></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M4 11c0-3.3 2-5.5 5-5.5 1.2 0 2.2.4 3 1.1V4C10.5 4 8.4 4.8 7 6.3 5.6 7.8 5 9.6 5 11.8V18H4v-7Zm11 0c0-3.3 2-5.5 5-5.5 1.2 0 2.2.4 3 1.1V4C21.5 4 19.4 4.8 18 6.3c-1.4 1.5-2 3.3-2 5.5V18h-1v-7Z" fill="currentColor"/></symbol>
+    <symbol id="i-ring" viewBox="0 0 276.11 279.12"><path d="M135.62,237.76c-52.51,0-95.08-42.57-95.08-95.08s42.57-95.08,95.08-95.08V10.37C62.55,10.37,3.31,69.61,3.31,142.68s59.24,132.31,132.31,132.31,132.31-59.24,132.31-132.31h-37.22c0,52.51-42.57,95.08-95.08,95.08Z" fill="currentColor"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <header class="handout-cover">
+    <div class="handout-cover-inner">
+      <p class="handout-kicker"><svg class="ico"><use href="#i-ring"/></svg> GFI Baden · Design System</p>
+      <h1>UI &amp; Gestaltungs&shy;handout</h1>
+      <p>Visuelle Dokumentation der Homepage: Farben, Typografie, Layoutprinzipien und wiederkehrende UI-Komponenten – kuratiert für Review, Weitergabe und PDF-Export.</p>
+      <div class="handout-cover-meta">
+        <span><strong>Basis:</strong> index.html</span>
+        <span><strong>Schrift:</strong> Plus Jakarta Sans</span>
+        <span><strong>Stand:</strong> Juni 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="handout-shell">
+    <nav class="handout-nav" aria-label="Inhaltsverzeichnis">
+      <p class="handout-nav-title">Inhalt</p>
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#farben">Farbigkeit</a></li>
+        <li><a href="#typografie">Typografie</a></li>
+        <li><a href="#headlines">Headlinestruktur</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#cta">CTA-Elemente</a></li>
+        <li><a href="#navigation">Navigation</a></li>
+        <li><a href="#hero">Hero-Section</a></li>
+        <li><a href="#layout">Grid &amp; Layout</a></li>
+        <li><a href="#cards">Kacheln &amp; Cards</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#slider">Slider &amp; Carousel</a></li>
+        <li><a href="#weitere">Weitere Komponenten</a></li>
+        <li><a href="#footer">Footer</a></li>
+        <li><a href="#zusammenfassung">Zusammenfassung</a></li>
+      </ul>
+      <a class="handout-nav-back" href="index.html">← Zurück zur Homepage</a>
+    </nav>
+
+    <main class="handout-main">
+
+      <!-- 1 INTRO -->
+      <section class="handout-section" id="intro">
+        <header class="handout-section-head">
+          <span class="handout-section-num">01 — Intro</span>
+          <h2>Übersicht</h2>
+          <p>Dieses Handout dokumentiert das visuelle System der GFI-Baden-Startseite: ein warmes, vertrauensvolles Interface mit organischen Verläufen, Glasflächen und klarer Typografie-Hierarchie. Alle Specimens nutzen die produktiven Styles aus <code>css/styles.css</code>.</p>
+        </header>
+        <div class="handout-block">
+          <h3 class="handout-block-title">Gestaltungsziel</h3>
+          <p class="handout-block-desc">Menschlichkeit und Professionalität verbinden: weiche Farbverläufe, großzügige Radien, dezente Motion und ein kontrastreicher Orange-Akzent für Handlungsaufforderungen.</p>
+          <div class="handout-meta-grid">
+            <dl class="handout-meta"><dt>Max. Inhaltsbreite</dt><dd>1240px</dd></dl>
+            <dl class="handout-meta"><dt>Basis-Schriftgröße</dt><dd>17px / 1.0625rem</dd></dl>
+            <dl class="handout-meta"><dt>Primär-Radius</dt><dd>18px – 40px</dd></dl>
+            <dl class="handout-meta"><dt>Button-Radius</dt><dd>999px (Pill)</dd></dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 FARBEN -->
+      <section class="handout-section" id="farben">
+        <header class="handout-section-head">
+          <span class="handout-section-num">02 — Farbigkeit</span>
+          <h2>Farbkonzept</h2>
+          <p>Das Farbsystem basiert auf Grün (Vertrauen, Soziales), Teal (Tiefe, Seriosität) und Orange (Energie, CTAs). Neutrale Hintergründe und Texttöne sorgen für Ruhe und Lesbarkeit.</p>
+        </header>
+
+        <div class="handout-block">
+          <h3 class="handout-block-title">Primärfarben</h3>
+          <div class="color-grid">
+            <div class="color-card"><div class="color-swatch" style="background:#6DB991"></div><div class="color-info"><strong>Primary Green</strong><code>#6DB991</code><span>Icons, Akzente, positive Zustände</span></div></div>
+            <div class="color-card"><div class="color-swatch" style="background:#F29B5B"></div><div class="color-info"><strong>Primary Orange</strong><code>#F29B5B</code><span>CTAs, Eyebrow-Ring, Sterne, Hover</span></div></div>
+            <div class="color-card"><div class="color-swatch" style="background:#1F6F68"></div><div class="color-info"><strong>Accent Teal</strong><code>#1F6F68</code><span>Links, Sekundärbuttons, Labels</span></div></div>
+          </div>
+        </div>
+
+        <div class="handout-block">
+          <h3 class="handout-block-title">Dunkel &amp; Struktur</h3>
+          <div class="color-grid">
+            <div class="color-card"><div class="color-swatch" style="background:#173B36"></div><div class="color-info"><strong>Dark</strong><code>#173B36</code><span>Footer, dunkle Sektionen, Button-Text auf Orange</span></div></div>
+            <div class="color-card"><div class="color-swatch" style="background:#102B28"></div><div class="color-info"><strong>Dark Deep</strong><code>#102B28</code><span>Verläufe, Tiefe, Statement-Bereiche</span></div></div>
+            <div class="color-card"><div class="color-swatch" style="background:#DCEBE4"></div><div class="color-info"><strong>Border Light</strong><code>#DCEBE4</code><span>Rahmen, Trennlinien, Glas-Kanten</span></div></div>
+          </div>
+        </div>
+
+        <div class="handout-block">
+          <h3 class="handout-block-title">Hintergründe &amp; Text</h3>
+          <div class="color-grid">
+            <div class="color-card"><div class="color-swatch" style="background:#FAFCFB"></div><div class="color-info"><strong>BG Main</strong><code>#FAFCFB</code><span>Seitenhintergrund, helle Flächen</span></div></div>
+            <div class="color-card"><div class="color-swatch" style="background:#F1F8F4"></div><div class="color-info"><strong>BG Soft Green</strong><code>#F1F8F4</code><span>Sektionsverläufe, Soft-Buttons</span></div></div>
+            <div class="color-card"><div class="color-swatch" style="background:#263734"></div><div class="color-info"><strong>Text Main</strong><code>#263734</code><span>Fließtext, Überschriften</span></div></div>
+            <div class="color-card"><div class="color-swatch" style="background:#667A75"></div><div class="color-info"><strong>Text Muted</strong><code>#667A75</code><span>Leads, Beschreibungen, Meta</span></div></div>
+          </div>
+        </div>
+
+        <div class="handout-block">
+          <h3 class="handout-block-title">Sektionsverläufe</h3>
+          <p class="handout-block-desc">Jede Sektion erhält einen dezenten diagonalen Verlauf – keine harten Farbblöcke, sondern weiche Übergänge zwischen Weiß, Mint und Warmtönen.</p>
+          <div class="color-grid">
+            <div class="color-card"><div class="color-swatch" style="background:linear-gradient(165deg,#fff9f4,#fff)"></div><div class="color-info"><strong>Warm / Hero</strong><span>Intro, News, Impact</span></div></div>
+            <div class="color-card"><div class="color-swatch" style="background:linear-gradient(165deg,#eef7f2,#fff)"></div><div class="color-info"><strong>Mint / Services</strong><span>Leistungen, Voices</span></div></div>
+            <div class="color-card"><div class="color-swatch" style="background:linear-gradient(165deg,#e6f4ec,#f1f8f4)"></div><div class="color-info"><strong>Green / FAQ</strong><span>FAQ, Akkordeon-Umfeld</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 TYPOGRAFIE -->
+      <section class="handout-section" id="typografie">
+        <header class="handout-section-head">
+          <span class="handout-section-num">03 — Typografie</span>
+          <h2>Schrift &amp; Hierarchie</h2>
+          <p>Plus Jakarta Sans durchgängig – variabel, mit hohem Kontrast zwischen Display-Headlines (800) und ruhigem Fließtext (450). <em>-Elemente</em> erhalten einen Orange-Gradient als Markenakzent.</p>
+        </header>
+
+        <div class="handout-block">
+          <div class="type-specimen">
+            <div class="type-label"><span>H1 / Hero</span><code>clamp(3rem, 8.5vw, 6rem) · 800 · −0.03em</code></div>
+            <div class="type-sample"><h1 class="hero-title" style="color:var(--ink)">Inklusion beginnt <em>im Kopf.</em></h1></div>
+          </div>
+          <div class="type-specimen">
+            <div class="type-label"><span>H2 / Sektion</span><code>clamp(1.9rem, 4.4vw, 3.2rem) · 800 · −0.03em</code></div>
+            <div class="type-sample"><h2>Teilhabe ermöglichen – <em>mit Zeit und Respekt.</em></h2></div>
+          </div>
+          <div class="type-specimen">
+            <div class="type-label"><span>H3 / Card</span><code>1.3rem · 700 · −0.015em</code></div>
+            <div class="type-sample"><h3>Schulbegleitung in Karlsruhe</h3></div>
+          </div>
+          <div class="type-specimen">
+            <div class="type-label"><span>Fließtext / Lead</span><code>1.0625rem · 450 · line-height 1.65</code></div>
+            <div class="type-sample"><p class="lead">Als Sozialunternehmen in Karlsruhe unterstützen wir Kinder, Jugendliche und Familien in der Eingliederungshilfe und Kinder- und Jugendhilfe.</p></div>
+          </div>
+          <div class="type-specimen">
+            <div class="type-label"><span>Eyebrow / Label</span><code>0.76rem · 700 · uppercase · 0.14em tracking</code></div>
+            <div class="type-sample"><p class="eyebrow"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Das sind wir</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 HEADLINES -->
+      <section class="handout-section" id="headlines">
+        <header class="handout-section-head">
+          <span class="handout-section-num">04 — Headlinestruktur</span>
+          <h2>Überschriften-Hierarchie</h2>
+          <p>Die Seite folgt einem klaren Muster: Eyebrow → H2 (Sektionstitel) → Lead. Im Hero eine eigenständige H1 mit Zeilenbruch und Gradient-Akzent auf <em>.</em></p>
+        </header>
+        <div class="specimen">
+          <div class="specimen-label">Section Head · sec-head</div>
+          <div class="specimen-body specimen--pad audience">
+            <header class="sec-head">
+              <p class="eyebrow"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Für wen wir da sind</p>
+              <h2>Der richtige Weg <em>für Sie.</em></h2>
+              <p class="sec-lead">Ob Familie, Schule oder Kooperationspartner – wir bieten passende Einstiege und transparente Abläufe.</p>
+            </header>
+          </div>
+        </div>
+        <div class="handout-meta-grid" style="margin-top:1.25rem">
+          <dl class="handout-meta"><dt>H1</dt><dd>1× pro Seite (Hero)</dd></dl>
+          <dl class="handout-meta"><dt>H2</dt><dd>Sektionsanker, max. ~18ch Breite</dd></dl>
+          <dl class="handout-meta"><dt>em-Akzent</dt><dd>Orange-Gradient, emotionaler Hook</dd></dl>
+        </div>
+      </section>
+
+      <!-- 5 BUTTONS -->
+      <section class="handout-section" id="buttons">
+        <header class="handout-section-head">
+          <span class="handout-section-num">05 — Buttons</span>
+          <h2>Button-System</h2>
+          <p>Pill-förmige Buttons (min-height 50px), Icon rechts mit Pfeil, Hover: leichtes Anheben (−2px) und Schattenverstärkung.</p>
+        </header>
+        <div class="handout-block">
+          <h3 class="handout-block-title">Helle Fläche</h3>
+          <div class="btn-row">
+            <a class="btn btn-accent" href="#"><span>Primär / Accent</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-primary" href="#"><span>Sekundär / Teal</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-line" href="#"><span>Soft / Line</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-light" href="#"><span>Light</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="#"><span>Ghost</span></a>
+          </div>
+          <div class="handout-meta-grid">
+            <dl class="handout-meta"><dt>Padding</dt><dd>0.9rem 1.6rem</dd></dl>
+            <dl class="handout-meta"><dt>btn-lg</dt><dd>1.05rem 1.9rem</dd></dl>
+            <dl class="handout-meta"><dt>Radius</dt><dd>var(--pill)</dd></dl>
+            <dl class="handout-meta"><dt>Transition</dt><dd>0.4s spring easing</dd></dl>
+          </div>
+        </div>
+        <div class="handout-block">
+          <h3 class="handout-block-title">Auf dunklem Grund</h3>
+          <div class="btn-row btn-row--dark">
+            <a class="btn btn-accent btn-lg" href="#"><span>Accent</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-light btn-lg" href="#"><span>Light</span></a>
+            <a class="btn btn-outline-light btn-lg" href="#"><span>Outline Light</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 CTA -->
+      <section class="handout-section" id="cta">
+        <header class="handout-section-head">
+          <span class="handout-section-num">06 — CTA</span>
+          <h2>Call-to-Action-Elemente</h2>
+          <p>CTAs sind durch Orange (btn-accent) und Pfeil-Icon sofort erkennbar. Gruppen aus 2–3 Buttons in final-actions oder hero-actions.</p>
+        </header>
+        <div class="specimen">
+          <div class="specimen-label">Final CTA · final section</div>
+          <div class="specimen-body specimen--dark" style="padding:2.5rem 1.5rem;text-align:center">
+            <div class="final-inner">
+              <p class="eyebrow light"><span class="eyebrow-ring"><svg class="ico"><use href="#i-ring"/></svg></span> Nächster Schritt</p>
+              <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem)">Sie haben Fragen? Wir zeigen Ihnen <em>den nächsten Schritt.</em></h2>
+              <div class="final-actions">
+                <a class="btn btn-accent btn-lg" href="#"><span>Unterstützung anfragen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+                <a class="btn btn-light btn-lg" href="#"><span>Jobs ansehen</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="handout-block" style="margin-top:1.25rem">
+          <h3 class="handout-block-title">Card-Link (textueller CTA)</h3>
+          <p class="handout-block-desc">Leichter Link mit Pfeil-Diagonalbewegung bei Hover – in Path-Cards und News.</p>
+          <a class="card-link" href="#"><span>Mehr erfahren</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
+      </section>
+
+      <!-- 7 NAV -->
+      <section class="handout-section" id="navigation">
+        <header class="handout-section-head">
+          <span class="handout-section-num">07 — Navigation</span>
+          <h2>Header &amp; Menü</h2>
+          <p>Fixed Header über dem Hero-Rahmen; nach Scroll: volle Breite mit Glas-Hintergrund (blur 22px). Mobile: Off-Canvas-Panel ab 760px.</p>
+        </header>
+        <div class="specimen">
+          <div class="specimen-label">Desktop · site-header (scrolled state)</div>
+          <div class="specimen-body">
+            <div class="specimen-nav site-header scrolled" style="position:static;width:100%;border-radius:0">
+              <a class="brand" href="#"><img src="assets/img/GFI-Logo.svg" alt="GFI" class="brand-logo" width="160" height="45" /></a>
+              <nav class="main-nav" aria-label="Beispiel">
+                <ul>
+                  <li><a href="#">Unser Angebot</a></li>
+                  <li><a href="#">Wir über uns</a></li>
+                  <li><a href="#">Jobs</a></li>
+                  <li><a href="#">Kontakt</a></li>
+                </ul>
+              </nav>
+              <div class="header-cta"><a class="btn btn-accent" href="#"><span>Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="handout-cols" style="margin-top:1.25rem">
+          <div class="handout-block">
+            <h3 class="handout-block-title">Desktop-Verhalten</h3>
+            <ul style="margin:0;padding-left:1.1rem;color:var(--ink-soft);font-size:0.92rem">
+              <li>Links: Gradient-Underline bei Hover</li>
+              <li>CTA-Button rechts in Orange</li>
+              <li>Sticky + Glas nach Scroll</li>
+            </ul>
+          </div>
+          <div class="handout-block">
+            <h3 class="handout-block-title">Mobile (≤760px)</h3>
+            <div class="specimen-mobile">
+              <div class="specimen-mobile-card"><strong>Nav-Toggle</strong>Hamburger → Vollbild-Panel von rechts, 86vw max.</div>
+              <div class="specimen-mobile-card"><strong>nav-cta-mobile</strong>Kontakt-Button im ausgeklappten Menü</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 HERO -->
+      <section class="handout-section" id="hero">
+        <header class="handout-section-head">
+          <span class="handout-section-num">08 — Hero</span>
+          <h2>Hero-Section</h2>
+          <p>Vollhöhen-Sektion im abgerundeten hero-shell-Rahmen: Bild-Slider, dunkler Veil, linke Textspalte, Trust-Band unten.</p>
+        </header>
+        <div class="specimen">
+          <div class="specimen-label">Visueller Aufbau (Auszug)</div>
+          <div class="specimen-body">
+            <div class="specimen-hero">
+              <div class="specimen-hero-bg"><img src="assets/img/begleitung.jpeg" alt="" /></div>
+              <div class="specimen-hero-veil" aria-hidden="true"></div>
+              <div class="specimen-hero-content">
+                <p class="eyebrow on-dark"><span class="eyebrow-ring"><svg class="ico"><use href="#i-ring"/></svg></span> GFI Baden · Karlsruhe</p>
+                <h1 class="hero-title">Inklusion beginnt <em>im Kopf.</em></h1>
+                <p class="hero-sub">Schulbegleitung, Familienhilfe und ambulante Angebote in Karlsruhe und Umgebung.</p>
+                <div class="hero-actions">
+                  <a class="btn btn-accent btn-lg" href="#"><span>Unterstützung anfragen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+                  <a class="btn btn-light btn-lg" href="#"><span>Jobs ansehen</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="handout-meta-grid" style="margin-top:1.25rem">
+          <dl class="handout-meta"><dt>hero-frame</dt><dd>Weißer Außenrand, 20px Inset</dd></dl>
+          <dl class="handout-meta"><dt>Slider</dt><dd>4 Bilder, Fade, Linien-Pagination</dd></dl>
+          <dl class="handout-meta"><dt>Trust-Band</dt><dd>3 Spalten, Glas-Karte</dd></dl>
+        </div>
+      </section>
+
+      <!-- 9 LAYOUT -->
+      <section class="handout-section" id="layout">
+        <header class="handout-section-head">
+          <span class="handout-section-num">09 — Layout</span>
+          <h2>Grid &amp; Rhythmus</h2>
+          <p>Zentrierter Container (max 1240px), fluides Padding, Sektionsabstand clamp(3.5rem, 8vw, 7rem). Grids: 3er (Paths, News), 4er (Steps, Proof), 2er (Intro, FAQ).</p>
+        </header>
+        <div class="handout-block">
+          <h3 class="handout-block-title">12-Spalten-Logik (schematisch)</h3>
+          <div class="layout-diagram">
+            <div class="layout-row"><div class="layout-cell span-12 muted">container · max-width 1240px</div></div>
+            <div class="layout-row"><div class="layout-cell span-4">4</div><div class="layout-cell span-4">4</div><div class="layout-cell span-4">4</div></div>
+            <div class="layout-row"><div class="layout-cell span-6">6</div><div class="layout-cell span-6">6</div></div>
+            <div class="layout-row"><div class="layout-cell span-3">3</div><div class="layout-cell span-3">3</div><div class="layout-cell span-3">3</div><div class="layout-cell span-3">3</div></div>
+          </div>
+          <div class="handout-meta-grid">
+            <dl class="handout-meta"><dt>--pad</dt><dd>clamp(1.1rem, 4vw, 2.2rem)</dd></dl>
+            <dl class="handout-meta"><dt>--section-y</dt><dd>clamp(3.5rem, 8vw, 7rem)</dd></dl>
+            <dl class="handout-meta"><dt>Gap Cards</dt><dd>clamp(1rem, 2vw, 1.6rem)</dd></dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 CARDS -->
+      <section class="handout-section" id="cards">
+        <header class="handout-section-head">
+          <span class="handout-section-num">10 — Kacheln</span>
+          <h2>Cards &amp; Kachelelemente</h2>
+          <p>Vier Hauptvarianten: Path-Cards (Zielgruppen), News-Cards, Proof/Step-Glas-Kacheln, Intro-Werte-Panel.</p>
+        </header>
+
+        <div class="handout-block">
+          <h3 class="handout-block-title">Path-Cards · audience</h3>
+          <p class="handout-block-desc">3 Spalten, farbiger Top-Stripe, Icon-Kachel, Hover: −8px lift. Jeweils Grün / Teal / Orange getönt.</p>
+          <div class="paths" style="grid-template-columns:1fr">
+            <article class="path-card">
+              <span class="path-num">01</span>
+              <div class="path-ico"><svg class="ico"><use href="#i-family"/></svg></div>
+              <h3>Für Familien</h3>
+              <ul class="path-points"><li>Schulbegleitung</li><li>Transparente Kommunikation</li></ul>
+              <a class="card-link" href="#"><span>Unser Angebot</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </article>
+          </div>
+        </div>
+
+        <div class="handout-cols">
+          <div class="handout-block">
+            <h3 class="handout-block-title">News-Card</h3>
+            <article class="news-card">
+              <a class="news-media" href="#"><img src="assets/img/schule.jpeg" alt="" /></a>
+              <div class="news-body">
+                <div class="news-meta"><span class="category">Weiterbildung</span><time>14. Jan. 2025</time></div>
+                <h3><a href="#">Weiterbildung zur Schulbegleitung</a></h3>
+                <p>Kurzer Teaser-Text zur GFI-Akademie.</p>
+              </div>
+            </article>
+          </div>
+          <div class="handout-block">
+            <h3 class="handout-block-title">Intro-Panel · Werte</h3>
+            <div class="intro-panel" style="height:auto">
+              <dl class="values-list">
+                <div class="values-row">
+                  <span class="values-ico"><svg class="ico"><use href="#i-family"/></svg></span>
+                  <div class="values-body"><dt>Menschlich</dt><dd>Raum geben, zuhören und respektvoll begegnen.</dd></div>
+                </div>
+                <div class="values-row">
+                  <span class="values-ico"><svg class="ico"><use href="#i-spark"/></svg></span>
+                  <div class="values-body"><dt>Engagiert</dt><dd>Hohe Fachlichkeit und Weiterbildung.</dd></div>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="handout-block" style="margin-top:1.25rem">
+          <h3 class="handout-block-title">Proof / Step (Glas-Kachel)</h3>
+          <div class="handout-cards-2">
+            <div class="proof">
+              <div class="proof-ico"><svg class="ico"><use href="#i-checkc"/></svg></div>
+              <h3>Qualität</h3>
+              <p>TVÖD-orientierte Strukturen und Weiterbildung.</p>
+            </div>
+            <div class="step">
+              <span class="step-num">1</span>
+              <h3>Kontakt</h3>
+              <p>Gemeinsamer Erstkontakt und Bedarfsklärung.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 FAQ -->
+      <section class="handout-section" id="faq">
+        <header class="handout-section-head">
+          <span class="handout-section-num">11 — FAQ</span>
+          <h2>Accordion &amp; FAQ-CTA</h2>
+          <p>Native details/summary mit grünem Plus-Toggle; geöffnet: Teal-Farbe, Minus-Animation. FAQ-CTA-Box als dunkle Kachel über dem Bild.</p>
+        </header>
+        <div class="handout-cols">
+          <div class="handout-block">
+            <div class="accordion">
+              <details class="faq-item" open>
+                <summary><span class="faq-q">Wie schnell erhalte ich eine Rückmeldung?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                <div class="faq-answer"><p>Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.</p></div>
+              </details>
+              <details class="faq-item">
+                <summary><span class="faq-q">Welche Leistungen bietet die GFI?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                <div class="faq-answer"><p>Schulbegleitung, Kitabegleitung, Familienhilfe und ambulante Angebote.</p></div>
+              </details>
+            </div>
+          </div>
+          <div class="handout-block" style="background:var(--color-bg-soft-green)">
+            <div class="faq-cta-box" style="position:static;width:100%;right:auto;bottom:auto">
+              <h3 class="faq-cta-title">Noch Fragen?</h3>
+              <p class="faq-cta-text">Wir beantworten gern alle offenen Punkte persönlich.</p>
+              <a class="btn btn-light faq-cta-btn" href="#"><span>Frage stellen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 SLIDER -->
+      <section class="handout-section" id="slider">
+        <header class="handout-section-head">
+          <span class="handout-section-num">12 — Slider</span>
+          <h2>Carousel &amp; Slider</h2>
+          <p>Zwei Systeme: Hero-Bildslider (Fade + Linien-Nav) und horizontaler Showcase (Leistungs-Kacheln) sowie Voices-Testimonial-Slider.</p>
+        </header>
+
+        <div class="handout-block">
+          <h3 class="handout-block-title">Showcase · Leistungs-Carousel</h3>
+          <p class="handout-block-desc">Große Panels (max 860px), Bild oben, Nummer + Titel + Text, horizontaler Scroll mit Progress-Bar.</p>
+          <div class="specimen specimen-body--scroll">
+            <div class="specimen-showcase-track">
+              <article class="sc-panel">
+                <figure class="sc-media"><img src="assets/img/kids.jpg" alt="" /></figure>
+                <div class="sc-info"><span class="sc-num">01</span><h3>Schulbegleitung</h3><p>Individuelle Begleitung im Schulalltag.</p></div>
+              </article>
+              <article class="sc-panel">
+                <figure class="sc-media"><img src="assets/img/Betreuung.jpeg" alt="" /></figure>
+                <div class="sc-info"><span class="sc-num">02</span><h3>Familienhilfe</h3><p>Sozialpädagogische Unterstützung.</p></div>
+              </article>
+            </div>
+          </div>
+          <div class="showcase-progress" style="margin-top:1rem;width:100%"><span style="width:45%"></span></div>
+        </div>
+
+        <div class="handout-block">
+          <h3 class="handout-block-title">Voices · Testimonials</h3>
+          <div class="specimen specimen--pad voices" style="background:var(--section-grad-mint)">
+            <div class="voices-slide is-active">
+              <blockquote class="voices-slide-quote"><p>„Herausragendes Engagement, setzen sich für eine passende I-Kraft ein."</p></blockquote>
+              <div class="voices-foot">
+                <div class="voices-author">
+                  <div class="voices-author-meta">
+                    <div class="voices-stars" aria-label="5 von 5 Sternen">
+                      <span class="voices-star is-filled">★</span><span class="voices-star is-filled">★</span><span class="voices-star is-filled">★</span><span class="voices-star is-filled">★</span><span class="voices-star is-filled">★</span>
+                    </div>
+                    <strong class="voices-author-name">Betreuerin</strong>
+                    <span class="voices-author-label">Kitakind, 7 Jahre</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 WEITERE -->
+      <section class="handout-section" id="weitere">
+        <header class="handout-section-head">
+          <span class="handout-section-num">13 — Weitere UI</span>
+          <h2>Icons, Listen &amp; Module</h2>
+          <p>Strich-Icons als SVG-Sprite (currentColor), Check-Listen, Category-Badges, Section-Eyebrows und Bild-Text-Module.</p>
+        </header>
+
+        <div class="handout-block">
+          <h3 class="handout-block-title">Icon-Set (Auszug)</h3>
+          <div class="icon-grid">
+            <div class="icon-cell"><svg class="ico"><use href="#i-family"/></svg><span>Family</span></div>
+            <div class="icon-cell"><svg class="ico"><use href="#i-spark"/></svg><span>Spark</span></div>
+            <div class="icon-cell"><svg class="ico"><use href="#i-eye"/></svg><span>Eye</span></div>
+            <div class="icon-cell"><svg class="ico"><use href="#i-building"/></svg><span>Building</span></div>
+            <div class="icon-cell"><svg class="ico"><use href="#i-phone"/></svg><span>Phone</span></div>
+            <div class="icon-cell"><svg class="ico"><use href="#i-mail"/></svg><span>Mail</span></div>
+            <div class="icon-cell"><svg class="ico"><use href="#i-ring"/></svg><span>Ring</span></div>
+            <div class="icon-cell"><svg class="ico"><use href="#i-arrow"/></svg><span>Arrow</span></div>
+          </div>
+        </div>
+
+        <div class="handout-cols">
+          <div class="handout-block">
+            <h3 class="handout-block-title">Check-Liste</h3>
+            <ul class="check-list">
+              <li><svg class="ico"><use href="#i-check"/></svg> Flexible Arbeitsmodelle</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> Weiterbildungsmöglichkeiten</li>
+            </ul>
+          </div>
+          <div class="handout-block">
+            <h3 class="handout-block-title">Category-Badge</h3>
+            <p><span class="category">Weiterbildung</span></p>
+            <p style="margin-top:1rem;font-size:0.88rem;color:var(--ink-soft)">Pill-förmig, mint-grün, für News-Meta.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 14 FOOTER -->
+      <section class="handout-section" id="footer">
+        <header class="handout-section-head">
+          <span class="handout-section-num">14 — Footer</span>
+          <h2>Footer-Struktur</h2>
+          <p>Volle Breite, dunkler Verlauf mit Ringpattern, inhaltsbasierte Spalten: Brand + Social, Navigation/Karriere, Unternehmen, Kontakt.</p>
+        </header>
+        <div class="specimen">
+          <div class="specimen-label">Footer-Auszug</div>
+          <div class="specimen-body specimen-footer">
+            <div class="specimen-footer-grid">
+              <div>
+                <img src="assets/img/GFI-Logo.svg" alt="GFI" width="140" style="filter:brightness(0) invert(1);margin-bottom:0.75rem" />
+                <p style="font-size:0.82rem;max-width:28ch;margin:0 0 0.5rem">Sozialunternehmen für Schulbegleitung in Karlsruhe.</p>
+                <div class="footer-social">
+                  <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div>
+                <h4>Navigation</h4>
+                <ul><li><a href="#">Unser Angebot</a></li><li><a href="#">Kontakt</a></li></ul>
+              </div>
+              <div>
+                <h4>Kontakt</h4>
+                <address style="font-style:normal;font-size:0.82rem;line-height:1.8">Hirschstraße 12-14<br>76133 Karlsruhe<br>0721/61909913</address>
+              </div>
+            </div>
+            <p style="margin:1.25rem 0 0;padding-top:1rem;border-top:1px solid rgba(255,255,255,.15);font-size:0.78rem;color:rgba(255,255,255,.65)">© EAS Holding GmbH · Hinweisgeberplattform · Datenschutz · Impressum</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15 ZUSAMMENFASSUNG -->
+      <section class="handout-section" id="zusammenfassung">
+        <header class="handout-section-head">
+          <span class="handout-section-num">15 — Fazit</span>
+          <h2>Designcharakter</h2>
+          <p>Das UI-System der GFI-Baden-Homepage verbindet soziale Wärme mit digitaler Präzision.</p>
+        </header>
+        <div class="handout-summary">
+          <h3>Gesamtwirkung</h3>
+          <ul>
+            <li><strong>Warm &amp; vertrauensvoll</strong> – organische Verläufe, weiche Schatten, menschliche Fotografie</li>
+            <li><strong>Klar &amp; handlungsorientiert</strong> – Orange-CTAs, konsistente Pfeil-Icons, starke Hierarchie</li>
+            <li><strong>Modern &amp; hochwertig</strong> – Glasflächen, dezente Animation, großzügiger Weißraum</li>
+            <li><strong>Barrierefreundlich angelegt</strong> – Skip-Link, Fokus-Ringe, semantisches HTML, aria-Labels</li>
+          </ul>
+          <div class="handout-principles">
+            <div class="handout-principle"><strong>Proportion</strong><span>Große Display-Type, kompakte Meta-Labels – klare Skala.</span></div>
+            <div class="handout-principle"><strong>Wiedererkennung</strong><span>Eyebrow + Ring-Icon als Sektionsmarke durchgängig.</span></div>
+            <div class="handout-principle"><strong>Interaktion</strong><span>Lift-Hover auf Cards, Wipe-Reveals, sanfte Easing-Kurven.</span></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var links = document.querySelectorAll('.handout-nav a[href^="#"]');
+      var sections = [];
+      links.forEach(function (a) {
+        var id = a.getAttribute('href').slice(1);
+        var el = document.getElementById(id);
+        if (el) sections.push({ link: a, el: el });
+      });
+      if (!sections.length || !('IntersectionObserver' in window)) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            sections.forEach(function (s) { s.link.classList.toggle('is-active', s.el === e.target); });
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+      sections.forEach(function (s) { obs.observe(s.el); });
+    })();
+  </script>
+</body>
+</html>
