@@ -1,5 +1,5 @@
 /* ============================================================
-   GFI Baden – Design Handout
+   Gesellschaft für Inklusion – Design Handout
    Dokumentations-Layout (ergänzt styles.css)
    ============================================================ */
 
@@ -28,14 +28,39 @@ body.handout-body {
   display: flex;
   align-items: flex-end;
   padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
-  background:
-    linear-gradient(155deg, rgba(23, 59, 54, 0.92) 0%, rgba(16, 43, 40, 0.88) 55%, rgba(31, 111, 104, 0.75) 100%),
-    url("../assets/img/kids.jpg") center / cover no-repeat;
+  overflow: hidden;
   color: var(--color-text-light);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.handout-cover-inner { max-width: 720px; }
+.handout-cover-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.handout-cover-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.handout-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(155deg, rgba(23, 59, 54, 0.92) 0%, rgba(16, 43, 40, 0.88) 55%, rgba(31, 111, 104, 0.75) 100%);
+  pointer-events: none;
+}
+
+.handout-cover-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
 
 .handout-kicker {
   display: inline-flex;
@@ -129,16 +154,6 @@ body.handout-body {
 .handout-nav a:hover,
 .handout-nav a.is-active {
   background: var(--color-bg-green-tint);
-  color: var(--color-accent-teal);
-}
-
-.handout-nav-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 1.75rem;
-  font-size: 0.82rem;
-  font-weight: 700;
   color: var(--color-accent-teal);
 }
 
@@ -655,7 +670,6 @@ body.handout-body {
   .handout-cover { min-height: auto; page-break-after: always; }
   .handout-section { page-break-inside: avoid; break-inside: avoid; }
   .handout-block { box-shadow: none; }
-  .handout-nav-back { display: none; }
 }
 
 @media (max-width: 1024px) {
