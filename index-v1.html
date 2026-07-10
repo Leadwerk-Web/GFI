@@ -1,0 +1,876 @@
+﻿<!DOCTYPE html>
+<html lang="de" class="theme-v1 home-v1">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- SEO -->
+  <title>GFI – Schulbegleitung für Schulen &amp; Ämter in Karlsruhe</title>
+  <meta name="description" content="Verlässliche Schulbegleitung und Inklusionsassistenz für Schulen, Ämter und Schulträger in Karlsruhe – mit klaren Prozessen, festen Ansprechpartnern und flexiblen Unterstützungsmodellen." />
+  <link rel="canonical" href="https://www.gfi-baden.de/" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#5fba84" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="GFI – Schulbegleitung für Schulen &amp; Ämter" />
+  <meta property="og:description" content="Verlässliche Schulbegleitung und Inklusionsassistenz für Schulen, Ämter und Schulträger in Karlsruhe – mit klaren Prozessen und festen Ansprechpartnern." />
+  <meta property="og:url" content="https://www.gfi-baden.de/" />
+  <meta property="og:image" content="https://www.gfi-baden.de/wp-content/uploads/2025/01/DSC00020-1024x683.jpg" />
+
+  <link rel="icon" href="assets/img/Favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/img/Favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css?v=20250630p" />
+  <link rel="stylesheet" href="css/colors-v1.css?v=13" />
+  <link rel="stylesheet" href="css/home-v1.css?v=50" />
+  <link rel="stylesheet" href="css/a11y.css?v=2" />
+  <script>
+  (function () {
+    try {
+      var s = JSON.parse(localStorage.getItem("gfi-a11y") || "{}");
+      var root = document.documentElement;
+      var scales = { sm: 0.875, lg: 1.125, xl: 1.25 };
+      if (s.font && s.font !== "normal" && scales[s.font]) {
+        root.setAttribute("data-a11y-font", s.font);
+        root.style.zoom = scales[s.font];
+      }
+      if (s.contrast) root.classList.add("a11y-contrast");
+      if (s.underline) root.classList.add("a11y-underline-links");
+      if (s.motion) root.classList.add("a11y-reduced-motion");
+      if (s.lineHeight) root.classList.add("a11y-line-height");
+    } catch (e) {}
+  })();
+  </script>
+  <style>
+    :root { --hero-frame-margin: 0; --hero-frame-radius: 0; }
+    .theme-v1.home-v1 .site-header { position: absolute; z-index: 1000; }
+    .theme-v1.home-v1 .site-header.scrolled {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.92);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      backdrop-filter: blur(16px) saturate(160%);
+      border-bottom: 1px solid #dceee4;
+    }
+    .to-top { position: fixed; right: 1rem; bottom: 1rem; z-index: 1100; }
+    /* Hero sofort sichtbar – unabhängig von Scroll-Reveal-JS */
+    .theme-v1.home-v1 #hero [data-motion],
+    .theme-v1.home-v1 #hero .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      clip-path: none !important;
+    }
+    /* Loader-Fallback falls JS blockiert (z. B. file://) */
+    html.js .loader { animation: gfi-loader-hide 0.01s 2.5s forwards; }
+    html.js .loader.done { animation: none; opacity: 0; visibility: hidden; }
+    @keyframes gfi-loader-hide { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+  </style>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GFI",
+    "url": "https://www.gfi-baden.de/",
+    "logo": "https://www.gfi-baden.de/assets/img/GFI-Logo.svg",
+    "description": "Verlässliche Schulbegleitung, Kitabegleitung und Inklusionsassistenz für Schulen, Ämter und Familien in Karlsruhe und Umgebung.",
+    "telephone": "+49 721 61930339",
+    "email": "info@gfi-baden.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hirschstraße 12-14",
+      "postalCode": "76133",
+      "addressLocality": "Karlsruhe",
+      "addressCountry": "DE"
+    },
+    "areaServed": "Karlsruhe, Landkreis Karlsruhe und angrenzende Kreise"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "GFI",
+    "url": "https://www.gfi-baden.de/",
+    "publisher": { "@type": "Organization", "name": "GFI" }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- SVG ICON SPRITE (Strich-Icons, currentColor) -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false" style="position:absolute">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-family" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="8.5" r="2.3"/><path d="M3 20c0-3.3 2.2-5.5 5-5.5s5 2.2 5 5.5M14.5 20c0-2.6 1.4-4.3 3.5-4.3 1.7 0 3 1.1 3.4 3"/></g></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 3.7 1.8 5 5.5 5.5C13.8 9 12.6 10.3 12 14c-.6-3.7-1.8-5-5.5-5.5C10.2 8 11.4 6.7 12 3ZM18 14c.3 1.9.9 2.6 2.8 2.9-1.9.3-2.5.9-2.8 2.8-.3-1.9-.9-2.5-2.8-2.8 1.9-.3 2.5-1 2.8-2.9Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l6-3.5V21M19 21V11l-8-4M8.5 10v.01M8.5 13.5v.01M8.5 17v.01"/></g></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5.5-5 2 2-5.5 5-2Z"/></g></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></g></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v4.5c0 1.2 2.7 2.8 6 2.8s6-1.6 6-2.8V11M20 9.5V15"/></g></symbol>
+    <symbol id="i-cycle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1M20.5 4v4.5H16"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.8 4.5L7.8 10a11 11 0 0 0 6.2 6.2l1.5-2.5L20 15.5V19a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-checkc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></g></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M4 11c0-3.3 2-5.5 5-5.5 1.2 0 2.2.4 3 1.1V4C10.5 4 8.4 4.8 7 6.3 5.6 7.8 5 9.6 5 11.8V18H4v-7Zm11 0c0-3.3 2-5.5 5-5.5 1.2 0 2.2.4 3 1.1V4C21.5 4 19.4 4.8 18 6.3c-1.4 1.5-2 3.3-2 5.5V18h-1v-7Z" fill="currentColor"/></symbol>
+    <symbol id="i-ring" viewBox="0 0 276.11 279.12"><path d="M135.62,237.76c-52.51,0-95.08-42.57-95.08-95.08s42.57-95.08,95.08-95.08V10.37C62.55,10.37,3.31,69.61,3.31,142.68s59.24,132.31,132.31,132.31,132.31-59.24,132.31-132.31h-37.22c0,52.51-42.57,95.08-95.08,95.08Z" fill="currentColor"/></symbol>
+    <symbol id="i-ring-thin" viewBox="0 0 276.11 279.12"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="5" d="M138.06,22.02c-65.23,0-118.11,52.88-118.11,118.11s52.88,118.11,118.11,118.11,118.11-52.88,118.11-118.11"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- Decorative grain + cursor + scroll progress -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><svg class="ico" viewBox="0 0 276.11 279.12"><use href="#i-ring"/></svg></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <!-- Page loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-mark"><span>GFI</span></div>
+    <div class="loader-line"><span></span></div>
+  </div>
+
+  <main id="main">
+
+    <!-- Hero + Trust-Karten (Eduka-Stil) -->
+    <div class="hp-hero-stage">
+    <header class="site-header" id="site-header" data-theme="light">
+      <div class="header-inner">
+        <a class="brand" href="index-v1.html" aria-label="GFI, zur Startseite">
+          <img src="assets/img/GFI-Logo.svg" width="200" height="56" alt="GFI Logo" class="brand-logo" />
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="#schulen">Für Schulen &amp; Ämter</a></li>
+            <li><a href="#pooling">Pooling</a></li>
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#wissen">Wissen</a></li>
+            <li><a href="#karriere">Karriere</a></li>
+            <li><a href="https://www.gfi-baden.de/ueber-uns/">Über uns</a></li>
+            <li><a href="https://www.gfi-baden.de/home-6/">Kontakt</a></li>
+          </ul>
+          <div class="nav-cta-mobile">
+            <a class="btn btn-accent" href="#kooperation" data-track="cooperation_cta_click"><span>Kooperation anfragen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          </div>
+        </nav>
+
+        <div class="header-cta">
+          <a class="btn btn-accent" href="#kooperation" data-track="cooperation_cta_click"><span>Kooperation anfragen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hp-hero hp-hero--slide section" id="hero" aria-labelledby="hero-title">
+      <div class="hp-hero-bg" aria-hidden="true">
+        <div class="hp-hero-slider" id="hp-hero-slider">
+          <div class="hp-hero-slide is-active">
+            <img src="assets/img/begleitung.jpeg" width="600" height="400" alt="" fetchpriority="high" decoding="async" />
+          </div>
+          <div class="hp-hero-slide">
+            <img src="assets/img/High5.jpeg" width="1024" height="683" alt="" loading="lazy" decoding="async" />
+          </div>
+          <div class="hp-hero-slide">
+            <img src="assets/img/kids.jpg" width="1024" height="683" alt="" loading="lazy" decoding="async" />
+          </div>
+          <div class="hp-hero-slide">
+            <img src="assets/img/Schule2.jpg" width="1024" height="683" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        <span class="hp-hero-overlay"></span>
+      </div>
+
+      <div class="container hp-hero-shell">
+        <div class="hp-hero-copy">
+          <p class="hp-hero-tag">
+            <svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>
+            Für Schulen &amp; Ämter
+          </p>
+          <h1 id="hero-title" class="hero-title">Verlässliche Schulbegleitung mit <span class="hp-hero-highlight">klaren Prozessen</span></h1>
+          <p class="hero-sub">Die GFI unterstützt Schulen, Ämter und Familien dabei, Inklusion im Schulalltag strukturiert umzusetzen – mit qualifizierter Begleitung und festen Ansprechpartnern.</p>
+
+          <div class="hp-hero-actions">
+            <a class="btn btn-lg btn-accent hp-hero-cta-primary" href="#kooperation" data-track="hero_cooperation_click"><span>Kooperation anfragen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-lg hp-hero-btn-outline" href="#prozess" data-track="hero_process_click"><span>Zusammenarbeit kennenlernen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vertrauenskarten (überlappend) -->
+    <section class="hp-trust hp-trust--cards" aria-label="Verlässliche Zusammenarbeit">
+      <div class="container">
+        <ul class="hp-trust-cards">
+          <li class="hp-trust-card reveal">
+            <span class="hp-trust-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-cap"/></svg></span>
+            <strong>Fachliche Begleitung</strong>
+            <p>Qualifizierte Mitarbeitende mit Einarbeitung und fachlicher Anleitung.</p>
+          </li>
+          <li class="hp-trust-card reveal">
+            <span class="hp-trust-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-eye"/></svg></span>
+            <strong>Transparente Kommunikation</strong>
+            <p>Regelmäßiger Austausch mit Schulen, Leistungsträgern und Beteiligten.</p>
+          </li>
+          <li class="hp-trust-card reveal">
+            <span class="hp-trust-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
+            <strong>Flexible Modelle</strong>
+            <p>Individuelle Schulbegleitung und abgestimmte Pooling-Konzepte – wo passend.</p>
+          </li>
+          <li class="hp-trust-card reveal">
+            <span class="hp-trust-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-phone"/></svg></span>
+            <strong>Feste Ansprechpartner</strong>
+            <p>Klare Zuständigkeiten für Schulen, Ämter und Kooperationspartner.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    </div>
+
+    <!-- Zielgruppeneinstiege -->
+    <section class="hp-audience section" id="schulen" aria-labelledby="audience-title">
+      <div class="container">
+        <div class="hp-audience-layout">
+          <div class="hp-audience-intro">
+            <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Ihr Einstieg</p>
+            <h2 id="audience-title" class="reveal">Wofür suchen Sie Unterstützung?</h2>
+            <p class="hp-audience-lead reveal">Schulen und Ämter stehen im Mittelpunkt unserer Zusammenarbeit. Bewerber finden einen klar abgegrenzten Karrierezugang.</p>
+            <a class="btn btn-primary reveal" href="#kooperation" data-track="audience_cooperation_click"><span>Kooperation anfragen</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+
+          <div class="hp-audience-bento reveal">
+            <a class="hp-bento-tile hp-bento-tile--wide hp-bento-tile--school" href="#prozess" data-track="school_entry_click">
+              <span class="hp-bento-bubbles" aria-hidden="true">
+                <span class="hp-bento-bubble"></span>
+                <span class="hp-bento-bubble"></span>
+              </span>
+              <span class="hp-bento-media" aria-hidden="true">
+                <img class="hp-bento-illu" src="assets/img/Schulkind.png" width="420" height="560" alt="" loading="lazy" decoding="async" />
+              </span>
+              <span class="hp-bento-body">
+                <span class="hp-bento-tag">Schulen</span>
+                <strong class="hp-bento-title">Begleitung im Schulalltag</strong>
+                <span class="hp-bento-cta">Mehr erfahren<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </span>
+            </a>
+
+            <a class="hp-bento-tile hp-bento-tile--authority" href="#kooperation" data-track="authority_entry_click">
+              <span class="hp-bento-media" aria-hidden="true">
+                <img class="hp-bento-illu" src="assets/img/Amt.png" width="360" height="360" alt="" loading="lazy" decoding="async" />
+              </span>
+              <span class="hp-bento-body">
+                <span class="hp-bento-tag">Ämter</span>
+                <strong class="hp-bento-title">Für Ämter &amp;<br>Schulträger</strong>
+                <span class="hp-bento-cta">Zusammenarbeit<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </span>
+            </a>
+
+            <a class="hp-bento-tile hp-bento-tile--career" href="#karriere" data-track="career_entry_click">
+              <span class="hp-bento-media" aria-hidden="true">
+                <img src="assets/img/High5.jpeg" width="480" height="360" alt="" loading="lazy" decoding="async" />
+                <span class="hp-bento-veil"></span>
+              </span>
+              <span class="hp-bento-body">
+                <span class="hp-bento-tag">Karriere</span>
+                <strong class="hp-bento-title">Arbeiten bei der GFI</strong>
+                <span class="hp-bento-cta">Jobs ansehen<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungsübersicht -->
+    <section class="hp-services section" id="leistungen" aria-labelledby="services-title">
+      <div class="container">
+        <header class="hp-sec-head">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Leistungen</p>
+          <h2 id="services-title" class="reveal">Was die GFI anbietet</h2>
+          <p class="hp-sec-lead reveal">Konkrete Leistungen mit klarer Zielgruppe und Nutzen – keine reine Schlagwortliste.</p>
+        </header>
+        <div class="hp-service-grid">
+          <article class="hp-service-card reveal">
+            <img src="assets/img/begleitung.jpeg" width="600" height="400" alt="Schulbegleiterin unterstützt ein Kind im Unterricht" loading="lazy" decoding="async" />
+            <div>
+              <h3>Schulbegleitung</h3>
+              <p class="hp-service-meta">Für Schulen, Ämter, Familien · Karlsruhe und Umgebung</p>
+              <p>Individuelle Unterstützung für Kinder und Jugendliche mit besonderem Bedarf im Schulalltag – im Unterricht und im sozialen Miteinander.</p>
+              <a class="card-link" href="https://www.gfi-baden.de/unser-angebot-2/"><span>Schulbegleitung im Detail</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="hp-service-card reveal">
+            <img src="assets/img/kids.jpg" width="1024" height="683" alt="Kitabegleitung im frühkindlichen Bereich" loading="lazy" decoding="async" />
+            <div>
+              <h3>Kitabegleitung / Inklusionsassistenz</h3>
+              <p class="hp-service-meta">Für Kitas, Ämter, Familien</p>
+              <p>Begleitung in frühkindlichen Einrichtungen – abgestimmt auf individuelle Bedarfe und den pädagogischen Alltag.</p>
+              <a class="card-link" href="https://www.gfi-baden.de/unser-angebot-2/"><span>Kitabegleitung im Detail</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="hp-service-card reveal">
+            <img src="assets/img/familie.jpeg" width="600" height="524" alt="Sozialpädagogische Familienhilfe im Gespräch" loading="lazy" decoding="async" />
+            <div>
+              <h3>Sozialpädagogische Familienhilfe</h3>
+              <p class="hp-service-meta">Für Familien und Leistungsträger</p>
+              <p>Beratung und Unterstützung für Familien im Alltag – mit enger Abstimmung und transparentem Prozess.</p>
+              <a class="card-link" href="https://www.gfi-baden.de/unser-angebot-2/"><span>Familienhilfe im Detail</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="hp-service-card reveal">
+            <img src="assets/img/Betreuung.jpeg" width="1024" height="683" alt="Ambulante Begleitung im Alltag" loading="lazy" decoding="async" />
+            <div>
+              <h3>Ambulante Angebote</h3>
+              <p class="hp-service-meta">Für erwachsene Menschen mit Behinderung</p>
+              <p>Individuell abgestimmte Begleitung und Unterstützung im Sinne gelingender Teilhabe.</p>
+              <a class="card-link" href="https://www.gfi-baden.de/unser-angebot-2/"><span>Ambulante Angebote im Detail</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pooling -->
+    <section class="hp-pooling section" id="pooling" aria-labelledby="pooling-title">
+      <div class="container">
+        <div class="hp-pooling-inner">
+          <div>
+            <header class="hp-sec-head">
+              <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Infrastrukturelles Pooling</p>
+              <h2 id="pooling-title" class="reveal">Unterstützung flexibel und verlässlich organisieren</h2>
+              <p class="hp-sec-lead reveal">Infrastrukturelles Pooling kann es ermöglichen, Schulbegleitungen innerhalb eines abgestimmten schulischen Konzeptes bedarfsgerecht einzusetzen. Gemeinsam mit Schulen und Leistungsträgern werden Zuständigkeiten, individuelle Bedarfe, Teamstrukturen und Qualitätsanforderungen geklärt.</p>
+            </header>
+            <p class="hp-placeholder reveal"><span class="hp-placeholder">[POOLING-ANGEBOT INTERN BESTÄTIGEN]</span> · <span class="hp-placeholder">[REGIONALE UMSETZUNG PRÜFEN]</span></p>
+            <aside class="hp-pooling-note reveal" role="note">
+              <strong>Pooling ist kein pauschaler Ersatz für notwendige 1:1-Begleitung.</strong> Individuelle Unterstützungsbedarfe bleiben maßgeblich. Pooling setzt eine fachliche und organisatorische Prüfung voraus und darf nicht nur als Sparmodell betrachtet werden.
+            </aside>
+            <ul class="hp-pooling-benefits reveal">
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Kann bedarfsgerechten Einsatz im Rahmen eines abgestimmten Konzeptes unterstützen</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Kann flexiblere Unterstützungsstrukturen und Vertretungsmöglichkeiten ermöglichen</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Kann engere Zusammenarbeit im multiprofessionellen Team fördern</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Kann klarere Teamkommunikation und Einbindung in den Schulalltag unterstützen</li>
+            </ul>
+            <div class="hp-pooling-actions reveal">
+              <a class="btn btn-accent" href="#kooperation" data-track="pooling_cta_click"><span>Pooling-Konzept anfragen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn-line" href="#prozess" data-track="pooling_entry_click"><span>Pooling kennenlernen</span></a>
+            </div>
+          </div>
+          <div class="hp-pooling-diagram reveal" aria-label="Pooling-Systemgrafik">
+            <h3 class="visually-hidden">So kann Pooling strukturiert werden</h3>
+            <div class="hp-pooling-flow">
+              <div class="hp-pooling-step">Schule</div>
+              <div class="hp-pooling-plus" aria-hidden="true">+</div>
+              <div class="hp-pooling-step">Leistungsträger</div>
+              <div class="hp-pooling-plus" aria-hidden="true">+</div>
+              <div class="hp-pooling-step">GFI-Koordination</div>
+              <div class="hp-pooling-plus" aria-hidden="true">+</div>
+              <div class="hp-pooling-step">Pooling-Team</div>
+              <div class="hp-pooling-plus" aria-hidden="true">=</div>
+              <div class="hp-pooling-step hp-pooling-step--result">Abgestimmte Unterstützung im Schulalltag</div>
+            </div>
+            <p class="hp-placeholder" style="margin-top:1rem;font-size:0.88rem"><span class="hp-placeholder">[ERFAHRUNGEN ODER PILOTPROJEKTE ERGÄNZEN]</span> · <span class="hp-placeholder">[ANSPRECHPARTNER POOLING ERGÄNZEN]</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prozess -->
+    <section class="hp-process section" id="prozess" aria-labelledby="process-title">
+      <div class="container">
+        <header class="hp-sec-head center">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Zusammenarbeit</p>
+          <h2 id="process-title" class="reveal">So läuft die Zusammenarbeit ab</h2>
+          <p class="hp-sec-lead reveal">Ein nachvollziehbarer Ablauf für Schulbegleitung und – bei geeigneten Rahmenbedingungen – Pooling-Konzepte.</p>
+        </header>
+        <ol class="hp-steps">
+          <li class="hp-step reveal">
+            <h3>Bedarf und Ausgangslage klären</h3>
+            <p>Sie schildern Ausgangssituation, Rahmenbedingungen und beteiligte Stellen.</p>
+            <div class="hp-step-meta"><strong>Rollen:</strong> Schule, Amt, GFI · <strong>Ergebnis:</strong> gemeinsames Verständnis des Bedarfs</div>
+          </li>
+          <li class="hp-step reveal">
+            <h3>Zuständigkeiten abstimmen</h3>
+            <p>Wir klären, wer wofür zuständig ist – inklusive Ansprechpartner und Kommunikationswege.</p>
+            <div class="hp-step-meta"><strong>Rollen:</strong> Leistungsträger, Schule, GFI · <strong>Ergebnis:</strong> klare Verantwortlichkeiten</div>
+          </li>
+          <li class="hp-step reveal">
+            <h3>Passende Unterstützungsform entwickeln</h3>
+            <p>Gemeinsam wird entschieden, ob individuelle Begleitung, Pooling oder eine Kombination sinnvoll ist.</p>
+            <div class="hp-step-meta"><strong>Rollen:</strong> Fachliche Beteiligte · <strong>Ergebnis:</strong> abgestimmtes Konzept</div>
+          </li>
+          <li class="hp-step reveal">
+            <h3>Mitarbeitende auswählen und vorbereiten</h3>
+            <p>Passende Begleitpersonen werden ausgewählt, eingearbeitet und der Schule vorgestellt.</p>
+            <div class="hp-step-meta"><strong>Rollen:</strong> GFI-Koordination, Schule · <strong>Ergebnis:</strong> startklare Begleitung</div>
+          </li>
+          <li class="hp-step reveal">
+            <h3>Zusammenarbeit begleiten und weiterentwickeln</h3>
+            <p>Regelmäßiger Austausch, Vertretungsregelungen und Qualitätsrückmeldungen sichern den Prozess.</p>
+            <div class="hp-step-meta"><strong>Rollen:</strong> Alle Beteiligten · <strong>Ergebnis:</strong> stabile, weiterentwickelte Zusammenarbeit</div>
+          </li>
+        </ol>
+        <p class="hp-placeholder center reveal" style="text-align:center;margin-top:1.5rem"><span class="hp-placeholder">[PROZESS INTERN ABSTIMMEN]</span></p>
+      </div>
+    </section>
+
+    <!-- Vorteile -->
+    <section class="hp-benefits section" aria-labelledby="benefits-title">
+      <div class="container">
+        <header class="hp-sec-head center">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Nutzen</p>
+          <h2 id="benefits-title" class="reveal">Was Schulen und Ämter konkret gewinnen</h2>
+        </header>
+        <div class="hp-benefit-list">
+          <div class="hp-benefit-row reveal">
+            <div class="hp-benefit-problem">
+              <h3>Unklare Zuständigkeiten</h3>
+              <p>Mehrere Ansprechpartner ohne klare Rolle verursachen unnötige Abstimmung.</p>
+            </div>
+            <div class="hp-benefit-solution">
+              <h3>Definierte Ansprechpartner</h3>
+              <p>Ein fest definierter Ansprechpartner koordiniert Kommunikation, nächste Schritte und notwendige Rückmeldungen.</p>
+            </div>
+          </div>
+          <div class="hp-benefit-row reveal">
+            <div class="hp-benefit-problem">
+              <h3>Unplanbare Vertretung</h3>
+              <p>Ausfälle im Schulalltag erfordern schnelle, zuverlässige Lösungen.</p>
+            </div>
+            <div class="hp-benefit-solution">
+              <h3>Abgestimmte Vertretungsstrukturen</h3>
+              <p>Vertretungsregelungen werden im Vorfeld geklärt und im laufenden Betrieb umgesetzt.</p>
+            </div>
+          </div>
+          <div class="hp-benefit-row reveal">
+            <div class="hp-benefit-problem">
+              <h3>Komplexe Bedarfslagen</h3>
+              <p>Mehrere Beteiligte brauchen abgestimmte Informationen und klare Prozesse.</p>
+            </div>
+            <div class="hp-benefit-solution">
+              <h3>Strukturierte Abstimmung</h3>
+              <p>Regelmäßiger Austausch mit Schulen und Leistungsträgern hält den Überblick und sichert Qualität.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualität -->
+    <section class="hp-quality section" id="qualitaet" aria-labelledby="quality-title">
+      <div class="container">
+        <header class="hp-sec-head center">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Qualität</p>
+          <h2 id="quality-title" class="reveal">Qualität entsteht durch klare Verantwortung</h2>
+          <p class="hp-sec-lead reveal">Konkrete Arbeitsweisen statt generischer Versprechen – nachvollziehbar für Schulen und Ämter.</p>
+        </header>
+        <div class="hp-quality-grid">
+          <article class="hp-quality-item reveal">
+            <h3>Personalauswahl und Einarbeitung</h3>
+            <p>Strukturierte Auswahl, Einarbeitung und fachliche Anleitung für neue Mitarbeitende.</p>
+          </article>
+          <article class="hp-quality-item reveal">
+            <h3>Fortbildung</h3>
+            <p>Weiterbildungsangebote, unter anderem über die GFI-Akademie zur Schulbegleitung.</p>
+          </article>
+          <article class="hp-quality-item reveal">
+            <h3>Feste Koordination</h3>
+            <p>Ansprechpartner für Schulen, Ämter und interne Abstimmung.</p>
+          </article>
+          <article class="hp-quality-item reveal">
+            <h3>Regelmäßige Abstimmung</h3>
+            <p>Austausch mit Schulen und Leistungsträgern zur Weiterentwicklung der Zusammenarbeit.</p>
+          </article>
+          <article class="hp-quality-item reveal">
+            <h3>Vertretungskonzepte</h3>
+            <p>Planung und Umsetzung von Vertretungen im laufenden Schulbetrieb.</p>
+          </article>
+          <article class="hp-quality-item reveal">
+            <h3>Arbeitgeberqualität</h3>
+            <p>Great Place to Work®-Evaluierung 2024 – Grundlage für kontinuierliche Verbesserung.</p>
+          </article>
+        </div>
+        <p class="hp-placeholder center reveal" style="text-align:center;margin-top:1.5rem"><span class="hp-placeholder">[QUALITÄTSSTANDARD INTERN BESTÄTIGEN]</span> · Beschwerde- und Eskalationswege: <span class="hp-placeholder">[PROZESS INTERN ABSTIMMEN]</span></p>
+        <div class="center reveal" style="margin-top:1.25rem;text-align:center">
+          <a class="btn btn-line" href="https://www.gfi-baden.de/qualitaet/"><span>Mehr zu Qualität</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fachkompetenz -->
+    <section class="hp-expertise section" aria-labelledby="expertise-title">
+      <div class="container">
+        <div class="hp-expertise-grid">
+          <figure class="hp-expert-media reveal">
+            <img src="assets/img/team-portrait.jpg" width="500" height="500" alt="Suzanne Mack und Franziska Lang, Standortverantwortliche der GFI" loading="lazy" decoding="async" />
+          </figure>
+          <div>
+            <header class="hp-sec-head">
+              <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Fachkompetenz</p>
+              <h2 id="expertise-title" class="reveal">Fachkompetenz, die im Schulalltag ankommt</h2>
+              <p class="hp-sec-lead reveal">Kompetenz wird über Menschen, Arbeitsweisen und weiterführende Inhalte sichtbar – nicht allein über Behauptungen.</p>
+            </header>
+            <article class="hp-expert-card reveal">
+              <h3>Suzanne Mack &amp; Franziska Lang</h3>
+              <p class="hp-expert-role">Standortverantwortliche · GFI</p>
+              <ul class="hp-expert-topics">
+                <li>Kooperation mit Schulen und Leistungsträgern in Karlsruhe</li>
+                <li>Qualität und Weiterentwicklung als Arbeitgeber</li>
+                <li>Ansprechpartnerinnen für institutionelle Fragen</li>
+              </ul>
+              <a class="card-link" href="#ansprechpartner" data-track="institution_contact_click"><span>Ansprechpartner kontaktieren</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </article>
+            <p class="reveal" style="margin-top:1rem;font-size:0.92rem;color:var(--ink-soft)">Weiterführend: <a href="https://www.gfi-baden.de/weiterbildung-zur-schulbegleitung/">GFI-Akademie – Weiterbildung Schulbegleitung</a> · <a href="https://www.gfi-autismus-therapie-zentrum.de/" target="_blank" rel="noopener noreferrer">GFI Autismus Therapie Zentrum</a> <span class="hp-placeholder">[INHALT FACHLICH BESTÄTIGEN]</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ansprechpartner -->
+    <section class="hp-contacts section" id="ansprechpartner" aria-labelledby="contacts-title">
+      <div class="container">
+        <header class="hp-sec-head center">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Ansprechpartner</p>
+          <h2 id="contacts-title" class="reveal">Wer ist für Ihr Anliegen zuständig?</h2>
+          <p class="hp-sec-lead reveal">Direkte Wege statt anonymer Kontaktformulare – mit klarem nächsten Schritt.</p>
+        </header>
+        <div class="hp-contact-grid">
+          <article class="hp-contact-card reveal">
+            <h3>Suzanne Mack &amp; Franziska Lang</h3>
+            <p class="hp-contact-role">Ihre Ansprechpartnerinnen für Kooperationen</p>
+            <p class="hp-contact-scope">Schulen und institutionelle Partner · Karlsruhe und Umgebung</p>
+            <div class="hp-contact-links">
+              <a href="tel:+4972161930339" data-track="phone_click"><svg class="ico"><use href="#i-phone"/></svg> 0721/61930339</a>
+              <a href="mailto:info@gfi-baden.de" data-track="email_click"><svg class="ico"><use href="#i-mail"/></svg> info@gfi-baden.de</a>
+              <a href="#kooperation">Kooperation anfragen</a>
+            </div>
+          </article>
+          <article class="hp-contact-card reveal">
+            <h3><span class="hp-placeholder">[ANSPRECHPARTNER POOLING ERGÄNZEN]</span></h3>
+            <p class="hp-contact-role">Ihr Ansprechpartner für Pooling-Konzepte</p>
+            <p class="hp-contact-scope">Schulträger, Ämter, Schulverwaltungen</p>
+            <div class="hp-contact-links">
+              <a href="#kooperation" data-track="pooling_cta_click">Pooling-Konzept anfragen</a>
+            </div>
+          </article>
+          <article class="hp-contact-card reveal">
+            <h3>Recruiting GFI</h3>
+            <p class="hp-contact-role">Ihre Ansprechpartnerin für Bewerbungen</p>
+            <p class="hp-contact-scope">Schulbegleitung, Quereinstieg, Pooling-Teams</p>
+            <div class="hp-contact-links">
+              <a href="https://www.gfi-baden.de/jobs/" data-track="job_cta_click">Offene Stellen ansehen</a>
+              <a href="mailto:info@gfi-baden.de" data-track="email_click"><svg class="ico"><use href="#i-mail"/></svg> Bewerbung starten</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recruiting -->
+    <section class="hp-career section" id="karriere" aria-labelledby="career-title">
+      <div class="container">
+        <div class="hp-career-grid">
+          <div class="hp-career-copy">
+            <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Karriere</p>
+            <h2 id="career-title" class="reveal">Arbeiten, das im Schulalltag etwas bewegt</h2>
+            <p class="reveal">Du suchst eine sinnstiftende Tätigkeit mit Struktur und Verantwortung? Als Schulbegleiterin oder Schulbegleiter unterstützt du Kinder und Jugendliche im Schulalltag – eingebunden in ein Team mit fester Koordination und Einarbeitung.</p>
+            <ul class="hp-career-list reveal">
+              <li>Aufgaben: Begleitung im Unterricht, Pausen und schulischen Abläufen</li>
+              <li>Quereinstieg möglich – wir arbeiten dich strukturiert ein</li>
+              <li>Faire Bezahlung orientiert am TVÖD</li>
+              <li>Weiterbildung, unter anderem über die GFI-Akademie</li>
+              <li>Arbeit in Pooling-Teams kann Teamarbeit und Vertretung stärken – erfordert Flexibilität und klare Zuständigkeiten</li>
+            </ul>
+            <div class="reveal">
+              <a class="btn btn-dark" href="https://www.gfi-baden.de/jobs/" data-track="job_cta_click"><span>Offene Stellen ansehen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn-line" href="mailto:info@gfi-baden.de" data-track="application_start" style="margin-left:0.5rem"><span>Bewerbung starten</span></a>
+            </div>
+          </div>
+          <figure class="hp-career-media reveal">
+            <img src="assets/img/team-event.png" width="1024" height="674" alt="Team der GFI bei einer Einführungsveranstaltung" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wissen -->
+    <section class="hp-knowledge section" id="wissen" aria-labelledby="knowledge-title">
+      <div class="container">
+        <header class="hp-sec-head">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Wissen</p>
+          <h2 id="knowledge-title" class="reveal">Wissen für eine verlässliche Zusammenarbeit</h2>
+          <p class="hp-sec-lead reveal">Weiterleitbare Inhalte für Schulen, Ämter und interne Abstimmungen.</p>
+        </header>
+        <div class="hp-knowledge-grid">
+          <article class="hp-knowledge-card reveal">
+            <span class="hp-knowledge-tag">FAQ · Schulen &amp; Ämter</span>
+            <h3>Schulbegleitung erklärt</h3>
+            <p>Was Schulbegleitung leistet, für wen sie infrage kommt und wie der Antrag ablaufen kann.</p>
+            <a class="card-link" href="#familien"><span>Orientierung lesen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="hp-knowledge-card reveal">
+            <span class="hp-knowledge-tag">Weiterbildung · PDF/Web</span>
+            <h3>GFI-Akademie: Schulbegleitung</h3>
+            <p>Weiterbildung als Einstieg in die professionelle Schulbegleitung – ortsunabhängig verfügbar.</p>
+            <p class="hp-knowledge-meta">Zielgruppe: Fachkräfte · Stand: Jan. 2025</p>
+            <a class="card-link" href="https://www.gfi-baden.de/weiterbildung-zur-schulbegleitung/" data-track="download_click"><span>Weiterbildung ansehen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="hp-knowledge-card reveal">
+            <span class="hp-knowledge-tag">Pooling · Konzept</span>
+            <h3>Infrastrukturelles Pooling verstehen</h3>
+            <p>Abgrenzung zu 1:1-Begleitung, Voraussetzungen und institutioneller Nutzen im Überblick.</p>
+            <a class="card-link" href="#pooling" data-track="pooling_entry_click"><span>Pooling-Überblick</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Familien -->
+    <section class="hp-families section" id="familien" aria-labelledby="families-title">
+      <div class="container">
+        <div class="hp-families-inner">
+          <div>
+            <header class="hp-sec-head">
+              <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Für Familien</p>
+              <h2 id="families-title" class="reveal">Orientierung zur Schulbegleitung</h2>
+              <p class="hp-sec-lead reveal">Ein kompakter Einstieg – ohne Rechtsberatung und ohne pauschale Leistungsversprechen.</p>
+            </header>
+            <ul class="hp-families-list reveal">
+              <li><strong>Was ist Schulbegleitung?</strong> Individuelle Unterstützung im Schul- oder Kitaalltag für Kinder mit besonderem Bedarf.</li>
+              <li><strong>Wie läuft ein Antrag ab?</strong> In der Regel über das zuständige Jugendamt oder den Eingliederungshilfeträger – wir beraten auf Wunsch.</li>
+              <li><strong>Was passiert nach der Anfrage?</strong> Wir klären den Bedarf, stimmen uns mit den Beteiligten ab und begleiten den weiteren Prozess.</li>
+            </ul>
+            <a class="btn btn-line reveal" href="https://www.gfi-baden.de/home-6/" data-track="family_entry_click"><span>Informationen für Familien</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          </div>
+          <figure class="hp-expert-media reveal">
+            <img src="assets/img/hero-kinder.jpeg" width="1024" height="683" alt="Kinder im gemeinsamen Lernen und Spielen" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abschluss-CTA + Formular -->
+    <section class="hp-final section" id="kooperation" aria-labelledby="final-title">
+      <div class="container">
+        <div class="hp-final-grid">
+          <div class="hp-final-copy">
+            <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Nächster Schritt</p>
+            <h2 id="final-title" class="reveal">Sie suchen einen verlässlichen Partner für Schulbegleitung und Inklusion?</h2>
+            <p class="reveal">Schildern Sie uns Ihr Anliegen – wir melden uns mit den nächsten Schritten. Für Pooling-Konzepte besprechen wir zunächst Rahmenbedingungen und Machbarkeit.</p>
+            <ol class="hp-final-steps reveal">
+              <li>Formular ausfüllen (ca. 2 Minuten)</li>
+              <li>Ihre Anfrage geht an die GFI Koordination</li>
+              <li>Rückmeldung mit Ansprechpartner und weiterem Vorgehen</li>
+            </ol>
+            <div class="reveal" style="margin-top:1.25rem">
+              <a class="btn btn-line" href="tel:+4972161930339" data-track="phone_click"><svg class="ico"><use href="#i-phone"/></svg> 0721/61930339</a>
+              <a class="btn btn-line" href="mailto:info@gfi-baden.de" data-track="email_click" style="margin-left:0.5rem"><svg class="ico"><use href="#i-mail"/></svg> info@gfi-baden.de</a>
+            </div>
+          </div>
+          <form class="hp-form reveal" action="https://www.gfi-baden.de/home-6/" method="get" data-track-form="cooperation">
+            <h3>Kooperation anfragen</h3>
+            <p class="hp-form-intro">Pflichtfelder sind mit * markiert. Ihre Angaben dienen der Bearbeitung Ihrer Anfrage. <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/">Datenschutzhinweis</a></p>
+            <div class="hp-form-grid">
+              <div class="hp-form-field">
+                <label for="coop-institution">Institution *</label>
+                <input type="text" id="coop-institution" name="institution" required autocomplete="organization" />
+              </div>
+              <div class="hp-form-field">
+                <label for="coop-role">Rolle / Funktion *</label>
+                <input type="text" id="coop-role" name="role" required autocomplete="organization-title" />
+              </div>
+              <div class="hp-form-field">
+                <label for="coop-name">Name *</label>
+                <input type="text" id="coop-name" name="name" required autocomplete="name" />
+              </div>
+              <div class="hp-form-field">
+                <label for="coop-email">E-Mail *</label>
+                <input type="email" id="coop-email" name="email" required autocomplete="email" />
+              </div>
+              <div class="hp-form-field">
+                <label for="coop-phone">Telefon</label>
+                <input type="tel" id="coop-phone" name="phone" autocomplete="tel" />
+              </div>
+              <div class="hp-form-field">
+                <label for="coop-region">Region / Standort</label>
+                <input type="text" id="coop-region" name="region" autocomplete="address-level2" />
+              </div>
+              <div class="hp-form-field hp-form-field--full">
+                <label for="coop-topic">Anliegen *</label>
+                <select id="coop-topic" name="topic" required>
+                  <option value="">Bitte wählen</option>
+                  <option value="schulbegleitung">Schulbegleitung</option>
+                  <option value="kooperation">Kooperation</option>
+                  <option value="pooling">Pooling</option>
+                  <option value="sonstiges">Sonstiges Anliegen</option>
+                </select>
+              </div>
+              <div class="hp-form-field hp-form-field--full">
+                <label for="coop-message">Nachricht</label>
+                <textarea id="coop-message" name="message" rows="4"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-accent" style="margin-top:1rem;width:100%" data-track="cooperation_form_submit"><span>Anfrage senden</span><svg class="ico"><use href="#i-arrow"/></svg></button>
+            <p class="hp-form-foot">Mit dem Absenden werden Sie zur Kontaktseite weitergeleitet. <span class="hp-placeholder">[PROZESS INTERN ABSTIMMEN]</span></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- 13. FOOTER                                                   -->
+  <!-- ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="assets/img/GFI-Logo.svg" width="200" height="56" alt="GFI Logo" loading="lazy" />
+        <p>Verlässliche Schulbegleitung und Inklusionsassistenz für Schulen, Ämter und Familien in Karlsruhe und Umgebung – mit klaren Prozessen und festen Ansprechpartnern.</p>
+        <div class="footer-social" aria-label="Social Media">
+          <a href="https://www.facebook.com/profile.php?id=61550116466430" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.youtube.com/@gesellschaftfurinklusion2586" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+          <a href="https://de.linkedin.com/company/gesellschaft-f%C3%BCr-inklusion" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Für Schulen &amp; Ämter</h3>
+        <ul>
+          <li><a href="#schulen">Einstieg für Schulen</a></li>
+          <li><a href="#prozess">Zusammenarbeit</a></li>
+          <li><a href="#ansprechpartner">Ansprechpartner</a></li>
+          <li><a href="#kooperation">Kooperation anfragen</a></li>
+        </ul>
+        <h3 class="footer-subhead">Themen</h3>
+        <ul>
+          <li><a href="#pooling">Pooling</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#wissen">Wissen</a></li>
+          <li><a href="#qualitaet">Qualität</a></li>
+          <li><a href="#familien">Informationen für Familien</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Karriere &amp; Unternehmen</h3>
+        <ul>
+          <li><a href="#karriere">Arbeiten bei der GFI</a></li>
+          <li><a href="https://www.gfi-baden.de/jobs/">Offene Stellen</a></li>
+          <li><a href="https://www.karriere-gfi.de/" target="_blank" rel="noopener noreferrer">Karriere für Führungskräfte</a></li>
+          <li><a href="https://www.gfi-baden.de/ueber-uns/">Über uns</a></li>
+          <li><a href="https://www.gfi-baden.de/aktuelles/">Aktuelles</a></li>
+        </ul>
+        <h3 class="footer-subhead">Weitere Gesellschaften</h3>
+        <ul>
+          <li><a href="https://www.gfi-baden.de/" target="_blank" rel="noopener noreferrer">Homepage GFI</a></li>
+          <li><a href="https://gfi-rheinland.de/" target="_blank" rel="noopener noreferrer">Homepage GFI – Rheinland GmbH</a></li>
+          <li><a href="https://gfi-rhein-main.de/" target="_blank" rel="noopener noreferrer">Homepage GFI – Rhein-Main GmbH</a></li>
+          <li><a href="https://gfi-rhein-neckar.de/" target="_blank" rel="noopener noreferrer">Homepage GFI – Rhein-Neckar GmbH</a></li>
+          <li><a href="https://www.gfi-autismus-therapie-zentrum.de/" target="_blank" rel="noopener noreferrer">Homepage GFI – Autismus Therapie Zentrum</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-contact">
+        <h3>Kontakt</h3>
+        <address>
+          Hirschstraße 12-14<br />76133 Karlsruhe<br />
+          <a href="tel:+4972161930339">0721/61930339</a> (GFI)<br />
+          <a href="mailto:info@gfi-baden.de">info@gfi-baden.de</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="footer-bottom-inner"><p>© <span id="year">2026</span> EAS Holding GmbH</p><p class="footer-bottom-links"><a href="https://gfi.hinweis.digital/" target="_blank" rel="noopener noreferrer">Hinweisgeberplattform</a><span>/</span><a href="https://gesellschaft-fuer-inklusion.de/datenschutz/">Datenschutz</a><span>/</span><a href="https://gesellschaft-fuer-inklusion.de/impressum/">Impressum</a><span>/</span><a href="https://gesellschaft-fuer-inklusion.de/barrierefreiheit/">Barrierefreiheit</a></p></div></div>
+  </footer>
+
+  <!-- Tracking-Events via data-track → dataLayer (consent-abhängig anbinden) -->
+
+  <button type="button" class="to-top" id="to-top" aria-label="Nach oben scrollen" hidden>
+    <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
+  </button>
+
+  <!-- Barrierefreiheit -->
+  <aside class="a11y" id="a11yWidget" aria-label="Barrierefreiheit">
+    <button class="a11y__toggle" id="a11yToggle" type="button" aria-expanded="false" aria-controls="a11yPanel" aria-label="Barrierefreiheit öffnen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M12 6v6M8 20l4-6 4 6M6 14h12"/></svg>
+    </button>
+    <div class="a11y__panel" id="a11yPanel" hidden>
+      <div class="a11y__head">
+        <h2 class="a11y__title" id="a11yTitle">Barrierefreiheit</h2>
+        <button class="a11y__close" id="a11yClose" type="button" aria-label="Barrierefreiheit schließen">&times;</button>
+      </div>
+      <div class="a11y__body">
+        <div class="a11y__group">
+          <span class="a11y__label" id="a11yFontLabel">Schriftgröße</span>
+          <div class="a11y__font-btns" role="group" aria-labelledby="a11yFontLabel">
+            <button class="a11y__font-btn" type="button" data-a11y-font="sm" aria-pressed="false" aria-label="Kleinere Schrift">A−</button>
+            <button class="a11y__font-btn is-active" type="button" data-a11y-font="normal" aria-pressed="true" aria-label="Normale Schrift">A</button>
+            <button class="a11y__font-btn" type="button" data-a11y-font="lg" aria-pressed="false" aria-label="Größere Schrift">A+</button>
+            <button class="a11y__font-btn" type="button" data-a11y-font="xl" aria-pressed="false" aria-label="Sehr große Schrift">A++</button>
+          </div>
+        </div>
+        <div class="a11y__group">
+          <button class="a11y__option" type="button" id="a11yContrast" aria-pressed="false">
+            <span class="a11y__option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/></svg></span>
+            <span>Hoher Kontrast</span>
+          </button>
+          <button class="a11y__option" type="button" id="a11yUnderline" aria-pressed="false">
+            <span class="a11y__option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 20h12M8 6v6a4 4 0 0 0 8 0V6"/></svg></span>
+            <span>Links unterstreichen</span>
+          </button>
+          <button class="a11y__option" type="button" id="a11yMotion" aria-pressed="false">
+            <span class="a11y__option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 9l-5 3 5 3V9zM14 9l5 3-5 3V9z"/></svg></span>
+            <span>Animationen reduzieren</span>
+          </button>
+          <button class="a11y__option" type="button" id="a11yLineHeight" aria-pressed="false">
+            <span class="a11y__option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
+            <span>Zeilenabstand vergrößern</span>
+          </button>
+        </div>
+        <button class="a11y__reset" type="button" id="a11yReset">Einstellungen zurücksetzen</button>
+        <a class="a11y__statement" href="https://gesellschaft-fuer-inklusion.de/barrierefreiheit/" target="_blank" rel="noopener noreferrer">
+          Barriereerklärung
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 14v5H5V5h5"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/main.js?v=20250710b"></script>
+  <script src="js/a11y.js?v=1"></script>
+  <script>
+  (function () {
+    document.querySelectorAll("[data-track]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        var name = el.getAttribute("data-track");
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: name, element: el.tagName.toLowerCase() });
+      });
+    });
+    var form = document.querySelector("[data-track-form]");
+    if (form) {
+      form.addEventListener("focusin", function once() {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "cooperation_form_start" });
+        form.removeEventListener("focusin", once);
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

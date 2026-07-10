@@ -1,0 +1,375 @@
+/* ============================================================
+   GFI – Farbvariante V1 (hell, ohne dunkle Flächen)
+   Akzente: Orange #f3a364 · Grün #5fba84
+   Teal #46aeac nur noch selten (Legacy-Alias)
+   ============================================================ */
+
+:root {
+  /* ---- Brand Colors ---- */
+  --color-primary-green: #5fba84;
+  --color-primary-orange: #f3a364;
+  --color-accent-teal: #5fba84;
+
+  /* Text auf Buttons (kein Dunkelgrün als Fläche) */
+  --color-dark: #263734;
+  --color-dark-deep: #263734;
+  --green-800: #4da874;
+  --green-900: #4da874;
+  --orange-ink: #263734;
+
+  /* ---- Buttons ---- */
+  --color-button-primary: #f3a364;
+  --color-button-primary-hover: #e08f52;
+  --color-button-secondary: #5fba84;
+  --color-button-secondary-hover: #4da874;
+  --color-button-soft: #e8f6ef;
+  --color-button-soft-hover: #d6efe3;
+
+  /* ---- Legacy Aliases ---- */
+  --green: #5fba84;
+  --green-50: #f0f9f4;
+  --green-25: #f7fbf9;
+  --green-100: #e8f6ef;
+  --green-200: #c5e8d4;
+  --green-300: #9fd7b8;
+  --green-500: #5fba84;
+  --green-ink: #4da874;
+  --green-700: #4da874;
+
+  --teal: #5fba84;
+  --teal-ink: #4da874;
+
+  --orange: #f3a364;
+  --orange-50: #fff8f2;
+  --orange-25: #fffcfa;
+  --orange-100: #fef0e4;
+  --orange-200: #f8d4b4;
+  --orange-2: #e08f52;
+  --orange-deep: #e08f52;
+
+  --accent-1: #5fba84;
+  --accent-2: #f3a364;
+  --accent-3: #f3a364;
+
+  --shadow-green: 0 14px 30px rgba(95, 186, 132, 0.18);
+  --shadow-orange: 0 14px 30px rgba(243, 163, 100, 0.22);
+  --shadow-card: 0 18px 45px rgba(95, 186, 132, 0.08);
+  --shadow-card-hover: 0 24px 60px rgba(95, 186, 132, 0.12);
+  --shadow-sm: 0 10px 28px rgba(95, 186, 132, 0.06);
+
+  --color-bg-soft-green: #f0f9f4;
+  --color-bg-green-tint: #e8f6ef;
+  --color-border-light: #dceee4;
+
+  --section-grad-green: #f0f9f4;
+  --section-grad-orange: #ffffff;
+  --section-grad-mint: #f0f9f4;
+  --section-grad-warm: #ffffff;
+  --section-grad-white: #ffffff;
+  --section-grad-audience: #f0f9f4;
+
+  --section-bg-white: #ffffff;
+  --section-bg-green: #f0f9f4;
+
+  /* Hero-Overlay: Primärgrün */
+  --hero-veil-rgb: 95, 186, 132;
+}
+
+body {
+  background: var(--section-bg-white);
+}
+
+/* ============================================================
+   Abschnitte – abwechselnd weiß / helles Grün, ohne Verläufe
+   ============================================================ */
+.theme-v1 .audience { background: var(--section-bg-green); }
+.theme-v1 .intro { background: var(--section-bg-white); }
+.theme-v1 .statement { background: var(--section-bg-green); }
+.theme-v1 .showcase { background: var(--section-bg-white); }
+.theme-v1 .impact { background: var(--section-bg-green); }
+.theme-v1 .process { background: var(--section-bg-white); }
+.theme-v1 .career { background: var(--section-bg-green); }
+.theme-v1 .fsj { background: var(--section-bg-white); }
+.theme-v1 .cooperation { background: var(--section-bg-green); }
+.theme-v1 .quality { background: var(--section-bg-white); }
+.theme-v1 .voices { background: var(--section-bg-green); }
+.theme-v1 .news { background: var(--section-bg-white); }
+.theme-v1 .faq { background: var(--section-bg-green); }
+.theme-v1 .final { background: var(--section-bg-white); }
+.theme-v1 .site-footer { background: var(--section-bg-green); }
+
+.theme-v1 .intro::before,
+.theme-v1 .career::before,
+.theme-v1 .voices::before,
+.theme-v1 .news::before,
+.theme-v1 .faq::before,
+.theme-v1 .quality::after,
+.theme-v1 .cooperation::before,
+.theme-v1 .process::before,
+.theme-v1 .process::after,
+.theme-v1 .cooperation::after {
+  display: none;
+}
+
+.theme-v1 .final-mesh {
+  display: none;
+}
+
+/* ============================================================
+   HERO – Türkis-Overlay (#46aeac), flach ohne Verlauf
+   ============================================================ */
+.theme-v1 .hero-veil {
+  background: rgba(var(--hero-veil-rgb), 0.38);
+}
+
+.theme-v1 .eyebrow,
+.theme-v1 .eyebrow.light,
+.theme-v1 .eyebrow.on-dark {
+  color: var(--color-primary-green);
+}
+.theme-v1 .hero-title { color: var(--ink); }
+.theme-v1 em {
+  background: linear-gradient(100deg, var(--color-primary-green), var(--green-700));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.theme-v1 .hero-sub { color: var(--ink-soft); }
+.theme-v1 .link-quiet.on-dark {
+  color: var(--ink);
+  text-decoration-color: rgba(38, 55, 52, 0.28);
+}
+.theme-v1 .link-quiet.on-dark:hover {
+  color: var(--color-primary-orange);
+  text-decoration-color: currentColor;
+}
+.theme-v1 .proof-meta { color: var(--ink-soft); }
+.theme-v1 .proof-meta strong { color: var(--ink); }
+
+.theme-v1 .site-header:not(.scrolled) .main-nav > ul a,
+.theme-v1 .site-header:not(.scrolled) .header-link { color: var(--ink); }
+.theme-v1 .site-header:not(.scrolled) .main-nav > ul a:hover,
+.theme-v1 .site-header:not(.scrolled) .header-link:hover { color: var(--color-primary-green); }
+.theme-v1 .site-header:not(.scrolled) .brand-logo { filter: none; }
+.theme-v1 .site-header:not(.scrolled) .nav-toggle span { background: var(--ink); }
+
+.theme-v1 .hero-slider-line { background: rgba(var(--hero-veil-rgb), 0.22); }
+.theme-v1 .hero-slider-nav-btn.is-active .hero-slider-line { background: rgba(var(--hero-veil-rgb), 0.16); }
+.theme-v1 .hero-slider-nav-btn:not(.is-active):hover .hero-slider-line { background: rgba(243, 163, 100, 0.38); }
+
+/* ============================================================
+   STATEMENT – helles Bild-Overlay
+   ============================================================ */
+.theme-v1 .statement {
+  color: var(--ink);
+  background: var(--section-bg-green);
+}
+
+.theme-v1 .statement-veil {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.theme-v1 .statement-text { color: var(--ink); }
+
+/* ============================================================
+   PROCESS – hell statt dunkel
+   ============================================================ */
+.theme-v1 .process {
+  background: var(--section-bg-white);
+  color: var(--ink);
+}
+
+.theme-v1 .process .sec-head h2,
+.theme-v1 .process .step h3 { color: var(--ink); }
+
+.theme-v1 .process .sec-lead,
+.theme-v1 .process .step p,
+.theme-v1 .process .microcopy { color: var(--ink-soft); }
+
+.theme-v1 .process .step {
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  border-color: var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-v1 .process .step::before {
+  background: radial-gradient(120% 80% at 50% -10%, rgba(95, 186, 132, 0.12), transparent 62%);
+}
+
+.theme-v1 .process .step:hover {
+  border-color: rgba(95, 186, 132, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   COOPERATION – hell statt dunkel
+   ============================================================ */
+.theme-v1 .cooperation {
+  background: var(--section-bg-green);
+  color: var(--ink);
+}
+
+.theme-v1 .cooperation .sec-head h2,
+.theme-v1 .cooperation .proof h3 { color: var(--ink); }
+
+.theme-v1 .cooperation .sec-lead,
+.theme-v1 .cooperation .proof p { color: var(--ink-soft); }
+
+.theme-v1 .cooperation .proof {
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  border-color: var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-v1 .cooperation .proof::before {
+  background: radial-gradient(120% 80% at 50% -10%, rgba(95, 186, 132, 0.12), transparent 62%);
+}
+
+.theme-v1 .cooperation .proof:hover {
+  border-color: rgba(95, 186, 132, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-v1 .cooperation .proof-ico {
+  background: rgba(95, 186, 132, 0.14);
+  border-color: rgba(95, 186, 132, 0.22);
+  color: var(--green-ink);
+}
+
+.theme-v1 .cooperation .proof:nth-child(4) .proof-ico {
+  background: rgba(243, 163, 100, 0.16);
+  border-color: rgba(243, 163, 100, 0.28);
+  color: var(--orange-ink);
+}
+
+/* ============================================================
+   FINAL CTA – helle Fläche
+   ============================================================ */
+.theme-v1 .final {
+  background: var(--section-bg-white);
+  color: var(--ink);
+}
+
+.theme-v1 .final h2 { color: var(--ink); }
+.theme-v1 .final-contact a { color: var(--ink); }
+.theme-v1 .final-contact a:hover { color: var(--color-primary-orange); }
+.theme-v1 .final-contact .ico { color: var(--color-primary-orange); }
+
+/* ============================================================
+   FAQ-CTA – helle Karte
+   ============================================================ */
+.theme-v1 .faq-cta-box {
+  background: var(--section-bg-white);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-v1 .faq-cta-title { color: var(--ink); }
+.theme-v1 .faq-cta-text { color: var(--ink-soft); }
+
+/* ============================================================
+   FOOTER – hell
+   ============================================================ */
+.theme-v1 .site-footer {
+  background: var(--section-bg-green);
+  color: var(--ink);
+}
+
+.theme-v1 .site-footer::before {
+  opacity: 0.07;
+}
+
+.theme-v1 .footer-brand img {
+  filter: none;
+  opacity: 1;
+}
+
+.theme-v1 .footer-brand p { color: var(--ink-soft); }
+
+.theme-v1 .footer-col h3,
+.theme-v1 .footer-subhead { color: var(--color-primary-green); }
+
+.theme-v1 .footer-col a { color: var(--ink-soft); }
+.theme-v1 .footer-col a:hover { color: var(--color-primary-orange); }
+
+.theme-v1 .footer-social a {
+  color: var(--color-primary-green);
+  background: rgba(95, 186, 132, 0.12);
+  border-color: rgba(95, 186, 132, 0.22);
+}
+
+.theme-v1 .footer-social a:hover {
+  color: var(--ink);
+  background: var(--color-primary-orange);
+  border-color: var(--color-primary-orange);
+}
+
+.theme-v1 .footer-bottom { border-top-color: var(--line); }
+.theme-v1 .footer-bottom p { color: var(--ink-soft); }
+.theme-v1 .footer-bottom-links a { color: var(--ink-soft); }
+.theme-v1 .footer-bottom-links a:hover { color: var(--color-primary-orange); }
+.theme-v1 .footer-bottom-links span { color: rgba(38, 55, 52, 0.28); }
+
+/* ============================================================
+   Komponenten-Feintuning
+   ============================================================ */
+.theme-v1 .btn-primary,
+.theme-v1 .btn-dark {
+  background: var(--color-primary-green);
+  color: #fff;
+  box-shadow: var(--shadow-green);
+}
+
+.theme-v1 .btn-primary:hover,
+.theme-v1 .btn-dark:hover {
+  background: var(--color-button-secondary-hover);
+  box-shadow: 0 18px 38px rgba(95, 186, 132, 0.28);
+}
+
+.theme-v1 .btn-line {
+  color: var(--color-primary-green);
+}
+
+.theme-v1 .btn-line:hover {
+  color: var(--green-700);
+}
+
+.theme-v1 .cursor-ring { color: var(--color-primary-green); }
+
+.theme-v1 .loader-mark span,
+.theme-v1 .loader-mark em { color: var(--color-primary-green); }
+
+.theme-v1 .loader-line span {
+  background: linear-gradient(90deg, var(--color-primary-green), var(--color-primary-orange));
+}
+
+.theme-v1 .card-link { color: var(--color-primary-green); }
+.theme-v1 .card-link:hover { color: var(--green-700); }
+
+.theme-v1 .btn-accent:hover { box-shadow: 0 18px 40px rgba(243, 163, 100, 0.32); }
+.theme-v1 .step-num { box-shadow: 0 8px 18px rgba(95, 186, 132, 0.22); }
+.theme-v1 .step:nth-child(4) .step-num { box-shadow: 0 8px 18px rgba(243, 163, 100, 0.24); }
+.theme-v1 .step:hover,
+.theme-v1 .proof:hover { border-color: rgba(95, 186, 132, 0.3); }
+.theme-v1 .proof-ico { background: rgba(95, 186, 132, 0.14); border-color: rgba(95, 186, 132, 0.22); }
+.theme-v1 .proof:nth-child(4) .proof-ico { background: rgba(243, 163, 100, 0.16); border-color: rgba(243, 163, 100, 0.28); }
+.theme-v1 .tag { border-color: rgba(243, 163, 100, 0.35); }
+.theme-v1 .sc-cta { background: linear-gradient(150deg, rgba(95, 186, 132, 0.18) 0%, rgba(243, 163, 100, 0.2) 100%); }
+.theme-v1 .intro-foot a { text-decoration-color: rgba(95, 186, 132, 0.35); }
+.theme-v1 .loader-line { background: rgba(95, 186, 132, 0.14); }
+.theme-v1 .loader-line span {
+  background: linear-gradient(90deg, var(--color-primary-green), var(--color-primary-orange));
+}
+.theme-v1 em {
+  background: linear-gradient(100deg, var(--color-primary-green), var(--color-primary-orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.theme-v1 .to-top:hover { border-color: rgba(243, 163, 100, 0.35); }
+.theme-v1 .site-header.scrolled { box-shadow: 0 1px 0 rgba(220, 235, 228, 0.9), 0 8px 28px rgba(95, 186, 132, 0.06); }

@@ -21,7 +21,7 @@
     if (!heroStarted && hero) {
       heroStarted = true;
       hero.classList.add("is-in");
-      hero.querySelectorAll(".motion-split").forEach(function (el) {
+      hero.querySelectorAll(".motion-split, [data-motion], [data-motion-group]").forEach(function (el) {
         el.classList.add("is-visible");
       });
     }
@@ -100,6 +100,77 @@
 
     if (!reduceMotion) {
       if (navBtns[0]) restartProgress(navBtns[0]);
+      start();
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) stop();
+        else start();
+      });
+    }
+  })();
+
+  /* ---------- Hero-Hintergrund-Slider (Startseite V1) ---------- */
+  (function initHpHeroSlider() {
+    var heroEl = document.getElementById("hero");
+    if (!heroEl || !heroEl.classList.contains("hp-hero--slide")) return;
+
+    var slider = heroEl.querySelector(".hp-hero-slider");
+    if (!slider) return;
+
+    var slides = slider.querySelectorAll(".hp-hero-slide");
+    if (slides.length < 2) return;
+
+    var prevBtn = heroEl.querySelector(".hp-hero-arrow--prev");
+    var nextBtn = heroEl.querySelector(".hp-hero-arrow--next");
+    var idx = 0;
+    var interval = 6500;
+    var timer = null;
+    var total = slides.length;
+
+    function goTo(next) {
+      slides[idx].classList.remove("is-active");
+      idx = (next + total) % total;
+      slides[idx].classList.add("is-active");
+    }
+
+    function next() { goTo(idx + 1); }
+    function prev() { goTo(idx - 1); }
+
+    function start() {
+      if (reduceMotion || timer) return;
+      timer = setInterval(next, interval);
+    }
+
+    function stop() {
+      if (!timer) return;
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function restartAutoplay() {
+      stop();
+      start();
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        prev();
+        restartAutoplay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        next();
+        restartAutoplay();
+      });
+    }
+
+    slider.addEventListener("mouseenter", stop);
+    slider.addEventListener("mouseleave", start);
+    slider.addEventListener("focusin", stop);
+    slider.addEventListener("focusout", start);
+
+    if (!reduceMotion) {
       start();
       document.addEventListener("visibilitychange", function () {
         if (document.hidden) stop();
@@ -429,6 +500,10 @@
     });
 
     document.querySelectorAll(".reveal").forEach(function (el) {
+      if (el.closest("#hero")) {
+        el.classList.remove("reveal");
+        return;
+      }
       if (motionMediaWrap.split(", ").some(function (sel) { return el.matches(sel); })) {
         el.classList.remove("reveal");
         return;

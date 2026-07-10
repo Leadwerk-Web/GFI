@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V1 – Dunkelfarben-Vergleich</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #f3a364;
+      --green: #5fba84;
+      --teal: #46aeac;
+      --font: "Plus Jakarta Sans", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: #f4f8f6;
+      color: #263734;
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+    h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      margin: 0 0 2rem;
+      color: #667a75;
+      max-width: 62ch;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #dcebe4;
+      background: #fff;
+      box-shadow: 0 12px 32px rgba(42, 117, 115, 0.06);
+    }
+    .card-head {
+      padding: 1rem 1.15rem;
+      border-bottom: 1px solid #eef3f0;
+    }
+    .card-head h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+    }
+    .card-head p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: #667a75;
+    }
+    .card-head code {
+      font-size: 0.78rem;
+      color: var(--teal);
+    }
+    .mock {
+      padding: 1.35rem 1.15rem 1.15rem;
+      color: #f7fbf9;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .mock-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin: 0 0 0.5rem;
+    }
+    .mock h3 {
+      margin: 0 0 0.65rem;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      color: #fff;
+    }
+    .mock p {
+      margin: 0;
+      font-size: 0.88rem;
+      opacity: 0.82;
+    }
+    .mock-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+    }
+    .btn-accent { background: var(--orange); color: #2a7573; }
+    .btn-light { background: #fff; color: var(--teal); }
+    .swatches {
+      display: flex;
+      gap: 0.45rem;
+      margin-top: 0.85rem;
+    }
+    .swatch {
+      flex: 1;
+      height: 28px;
+      border-radius: 8px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,0.9);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+    .note {
+      margin-top: 2rem;
+      padding: 1.25rem 1.35rem;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #dcebe4;
+    }
+    .note h2 { margin: 0 0 0.75rem; font-size: 1.05rem; }
+    .note ul { margin: 0; padding-left: 1.2rem; color: #667a75; }
+    .note li + li { margin-top: 0.45rem; }
+    .tag-rec {
+      display: inline-block;
+      margin-left: 0.35rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #e8f6ef;
+      color: #3a9a98;
+      font-size: 0.68rem;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+    .links { margin-top: 1.5rem; font-size: 0.9rem; }
+    .links a { color: #46aeac; font-weight: 700; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Dunkelgrün ersetzen – wie wirkt das?</h1>
+    <p class="lead">Statt Waldgrün oder Dunkel-Teal können die großen dunklen Flächen (Footer, Final-CTA, Process) aus abgedunkelten Varianten von <strong>#5fba84</strong> (Grün) oder <strong>#f3a364</strong> (Orange) aufgebaut werden. Hier der direkte Vergleich.</p>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-head">
+          <h2>Aktuell · Dunkel-Teal</h2>
+          <p>Abgeleitet aus <code>#46aeac</code></p>
+        </div>
+        <div class="mock" style="background: linear-gradient(155deg, #1f5654 0%, #2a7573 100%);">
+          <div>
+            <p class="mock-eyebrow">Nächster Schritt</p>
+            <h3>Sie haben Fragen?</h3>
+            <p>Footer &amp; CTA-Bereiche in ruhigem Teal-Ton – seriös, kühl, nah an der Akzentfarbe.</p>
+          </div>
+          <div class="mock-btns">
+            <span class="btn btn-accent">Unterstützung anfragen</span>
+            <span class="btn btn-light">Jobs ansehen</span>
+          </div>
+          <div class="swatches">
+            <span class="swatch" style="background:#1f5654">#1f5654</span>
+            <span class="swatch" style="background:#2a7573">#2a7573</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>Variante Grün <span class="tag-rec">empfohlen</span></h2>
+          <p>Abgeleitet aus <code>#5fba84</code></p>
+        </div>
+        <div class="mock" style="background: linear-gradient(155deg, #2d6b4a 0%, #3d8f62 100%);">
+          <div>
+            <p class="mock-eyebrow">Nächster Schritt</p>
+            <h3>Sie haben Fragen?</h3>
+            <p>Wirkt frischer und wärmer als Waldgrün – klar sozial, einladend, gut lesbar mit weißem Text.</p>
+          </div>
+          <div class="mock-btns">
+            <span class="btn btn-accent" style="color:#2d6b4a">Unterstützung anfragen</span>
+            <span class="btn btn-light" style="color:#3d8f62">Jobs ansehen</span>
+          </div>
+          <div class="swatches">
+            <span class="swatch" style="background:#2d6b4a">#2d6b4a</span>
+            <span class="swatch" style="background:#3d8f62">#3d8f62</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>Variante Orange</h2>
+          <p>Abgeleitet aus <code>#f3a364</code></p>
+        </div>
+        <div class="mock" style="background: linear-gradient(155deg, #9a5f2e 0%, #c47840 100%);">
+          <div>
+            <p class="mock-eyebrow">Nächster Schritt</p>
+            <h3>Sie haben Fragen?</h3>
+            <p>Sehr warm, fast „Sonnenuntergang“ – auffällig, emotional. Orange-CTA hebt sich weniger ab.</p>
+          </div>
+          <div class="mock-btns">
+            <span class="btn btn-accent" style="background:#f3a364;color:#5a3a18">Unterstützung anfragen</span>
+            <span class="btn btn-light" style="color:#9a5f2e">Jobs ansehen</span>
+          </div>
+          <div class="swatches">
+            <span class="swatch" style="background:#9a5f2e">#9a5f2e</span>
+            <span class="swatch" style="background:#c47840">#c47840</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="note">
+      <h2>Kurz eingeordnet</h2>
+      <ul>
+        <li><strong>Ja, es geht</strong> – aber nicht mit den hellen Originalfarben direkt, sondern mit abgedunkelten Ableitungen (ca. 40–55&nbsp;% dunkler).</li>
+        <li><strong>Grün (#5fba84):</strong> Natürlichster Ersatz für Dunkelgrün – vertrauensvoll, ruhig, passt zum Sozial-/Gesundheitskontext. Orange-CTA bleibt klar erkennbar.</li>
+        <li><strong>Orange (#f3a364):</strong> Deutlich wärmer und ungewöhnlicher – kann mutig wirken, aber Footer und CTA konkurrieren optisch stärker miteinander.</li>
+        <li><strong>Teal (aktuell):</strong> Kühler und sachlicher – gut, wenn Professionalität im Vordergrund steht.</li>
+      </ul>
+    </div>
+
+    <p class="links"><a href="index-v1.html">→ Index V1 (aktuell: Dunkel-Grün)</a></p>
+  </div>
+</body>
+</html>
