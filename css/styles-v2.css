@@ -40,8 +40,8 @@
   /* ---- Buttons ---- */
   --color-button-primary: var(--v2-orange);
   --color-button-primary-hover: #e8924f;
-  --color-button-secondary: var(--v2-teal);
-  --color-button-secondary-hover: #3a9694;
+  --color-button-secondary: var(--v2-green);
+  --color-button-secondary-hover: #4da872;
   --color-button-soft: #e3f3ea;
   --color-button-soft-hover: #d4ebdc;
 
@@ -444,7 +444,7 @@ img { max-width: 100%; height: auto; display: block; }
 @keyframes load { to { width: 100%; } }
 
 /* ============================================================
-   BUTTONS
+   BUTTONS – Orange · Grün · Ghost
    ============================================================ */
 .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: .55rem; font-family: var(--font); font-weight: 700; font-size: 1rem; padding: .9rem 1.6rem; border-radius: var(--pill); border: 1.5px solid transparent; cursor: pointer; transition: transform .4s var(--ease-spring), box-shadow .45s var(--ease-out), background-color .25s, color .25s, border-color .25s, filter .35s var(--ease); min-height: 50px; }
 .btn .ico { transition: transform .4s var(--ease-spring); }
@@ -453,18 +453,82 @@ img { max-width: 100%; height: auto; display: block; }
 .btn:hover .ico { transform: translateX(3px); }
 .btn-lg { padding: 1.05rem 1.9rem; font-size: 1.05rem; }
 
-.btn-primary, .btn-dark { background: var(--color-button-secondary); color: var(--color-text-light); box-shadow: var(--shadow-green); }
-.btn-primary:hover, .btn-dark:hover { background: var(--color-button-secondary-hover); box-shadow: 0 18px 38px rgba(70,174,172,.28); filter: none; }
-.btn-accent { background: var(--color-button-primary); color: var(--color-dark); box-shadow: var(--shadow-orange); }
-.btn-accent:hover { background: var(--color-button-primary-hover); box-shadow: 0 18px 40px rgba(243,163,100,.32); filter: none; }
-.btn-line { background: var(--color-button-soft); color: var(--green-ink); border-color: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
-.btn-line:hover { background: var(--color-button-soft-hover); color: var(--green-700); border-color: transparent; box-shadow: none; filter: none; }
-.btn-light { background: var(--color-bg-white); color: var(--color-button-secondary); box-shadow: var(--shadow-sm); }
-.btn-light:hover { background: var(--color-bg-white); color: var(--color-button-secondary-hover); box-shadow: var(--shadow-md); filter: none; }
-.btn-outline-light { background: rgba(255,255,255,.12); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: #fff; border-color: rgba(255,255,255,.55); }
-.btn-outline-light:hover { background: rgba(255,255,255,.22); border-color: #fff; filter: none; }
-.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
-.btn-ghost:hover { border-color: var(--color-primary-green); color: var(--green-ink); background: var(--color-bg-green-tint); box-shadow: var(--shadow-sm); filter: none; }
+/* Orange – Haupt-CTA */
+.btn-accent {
+  background: var(--color-button-primary);
+  color: var(--color-dark);
+  box-shadow: var(--shadow-orange);
+}
+.btn-accent:hover {
+  background: var(--color-button-primary-hover);
+  box-shadow: 0 18px 40px rgba(243,163,100,.32);
+  filter: none;
+}
+
+/* Grün – Sekundär-CTA */
+.btn-primary,
+.btn-dark,
+.btn-green {
+  background: var(--color-button-secondary);
+  color: var(--color-text-light);
+  box-shadow: var(--shadow-green);
+}
+.btn-primary:hover,
+.btn-dark:hover,
+.btn-green:hover {
+  background: var(--color-button-secondary-hover);
+  box-shadow: 0 18px 38px rgba(95,186,132,.28);
+  filter: none;
+}
+
+/* Ghost – Outline auf hellem Hintergrund */
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+.btn-ghost:hover {
+  border-color: var(--color-primary-green);
+  color: var(--green-ink);
+  background: var(--color-bg-green-tint);
+  box-shadow: var(--shadow-sm);
+  filter: none;
+}
+
+/* Ghost – auf dunklem/grünem Hintergrund */
+.btn-ghost-light,
+.btn-outline-light {
+  background: rgba(255,255,255,.12);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  border-color: rgba(255,255,255,.55);
+}
+.btn-ghost-light:hover,
+.btn-outline-light:hover {
+  background: rgba(255,255,255,.22);
+  border-color: #fff;
+  filter: none;
+}
+
+/* Legacy-Aliase → Ghost */
+.btn-light,
+.btn-line {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.btn-light:hover,
+.btn-line:hover {
+  border-color: var(--color-primary-green);
+  color: var(--green-ink);
+  background: var(--color-bg-green-tint);
+  box-shadow: var(--shadow-sm);
+  filter: none;
+}
 
 .link-quiet { font-weight: 700; color: var(--ink-soft); text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--line); }
 .link-quiet:hover { color: var(--green-ink); text-decoration-color: var(--green); }
@@ -565,7 +629,10 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .js .motion-split .motion-char { display: inline-block; vertical-align: baseline; line-height: inherit; opacity: 0; transform: translate(.32em, .82em); will-change: transform, opacity; }
 .js .motion-split.is-visible .motion-char { opacity: 1; transform: none; transition: opacity .55s var(--ease), transform .82s var(--ease-out); transition-delay: calc(var(--char-i, 0) * 30ms + var(--motion-delay, 0ms)); }
 .hero-title .motion-split .motion-char { transform: translateX(.65em); }
-.hero-title .motion-split { line-height: 1; padding-bottom: 0; }
+.hero-title .motion-split {
+  line-height: inherit;
+  padding-bottom: .14em;
+}
 
 /* Fallback ohne JS */
 .reveal { opacity: 1; transform: none; }
@@ -825,7 +892,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .container-inner-hero .hero-sub,
 .container-inner-hero .hero-actions,
 .container-inner-hero .hero-proof { max-width: 760px; }
-.hero-title { font-size: clamp(3rem, 8.5vw, 6rem); font-weight: 800; line-height: 1; margin: 0 0 1.4rem; letter-spacing: -.03em; color: #fff; }
+.hero-title { font-size: clamp(3rem, 8.5vw, 6rem); font-weight: 800; line-height: 1.12; margin: 0 0 1.4rem; padding-bottom: .14em; letter-spacing: -.03em; color: #fff; overflow: visible; }
 .hero-sub { font-size: clamp(1.1rem, 1.7vw, 1.34rem); color: rgba(255,255,255,.9); max-width: 52ch; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.3rem; margin-top: 2rem; }
 
@@ -1386,7 +1453,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .faq-item:last-child { border-bottom: 0; }
 .faq-item[open] { background: var(--white); box-shadow: none; }
 .faq-item summary { cursor: pointer; list-style: none; padding: clamp(1.1rem, 2vw, 1.35rem) clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 700; font-size: clamp(1rem, 1.35vw, 1.12rem); color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 1.25rem; transition: color .25s var(--ease); }
-.faq-item[open] summary { color: var(--color-accent-teal); }
+.faq-item[open] summary { color: var(--color-primary-green); }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-q { flex: 1; min-width: 0; line-height: 1.35; }
 .faq-toggle { position: relative; flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: var(--color-primary-green); transition: background .25s var(--ease), transform .25s var(--ease-spring); }
@@ -1523,9 +1590,11 @@ h1.motion-split, h2.motion-split, h3.motion-split,
    ============================================================ */
 
 /* Hero – Einblende-Choreografie beim Laden */
-.hero-title .line { display: block; overflow: visible; padding-bottom: .04em; line-height: 1; }
-.hero-title .line:last-child { padding-bottom: 0; }
-.hero-title .line-in { display: inline-block; line-height: inherit; vertical-align: baseline; }
+.hero-title .line { display: block; overflow: visible; padding-bottom: .12em; line-height: inherit; }
+.hero-title .line:last-child { padding-bottom: .12em; }
+.hero-title .line-in { display: inline-block; line-height: inherit; vertical-align: baseline; padding-bottom: .04em; }
+.hero-title em .motion-char,
+.hero-title em .motion-char-accent { line-height: 1.2; padding-bottom: .06em; }
 .js .hero-rise { opacity: 0; transform: translateY(42px); }
 
 .hero.is-in .hero-rise { animation: riseIn .9s var(--ease) both; animation-delay: var(--d, 0s); }
