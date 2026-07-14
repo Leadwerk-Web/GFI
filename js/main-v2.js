@@ -918,7 +918,7 @@
             dy *= maxOffset / dist;
           }
           el.style.transition = "transform .28s var(--ease-out)";
-          el.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px)";
+          el.style.transform = "translate(" + dx.toFixed(1) + "px," + (dy - 2).toFixed(1) + "px)";
         });
       });
       el.addEventListener("mouseleave", function () {
