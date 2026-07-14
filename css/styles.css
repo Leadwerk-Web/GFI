@@ -202,7 +202,7 @@ p { text-wrap: pretty; }
 em { font-style: normal; font-weight: 800; background: linear-gradient(100deg, var(--green-ink), var(--teal-ink)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
 /* Headline-Akzente: Orange-Verlauf (Buchstaben-Position per JS) */
-h1 em, h2 em, h3 em, .statement-text em, .hero-title em, .final h2 em {
+h1 em, h2 em, h3 em, .hero-title em, .final h2 em {
   background: linear-gradient(100deg, var(--orange) 0%, var(--orange-deep) 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -212,12 +212,28 @@ h1 em, h2 em, h3 em, .statement-text em, .hero-title em, .final h2 em {
 h1 em:has(.motion-char),
 h2 em:has(.motion-char),
 h3 em:has(.motion-char),
-.statement-text em:has(.motion-char),
 .hero-title em:has(.motion-char),
 .final h2 em:has(.motion-char) {
   background: none;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+/* Statement: Headline einfarbig weiß */
+.statement-text em,
+.statement-text em:has(.motion-char){
+  background: none !important;
+  -webkit-text-fill-color: var(--color-text-light) !important;
+  color: var(--color-text-light) !important;
+}
+.statement-text em .motion-char,
+.statement-text em .motion-char-accent,
+.statement-text .motion-char{
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: var(--color-text-light) !important;
+  color: var(--color-text-light) !important;
 }
 .motion-char-accent {
   background-image: linear-gradient(100deg, var(--orange) 0%, var(--orange-deep) 100%);
@@ -428,7 +444,18 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .js .motion-split .motion-char { display: inline-block; vertical-align: baseline; line-height: inherit; opacity: 0; transform: translate(.32em, .82em); will-change: transform, opacity; }
 .js .motion-split.is-visible .motion-char { opacity: 1; transform: none; transition: opacity .55s var(--ease), transform .82s var(--ease-out); transition-delay: calc(var(--char-i, 0) * 30ms + var(--motion-delay, 0ms)); }
 .hero-title .motion-split .motion-char { transform: translateX(.65em); }
-.hero-title .motion-split { line-height: 1; padding-bottom: 0; }
+.hero-title .motion-split { line-height: 1; padding-bottom: .16em; }
+.hero-title em .motion-char,
+.hero-title em .motion-char-accent {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: var(--orange) !important;
+  color: var(--orange) !important;
+  overflow: visible;
+  padding-bottom: .08em;
+}
 
 /* Fallback ohne JS */
 .reveal { opacity: 1; transform: none; }
@@ -684,9 +711,9 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .container-inner-hero .hero-sub,
 .container-inner-hero .hero-actions,
 .container-inner-hero .hero-proof { max-width: 760px; }
-.hero-title { font-size: clamp(3rem, 8.5vw, 6rem); font-weight: 800; line-height: 1; margin: 0 0 1.4rem; letter-spacing: -.03em; color: #fff; }
-.hero-sub { font-size: clamp(1.1rem, 1.7vw, 1.34rem); color: rgba(255,255,255,.9); max-width: 52ch; }
-.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.3rem; margin-top: 2rem; }
+.hero-title { font-size: clamp(3rem, 8.5vw, 6rem); font-weight: 800; line-height: 1; margin: 0 0 1rem; padding-bottom: .18em; letter-spacing: -.03em; color: #fff; overflow: visible; display: flex; flex-direction: column; gap: .04em; }
+.hero-sub { font-size: clamp(.98rem, 1.45vw, 1.15rem); line-height: 1.55; color: rgba(255,255,255,.9); max-width: 52ch; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.3rem; margin-top: 1.6rem; }
 
 /* Heller Akzent auf dunklem Bild */
 .eyebrow.on-dark { color: #fff; }
@@ -694,7 +721,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .link-quiet.on-dark:hover { color: #fff; text-decoration-color: #fff; }
 
 /* Social proof: Avatar-Stack */
-.hero-proof { display: flex; align-items: center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+.hero-proof { display: flex; align-items: center; gap: 1rem; margin-top: 1.6rem; flex-wrap: wrap; }
 .avatars { display: inline-flex; }
 .avatars img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,.85); margin-left: -14px; box-shadow: var(--shadow-sm); }
 .avatars img:first-child { margin-left: 0; }
@@ -1290,9 +1317,11 @@ h1.motion-split, h2.motion-split, h3.motion-split,
    ============================================================ */
 
 /* Hero – Einblende-Choreografie beim Laden */
-.hero-title .line { display: block; overflow: visible; padding-bottom: .04em; line-height: 1; }
-.hero-title .line:last-child { padding-bottom: 0; }
-.hero-title .line-in { display: inline-block; line-height: inherit; vertical-align: baseline; }
+.hero-title .line { display: block; overflow: visible; padding: 0; margin: 0; line-height: 1; }
+.hero-title .line:last-child { padding-bottom: .12em; }
+.hero-title .line-in { display: inline-block; line-height: inherit; vertical-align: baseline; overflow: visible; padding-bottom: .02em; }
+.hero-title em .motion-char,
+.hero-title em .motion-char-accent { overflow: visible; padding-bottom: .08em; }
 .js .hero-rise { opacity: 0; transform: translateY(42px); }
 
 .hero.is-in .hero-rise { animation: riseIn .9s var(--ease) both; animation-delay: var(--d, 0s); }
@@ -1316,7 +1345,8 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .statement-bg img { width: 100%; height: 100%; object-fit: cover; }
 .statement-veil { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(23,59,54,.62), rgba(23,59,54,.38) 45%, rgba(23,59,54,.74)); }
 .statement-inner { text-align: center; max-width: 1040px; }
-.statement-text { font-size: clamp(1.95rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.22; letter-spacing: -.025em; color: var(--color-text-light); margin: .5rem 0 1.7rem; padding-bottom: .12em; overflow: visible; }
+.statement-text { font-size: clamp(1.95rem, 5vw, 3.8rem); font-weight: 800; font-variation-settings: "wght" 800; line-height: 1.22; letter-spacing: -.03em; color: var(--color-text-light); margin: .5rem 0 1.7rem; padding-bottom: .12em; overflow: visible; -webkit-text-stroke: 0.015em rgba(255,255,255,.22); }
+.statement-text em { font-weight: inherit; font-variation-settings: inherit; -webkit-text-stroke: inherit; }
 .statement .eyebrow.light { justify-content: center; }
 
 /* ---------- SHOWCASE (horizontal gepinnt) ---------- */

@@ -55,12 +55,12 @@
         <li><a href="#uebersicht-skizze">↳ Skizze</a></li>
         <li><a href="#baum">Seitenbaum</a></li>
         <li><a href="#schulen">Schulen &amp; Ämter</a></li>
+        <li><a href="#familien">Familien</a></li>
         <li><a href="#pooling">Pooling</a></li>
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#wissen">Wissen</a></li>
         <li><a href="#karriere">Karriere</a></li>
         <li><a href="#organisation">Über uns &amp; Kontakt</a></li>
-        <li><a href="#familien">Familien</a></li>
         <li><a href="#rechtliches">Rechtliches</a></li>
         <li><a href="#fluesse">Nutzerführung</a></li>
         <li><a href="#rollout">Rollout-Phasen</a></li>
@@ -94,7 +94,7 @@
           <ul style="margin:0;padding-left:1.1rem;color:var(--ink-soft);font-size:0.92rem;line-height:1.65">
             <li><strong>Startseite</strong> erklärt und verlinkt – Unterseiten vertiefen.</li>
             <li><strong>Pooling</strong> nie nur Unterpunkt von Leistungen – eigene URL <code>/pooling/</code>.</li>
-            <li><strong>Familien</strong> nicht in der Hauptnavigation – Zugang über Footer und Teaser.</li>
+            <li><strong>Familien</strong> eigener Hauptnavigationspunkt direkt nach Schulen &amp; Ämter – kompakte Orientierung, keine Rechtsberatung.</li>
             <li><strong>Karriere</strong> eigene Strecke mit Du-Ansprache, visuell abgegrenzt.</li>
             <li><strong>Keine erfundenen Leistungen</strong> – unbestätigte Seiten mit Platzhalter kennzeichnen.</li>
           </ul>
@@ -106,12 +106,13 @@
         <header class="handout-section-head">
           <span class="handout-section-num">02 — Navigation</span>
           <h2>Hauptnavigation &amp; CTAs</h2>
-          <p>Sieben Navigationspunkte plus Primär-CTA und Karriere-Zugang – wie in der V1-Startseite vorbereitet.</p>
+          <p>Acht Navigationspunkte plus Primär-CTA – Reihenfolge wie in <code>index-v3.html</code>.</p>
         </header>
         <div class="handout-block">
           <h3 class="handout-block-title">Desktop-Navigation</h3>
           <div class="nav-overview">
             <div class="nav-row"><strong>Für Schulen &amp; Ämter</strong><code>/schulen-aemter/</code><span class="badge badge--p1">Hub</span></div>
+            <div class="nav-row"><strong>Familien</strong><code>/familien/</code><span class="badge badge--p3">Orientierung</span><span class="badge badge--live">Teaser V3</span></div>
             <div class="nav-row"><strong>Pooling</strong><code>/pooling/</code><span class="badge badge--p1">Eigenständig</span></div>
             <div class="nav-row"><strong>Leistungen</strong><code>/leistungen/</code><span class="badge badge--nav">Übersicht</span></div>
             <div class="nav-row"><strong>Wissen</strong><code>/wissen/</code><span class="badge badge--p2">Materialien</span></div>
@@ -146,7 +147,7 @@
         </div>
         <div class="handout-block">
           <h3 class="handout-block-title">Footer-Navigation (ergänzend)</h3>
-          <p class="handout-block-desc">Familien, Pooling, Ansprechpartner, Barrierefreiheit – auch wenn nicht in der Hauptnav.</p>
+          <p class="handout-block-desc">Ergänzende Links – u. a. Familien und Pooling zusätzlich zur Hauptnavigation, Ansprechpartner und Barrierefreiheit.</p>
           <div class="handout-meta-grid">
             <dl class="handout-meta"><dt>Familien</dt><dd>/familien/</dd></dl>
             <dl class="handout-meta"><dt>Pooling</dt><dd>/pooling/</dd></dl>
@@ -198,7 +199,7 @@
               <h4>Priorität 3 · Sekundär</h4>
               <div class="overview-nodes">
                 <span class="overview-node">/karriere/</span>
-                <span class="overview-node overview-node--secondary">/familien/</span>
+                <span class="overview-node">/familien/</span>
                 <span class="overview-node overview-node--secondary">/ueber-uns/</span>
               </div>
             </div>
@@ -321,10 +322,10 @@
             <text class="sk-label" x="608" y="538" text-anchor="middle" font-size="10">Team</text>
             <text class="sk-url" x="608" y="550" text-anchor="middle">/ueber-uns/team/</text>
 
-            <rect class="sk-box sk-box--secondary" x="232" y="450" width="120" height="44" rx="8"/>
+            <rect class="sk-box" x="232" y="450" width="120" height="44" rx="8"/>
             <text class="sk-label" x="292" y="468" text-anchor="middle" font-size="10">Familien</text>
             <text class="sk-url" x="292" y="482" text-anchor="middle">/familien/</text>
-            <text class="sk-zone-label" x="292" y="496" text-anchor="middle">nur Footer</text>
+            <text class="sk-zone-label" x="292" y="496" text-anchor="middle">Hauptnav · V3</text>
 
             <!-- Rechtliches -->
             <rect class="sk-box sk-box--secondary" x="48" y="450" width="120" height="44" rx="8"/>
@@ -377,6 +378,23 @@
                     <li><div class="tree-node"><div class="tree-body"><h4>Für Ämter &amp; Schulträger</h4><p>Prozesse, Dokumentation, Pooling-Bezug</p></div><code class="tree-url">/aemter/</code></div></li>
                     <li><div class="tree-node"><div class="tree-body"><h4>Zusammenarbeit</h4><p>5-Schritte-Prozess, Rollen, Ergebnisse</p></div><code class="tree-url">/zusammenarbeit/</code></div></li>
                     <li><div class="tree-node"><div class="tree-body"><h4>Kooperationsprofil</h4><p>Download für interne Freigabe</p></div><code class="tree-url">/schulen-aemter/kooperationsprofil/</code></div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="tree-node tree-node--hub">
+                    <span class="tree-icon"><svg class="ico"><use href="#i-family"/></svg></span>
+                    <div class="tree-body"><h4>Familien</h4><p>Orientierung für Eltern und Angehörige – Hauptnavigation</p></div>
+                    <code class="tree-url">/familien/</code>
+                  </div>
+                  <span class="badge badge--live" style="margin:0.35rem 0 0 3rem;display:inline-flex">Teaser V3 · index-v3.html #familien</span>
+                  <ul>
+                    <li><div class="tree-node"><div class="tree-body"><h4>Was ist Schulbegleitung?</h4><p>Verständliche Erklärung, für wen, was leisten kann</p></div><code class="tree-url">/familien/schulbegleitung/</code></div></li>
+                    <li><div class="tree-node"><div class="tree-body"><h4>Ablauf &amp; beteiligte Stellen</h4><p>Schule, Leistungsträger, GFI – nächste Schritte</p></div><code class="tree-url">/familien/ablauf/</code></div></li>
+                    <li><div class="tree-node"><div class="tree-body"><h4>Antrag &amp; Zuständigkeiten</h4><p>Orientierung – keine Rechtsberatung</p></div><code class="tree-url">/familien/antrag/</code></div></li>
+                    <li><div class="tree-node"><div class="tree-body"><h4>FAQ für Familien</h4><p>Häufige Fragen, Verweis auf /wissen/faq/</p></div><code class="tree-url">/familien/faq/</code></div></li>
+                    <li><div class="tree-node tree-node--secondary"><div class="tree-body"><h4>→ Familienhilfe</h4><p>Leistungsdetail verlinken</p></div><code class="tree-url">/leistungen/familienhilfe/</code></div></li>
+                    <li><div class="tree-node tree-node--secondary"><div class="tree-body"><h4>→ FSJ bei der GFI</h4><p>Querverweis Karriere</p></div><code class="tree-url">/karriere/fsj/</code></div></li>
+                    <li><div class="tree-node"><div class="tree-body"><h4>Informationen anfragen</h4><p>Persönliche Beratung, feste Ansprechpartner</p></div><code class="tree-url">/kontakt/familien/</code></div></li>
                   </ul>
                 </li>
                 <li>
@@ -468,17 +486,7 @@
                     <li><div class="tree-node"><div class="tree-body"><h4>Ansprechpartner</h4></div><code class="tree-url">/kontakt/ansprechpartner/</code></div></li>
                     <li><div class="tree-node tree-node--hub"><div class="tree-body"><h4>Kooperation anfragen</h4><p>Primär-CTA Formular</p></div><code class="tree-url">/kontakt/kooperation-anfragen/</code></div></li>
                     <li><div class="tree-node tree-node--pooling"><div class="tree-body"><h4>Pooling anfragen</h4></div><code class="tree-url">/kontakt/pooling-anfragen/</code></div></li>
-                    <li><div class="tree-node tree-node--secondary"><div class="tree-body"><h4>Familien-Anfrage</h4></div><code class="tree-url">/kontakt/familien/</code></div></li>
-                  </ul>
-                </li>
-                <li>
-                  <div class="tree-node tree-node--secondary">
-                    <span class="tree-icon"><svg class="ico"><use href="#i-family"/></svg></span>
-                    <div class="tree-body"><h4>Familien</h4><p>Footer-Zugang, keine Hauptnav</p></div>
-                    <code class="tree-url">/familien/</code>
-                  </div>
-                  <ul>
-                    <li><div class="tree-node tree-node--secondary"><div class="tree-body"><h4>Antrag &amp; Ablauf</h4></div><code class="tree-url">/familien/antrag/</code></div></li>
+                    <li><div class="tree-node"><div class="tree-body"><h4>Familien-Anfrage</h4><p>Formular für Orientierung und Rückfragen</p></div><code class="tree-url">/kontakt/familien/</code></div></li>
                   </ul>
                 </li>
                 <li>
@@ -714,6 +722,7 @@
               <li><code>/kontakt/ansprechpartner/</code> — Schulen · Ämter · Pooling · Recruiting</li>
               <li><code>/kontakt/kooperation-anfragen/</code> — Primär-CTA</li>
               <li><code>/kontakt/pooling-anfragen/</code> — Pooling-CTA</li>
+              <li><code>/kontakt/familien/</code> — Familien-Anfrage, Orientierung</li>
             </ul>
           </div>
         </div>
@@ -724,22 +733,53 @@
         <header class="handout-section-head">
           <span class="handout-section-num">11 — Familien</span>
           <h2>Informationen für Familien</h2>
-          <p>Sekundärer Zugang – kompakt, ohne Rechtsberatung, nicht konkurrierend mit institutioneller Hauptausrichtung.</p>
+          <p>Eigener Navigationspunkt nach Schulen &amp; Ämter – verständliche Orientierung zur Schulbegleitung, ohne Rechtsberatung und ohne die institutionelle Hauptkommunikation zu überlagern.</p>
         </header>
+        <div class="handout-block" style="margin-bottom:1.25rem">
+          <h3 class="handout-block-title">Startseiten-Teaser (V3)</h3>
+          <p class="handout-block-desc">In <code>index-v3.html</code> liefert die Sektion <code>#familien</code> und die Zielgruppen-Karte „Familien“ den Einstieg:</p>
+          <ul style="margin:0.75rem 0 0;padding-left:1.1rem;color:var(--ink-soft);font-size:0.92rem;line-height:1.65">
+            <li>Verständliche Orientierung zur Schulbegleitung – was Begleitung leisten kann</li>
+            <li>Hilfe bei Fragen zu Ablauf, beteiligten Stellen und nächsten Schritten</li>
+            <li>Persönliche Beratung durch feste Ansprechpartner</li>
+            <li>CTA „Informationen anfragen“ → <code>/kontakt/familien/</code></li>
+          </ul>
+        </div>
         <div class="page-grid">
           <article class="page-card page-card--prio3">
             <code class="page-card-url">/familien/</code>
-            <h4>Orientierung</h4>
-            <p>Was ist Schulbegleitung, für wen, nächste Schritte.</p>
-            <div class="page-card-meta"><span class="badge badge--live">Teaser V1</span><span class="badge badge--nav">Footer</span></div>
+            <h4>Hub · Orientierung</h4>
+            <p>Informationen für Eltern und Angehörige – Einstieg, Kurzüberblick, Verlinkung in den Bereich.</p>
+            <div class="page-card-meta"><span class="badge badge--live">Teaser V3</span><span class="badge badge--nav">Hauptnav</span></div>
+          </article>
+          <article class="page-card page-card--prio3">
+            <code class="page-card-url">/familien/schulbegleitung/</code>
+            <h4>Was ist Schulbegleitung?</h4>
+            <p>Erklärung in verständlicher Sprache: Ziel, Rahmen, für wen die Begleitung gedacht ist.</p>
+          </article>
+          <article class="page-card page-card--prio3">
+            <code class="page-card-url">/familien/ablauf/</code>
+            <h4>Ablauf &amp; beteiligte Stellen</h4>
+            <p>Schule, Leistungsträger, GFI – wer wann beteiligt ist und welche Schritte sinnvoll sein können.</p>
           </article>
           <article class="page-card page-card--prio3">
             <code class="page-card-url">/familien/antrag/</code>
-            <h4>Antrag &amp; Ablauf</h4>
-            <p>Zuständigkeiten, Orientierung – keine Rechtsberatung.</p>
+            <h4>Antrag &amp; Zuständigkeiten</h4>
+            <p>Orientierung zu Antrag und Zuständigkeiten – ausdrücklich keine Rechtsberatung.</p>
             <div class="page-card-meta"><span class="badge badge--placeholder">Rechtlich prüfen</span></div>
           </article>
+          <article class="page-card page-card--prio3">
+            <code class="page-card-url">/familien/faq/</code>
+            <h4>FAQ für Familien</h4>
+            <p>Häufige Fragen gebündelt; ergänzt den Familien-Filter in <code>/wissen/faq/</code>.</p>
+          </article>
+          <article class="page-card page-card--prio3">
+            <code class="page-card-url">/kontakt/familien/</code>
+            <h4>Informationen anfragen</h4>
+            <p>Kontaktformular für Rückfragen und persönliche Orientierung – eigener Ansprechweg.</p>
+          </article>
         </div>
+        <p style="margin-top:1rem;font-size:0.88rem;color:var(--ink-soft)">Querverweise: <code>/leistungen/familienhilfe/</code> für sozialpädagogische Familienhilfe · <code>/karriere/fsj/</code> für FSJ-Interessierte (Inhalt in V3-Teaser erwähnt, gehört fachlich in Karriere).</p>
       </section>
 
       <!-- Rechtliches -->
@@ -814,6 +854,9 @@
             <strong>Familie</strong>
             <div class="flow-targets">
               <code>/familien/</code>
+              <code>/familien/schulbegleitung/</code>
+              <code>/familien/ablauf/</code>
+              <code>/familien/faq/</code>
               <code>/wissen/faq/</code>
               <code>/kontakt/familien/</code>
             </div>
@@ -827,6 +870,7 @@
             <dl class="handout-meta"><dt>Prozess</dt><dd>5 Schritte Kurz → /zusammenarbeit/</dd></dl>
             <dl class="handout-meta"><dt>Leistungen</dt><dd>4 Karten → Detailseiten</dd></dl>
             <dl class="handout-meta"><dt>Qualität</dt><dd>6 Punkte → /qualitaet/</dd></dl>
+            <dl class="handout-meta"><dt>Familien</dt><dd>Teaser #familien → /familien/</dd></dl>
           </div>
         </div>
       </section>
@@ -857,7 +901,7 @@
               <p>Vertiefung für Entscheider – Ansprechpartner, FAQ, Zusammenarbeit.</p>
               <div class="phase-pages">
                 <code>/zusammenarbeit/</code><code>/qualitaet/</code><code>/kontakt/ansprechpartner/</code>
-                <code>/wissen/</code><code>/wissen/faq/</code>
+                <code>/wissen/</code><code>/wissen/faq/</code><code>/familien/</code><code>/kontakt/familien/</code>
               </div>
             </div>
           </article>
@@ -875,9 +919,10 @@
             <span class="phase-num">4</span>
             <div class="phase-body">
               <h4>Sekundär &amp; Content</h4>
-              <p>Familien, Downloads, Aktuelles migrieren.</p>
+              <p>Familien vertiefen, Downloads und Aktuelles migrieren.</p>
               <div class="phase-pages">
-                <code>/familien/</code><code>/wissen/downloads/</code><code>/aktuelles/</code>
+                <code>/familien/schulbegleitung/</code><code>/familien/ablauf/</code><code>/familien/antrag/</code>
+                <code>/familien/faq/</code><code>/wissen/downloads/</code><code>/aktuelles/</code>
               </div>
             </div>
           </article>
@@ -914,11 +959,11 @@
         <div class="handout-summary">
           <h3>Zusammenfassung</h3>
           <ul>
-            <li><strong>~45 geplante Seiten</strong> in maximal 3 Hierarchieebenen</li>
-            <li><strong>7 Hauptnavigationspunkte</strong> + Primär-CTA „Kooperation anfragen“</li>
+            <li><strong>~50 geplante Seiten</strong> in maximal 3 Hierarchieebenen</li>
+            <li><strong>8 Hauptnavigationspunkte</strong> + Primär-CTA „Kooperation anfragen“</li>
             <li><strong>Pooling</strong> als eigenständiger Top-Level-Bereich <code>/pooling/</code></li>
-            <li><strong>Familien</strong> über Footer und Teaser – nicht in der Hauptnav</li>
-            <li><strong>V1-Startseite</strong> (<code>index-v1.html</code>) liefert Teaser für alle Hauptcluster</li>
+            <li><strong>Familien</strong> in der Hauptnavigation (nach Schulen &amp; Ämter) – Hub und Teaser in V3</li>
+            <li><strong>V3-Startseite</strong> (<code>index-v3.html</code>) liefert Teaser für alle Hauptcluster inkl. Familien</li>
             <li><strong>Platzhalter-Inhalte</strong> erst veröffentlichen nach interner fachlicher Freigabe</li>
           </ul>
           <div class="handout-principles">
