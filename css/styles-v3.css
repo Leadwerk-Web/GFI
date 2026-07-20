@@ -208,7 +208,7 @@
   /* Für „Prozess / Pooling / Final“ – Vollfläche Primary Green */
   --section-grad-process: var(--v3-green);
   --section-grad-cooperation: var(--v3-green);
-  --section-grad-final: var(--v3-green);
+  --section-grad-final: var(--color-dark-deep);
 }
 
 * , *::before, *::after { box-sizing: border-box; }
@@ -401,6 +401,9 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: var(--hero-frame-margin);
   z-index: 1;
 }
+.final{
+  margin-bottom: var(--hero-frame-margin);
+}
 
 /* Dezente Übergänge zwischen Sektionen */
 .hero,
@@ -424,7 +427,6 @@ img { max-width: 100%; height: auto; display: block; }
 .path-ico,
 .proof-ico,
 .step-num,
-.final-contact .ico,
 .footer-social a,
 .sc-panel-ico {
   --icon-badge-size: clamp(3.75rem, 5vw, 4.5rem);
@@ -448,16 +450,24 @@ img { max-width: 100%; height: auto; display: block; }
 .path-card,
 .proof,
 .step,
-.final-contact a,
 .footer-social {
   perspective: 900px;
 }
 .path-card:hover .path-ico,
 .proof:hover .proof-ico,
 .step:hover .step-num,
-.final-contact a:hover .ico,
 .footer-social a:hover {
   transform: rotateY(180deg);
+}
+
+/* Zusammenarbeit: Kreis flippt, Zahl bleibt lesbar (nicht gespiegelt) */
+.step-num-face {
+  display: inline-block;
+  transform-style: preserve-3d;
+  transition: transform 0.62s cubic-bezier(0.34, 1.15, 0.5, 1);
+}
+.step:hover .step-num-face {
+  transform: rotateY(-180deg);
 }
 
 .skip-link { position: absolute; left: -999px; top: 0; z-index: 2000; background: var(--color-button-secondary); color: var(--color-text-light); padding: .8rem 1.3rem; border-radius: 0 0 var(--r) 0; }
@@ -564,7 +574,6 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Ghost Teal – Outline auf hellem Hintergrund */
 .btn-ghost,
-.btn-light,
 .btn-line {
   background: rgba(var(--v3-teal-rgb), .08);
   color: var(--v3-teal);
@@ -574,7 +583,6 @@ img { max-width: 100%; height: auto; display: block; }
   backdrop-filter: none;
 }
 .btn-ghost:hover,
-.btn-light:hover,
 .btn-line:hover {
   border-color: var(--color-button-secondary-hover);
   color: var(--color-button-secondary-hover);
@@ -582,8 +590,22 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: var(--shadow-md);
 }
 .btn-ghost .ico,
-.btn-light .ico,
 .btn-line .ico { color: currentColor; }
+
+/* Weiß – sekundärer CTA auf dunklem/farbigem Hintergrund */
+.btn-light {
+  background: #fff;
+  color: var(--ink);
+  border: 1.5px solid #fff;
+  box-shadow: 0 10px 28px rgba(23, 59, 54, 0.16);
+}
+.btn-light:hover {
+  background: #fff;
+  color: var(--teal-ink);
+  border-color: #fff;
+  box-shadow: 0 14px 34px rgba(23, 59, 54, 0.22);
+}
+.btn-light .ico { color: currentColor; }
 
 /* Ghost Teal – Outline auf dunklem Hintergrund (Hero) */
 .btn-ghost-light,
@@ -952,6 +974,30 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .site-header:not(.scrolled) .header-link:hover { color: var(--orange); }
 .site-header:not(.scrolled) .brand-logo { filter: brightness(0) invert(1); }
 .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
+
+/* Header-CTA: Weiß über dem Hero, Orange nach Scroll */
+.site-header:not(.scrolled) .header-cta .btn-accent,
+.site-header:not(.scrolled) .nav-cta-mobile .btn-accent {
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
+  box-shadow: 0 10px 28px rgba(23, 59, 54, 0.18);
+}
+.site-header:not(.scrolled) .header-cta .btn-accent .ico,
+.site-header:not(.scrolled) .nav-cta-mobile .btn-accent .ico {
+  color: var(--ink);
+}
+.site-header:not(.scrolled) .header-cta .btn-accent:hover,
+.site-header:not(.scrolled) .nav-cta-mobile .btn-accent:hover {
+  background: #fff;
+  color: var(--teal-ink);
+  border-color: #fff;
+  box-shadow: 0 14px 34px rgba(23, 59, 54, 0.22);
+}
+.site-header:not(.scrolled) .header-cta .btn-accent:hover .ico,
+.site-header:not(.scrolled) .nav-cta-mobile .btn-accent:hover .ico {
+  color: var(--teal-ink);
+}
 
 /* ============================================================
    3. AUDIENCE / DREI WEGE (Glaskarten)
@@ -1355,144 +1401,57 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .impact-label { display: block; max-width: 16ch; margin-inline: auto; font-weight: 700; font-size: clamp(.95rem, 1.3vw, 1.08rem); line-height: 1.38; color: var(--ink); }
 
 /* ============================================================
-   GRÜNE SZENEN – abstrakter CSS-Hintergrund
-   (Zusammenarbeit, Pooling, Nächster Schritt)
+   GRÜNE SZENEN – einfarbig (wie V2)
+   (Zusammenarbeit, Pooling)
    ============================================================ */
 .process,
-.cooperation,
-.final {
+.cooperation {
+  position: relative;
   overflow: hidden;
-  color: var(--color-text-light);
+  color: var(--color-dark-deep);
   background-color: var(--v3-green);
   background-image: none;
 }
-.green-scene-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: inherit;
-  overflow: hidden;
-  background:
-    radial-gradient(130% 95% at 100% 0%, rgba(20, 74, 69, .36) 0%, rgba(26, 95, 89, .14) 34%, transparent 62%),
-    radial-gradient(105% 80% at 0% 100%, rgba(255, 255, 255, .24) 0%, rgba(210, 238, 222, .12) 28%, transparent 58%),
-    radial-gradient(72% 58% at 76% 28%, rgba(130, 198, 162, .22) 0%, transparent 68%),
-    radial-gradient(58% 46% at 18% 18%, rgba(255, 255, 255, .08) 0%, transparent 72%),
-    linear-gradient(
-      148deg,
-      color-mix(in srgb, var(--v3-green) 72%, #144a45) 0%,
-      var(--v3-green) 38%,
-      color-mix(in srgb, var(--v3-green) 88%, #8ecbab) 100%
-    );
-}
-.green-scene-bg::before {
-  content: "";
-  position: absolute;
-  left: -22%;
-  right: -14%;
-  bottom: -14%;
-  height: clamp(30%, 34vh, 38%);
-  border-radius: 50% 50% 0 0 / 44% 44% 0 0;
-  background: linear-gradient(
-    168deg,
-    rgba(255, 255, 255, .11) 0%,
-    rgba(196, 232, 212, .24) 18%,
-    rgba(142, 203, 171, .34) 42%,
-    rgba(109, 185, 145, .48) 68%,
-    rgba(79, 154, 118, .58) 100%
-  );
-  transform: rotate(-8deg) scale(1.08);
-  transform-origin: 14% 100%;
-  filter: blur(3px);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .22),
-    0 -24px 64px rgba(255, 255, 255, .06);
-}
-.green-scene-bg::after {
-  content: "";
-  position: absolute;
-  left: -18%;
-  right: -10%;
-  bottom: clamp(26%, 30vh, 34%);
-  height: clamp(10%, 12vh, 16%);
-  border-radius: 50% 50% 0 0 / 36% 36% 0 0;
-  transform: rotate(-8deg) scale(1.06);
-  transform-origin: 16% 100%;
-  background:
-    radial-gradient(130% 42% at 52% 0%, rgba(235, 248, 240, .42) 0%, rgba(196, 232, 212, .16) 32%, transparent 72%),
-    linear-gradient(180deg, rgba(220, 245, 232, .28) 0%, transparent 48%);
-  filter: blur(16px);
-  opacity: .9;
-}
-.process::before,
-.cooperation::before,
-.final::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(58% 52% at 94% 6%, rgba(20, 74, 69, .28) 0%, transparent 66%),
-    radial-gradient(46% 40% at 82% 16%, rgba(31, 111, 104, .14) 0%, transparent 70%);
-}
-.process::after,
-.cooperation::after,
-.final::after {
-  content: "";
-  position: absolute;
-  width: min(78vw, 720px);
-  height: min(78vw, 720px);
-  left: -20%;
-  bottom: -24%;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, .3) 0%,
-    rgba(220, 245, 232, .16) 32%,
-    rgba(170, 220, 195, .06) 52%,
-    transparent 72%
-  );
-  filter: blur(48px);
-}
 .process > .container,
-.cooperation > .container,
-.final > .container { position: relative; z-index: 2; }
+.cooperation > .container { position: relative; z-index: 2; }
 .process .sec-head h2,
-.cooperation .sec-head h2,
-.final h2 {
+.cooperation .sec-head h2 {
   color: var(--color-dark-deep);
-  text-shadow: 0 1px 2px rgba(10, 42, 32, .22), 0 2px 10px rgba(10, 42, 32, .1);
+  text-shadow:
+    0 2px 4px rgba(var(--v3-teal-rgb), .4),
+    0 4px 14px rgba(var(--v3-teal-rgb), .28);
 }
 .process .sec-head h2 em,
 .cooperation .sec-head h2 em,
-.final h2 em,
 .process .sec-head h2 em:has(.motion-char),
-.cooperation .sec-head h2 em:has(.motion-char),
-.final h2 em:has(.motion-char) {
+.cooperation .sec-head h2 em:has(.motion-char) {
   background: none !important;
   -webkit-text-fill-color: var(--v3-orange) !important;
   color: var(--v3-orange) !important;
+  text-shadow:
+    0 2px 4px rgba(var(--v3-teal-rgb), .5),
+    0 4px 12px rgba(var(--v3-teal-rgb), .38),
+    0 8px 22px rgba(var(--v3-teal-rgb), .25);
 }
 .process .sec-head h2 em .motion-char,
 .process .sec-head h2 em .motion-char-accent,
 .cooperation .sec-head h2 em .motion-char,
-.cooperation .sec-head h2 em .motion-char-accent,
-.final h2 em .motion-char,
-.final h2 em .motion-char-accent {
+.cooperation .sec-head h2 em .motion-char-accent {
   background: none !important;
   background-image: none !important;
   -webkit-background-clip: border-box !important;
   background-clip: border-box !important;
   -webkit-text-fill-color: var(--v3-orange) !important;
   color: var(--v3-orange) !important;
+  text-shadow:
+    0 2px 4px rgba(var(--v3-teal-rgb), .5),
+    0 4px 12px rgba(var(--v3-teal-rgb), .38),
+    0 8px 22px rgba(var(--v3-teal-rgb), .25);
 }
 .process .sec-head .eyebrow,
 .cooperation .sec-head .eyebrow,
-.final .eyebrow,
-.final-inner .eyebrow {
+.process .sec-head .eyebrow.light,
+.cooperation .sec-head .eyebrow.light {
   color: var(--color-dark-deep);
   font-weight: 800;
   font-variation-settings: "wght" 850;
@@ -1500,9 +1459,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
   letter-spacing: .16em;
 }
 .process .sec-head .eyebrow .eyebrow-ring,
-.cooperation .sec-head .eyebrow .eyebrow-ring,
-.final .eyebrow .eyebrow-ring,
-.final-inner .eyebrow .eyebrow-ring {
+.cooperation .sec-head .eyebrow .eyebrow-ring {
   color: var(--v3-orange);
   filter: none;
 }
@@ -1510,7 +1467,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 /* ============================================================
    6. PROCESS (Zusammenarbeit)
    ============================================================ */
-.process .sec-lead { color: rgba(247,251,249,.88); }
+.process .sec-lead { color: rgba(20, 74, 69, .88); }
 .process-cta { position: relative; z-index: 1; text-align: center; }
 .steps { position: relative; z-index: 1; list-style: none; margin: 0 0 clamp(2.4rem,5vw,3.4rem); padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.3rem; }
 .process .step,
@@ -1539,17 +1496,15 @@ h1.motion-split, h2.motion-split, h3.motion-split,
   font-size: clamp(1rem, 1.35vw, 1.12rem);
   margin-bottom: 1rem;
 }
-.step h3 { font-size: 1.2rem; margin-bottom: .35rem; color: var(--v3-teal); }
-.step p { color: rgba(247,251,249,.82); font-size: .96rem; margin: 0; }
-.microcopy { color: rgba(247,251,249,.78); font-size: .94rem; margin-top: .9rem; }
-.process .microcopy { color: rgba(247,251,249,.78); }
+.step h3 { font-size: 1.2rem; margin-bottom: .35rem; color: var(--color-dark-deep); }
+.step p { color: rgba(20, 74, 69, .82); font-size: .96rem; margin: 0; }
+.microcopy { color: rgba(20, 74, 69, .78); font-size: .94rem; margin-top: .9rem; }
+.process .microcopy { color: rgba(20, 74, 69, .78); }
 
-/* Prozess / Final / Kooperation / Statement / FAQ: Ghost-Varianten auf farbigen Flächen */
+/* Prozess / Kooperation / Statement / FAQ: Ghost-Varianten auf farbigen Flächen */
 .statement .btn-ghost,
 .cooperation .btn-ghost-light,
 .cooperation .btn-outline-light,
-.final .btn-ghost-light,
-.final .btn-outline-light,
 .faq-cta-box .btn-ghost-light,
 .faq-cta-box .btn-outline-light {
   background: rgba(var(--v3-orange-rgb), .12);
@@ -1560,8 +1515,6 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .statement .btn-ghost:hover,
 .cooperation .btn-ghost-light:hover,
 .cooperation .btn-outline-light:hover,
-.final .btn-ghost-light:hover,
-.final .btn-outline-light:hover,
 .faq-cta-box .btn-ghost-light:hover,
 .faq-cta-box .btn-outline-light:hover {
   background: rgba(var(--v3-orange-rgb), .22);
@@ -1573,31 +1526,8 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .statement .btn-ghost .ico,
 .cooperation .btn-ghost-light .ico,
 .cooperation .btn-outline-light .ico,
-.final .btn-ghost-light .ico,
-.final .btn-outline-light .ico,
 .faq-cta-box .btn-ghost-light .ico,
 .faq-cta-box .btn-outline-light .ico { color: #fff; }
-
-/* Final: Teal-Ghost für btn-ghost auf grünem Hintergrund */
-.final .btn-ghost,
-.final .btn-light,
-.final .btn-line {
-  background: rgba(var(--v3-teal-rgb), .16);
-  border-color: var(--v3-teal);
-  color: #fff;
-  box-shadow: none;
-}
-.final .btn-ghost:hover,
-.final .btn-light:hover,
-.final .btn-line:hover {
-  background: rgba(var(--v3-teal-rgb), .26);
-  border-color: var(--v3-teal);
-  color: #fff;
-  box-shadow: none;
-}
-.final .btn-ghost .ico,
-.final .btn-light .ico,
-.final .btn-line .ico { color: #fff; }
 
 /* ============================================================
    7. CAREER
@@ -1721,9 +1651,9 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 /* ============================================================
    8. COOPERATION (Pooling)
    ============================================================ */
-.cooperation .sec-lead { color: rgba(247,251,249,.88); }
-.cooperation .proof h3 { color: var(--v3-teal); }
-.cooperation .proof p { color: rgba(247,251,249,.82); }
+.cooperation .sec-lead { color: rgba(20, 74, 69, .88); }
+.cooperation .proof h3 { color: var(--color-dark-deep); }
+.cooperation .proof p { color: rgba(20, 74, 69, .82); }
 .cooperation .center { position: relative; z-index: 1; }
 
 /* ============================================================
@@ -1839,33 +1769,203 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .faq-answer p { margin: 0; color: var(--ink-soft); font-size: .98rem; line-height: 1.65; max-width: 62ch; }
 
 /* ============================================================
-   12. FINAL CTA (Nächster Schritt)
+   12. FINAL CTA (Nächster Schritt) – dunkles Markengrün
    ============================================================ */
-.final { position: relative; text-align: center; padding-block: 150px; }
+.final {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  padding-block: 150px;
+  color: var(--color-text-light);
+  background: var(--color-dark-deep);
+  background-image: none;
+}
+.final::before {
+  content: "";
+  position: absolute;
+  width: min(520px, 70vw);
+  height: min(520px, 70vw);
+  right: -160px;
+  top: -80px;
+  background: rgba(var(--v3-green-rgb), .22);
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+}
+.final::after {
+  content: "";
+  position: absolute;
+  width: min(480px, 65vw);
+  height: min(480px, 65vw);
+  left: -170px;
+  bottom: -120px;
+  background: rgba(var(--v3-green-rgb), .16);
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+}
+.final > .container,
 .final-inner { position: relative; z-index: 2; }
 .final-inner .eyebrow { justify-content: center; }
-.final h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); max-width: none; margin: 0 auto 2.1rem; line-height: 1.22; padding-bottom: .12em; overflow: visible; }
+.final .eyebrow,
+.final-inner .eyebrow,
+.final .eyebrow.light,
+.final-inner .eyebrow.light {
+  color: var(--color-text-light);
+  font-weight: 800;
+  font-variation-settings: "wght" 850;
+  font-size: .82rem;
+  letter-spacing: .16em;
+}
+.final .eyebrow .eyebrow-ring,
+.final-inner .eyebrow .eyebrow-ring {
+  color: var(--v3-orange);
+  filter: none;
+}
+.final h2 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  max-width: none;
+  margin: 0 auto 2.1rem;
+  line-height: 1.18;
+  padding-bottom: .12em;
+  overflow: visible;
+  color: var(--color-text-light);
+  text-shadow: none;
+}
 .final-title-line { display: block; }
-.final-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2.2rem; }
-.final-contact { display: flex; flex-wrap: wrap; gap: 1rem 2.2rem; justify-content: center; }
-.final-contact a { display: inline-flex; align-items: center; gap: .75rem; color: var(--color-text-light); font-weight: 700; font-size: 1.05rem; }
-.final-contact .ico {
-  width: clamp(2.65rem, 3.8vw, 3rem);
-  height: clamp(2.65rem, 3.8vw, 3rem);
-  padding: .55rem;
-  box-sizing: border-box;
-  color: #fff;
-  flex: 0 0 auto;
+.final h2 em,
+.final h2 em:has(.motion-char) {
+  background: none !important;
+  -webkit-text-fill-color: var(--v3-orange) !important;
+  color: var(--v3-orange) !important;
+  text-shadow:
+    0 2px 4px rgba(20, 74, 69, .55),
+    0 4px 14px rgba(20, 74, 69, .4);
+}
+.final h2 em .motion-char,
+.final h2 em .motion-char-accent {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: var(--v3-orange) !important;
+  color: var(--v3-orange) !important;
+  text-shadow:
+    0 2px 4px rgba(20, 74, 69, .55),
+    0 4px 14px rgba(20, 74, 69, .4);
+}
+.final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2.2rem;
 }
 
-/* FINAL (Nächster Schritt): Kontakt & Fließtext weiß */
-.final-contact a { color: var(--color-text-light); }
-.final-contact a:hover { color: var(--color-text-light); text-decoration-color: rgba(255,255,255,.75); }
+/* Buttons auf dunklem Final */
+.final .btn-accent {
+  background: var(--v3-orange);
+  color: var(--color-dark-deep);
+  border-color: var(--v3-orange);
+  box-shadow: var(--shadow-orange);
+}
+.final .btn-accent:hover {
+  background: var(--color-button-primary-hover);
+  color: var(--color-dark-deep);
+  border-color: var(--color-button-primary-hover);
+}
+.final .btn-accent .ico { color: var(--color-dark-deep); }
+.final .btn-light {
+  background: #fff;
+  color: var(--color-dark-deep);
+  border-color: #fff;
+  box-shadow: 0 10px 28px rgba(10, 42, 32, 0.28);
+}
+.final .btn-light:hover {
+  background: #fff;
+  color: var(--v3-teal);
+  border-color: #fff;
+  box-shadow: 0 14px 34px rgba(10, 42, 32, 0.34);
+}
+.final .btn-light .ico { color: currentColor; }
+.final .btn-ghost-light,
+.final .btn-outline-light,
+.final .btn-ghost,
+.final .btn-line {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .85);
+  color: #fff;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.final .btn-ghost-light:hover,
+.final .btn-outline-light:hover,
+.final .btn-ghost:hover,
+.final .btn-line:hover {
+  background: rgba(255, 255, 255, .1);
+  border-color: #fff;
+  color: #fff;
+  box-shadow: none;
+  filter: none;
+}
+.final .btn-ghost-light .ico,
+.final .btn-outline-light .ico,
+.final .btn-ghost .ico,
+.final .btn-line .ico { color: #fff; }
+
+/* Kontakt: orange Icons, weiße Schrift */
+.final-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.2rem;
+  justify-content: center;
+}
+.final-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  color: var(--color-text-light);
+  font-weight: 700;
+  font-size: 1.05rem;
+  perspective: none;
+}
+.final-contact a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, .55);
+}
+.final-contact .ico,
+.final-contact a:hover .ico {
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--v3-orange);
+  transform: none;
+  transition: color .25s var(--ease), transform .25s var(--ease);
+}
+.final-contact a:hover .ico {
+  color: var(--color-button-primary-hover);
+  transform: none;
+}
 
 /* ============================================================
    13. FOOTER
    ============================================================ */
-.site-footer { position: relative; isolation: isolate; overflow: hidden; color: rgba(247,251,249,.88); padding-top: clamp(3rem, 6vw, 5rem); background: linear-gradient(165deg, var(--color-dark-deep) 0%, var(--color-dark) 100%); }
+.site-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: rgba(247,251,249,.88);
+  padding-top: clamp(3rem, 6vw, 5rem);
+  background: linear-gradient(165deg, var(--color-dark-deep) 0%, var(--color-dark) 100%);
+}
 .site-footer::before { content: ""; position: absolute; inset: 0; z-index: 0; background: url("../assets/img/ringpattern.svg") center center / cover no-repeat; opacity: 1; pointer-events: none; }
 .site-footer > * { position: relative; z-index: 1; }
 .footer-grid {
@@ -1941,8 +2041,8 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 
 /* Schwebende Hintergrund-Blobs */
 @media (prefers-reduced-motion: no-preference) {
-  .hero::before, .intro::before, .services::before, .career::before, .news::before, .faq::before { animation: floatA 17s ease-in-out infinite; }
-  .hero::after, .audience::after, .intro::after, .career::after, .news::after, .faq::after { animation: floatB 21s ease-in-out infinite; }
+  .hero::before, .intro::before, .services::before, .career::before, .news::before, .faq::before, .final::before { animation: floatA 17s ease-in-out infinite; }
+  .hero::after, .audience::after, .intro::after, .career::after, .news::after, .faq::after, .final::after { animation: floatB 21s ease-in-out infinite; }
   .audience::before { animation: floatB 19s ease-in-out infinite; }
 }
 @keyframes floatA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(32px,-28px) scale(1.06); } }
@@ -2144,8 +2244,8 @@ h1.motion-split, h2.motion-split, h3.motion-split,
   .path-card:hover .path-ico,
   .proof:hover .proof-ico,
   .step:hover .step-num,
-  .final-contact a:hover .ico,
   .footer-social a:hover { transform: none; }
+  .step:hover .step-num-face { transform: none; }
 }
 
 /* Medien-Reveals: Bilder nach Animation garantiert sichtbar */
