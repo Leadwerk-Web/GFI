@@ -829,7 +829,13 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .main-nav a:hover { color: var(--teal-ink); }
 .main-nav a:hover::after { width: 100%; }
 .nav-cta-mobile { display: none; }
-.header-cta { display: flex; align-items: center; gap: 1.2rem; }
+.header-cta { display: flex; align-items: center; gap: .75rem; }
+.header-cta .btn,
+.nav-cta-mobile .btn {
+  min-height: 46px;
+  padding: .7rem 1.25rem;
+  font-size: .95rem;
+}
 .header-link { font-weight: 700; color: var(--ink); }
 .header-link:hover { color: var(--teal-ink); }
 .nav-toggle { display: none; flex-direction: column; gap: 6px; background: transparent; border: 0; cursor: pointer; padding: 12px; margin-left: auto; }
@@ -975,7 +981,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .site-header:not(.scrolled) .brand-logo { filter: brightness(0) invert(1); }
 .site-header:not(.scrolled) .nav-toggle span { background: #fff; }
 
-/* Header-CTA: Weiß über dem Hero, Orange nach Scroll */
+/* Header-CTA: Weiß über dem Hero, Markenfarben nach Scroll */
 .site-header:not(.scrolled) .header-cta .btn-accent,
 .site-header:not(.scrolled) .nav-cta-mobile .btn-accent {
   background: #fff;
@@ -997,6 +1003,38 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .site-header:not(.scrolled) .header-cta .btn-accent:hover .ico,
 .site-header:not(.scrolled) .nav-cta-mobile .btn-accent:hover .ico {
   color: var(--teal-ink);
+}
+.site-header:not(.scrolled) .header-cta .btn-ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, .85);
+  box-shadow: none;
+}
+.site-header:not(.scrolled) .header-cta .btn-ghost:hover {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  border-color: #fff;
+  box-shadow: none;
+}
+
+/* Pooling-Button: nach Scroll voll (Teal), kein Ghost */
+.site-header.scrolled .header-cta .btn-ghost,
+.site-header.scrolled .nav-cta-mobile .btn-ghost,
+.site-header.is-pinned .header-cta .btn-ghost,
+.site-header.is-pinned .nav-cta-mobile .btn-ghost {
+  background: var(--v3-teal);
+  color: #fff;
+  border-color: var(--v3-teal);
+  box-shadow: var(--shadow-teal);
+}
+.site-header.scrolled .header-cta .btn-ghost:hover,
+.site-header.scrolled .nav-cta-mobile .btn-ghost:hover,
+.site-header.is-pinned .header-cta .btn-ghost:hover,
+.site-header.is-pinned .nav-cta-mobile .btn-ghost:hover {
+  background: var(--color-button-secondary-hover);
+  color: #fff;
+  border-color: var(--color-button-secondary-hover);
+  box-shadow: 0 18px 38px rgba(var(--v3-teal-rgb), .28);
 }
 
 /* ============================================================
