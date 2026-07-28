@@ -1125,6 +1125,10 @@ html:not(.js) .sa-qcard-toggle { display: none; }
 /* ============================================================
    12. FAQ – Hintergrund wie index-v3 (mintgrün)
    ============================================================ */
+/* Keine weiße Haarlinie am Übergang Pooling → FAQ */
+.page-schulen .sa-faq {
+  box-shadow: none;
+}
 .page-schulen .sa-faq .faq-cta {
   position: static;
   top: auto;
