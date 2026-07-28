@@ -1121,6 +1121,16 @@ html:not(.js) .sa-qcard-toggle { display: none; }
   background: var(--v3-teal);
   border-radius: 50%;
 }
+.sa-pooling .btn-line {
+  color: #fff;
+  border-color: rgba(255, 255, 255, .55);
+  background: transparent;
+}
+.sa-pooling .btn-line:hover {
+  color: var(--color-dark-deep);
+  background: #fff;
+  border-color: #fff;
+}
 
 /* ============================================================
    12. FAQ – Hintergrund wie index-v3 (mintgrün)

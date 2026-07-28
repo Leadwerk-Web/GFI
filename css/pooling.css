@@ -1,0 +1,1191 @@
+/* ============================================================
+   GFI Baden – Unterseite „Pooling“
+   Ergänzung zu css/styles-v3.css (+ Formular-/Note-Muster aus
+   schulen-aemter.css). Wirkt auf <html class="page-pooling">.
+   ============================================================ */
+
+html.page-pooling { scroll-padding-top: 6.5rem; }
+
+.page-pooling .lead,
+.page-pooling .sec-lead {
+  color: var(--color-dark-deep);
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+}
+
+.page-pooling .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Aktiver Pooling-CTA in der Navigation */
+.page-pooling .header-cta .btn-ghost.is-active,
+.page-pooling .nav-cta-mobile .btn-ghost.is-active {
+  color: var(--v3-teal);
+  border-color: rgba(var(--v3-teal-rgb), .35);
+  background: rgba(var(--v3-teal-rgb), .08);
+}
+.page-pooling .site-header:not(.scrolled) .header-cta .btn-ghost.is-active,
+.page-pooling .site-header:not(.scrolled) .nav-cta-mobile .btn-ghost.is-active {
+  color: #fff;
+  border-color: rgba(255, 255, 255, .55);
+  background: rgba(255, 255, 255, .14);
+}
+.page-pooling .main-nav > ul a.is-active { color: var(--teal-ink); }
+.page-pooling .site-header:not(.scrolled) .main-nav > ul a.is-active { color: var(--orange); }
+.page-pooling .main-nav > ul a.is-active::after { width: 100%; }
+
+.sa-optional {
+  font-weight: 500;
+  color: var(--color-text-muted);
+  font-size: .86em;
+}
+
+/* ============================================================
+   EYEBROWS – Farben analog styles-v3 / Schulen-Ämter
+   Hellflächen: dunkles Teal · Grünprozess: dunkles Teal ·
+   Dunkler CTA: Weiß · Ring immer Orange
+   ============================================================ */
+.page-pooling .eyebrow {
+  color: var(--color-dark-deep);
+}
+.page-pooling .eyebrow-ring {
+  color: var(--v3-orange);
+  filter: none;
+}
+
+/* Hero über Bild */
+.page-pooling .hero .eyebrow.on-dark {
+  color: #fff;
+}
+.page-pooling .hero .eyebrow.on-dark .eyebrow-ring {
+  color: var(--v3-orange);
+  filter: drop-shadow(0 0 6px rgba(var(--v3-orange-rgb), .35));
+}
+
+/* Grüner Prozessblock – wie .process auf der Startseite */
+.page-pooling .pl-process .eyebrow,
+.page-pooling .pl-process .eyebrow.light {
+  color: var(--color-dark-deep);
+  font-weight: 800;
+  font-variation-settings: "wght" 850;
+}
+.page-pooling .pl-process .eyebrow-ring {
+  color: var(--v3-orange);
+  filter: none;
+}
+
+/* Dunkler Abschluss-CTA */
+.page-pooling .pl-request .sa-request-copy .eyebrow,
+.page-pooling .pl-request .sa-request-copy .eyebrow.light {
+  color: #fff;
+  font-weight: 800;
+  font-variation-settings: "wght" 850;
+}
+.page-pooling .pl-request .sa-request-copy .eyebrow-ring {
+  color: var(--v3-orange);
+  filter: none;
+}
+
+/* ============================================================
+   HERO – wie fuer-schulen-aemter.html (Inset, Bild, 70dvh)
+   ============================================================ */
+.page-pooling .hero-frame {
+  height: 70dvh;
+  max-height: 70dvh;
+}
+
+.page-pooling .hero {
+  justify-content: center;
+  padding: clamp(5rem, 10vh, 6.5rem) 0;
+}
+
+.page-pooling .hero-title {
+  font-size: clamp(2.1rem, 5.2vw, 3.75rem);
+  margin-bottom: .7rem;
+}
+
+.page-pooling .hero-sub {
+  font-size: clamp(.94rem, 1.3vw, 1.08rem);
+  max-width: 48ch;
+}
+
+.page-pooling .hero-actions {
+  margin-top: 1.15rem;
+}
+
+.page-pooling .hero-inner {
+  transform: none;
+}
+
+.page-pooling .hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  transform: scale(1.08);
+  filter: brightness(.96) saturate(1.02);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-pooling .hero-image {
+    animation: heroVideoKenBurns 18s var(--ease-out) forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-pooling .hero-image {
+    animation: none;
+    transform: scale(1.04);
+  }
+}
+
+.page-pooling .pl-trust-line {
+  margin: 1.1rem 0 0;
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  color: rgba(255, 255, 255, .9);
+  max-width: 48ch;
+}
+
+/* ============================================================
+   2. HERAUSFORDERUNG + Vorher/Nachher-Vergleich
+   ============================================================ */
+.pl-challenge {
+  background-color: #fff;
+  background-image: var(--spots-white);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pl-challenge-intro {
+  max-width: 52rem;
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+}
+.pl-challenge-intro h2 { max-width: 22ch; }
+.pl-challenge-lead {
+  display: grid;
+  gap: .85rem;
+  max-width: 68ch;
+}
+.pl-challenge-lead p { color: var(--ink-soft); margin: 0; }
+
+.pl-compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 1.4rem);
+  align-items: stretch;
+}
+
+.pl-compare-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin: 0;
+  padding: clamp(1.35rem, 2.4vw, 1.85rem);
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1.5px solid rgba(var(--v3-teal-rgb), .14);
+  box-shadow: var(--shadow-sm);
+}
+.pl-compare-card--after {
+  border-color: rgba(var(--v3-green-rgb), .32);
+  background: linear-gradient(165deg, #fff 0%, var(--green-25) 100%);
+}
+
+.pl-compare-head { display: grid; gap: .45rem; }
+.pl-compare-badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: .28rem .7rem;
+  border-radius: var(--pill);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.pl-compare-badge--before {
+  color: var(--orange-deep);
+  background: rgba(var(--v3-orange-rgb), .16);
+}
+.pl-compare-badge--after {
+  color: var(--color-dark-deep);
+  background: rgba(var(--v3-green-rgb), .22);
+}
+.pl-compare-title {
+  margin: 0;
+  font-size: clamp(1.08rem, 1.6vw, 1.28rem);
+  color: var(--v3-teal);
+  line-height: 1.3;
+}
+.pl-compare-hint {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: .95rem;
+  line-height: 1.55;
+  max-width: 40ch;
+}
+
+.pl-compare-points {
+  list-style: none;
+  margin: auto 0 0;
+  padding: 1rem 0 0;
+  display: grid;
+  gap: .4rem;
+  border-top: 1.5px solid rgba(var(--v3-teal-rgb), .12);
+}
+.pl-compare-points li {
+  position: relative;
+  padding-left: 1.05rem;
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+.pl-compare-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .5em;
+  width: .4rem;
+  height: .4rem;
+  border-radius: 50%;
+  background: var(--v3-orange);
+}
+.pl-compare-card--after .pl-compare-points li::before {
+  background: var(--v3-green);
+}
+
+.pl-compare-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  align-self: center;
+  color: var(--v3-orange);
+}
+.pl-compare-bridge-ico {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(var(--v3-orange-rgb), .14);
+  border: 1.5px solid rgba(var(--v3-orange-rgb), .35);
+}
+.pl-compare-bridge-ico .ico { width: 1.15rem; height: 1.15rem; }
+.pl-compare-bridge-txt {
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--v3-teal);
+}
+
+/* Chips – gemeinsame Bausteine */
+.pl-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: .45rem .85rem;
+  border-radius: var(--r-sm);
+  background: #fff;
+  border: 1.5px solid rgba(var(--v3-teal-rgb), .2);
+  color: var(--color-dark-deep);
+  font-size: .86rem;
+  font-weight: 750;
+  font-variation-settings: "wght" 750;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+.pl-chip--accent {
+  border-color: rgba(var(--v3-orange-rgb), .45);
+  background: rgba(var(--v3-orange-rgb), .1);
+  color: var(--orange-deep);
+}
+.pl-chip--soft {
+  background: var(--green-25);
+  border-color: rgba(var(--v3-green-rgb), .28);
+}
+.pl-chip--hub {
+  background: var(--v3-teal);
+  border-color: var(--v3-teal);
+  color: #fff;
+  min-width: 7.5rem;
+  box-shadow: var(--shadow-teal);
+}
+.pl-chip--team {
+  border-color: rgba(var(--v3-green-rgb), .4);
+  background: #fff;
+  color: var(--v3-teal);
+}
+
+/* Vorher: drei parallele Silos */
+.pl-silos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .65rem;
+  flex: 1 1 auto;
+  align-content: center;
+}
+.pl-silo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: .85rem .45rem;
+  border-radius: var(--r-lg);
+  background: var(--orange-50);
+  border: 1.5px dashed rgba(var(--v3-orange-rgb), .35);
+}
+.pl-silo-line {
+  width: 1.5px;
+  height: .7rem;
+  background: rgba(var(--v3-orange-rgb), .45);
+  flex: 0 0 auto;
+}
+.pl-silo .pl-chip {
+  width: 100%;
+  max-width: 6.5rem;
+}
+
+html.js .pl-silo {
+  opacity: 0;
+  transform: translateY(10px);
+}
+html.js .pl-compare.is-active .pl-silo {
+  opacity: 1;
+  transform: none;
+  transition: opacity .45s var(--ease-out), transform .5s var(--ease-out);
+}
+html.js .pl-compare.is-active .pl-silo:nth-child(1) { transition-delay: .05s; }
+html.js .pl-compare.is-active .pl-silo:nth-child(2) { transition-delay: .15s; }
+html.js .pl-compare.is-active .pl-silo:nth-child(3) { transition-delay: .25s; }
+
+/* Nachher: klarer Fluss */
+.pl-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  flex: 1 1 auto;
+  justify-content: center;
+  padding: .35rem 0;
+}
+.pl-flow-top,
+.pl-flow-base,
+.pl-flow-team-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  width: 100%;
+}
+.pl-flow-dash {
+  width: clamp(1.25rem, 4vw, 2rem);
+  height: 1.5px;
+  background: rgba(var(--v3-teal-rgb), .35);
+  flex: 0 0 auto;
+}
+.pl-flow-stem {
+  width: 1.5px;
+  height: 1rem;
+  background: rgba(var(--v3-teal-rgb), .35);
+}
+.pl-flow-team {
+  width: 100%;
+  max-width: 22rem;
+  padding: .85rem .9rem 1rem;
+  border-radius: var(--r-lg);
+  background: rgba(var(--v3-green-rgb), .12);
+  border: 1.5px solid rgba(var(--v3-green-rgb), .32);
+  text-align: center;
+}
+.pl-flow-team-label {
+  margin: 0 0 .65rem;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--v3-teal);
+}
+.pl-flow-team-row { gap: .5rem; }
+
+html.js .pl-flow > * {
+  opacity: 0;
+  transform: translateY(8px);
+}
+html.js .pl-compare.is-active .pl-flow > * {
+  opacity: 1;
+  transform: none;
+  transition: opacity .45s var(--ease-out), transform .5s var(--ease-out);
+}
+html.js .pl-compare.is-active .pl-flow > *:nth-child(1) { transition-delay: .2s; }
+html.js .pl-compare.is-active .pl-flow > *:nth-child(2) { transition-delay: .28s; }
+html.js .pl-compare.is-active .pl-flow > *:nth-child(3) { transition-delay: .36s; }
+html.js .pl-compare.is-active .pl-flow > *:nth-child(4) { transition-delay: .44s; }
+html.js .pl-compare.is-active .pl-flow > *:nth-child(5) { transition-delay: .52s; }
+
+/* ============================================================
+   3. WAS IST POOLING? – asymmetrische Prinzipien
+   ============================================================ */
+.pl-explain {
+  background-color: var(--orange-50);
+  background-image: var(--spots-orange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pl-explain-intro { margin-bottom: clamp(2rem, 4vw, 3rem); }
+.pl-explain-copy h2 { max-width: 20ch; }
+.pl-explain-copy p { max-width: 62ch; color: var(--ink-soft); }
+
+.pl-principles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+.pl-principle {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem 1.15rem;
+  padding: clamp(1.35rem, 2.4vw, 1.85rem);
+  border-radius: var(--r-xl);
+  background: var(--green-25);
+  border: 1.5px solid rgba(var(--v3-green-rgb), .28);
+  box-shadow: var(--shadow-sm);
+}
+.pl-principle--1 { grid-column: 1 / span 7; }
+.pl-principle--2 { grid-column: 6 / span 7; margin-top: -.5rem; }
+.pl-principle--3 { grid-column: 2 / span 8; }
+.pl-principle-num {
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: #fff;
+  background: var(--v3-teal);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-teal);
+}
+.pl-principle h3 {
+  margin: 0 0 .35rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+}
+.pl-principle p {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 42ch;
+}
+
+/* ============================================================
+   4. PRAXISBEISPIEL – Stufen
+   ============================================================ */
+.pl-practice {
+  background-color: var(--green-50);
+  background-image: var(--spots-mint);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pl-practice .sec-head h2 { max-width: 22ch; }
+
+.pl-stages {
+  list-style: none;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  position: relative;
+}
+.pl-stages::before {
+  content: "";
+  position: absolute;
+  top: 1.55rem;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(var(--v3-teal-rgb), .2), rgba(var(--v3-green-rgb), .55), rgba(var(--v3-teal-rgb), .2));
+  z-index: 0;
+}
+.pl-stage {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.35rem, 2.4vw, 1.85rem);
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1.5px solid rgba(var(--v3-teal-rgb), .16);
+  box-shadow: var(--shadow-sm);
+  opacity: .55;
+  transform: translateY(12px);
+  transition: opacity .55s var(--ease-out), transform .55s var(--ease-out), border-color .35s var(--ease), box-shadow .35s var(--ease);
+}
+.pl-stage.is-in {
+  opacity: 1;
+  transform: none;
+  border-color: rgba(var(--v3-green-rgb), .4);
+  box-shadow: var(--shadow-md);
+}
+.pl-stage-badge {
+  display: inline-block;
+  margin-bottom: .7rem;
+  padding: .28rem .7rem;
+  border-radius: var(--pill);
+  background: rgba(var(--v3-orange-rgb), .14);
+  color: var(--orange-deep);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.pl-stage h3 { margin: 0 0 .45rem; font-size: 1.15rem; }
+.pl-stage p { margin: 0; color: var(--ink-soft); max-width: 38ch; }
+
+/* ============================================================
+   5. VORTEILE – Orbit / asymmetrischer Mittelpunkt
+   ============================================================ */
+.pl-benefits {
+  background-color: #fff;
+  background-image: var(--spots-white);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pl-benefits .sec-head h2 { max-width: 20ch; margin-inline: auto; }
+
+.pl-benefits-orbit {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr) minmax(0, 1fr);
+  grid-template-areas:
+    "schools hub carriers"
+    "families families families";
+  gap: clamp(1rem, 2.2vw, 1.6rem);
+  align-items: stretch;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+.pl-benefit--schools { grid-area: schools; }
+.pl-benefit--carriers { grid-area: carriers; }
+.pl-benefit--families { grid-area: families; max-width: 52rem; margin-inline: auto; width: 100%; }
+.pl-benefits-hub {
+  grid-area: hub;
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 11rem);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.pl-benefits-hub-ring {
+  position: absolute;
+  inset: 8%;
+  color: rgba(var(--v3-green-rgb), .35);
+  display: grid;
+  place-items: center;
+}
+.pl-benefits-hub-ring .ico { width: 100%; height: 100%; }
+.pl-benefits-hub-label {
+  position: relative;
+  z-index: 1;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--v3-teal);
+  letter-spacing: -.01em;
+}
+
+.pl-benefit {
+  padding: clamp(1.35rem, 2.5vw, 1.9rem);
+  border-radius: var(--r-xl);
+  background: var(--green-25);
+  border: 1.5px solid rgba(var(--v3-teal-rgb), .16);
+  box-shadow: var(--shadow-sm);
+}
+.pl-benefit--schools {
+  background: linear-gradient(165deg, #fff 0%, var(--green-25) 100%);
+}
+.pl-benefit--carriers {
+  background: linear-gradient(165deg, #fff 0%, var(--orange-50) 100%);
+  border-color: rgba(var(--v3-orange-rgb), .28);
+}
+.pl-benefit--families {
+  background: #fff;
+  border-color: rgba(var(--v3-green-rgb), .32);
+}
+.pl-benefit h3 {
+  margin: 0 0 .85rem;
+  font-size: 1.12rem;
+  padding-bottom: .7rem;
+  border-bottom: 2px solid rgba(var(--v3-green-rgb), .35);
+}
+.pl-benefit--carriers h3 { border-bottom-color: rgba(var(--v3-orange-rgb), .45); }
+.pl-benefit ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .55rem;
+}
+.pl-benefit li {
+  position: relative;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+  font-size: .96rem;
+  line-height: 1.5;
+}
+.pl-benefit li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .55em;
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  background: var(--v3-green);
+}
+.pl-benefit--carriers li::before { background: var(--v3-orange); }
+
+/* ============================================================
+   6. RAHMENBEDINGUNGEN
+   ============================================================ */
+.pl-framework {
+  background-color: var(--orange-50);
+  background-image: var(--spots-orange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pl-framework-copy h2 { max-width: 16ch; }
+.pl-framework-list {
+  list-style: none;
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem 1.1rem;
+}
+.pl-framework-list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .85rem;
+  align-items: start;
+  padding: 1rem 1.1rem;
+  border-radius: var(--r-sm);
+  background: #fff;
+  border: 1.5px solid rgba(var(--v3-orange-rgb), .22);
+  font-weight: 600;
+  color: var(--color-dark-deep);
+  line-height: 1.45;
+}
+.pl-framework-list li::before {
+  content: "";
+  width: .7rem;
+  height: .7rem;
+  margin-top: .4rem;
+  border-radius: 2px;
+  background: var(--v3-orange);
+  box-shadow: 0 0 0 4px rgba(var(--v3-orange-rgb), .16);
+}
+.pl-framework-close {
+  max-width: 68ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+.pl-internal-links {
+  margin-top: 1.25rem;
+  max-width: 62ch;
+  color: var(--ink-soft);
+}
+.pl-internal-links a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ============================================================
+   7. ABLAUF – Prozesslinie
+   ============================================================ */
+.page-pooling .pl-process.section {
+  background: var(--v3-green);
+  color: #fff;
+}
+.page-pooling .pl-process h2,
+.page-pooling .pl-process h3 { color: #fff; }
+.page-pooling .pl-process h2 em {
+  -webkit-text-fill-color: #fff8f0;
+  color: #fff8f0;
+}
+
+.pl-process-track {
+  list-style: none;
+  margin: clamp(1.75rem, 4vw, 2.75rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.15rem;
+  position: relative;
+}
+.pl-process-track::before {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 1.7rem;
+  height: 2px;
+  background: rgba(255, 255, 255, .28);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.1s var(--ease-out);
+  z-index: 0;
+}
+.pl-process-track.is-drawn::before { transform: scaleX(1); }
+
+.pl-process-step {
+  position: relative;
+  z-index: 1;
+  padding: 1.25rem 1.15rem 1.35rem;
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, .12);
+  border: 1.5px solid rgba(255, 255, 255, .22);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: .72;
+  transition: opacity .4s var(--ease), background .35s var(--ease), border-color .35s var(--ease), transform .4s var(--ease);
+}
+.pl-process-step.is-active {
+  opacity: 1;
+  background: rgba(255, 255, 255, .2);
+  border-color: rgba(255, 255, 255, .55);
+  transform: translateY(-4px);
+}
+.pl-process-num {
+  display: inline-block;
+  margin-bottom: .55rem;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  color: #fff;
+  opacity: .85;
+}
+.pl-process-step h3 {
+  margin: 0 0 .45rem;
+  font-size: 1.08rem;
+}
+.pl-process-step p {
+  margin: 0;
+  color: rgba(255, 255, 255, .9);
+  font-size: .94rem;
+  line-height: 1.55;
+  max-width: 36ch;
+}
+
+/* ============================================================
+   8. ROLLEN – zusammenhängendes System
+   ============================================================ */
+.pl-roles {
+  background-color: #fff;
+  background-image: var(--spots-white);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pl-roles .sec-head h2 { max-width: 18ch; }
+.pl-roles .sec-lead { max-width: 62ch; }
+
+.pl-roles-system {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 58rem;
+}
+.pl-roles-links {
+  position: absolute;
+  inset: 8% 12%;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .35;
+}
+.pl-roles-link {
+  fill: none;
+  stroke: var(--v3-green);
+  stroke-width: 1.2;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+}
+.pl-roles-system.is-active .pl-roles-link {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .9s var(--ease-out);
+}
+.pl-role {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.25rem, 2.2vw, 1.7rem);
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1.5px solid rgba(var(--v3-teal-rgb), .18);
+  box-shadow: var(--shadow-sm);
+}
+.pl-role--coord {
+  grid-column: 1 / -1;
+  background: linear-gradient(120deg, rgba(var(--v3-teal-rgb), .08), #fff 55%);
+  border-color: rgba(var(--v3-teal-rgb), .28);
+}
+.pl-role--team {
+  background: linear-gradient(165deg, #fff, var(--green-25));
+}
+.pl-role--school {
+  border-color: rgba(var(--v3-orange-rgb), .3);
+}
+.pl-role h3 { margin: 0 0 .45rem; font-size: 1.1rem; }
+.pl-role p { margin: 0; color: var(--ink-soft); max-width: 48ch; }
+
+/* ============================================================
+   9. QUALITÄT – Trust
+   ============================================================ */
+.pl-quality {
+  background-color: var(--green-50);
+  background-image: var(--spots-mint);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pl-quality-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: start;
+}
+.pl-quality-copy h2 { max-width: 16ch; }
+.pl-quality-copy p { max-width: 48ch; color: var(--ink-soft); }
+.pl-quality-copy a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pl-quality-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .7rem;
+}
+.pl-quality-grid li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .75rem;
+  align-items: start;
+  padding: .95rem 1rem;
+  border-radius: var(--r-sm);
+  background: #fff;
+  border: 1.5px solid rgba(var(--v3-teal-rgb), .16);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+  color: var(--color-dark-deep);
+  line-height: 1.4;
+}
+.pl-quality-grid li::before {
+  content: "";
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: .1rem;
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--v3-green), var(--v3-green)) center / .45rem 2px no-repeat,
+    linear-gradient(var(--v3-green), var(--v3-green)) center / 2px .45rem no-repeat,
+    rgba(var(--v3-green-rgb), .16);
+  box-shadow: inset 0 0 0 1.5px rgba(var(--v3-green-rgb), .55);
+}
+
+/* ============================================================
+   10. ERGÄNZENDE KOOPERATION
+   ============================================================ */
+.pl-extra {
+  background-color: var(--orange-50);
+  background-image: var(--spots-orange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.pl-extra .sec-head h2 { max-width: 22ch; }
+.pl-extra-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0;
+}
+.pl-extra-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .35rem 1rem;
+  padding: clamp(1.25rem, 2.2vw, 1.7rem);
+  border-radius: var(--r-xl);
+  background: #fff;
+  border: 1.5px solid rgba(var(--v3-orange-rgb), .22);
+}
+.pl-extra-ico {
+  grid-row: span 2;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--v3-teal);
+  border: 1.5px solid rgba(var(--v3-teal-rgb), .18);
+}
+.pl-extra-ico .ico { width: 1.25rem; height: 1.25rem; }
+.pl-extra-item h3 { margin: 0; font-size: 1.08rem; align-self: end; }
+.pl-extra-item p { margin: 0; color: var(--ink-soft); grid-column: 2; max-width: 42ch; }
+
+/* ============================================================
+   11. FAQ – buttonbasiert
+   ============================================================ */
+.page-pooling .pl-faq {
+  background-color: var(--green-50);
+  background-image: var(--spots-mint);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: none;
+}
+
+.pl-faq-list {
+  display: grid;
+  gap: .65rem;
+}
+.pl-faq-item {
+  border-radius: var(--r-lg);
+  background: #fff;
+  border: 1.5px solid rgba(var(--v3-teal-rgb), .14);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.pl-faq-h { margin: 0; }
+.pl-faq-btn {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  text-align: left;
+  padding: 1.05rem 1.15rem;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  color: var(--v3-teal);
+  cursor: pointer;
+}
+.pl-faq-btn:focus-visible {
+  outline: 2.5px solid var(--color-primary-orange);
+  outline-offset: -2px;
+}
+.pl-faq-q {
+  font-weight: 750;
+  font-variation-settings: "wght" 750;
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+.pl-faq-toggle {
+  position: relative;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  background: rgba(var(--v3-teal-rgb), .1);
+  flex: 0 0 auto;
+}
+.pl-faq-toggle::before,
+.pl-faq-toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--v3-teal);
+  border-radius: 2px;
+  transition: opacity .25s var(--ease), transform .25s var(--ease);
+}
+.pl-faq-toggle::before { width: 11px; height: 2px; transform: translate(-50%, -50%); }
+.pl-faq-toggle::after { width: 2px; height: 11px; transform: translate(-50%, -50%); }
+.pl-faq-item.is-open .pl-faq-toggle { background: var(--v3-orange); }
+.pl-faq-item.is-open .pl-faq-toggle::before { background: #fff; }
+.pl-faq-item.is-open .pl-faq-toggle::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.pl-faq-panel {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 1.15rem;
+  transition: max-height .4s var(--ease-out), opacity .3s var(--ease-out), padding-bottom .4s var(--ease-out);
+}
+.pl-faq-item.is-open .pl-faq-panel {
+  opacity: 1;
+  padding-bottom: 1.1rem;
+}
+.pl-faq-panel p {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  line-height: 1.62;
+}
+
+html:not(.js) .pl-faq-panel {
+  max-height: none !important;
+  opacity: 1;
+  padding-bottom: 1.1rem;
+}
+html:not(.js) .pl-faq-panel[hidden] { display: block; }
+
+/* ============================================================
+   12. FORMULAR / CTA – Overrides auf sa-request
+   ============================================================ */
+.page-pooling .pl-request.section {
+  padding: 0;
+  background: transparent;
+  background-image: none;
+}
+.pl-request-micro {
+  margin-top: 1.1rem;
+  color: rgba(255, 255, 255, .88);
+  font-size: .95rem;
+  max-width: 42ch;
+}
+.page-pooling .sa-form-state--success code {
+  font-size: .9em;
+  background: rgba(var(--v3-teal-rgb), .08);
+  padding: .1em .35em;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .pl-quality-layout {
+    grid-template-columns: 1fr;
+  }
+  .pl-compare {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .pl-compare-bridge {
+    flex-direction: row;
+    padding: .15rem 0;
+  }
+  .pl-compare-bridge-ico {
+    transform: rotate(90deg);
+  }
+  .pl-principles { grid-template-columns: 1fr; }
+  .pl-principle--1,
+  .pl-principle--2,
+  .pl-principle--3 {
+    grid-column: 1;
+    margin-top: 0;
+  }
+  .pl-stages {
+    grid-template-columns: 1fr;
+  }
+  .pl-stages::before {
+    display: none;
+  }
+  .pl-benefits-orbit {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hub"
+      "schools"
+      "carriers"
+      "families";
+  }
+  .pl-benefits-hub {
+    width: 7.5rem;
+    margin-bottom: .25rem;
+  }
+  .pl-process-track {
+    grid-template-columns: 1fr;
+  }
+  .pl-process-track::before {
+    display: none;
+  }
+  .pl-framework-list,
+  .pl-quality-grid,
+  .pl-extra-grid,
+  .pl-roles-system {
+    grid-template-columns: 1fr;
+  }
+  .pl-roles-links { display: none; }
+  .pl-role--coord { grid-column: auto; }
+}
+
+@media (max-width: 760px) {
+  html.page-pooling { scroll-padding-top: 5rem; }
+  .page-pooling .hero-frame {
+    height: min(68dvh, 560px);
+    max-height: min(68dvh, 560px);
+  }
+  .page-pooling .hero {
+    justify-content: center;
+    padding: clamp(4.5rem, 11vh, 5.5rem) 0;
+  }
+  .page-pooling .hero-inner {
+    transform: none;
+  }
+  .page-pooling .hero-title {
+    font-size: clamp(1.85rem, 8vw, 2.55rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-pooling .hero-actions .btn { width: 100%; }
+  .pl-silos { gap: .45rem; }
+  .pl-silo { padding: .7rem .3rem; }
+  .pl-chip { min-height: 2.1rem; padding: .4rem .55rem; font-size: .78rem; }
+  .pl-flow-dash { width: 1rem; }
+  .pl-chip--hub { min-width: 0; }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html.js .pl-silo,
+  html.js .pl-flow > *,
+  html.js .pl-compare.is-active .pl-silo,
+  html.js .pl-compare.is-active .pl-flow > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .pl-process-track::before {
+    transform: scaleX(1);
+    transition: none;
+  }
+  .pl-stage,
+  .pl-process-step {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .pl-faq-panel {
+    transition: none;
+  }
+}
