@@ -449,25 +449,18 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .path-card,
 .proof,
-.step,
 .footer-social {
   perspective: 900px;
 }
 .path-card:hover .path-ico,
 .proof:hover .proof-ico,
-.step:hover .step-num,
 .footer-social a:hover {
   transform: rotateY(180deg);
 }
 
-/* Zusammenarbeit: Kreis flippt, Zahl bleibt lesbar (nicht gespiegelt) */
+/* Zusammenarbeit: Nummern-Icons ohne Flip-Hover */
 .step-num-face {
   display: inline-block;
-  transform-style: preserve-3d;
-  transition: transform 0.62s cubic-bezier(0.34, 1.15, 0.5, 1);
-}
-.step:hover .step-num-face {
-  transform: rotateY(-180deg);
 }
 
 .skip-link { position: absolute; left: -999px; top: 0; z-index: 2000; background: var(--color-button-secondary); color: var(--color-text-light); padding: .8rem 1.3rem; border-radius: 0 0 var(--r) 0; }
@@ -1505,7 +1498,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 /* ============================================================
    6. PROCESS (Zusammenarbeit)
    ============================================================ */
-.process .sec-lead { color: rgba(20, 74, 69, .88); }
+.process .sec-lead { color: #fff; }
 .process-cta { position: relative; z-index: 1; text-align: center; }
 .steps { position: relative; z-index: 1; list-style: none; margin: 0 0 clamp(2.4rem,5vw,3.4rem); padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.3rem; }
 .process .step,
@@ -1689,7 +1682,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 /* ============================================================
    8. COOPERATION (Pooling)
    ============================================================ */
-.cooperation .sec-lead { color: rgba(20, 74, 69, .88); }
+.cooperation .sec-lead { color: #fff; }
 .cooperation .proof h3 { color: var(--color-dark-deep); }
 .cooperation .proof p { color: rgba(20, 74, 69, .82); }
 .cooperation .center { position: relative; z-index: 1; }
@@ -1744,7 +1737,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 .faq::before { content: ""; position: absolute; width: 420px; height: 420px; left: -160px; top: 20%; background: rgba(var(--v3-green-rgb),.09); border-radius: 50%; filter: blur(130px); pointer-events: none; }
 .faq::after { display: none; }
 .faq-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(250px, .82fr) minmax(0, 1.18fr); gap: clamp(2rem, 4vw, 3.5rem); align-items: start; overflow: visible; }
-.faq-cta { position: sticky; top: 100px; overflow: visible; align-self: center; }
+.faq-cta { position: static; overflow: visible; align-self: start; }
 .faq-visual {
   position: relative;
   margin: 0;
@@ -2281,9 +2274,7 @@ h1.motion-split, h2.motion-split, h3.motion-split,
   .to-top:hover .ico { transform: rotate(-90deg); }
   .path-card:hover .path-ico,
   .proof:hover .proof-ico,
-  .step:hover .step-num,
   .footer-social a:hover { transform: none; }
-  .step:hover .step-num-face { transform: none; }
 }
 
 /* Medien-Reveals: Bilder nach Animation garantiert sichtbar */

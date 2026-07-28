@@ -477,11 +477,11 @@
     el.querySelectorAll("em").forEach(applyEmGradient);
   };
 
-  var motionGroups = ".paths, .steps, .values-list, .proof-grid, .impact-stats, .news-grid, .check-list, .final-actions, .hp-pooling-benefits, .hp-career-list, .hp-families-list, .hp-final-steps, .hp-knowledge-grid, .hp-benefit-cards";
-  var motionSlides = ".intro-media, .career-media .frame-soft, .frame-arch, .sc-media, .faq-visual-media";
-  var motionFlow = ".lead, .sec-lead, .intro-head-lead, .intro-foot, .quote";
-  var motionRise = ".hero-sub, .eyebrow, .voices-panel, .voices-visual, .accordion, .final-contact, .process-cta, .microcopy, .showcase-hint, .statement-cta, .btn, blockquote:not(.quote)";
-  var motionMediaWrap = ".intro-media, .career-media .frame-soft, .quality-media, .faq-visual-media";
+  var motionGroups = ".paths, .steps, .values-list, .proof-grid, .impact-stats, .news-grid, .check-list, .final-actions, .hp-pooling-benefits, .hp-career-list, .hp-families-list, .hp-final-steps, .hp-knowledge-grid, .hp-benefit-cards, .sa-entry-grid, .sa-role-grid, .sa-schools-tiles, .sa-authorities-tiles, .sa-timeline, .sa-qgrid";
+  var motionSlides = ".intro-media, .career-media .frame-soft, .frame-arch, .sc-media, .faq-visual-media, .sa-team-media, .sa-schools-media, .sa-authorities-media, .sa-expertise-media";
+  var motionFlow = ".lead, .sec-lead, .intro-head-lead, .intro-foot, .quote, .sa-pullquote, .sa-note, .sa-timeline-text, .sa-contact-fallback, .faq-cta-text, .sa-pooling-copy > p, .sa-team-copy > p:not(.eyebrow), .sa-request-copy > p:not(.eyebrow), .sa-authorities-copy > p:not(.eyebrow), .sa-schools-copy > p:not(.eyebrow), .sa-expertise-copy > p:not(.eyebrow), .sa-quality-copy > p:not(.eyebrow), .sa-role-head-lead > p, .sa-contact-copy > p:not(.eyebrow)";
+  var motionRise = ".hero-sub, .eyebrow, .voices-panel, .voices-visual, .accordion, .final-contact, .process-cta, .microcopy, .showcase-hint, .statement-cta, .btn, blockquote:not(.quote):not(.sa-pullquote)";
+  var motionMediaWrap = ".intro-media, .career-media .frame-soft, .quality-media, .faq-visual-media, .sa-team-media, .sa-schools-media, .sa-authorities-media, .sa-expertise-media";
 
   var isInMotionTile = function (el) {
     var group = el.closest("[data-motion-group]");
@@ -558,7 +558,10 @@
         return;
       }
       if (!el.dataset.motion && !el.closest("[data-motion-group]")) {
-        el.setAttribute("data-motion", el.matches("p, blockquote") ? "tile-up" : "rise");
+        /* Fließtext wie auf index-v3: tile-up; Headlines behalten chars (bereits gesetzt) */
+        var isHeadline = el.matches("h1, h2, h3, h4, .statement-text");
+        var isFlowText = el.matches("p, blockquote, .lead, .sec-lead, .sa-pullquote, .sa-note, .sa-timeline-text, .sa-contact-fallback, .faq-cta-text");
+        el.setAttribute("data-motion", isHeadline ? "rise" : (isFlowText ? "tile-up" : "rise"));
       }
       el.classList.remove("reveal");
     });

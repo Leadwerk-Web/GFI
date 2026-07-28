@@ -223,7 +223,8 @@
   })();
 
   /* ============================================================
-     3. FORMULAR – clientseitige Validierung, Erfolg und Fehler
+     3. FORMULAR – einstufig für Schulen & Ämter (niedrige Hürde)
+     Zweistufige Variante bleibt für „Eltern & Angehörige“ vorgesehen.
      ============================================================ */
   (function initRequestForm() {
     var form = document.getElementById("kooperation-form");
@@ -283,17 +284,6 @@
         return true;
       }
 
-      if (input.type === "radio") {
-        var group = form.querySelectorAll('input[name="' + input.name + '"]');
-        var checked = Array.prototype.some.call(group, function (r) { return r.checked; });
-        if (!checked) {
-          setError(input, "Bitte wählen Sie einen bevorzugten Kontaktweg.");
-          return false;
-        }
-        clearError(input);
-        return true;
-      }
-
       if (input.required && !value) {
         setError(input, input.tagName === "SELECT" ? "Bitte treffen Sie eine Auswahl." : "Bitte füllen Sie dieses Feld aus.");
         return false;
@@ -318,12 +308,21 @@
       return true;
     };
 
+    var validateForm = function () {
+      var firstInvalid = null;
+      var fields = Array.prototype.slice.call(form.querySelectorAll("input, select, textarea"));
+      fields.forEach(function (input) {
+        if (!validateField(input) && !firstInvalid) firstInvalid = input;
+      });
+      return firstInvalid;
+    };
+
     var fields = Array.prototype.slice.call(form.querySelectorAll("input, select, textarea"));
 
     fields.forEach(function (input) {
-      var eventName = (input.type === "checkbox" || input.type === "radio" || input.tagName === "SELECT") ? "change" : "blur";
+      var eventName = (input.type === "checkbox" || input.tagName === "SELECT") ? "change" : "blur";
       input.addEventListener(eventName, function () {
-        if (input.type === "radio" || input.hasAttribute("aria-invalid") || input.value) validateField(input);
+        if (input.hasAttribute("aria-invalid") || input.value) validateField(input);
       });
       input.addEventListener("input", function () {
         if (input.hasAttribute("aria-invalid")) validateField(input);
@@ -359,19 +358,7 @@
       e.preventDefault();
       hideFormError();
 
-      var firstInvalid = null;
-      /* Radiogruppen nur einmal prüfen */
-      var checkedGroups = {};
-
-      fields.forEach(function (input) {
-        if (input.type === "radio") {
-          if (checkedGroups[input.name]) return;
-          checkedGroups[input.name] = true;
-          if (!form.querySelector('input[name="' + input.name + '"][required]')) return;
-        }
-        if (!validateField(input) && !firstInvalid) firstInvalid = input;
-      });
-
+      var firstInvalid = validateForm();
       if (firstInvalid) {
         showFormError("Bitte prüfen Sie die markierten Felder. Anschließend können Sie die Anfrage übermitteln.");
         firstInvalid.focus();
@@ -380,9 +367,6 @@
 
       var endpoint = form.getAttribute("data-endpoint");
       if (!endpoint) {
-        /* Noch kein serverseitiger Endpunkt hinterlegt: Die Anfrage wird
-           nicht übermittelt, sondern der Bestätigungszustand angezeigt.
-           Sobald data-endpoint gesetzt ist, greift der fetch-Zweig. */
         showSuccess();
         return;
       }

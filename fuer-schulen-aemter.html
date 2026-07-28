@@ -26,16 +26,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20250727v3bf" />
-  <link rel="stylesheet" href="css/schulen-aemter.css?v=20260727aa" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260728v3bj" />
+  <link rel="stylesheet" href="css/schulen-aemter.css?v=20260728af" />
   <style>
     /* Kritisches Layout – sichtbar auch bei Cache-/file://-Problemen */
     :root { --hero-frame-margin: 20px; --hero-frame-radius: clamp(18px, 2.2vw, 26px); }
     body { background: linear-gradient(180deg, #eef7f2 0%, #eef5f1 100%); }
     .hero-frame {
       background: #ffffff;
-      height: 60dvh;
-      max-height: 60dvh;
+      height: 70dvh;
+      max-height: 70dvh;
       padding: var(--hero-frame-margin);
       overflow: hidden;
     }
@@ -95,7 +95,7 @@
 
 <body>
   <!-- SVG ICON SPRITE (Strich-Icons, currentColor) – Basis identisch zu index-v3.html,
-       ergänzt um seitenspezifische Symbole (i-doc, i-download, i-pin, i-clock, i-chat,
+       ergänzt um seitenspezifische Symbole (i-doc, i-pin, i-clock, i-chat,
        i-shield, i-users, i-target, i-network). -->
   <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false" style="position:absolute">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -114,7 +114,6 @@
     <symbol id="i-ring" viewBox="0 0 276.11 279.12"><path d="M135.62,237.76c-52.51,0-95.08-42.57-95.08-95.08s42.57-95.08,95.08-95.08V10.37C62.55,10.37,3.31,69.61,3.31,142.68s59.24,132.31,132.31,132.31,132.31-59.24,132.31-132.31h-37.22c0,52.51-42.57,95.08-95.08,95.08Z" fill="currentColor"/></symbol>
     <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7.5A2.5 2.5 0 0 0 5 5.5v13A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 16.5h4"/></g></symbol>
-    <symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v10m0 0 4-4m-4 4-4-4M5 18.5h14"/></g></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></g></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></g></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12.5a7 7 0 0 1-7 7h-4l-5 2.5 1-4.1a7 7 0 0 1-2-4.9v-1a7 7 0 0 1 7-7h3a7 7 0 0 1 7 7v.5Z"/><path d="M8.5 10.5h7M8.5 14h4"/></g></symbol>
@@ -172,7 +171,7 @@
       </div>
     </header>
 
-    <!-- Hero-Rahmen (Inset) – wie Startseite, Bild statt Video, 60dvh -->
+    <!-- Hero-Rahmen (Inset) – wie Startseite, Bild statt Video, 70dvh -->
     <div class="hero-frame">
     <div class="hero-shell">
       <section class="hero" id="hero" aria-labelledby="hero-title" data-cursor="dark">
@@ -236,7 +235,7 @@
 
         <div class="sa-team-media reveal">
           <figure class="frame-soft">
-            <img src="assets/img/team-portrait.jpg" width="1024" height="587" alt="Fachkräfte der GFI Baden im gemeinsamen Austausch" loading="lazy" decoding="async" />
+            <img src="assets/img/Gemeinsam_Verantwortung.png" width="1024" height="768" alt="Gemeinsame Verantwortung in der Schulbegleitung: Zusammenarbeit von Schule, Familie und Fachkräften" loading="lazy" decoding="async" />
           </figure>
         </div>
       </div>
@@ -427,6 +426,11 @@
     <section class="sa-authorities section" id="leistungstraeger" aria-labelledby="authorities-title">
       <div class="container">
         <div class="sa-authorities-intro">
+          <div class="sa-authorities-media reveal">
+            <figure class="frame-soft">
+              <img src="assets/img/High5.jpeg" width="1024" height="683" alt="High Five zwischen Fachkraft und Kind als Symbol für gelungene Zusammenarbeit" loading="lazy" decoding="async" />
+            </figure>
+          </div>
           <div class="sa-authorities-copy">
             <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Für Ämter und Leistungsträger</p>
             <h2 id="authorities-title" class="reveal">Nachvollziehbare Prozesse statt <em>zusätzlicher Abstimmungsschleifen</em></h2>
@@ -551,7 +555,6 @@
 
         <div class="process-cta reveal">
           <a class="btn btn-accent btn-lg" data-magnetic href="#kooperation-anfragen"><span>Konkreten Bedarf besprechen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
-          <p class="microcopy">Wir melden uns mit den nächsten Schritten.</p>
         </div>
       </div>
     </section>
@@ -755,80 +758,41 @@
     <!-- 10. POOLING-TEASER                                           -->
     <!-- ============================================================ -->
     <section class="sa-pooling section" id="pooling" aria-labelledby="pooling-title" data-cursor="dark">
-      <div class="container sa-pooling-panel">
-        <div class="sa-pooling-copy">
-          <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Infrastrukturelles Pooling</p>
-          <h2 id="pooling-title" class="reveal">Mehrere Unterstützungsbedarfe <em>an einer Schule?</em></h2>
-          <p class="reveal">
-            Nicht jede Situation muss ausschließlich über voneinander getrennte Einzelmaßnahmen
-            organisiert werden. Bei mehreren Unterstützungsbedarfen kann geprüft werden, ob ein
-            infrastrukturelles Pooling als ergänzende Organisationsform grundsätzlich geeignet ist.
-          </p>
-          <p class="reveal">
-            Dabei werden Schulbegleitungen nicht ausschließlich einzelnen Kindern fest zugeordnet.
-            Ein abgestimmtes Team kann innerhalb einer Schule, Jahrgangsstufe oder Klasse
-            bedarfsorientiert eingesetzt werden.
-          </p>
-          <div class="sa-actions reveal">
-            <a class="btn btn-accent btn-lg" data-magnetic href="#kooperation-anfragen"><span>Pooling als Schulkonzept prüfen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
-            <!-- Platzhalter-Ziel: eigenständige Pooling-Unterseite noch nicht vorhanden. -->
-            <a class="link-quiet on-dark" href="index-v3.html#pooling">Vorteile, Voraussetzungen und Ablauf kennenlernen</a>
-          </div>
-        </div>
+      <div class="sa-pooling-shell">
+        <div class="container">
+          <header class="sa-pooling-head">
+            <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Infrastrukturelles Pooling</p>
+            <h2 id="pooling-title" class="reveal">Mehrere Unterstützungsbedarfe <em>an einer Schule?</em></h2>
+          </header>
 
-        <div class="sa-pooling-req reveal">
-          <h3>Voraussetzungen für eine Prüfung</h3>
-          <ul>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> sorgfältige Bedarfsanalyse</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> klare Rollen- und Teamstruktur</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> verlässliche Absprachen zwischen Schule, Leistungsträger und Leistungserbringer</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> definierte Kommunikationswege</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> kontinuierliche Qualitätssicherung</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Prüfung, für welche Kinder weiterhin eine individuelle 1:1-Begleitung erforderlich ist</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- 11. KOOPERATIONSPROFIL UND DOWNLOADS                         -->
-    <!-- ============================================================ -->
-    <!-- DOKUMENTE ERGÄNZEN: Im Projekt liegen derzeit keine PDF-Dateien vor.
-         Deshalb sind alle Dokumente als Platzhalter ohne Link ausgezeichnet.
-         Sobald Dateien bereitstehen (z. B. assets/downloads/gfi-kooperationsprofil.pdf),
-         können die Platzhalter durch <a class="btn btn-accent" download> ersetzt werden. -->
-    <section class="sa-downloads section" id="downloads" aria-labelledby="downloads-title">
-      <div class="container">
-        <header class="sec-head">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Zum Weitergeben und Abstimmen</p>
-          <h2 id="downloads-title" class="reveal">Alle relevanten Informationen <em>für Ihre interne Abstimmung</em></h2>
-          <p class="sec-lead reveal">Institutionelle Entscheidungen werden häufig nicht von einer Person allein getroffen. Deshalb stellen wir zentrale Informationen kompakt und weiterleitbar zur Verfügung.</p>
-        </header>
-
-        <div class="sa-downloads-grid">
-          <article class="sa-download-main reveal">
-            <span class="sa-download-ico" aria-hidden="true"><svg class="ico"><use href="#i-doc"/></svg></span>
-            <p class="sa-download-status">Dokument in Vorbereitung</p>
-            <h3>Kooperationsprofil Schulbegleitung – GFI Baden</h3>
-            <p>Leistungsbereiche, Zuständigkeiten, Qualitätsprozesse und Ansprechpartner kompakt zusammengefasst.</p>
-            <div class="sa-actions">
-              <span class="btn btn-accent is-placeholder" role="button" aria-disabled="true" tabindex="-1"><span>Kooperationsprofil herunterladen</span><svg class="ico"><use href="#i-download"/></svg></span>
-              <a class="link-quiet" href="mailto:info@gfi-baden.de?subject=Kooperationsprofil%20Schulbegleitung%20anfordern">Kooperationsprofil per E-Mail anfordern</a>
+          <div class="sa-pooling-panel">
+            <div class="sa-pooling-copy">
+              <p class="reveal">
+                Nicht jede Situation muss ausschließlich über voneinander getrennte Einzelmaßnahmen
+                organisiert werden. Bei mehreren Unterstützungsbedarfen kann geprüft werden, ob ein
+                infrastrukturelles Pooling als ergänzende Organisationsform grundsätzlich geeignet ist.
+              </p>
+              <p class="reveal">
+                Dabei werden Schulbegleitungen nicht ausschließlich einzelnen Kindern fest zugeordnet.
+                Ein abgestimmtes Team kann innerhalb einer Schule, Jahrgangsstufe oder Klasse
+                bedarfsorientiert eingesetzt werden.
+              </p>
+              <div class="sa-actions reveal">
+                <a class="btn btn-accent btn-lg" data-magnetic href="#kooperation-anfragen"><span>Pooling als Schulkonzept prüfen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+              </div>
             </div>
-            <p class="sa-microtext">Kompakt zusammengefasst und für interne Abstimmungen geeignet.</p>
-          </article>
 
-          <div class="sa-download-list">
-            <h3 class="sa-download-list-title">Weitere Unterlagen in Vorbereitung</h3>
-            <ul>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> Übersicht der regionalen Ansprechpartner</li>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> Ablaufgrafik „Von der Anfrage bis zum Einsatz“</li>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> Checkliste für eine erste Kapazitätsanfrage</li>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> Übersicht der Qualitäts- und Kommunikationsprozesse</li>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> Informationen zum infrastrukturellen Pooling</li>
-              <li><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg> Informationen zur GFI-Akademie</li>
-            </ul>
-            <p class="sa-microtext">Sie benötigen eine dieser Unterlagen kurzfristig? Sprechen Sie uns an – wir stellen die verfügbaren Informationen direkt zusammen.</p>
+            <div class="sa-pooling-req reveal">
+              <h3>Voraussetzungen für eine Prüfung</h3>
+              <ul>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> sorgfältige Bedarfsanalyse</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> klare Rollen- und Teamstruktur</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> verlässliche Absprachen zwischen Schule, Leistungsträger und Leistungserbringer</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> definierte Kommunikationswege</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> kontinuierliche Qualitätssicherung</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Prüfung, für welche Kinder weiterhin eine individuelle 1:1-Begleitung erforderlich ist</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -838,11 +802,25 @@
     <!-- 12. FAQ                                                      -->
     <!-- ============================================================ -->
     <section class="faq sa-faq section" aria-labelledby="faq-title">
-      <div class="container sa-faq-grid">
-        <div class="sa-faq-main">
+      <div class="container faq-grid">
+        <aside class="faq-cta">
+          <div class="faq-visual">
+            <figure class="faq-visual-media reveal">
+              <img src="assets/img/begleitung.jpeg" width="600" height="400" alt="Schulbegleiterin unterstützt ein Kind im Unterricht" loading="lazy" decoding="async" />
+            </figure>
+            <div class="faq-cta-box">
+              <h3 class="faq-cta-title">Kooperation anfragen</h3>
+              <p class="faq-cta-text">Sie haben Fragen zu Zusammenarbeit, Unterstützungsmodellen oder Pooling? Unser Team berät Sie persönlich.</p>
+              <a class="btn btn-accent faq-cta-btn" href="#kooperation-anfragen"><span>Anfrage senden</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="faq-main">
           <header class="faq-head">
             <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Häufige Fragen</p>
             <h2 id="faq-title" class="reveal">Was Institutionen vor <em>einer Zusammenarbeit</em> wissen möchten</h2>
+            <p class="sec-lead reveal">Antworten zu Anfrage, Zuständigkeit, Qualität und Pooling – kompakt für Schulen und Ämter.</p>
           </header>
 
           <div class="accordion reveal">
@@ -876,25 +854,6 @@
             </details>
           </div>
         </div>
-
-        <aside class="sa-faq-aside reveal" aria-label="Weiterführende Informationen">
-          <div class="sa-faq-card">
-            <h3>Weiterführende Informationen</h3>
-            <ul class="sa-faq-links">
-              <li><a href="https://www.gesetze-im-internet.de/sgb_9_2018/__112.html" target="_blank" rel="noopener noreferrer">§ 112 SGB IX – Teilhabe an Bildung</a></li>
-              <li><a href="https://www.gesetze-im-internet.de/sgb_8/__35a.html" target="_blank" rel="noopener noreferrer">§ 35a SGB VIII – Eingliederungshilfe</a></li>
-              <li><a href="https://www.gfi-baden.de/qualitaet/">Qualität und Standards der GFI</a></li>
-            </ul>
-          </div>
-          <div class="sa-faq-card sa-faq-card--contact">
-            <h3>Frage nicht dabei?</h3>
-            <p>Rufen Sie uns an oder schreiben Sie uns. Wir klären die Zuständigkeit und melden uns mit den nächsten Schritten.</p>
-            <p class="sa-faq-contact">
-              <a href="tel:+4972161930339"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> 0721/61930339</a>
-              <a href="mailto:info@gfi-baden.de"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg> info@gfi-baden.de</a>
-            </p>
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -902,169 +861,120 @@
     <!-- 13. ABSCHLUSS-CTA UND FORMULAR                               -->
     <!-- ============================================================ -->
     <section class="sa-request section" id="kooperation-anfragen" aria-labelledby="request-title">
-      <div class="container sa-request-panel">
-        <div class="sa-request-copy">
-          <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Kooperation anfragen</p>
-          <h2 id="request-title" class="reveal">Lassen Sie uns klären, was Ihre Schule oder <em>Ihr Zuständigkeitsbereich benötigt.</em></h2>
-          <p class="reveal">
-            Eine verlässliche Zusammenarbeit beginnt nicht mit einem langen Formular, sondern mit den
-            richtigen Informationen.
-          </p>
-          <p class="reveal">
-            Übermitteln Sie uns die wichtigsten Eckdaten. Die zuständige Fachkraft prüft Ihre Anfrage
-            und meldet sich mit den nächsten sinnvollen Schritten.
-          </p>
-          <div class="sa-request-contact reveal">
-            <a href="tel:+4972161930339"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> 0721/61930339</a>
-            <a href="#ansprechpartner"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ansprechpartner direkt kontaktieren</a>
+      <div class="sa-request-shell">
+        <div class="container sa-request-panel">
+          <div class="sa-request-copy">
+            <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Kooperation anfragen</p>
+            <h2 id="request-title" class="reveal">Lassen Sie uns klären, was Ihre Schule oder Ihr<br><em>Zuständigkeitsbereich benötigt.</em></h2>
+            <p class="reveal">
+              Eine verlässliche Zusammenarbeit beginnt nicht mit einem langen Formular, sondern mit den
+              richtigen Informationen.
+            </p>
+            <p class="reveal">
+              Übermitteln Sie uns die wichtigsten Eckdaten. Die zuständige Fachkraft prüft Ihre Anfrage
+              und meldet sich mit den nächsten sinnvollen Schritten.
+            </p>
+            <div class="sa-request-contact reveal">
+              <a href="tel:+4972161930339"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> 0721/61930339</a>
+              <a href="#ansprechpartner"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ansprechpartner direkt kontaktieren</a>
+            </div>
           </div>
-        </div>
 
-        <div class="sa-form-card">
-          <!-- FORMULAR-ENDPUNKT ERGÄNZEN: Das Projekt enthält bislang keine serverseitige
-               Formularlösung. Sobald ein Endpunkt vorliegt, wird er über data-endpoint
-               gesetzt; die Übermittlung erfolgt dann per fetch (siehe js/schulen-aemter.js). -->
-          <form class="sa-form" id="kooperation-form" novalidate data-endpoint="">
-            <h3 class="sa-form-title">Ihre Anfrage</h3>
+          <div class="sa-form-card">
+            <!-- FORMULAR-ENDPUNKT ERGÄNZEN: Das Projekt enthält bislang keine serverseitige
+                 Formularlösung. Sobald ein Endpunkt vorliegt, wird er über data-endpoint
+                 gesetzt; die Übermittlung erfolgt dann per fetch (siehe js/schulen-aemter.js). -->
+            <form class="sa-form" id="kooperation-form" novalidate data-endpoint="">
+              <h3 class="sa-form-title">Ihre Anfrage</h3>
 
-            <div class="sa-form-grid">
-              <p class="sa-field sa-field--full">
-                <label for="f-rolle">Ich frage an als <span class="sa-req" aria-hidden="true">*</span></label>
-                <span class="sa-select-wrap">
-                  <select id="f-rolle" name="rolle" required aria-describedby="f-rolle-error">
-                    <option value="">Bitte auswählen</option>
-                    <option>Schule</option>
-                    <option>Jugendamt</option>
-                    <option>Sozialamt</option>
-                    <option>Eingliederungshilfeträger</option>
-                    <option>Schulträger</option>
-                    <option>sonstige Institution</option>
-                  </select>
-                  <svg class="ico sa-select-ico" aria-hidden="true"><use href="#i-chev"/></svg>
-                </span>
-                <span class="sa-field-error" id="f-rolle-error" hidden></span>
+              <div class="sa-form-grid">
+                <p class="sa-field sa-field--full">
+                  <label for="f-rolle">Ich frage an als <span class="sa-req" aria-hidden="true">*</span></label>
+                  <span class="sa-select-wrap">
+                    <select id="f-rolle" name="rolle" required aria-describedby="f-rolle-error">
+                      <option value="">Bitte auswählen</option>
+                      <option>Schule</option>
+                      <option>Jugendamt</option>
+                      <option>Sozialamt</option>
+                      <option>Eingliederungshilfeträger</option>
+                      <option>Schulträger</option>
+                      <option>sonstige Institution</option>
+                    </select>
+                    <svg class="ico sa-select-ico" aria-hidden="true"><use href="#i-chev"/></svg>
+                  </span>
+                  <span class="sa-field-error" id="f-rolle-error" hidden></span>
+                </p>
+
+                <p class="sa-field sa-field--full">
+                  <label for="f-institution">Institution <span class="sa-req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-institution" name="institution" required autocomplete="organization" aria-describedby="f-institution-error" />
+                  <span class="sa-field-error" id="f-institution-error" hidden></span>
+                </p>
+
+                <p class="sa-field sa-field--third">
+                  <label for="f-plz">Postleitzahl <span class="sa-req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-plz" name="plz" required inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code" aria-describedby="f-plz-error" />
+                  <span class="sa-field-error" id="f-plz-error" hidden></span>
+                </p>
+
+                <p class="sa-field sa-field--two-third">
+                  <label for="f-ort">Ort <span class="sa-req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-ort" name="ort" required autocomplete="address-level2" aria-describedby="f-ort-error" />
+                  <span class="sa-field-error" id="f-ort-error" hidden></span>
+                </p>
+
+                <p class="sa-field sa-field--full">
+                  <label for="f-person">Kontaktperson <span class="sa-req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-person" name="kontaktperson" required autocomplete="name" aria-describedby="f-person-error" />
+                  <span class="sa-field-error" id="f-person-error" hidden></span>
+                </p>
+
+                <p class="sa-field sa-field--half">
+                  <label for="f-mail">E-Mail-Adresse <span class="sa-req" aria-hidden="true">*</span></label>
+                  <input type="email" id="f-mail" name="email" required autocomplete="email" aria-describedby="f-mail-error" />
+                  <span class="sa-field-error" id="f-mail-error" hidden></span>
+                </p>
+
+                <p class="sa-field sa-field--half">
+                  <label for="f-tel">Telefonnummer</label>
+                  <input type="tel" id="f-tel" name="telefon" autocomplete="tel" aria-describedby="f-tel-error" />
+                  <span class="sa-field-error" id="f-tel-error" hidden></span>
+                </p>
+
+                <p class="sa-field sa-field--full">
+                  <label for="f-beschreibung">Ihr Anliegen</label>
+                  <textarea id="f-beschreibung" name="beschreibung" rows="5" placeholder="Optional: kurze Notiz zu Ihrem Anliegen" aria-describedby="f-beschreibung-error f-datenhinweis"></textarea>
+                  <span class="sa-field-error" id="f-beschreibung-error" hidden></span>
+                </p>
+              </div>
+
+              <p class="sa-form-hint" id="f-datenhinweis">
+                <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>
+                Bitte übermitteln Sie keine ausführlichen medizinischen Unterlagen.
+                Nach Prüfung Ihrer Anfrage informieren wir Sie über den geeigneten weiteren Übermittlungsweg.
               </p>
 
-              <p class="sa-field sa-field--full">
-                <label for="f-institution">Institution <span class="sa-req" aria-hidden="true">*</span></label>
-                <input type="text" id="f-institution" name="institution" required autocomplete="organization" aria-describedby="f-institution-error" />
-                <span class="sa-field-error" id="f-institution-error" hidden></span>
+              <p class="sa-field sa-field--full sa-consent">
+                <label class="sa-checkbox">
+                  <input type="checkbox" id="f-datenschutz" name="datenschutz" required aria-describedby="f-datenschutz-error" />
+                  <span>Ich habe die <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu. <span class="sa-req" aria-hidden="true">*</span></span>
+                </label>
+                <span class="sa-field-error" id="f-datenschutz-error" hidden></span>
               </p>
 
-              <p class="sa-field sa-field--third">
-                <label for="f-plz">Postleitzahl <span class="sa-req" aria-hidden="true">*</span></label>
-                <input type="text" id="f-plz" name="plz" required inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code" aria-describedby="f-plz-error" />
-                <span class="sa-field-error" id="f-plz-error" hidden></span>
-              </p>
+              <div class="sa-form-foot">
+                <button type="submit" class="btn btn-accent btn-lg"><span>Anfrage übermitteln</span><svg class="ico"><use href="#i-arrow"/></svg></button>
+                <p class="sa-microtext">Pflichtfelder sind mit <span aria-hidden="true">*</span><span class="sr-only">Sternchen</span> gekennzeichnet.</p>
+              </div>
 
-              <p class="sa-field sa-field--two-third">
-                <label for="f-ort">Ort <span class="sa-req" aria-hidden="true">*</span></label>
-                <input type="text" id="f-ort" name="ort" required autocomplete="address-level2" aria-describedby="f-ort-error" />
-                <span class="sa-field-error" id="f-ort-error" hidden></span>
-              </p>
-
-              <p class="sa-field sa-field--full">
-                <label for="f-person">Kontaktperson <span class="sa-req" aria-hidden="true">*</span></label>
-                <input type="text" id="f-person" name="kontaktperson" required autocomplete="name" aria-describedby="f-person-error" />
-                <span class="sa-field-error" id="f-person-error" hidden></span>
-              </p>
-
-              <p class="sa-field sa-field--half">
-                <label for="f-mail">E-Mail-Adresse <span class="sa-req" aria-hidden="true">*</span></label>
-                <input type="email" id="f-mail" name="email" required autocomplete="email" aria-describedby="f-mail-error" />
-                <span class="sa-field-error" id="f-mail-error" hidden></span>
-              </p>
-
-              <p class="sa-field sa-field--half">
-                <label for="f-tel">Telefonnummer</label>
-                <input type="tel" id="f-tel" name="telefon" autocomplete="tel" aria-describedby="f-tel-error" />
-                <span class="sa-field-error" id="f-tel-error" hidden></span>
-              </p>
-
-              <p class="sa-field sa-field--full">
-                <label for="f-anliegen-art">Art der Anfrage <span class="sa-req" aria-hidden="true">*</span></label>
-                <span class="sa-select-wrap">
-                  <select id="f-anliegen-art" name="anfrageart" required aria-describedby="f-anliegen-art-error">
-                    <option value="">Bitte auswählen</option>
-                    <option>neue Schulbegleitung</option>
-                    <option>bestehende Maßnahme</option>
-                    <option>Pooling</option>
-                    <option>allgemeine Kooperation</option>
-                  </select>
-                  <svg class="ico sa-select-ico" aria-hidden="true"><use href="#i-chev"/></svg>
-                </span>
-                <span class="sa-field-error" id="f-anliegen-art-error" hidden></span>
-              </p>
-
-              <p class="sa-field sa-field--half">
-                <label for="f-beginn">Gewünschter Beginn</label>
-                <input type="text" id="f-beginn" name="beginn" placeholder="z. B. nach den Sommerferien" aria-describedby="f-beginn-error" />
-                <span class="sa-field-error" id="f-beginn-error" hidden></span>
-              </p>
-
-              <p class="sa-field sa-field--half">
-                <label for="f-stunden">Ungefährer Stundenumfang</label>
-                <input type="text" id="f-stunden" name="stundenumfang" placeholder="z. B. 20 Stunden pro Woche" aria-describedby="f-stunden-error" />
-                <span class="sa-field-error" id="f-stunden-error" hidden></span>
-              </p>
-
-              <p class="sa-field sa-field--full">
-                <label for="f-bewilligung">Bewilligungsstatus</label>
-                <span class="sa-select-wrap">
-                  <select id="f-bewilligung" name="bewilligungsstatus" aria-describedby="f-bewilligung-error">
-                    <option value="">Bitte auswählen</option>
-                    <option>noch nicht beantragt</option>
-                    <option>beantragt, Entscheidung offen</option>
-                    <option>bewilligt</option>
-                    <option>nicht bekannt</option>
-                  </select>
-                  <svg class="ico sa-select-ico" aria-hidden="true"><use href="#i-chev"/></svg>
-                </span>
-                <span class="sa-field-error" id="f-bewilligung-error" hidden></span>
-              </p>
-
-              <p class="sa-field sa-field--full">
-                <label for="f-beschreibung">Kurze Beschreibung des Anliegens <span class="sa-req" aria-hidden="true">*</span></label>
-                <textarea id="f-beschreibung" name="beschreibung" rows="5" required aria-describedby="f-beschreibung-error f-datenhinweis"></textarea>
-                <span class="sa-field-error" id="f-beschreibung-error" hidden></span>
-              </p>
-
-              <fieldset class="sa-field sa-field--full sa-fieldset">
-                <legend>Bevorzugter Kontaktweg <span class="sa-req" aria-hidden="true">*</span></legend>
-                <span class="sa-radio-row">
-                  <label class="sa-radio"><input type="radio" name="kontaktweg" value="E-Mail" required aria-describedby="f-kontaktweg-error" /> <span>E-Mail</span></label>
-                  <label class="sa-radio"><input type="radio" name="kontaktweg" value="Telefon" /> <span>Telefon</span></label>
-                </span>
-                <span class="sa-field-error" id="f-kontaktweg-error" hidden></span>
-              </fieldset>
-            </div>
-
-            <p class="sa-form-hint" id="f-datenhinweis">
-              <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>
-              Bitte übermitteln Sie im ersten Schritt keine ausführlichen medizinischen Unterlagen.
-              Nach Prüfung Ihrer Anfrage informieren wir Sie über den geeigneten weiteren Übermittlungsweg.
-            </p>
-
-            <p class="sa-field sa-field--full sa-consent">
-              <label class="sa-checkbox">
-                <input type="checkbox" id="f-datenschutz" name="datenschutz" required aria-describedby="f-datenschutz-error" />
-                <span>Ich habe die <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu. <span class="sa-req" aria-hidden="true">*</span></span>
-              </label>
-              <span class="sa-field-error" id="f-datenschutz-error" hidden></span>
-            </p>
-
-            <div class="sa-form-foot">
-              <button type="submit" class="btn btn-accent btn-lg"><span>Anfrage sicher übermitteln</span><svg class="ico"><use href="#i-arrow"/></svg></button>
-              <p class="sa-microtext">Pflichtfelder sind mit <span aria-hidden="true">*</span><span class="sr-only">Sternchen</span> gekennzeichnet.</p>
-            </div>
-
-            <p class="sa-form-state sa-form-state--error" id="form-error" role="alert" hidden></p>
-          </form>
+              <p class="sa-form-state sa-form-state--error" id="form-error" role="alert" hidden></p>
+            </form>
 
           <div class="sa-form-state sa-form-state--success" id="form-success" role="status" hidden>
             <span class="sa-form-state-ico" aria-hidden="true"><svg class="ico"><use href="#i-checkc"/></svg></span>
             <h3>Vielen Dank für Ihre Anfrage.</h3>
             <p>Wir prüfen die regionale und fachliche Zuständigkeit und leiten Ihre Angaben an die passende Ansprechperson weiter. Sie erhalten anschließend eine Rückmeldung zu den nächsten Schritten.</p>
+          </div>
           </div>
         </div>
       </div>
@@ -1149,7 +1059,7 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20250720v3d"></script>
-  <script src="js/schulen-aemter.js?v=20260727b"></script>
+  <script src="js/main-v3.js?v=20260728motion2"></script>
+  <script src="js/schulen-aemter.js?v=20260728f"></script>
 </body>
 </html>
