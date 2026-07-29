@@ -1,0 +1,104 @@
+/* ============================================================
+   GFI Baden – Unterseite „Für Eltern & Angehörige“
+   Ergänzung zu css/styles-v3.css und css/schulen-aemter.css.
+   Seite lädt html.page-schulen (geteilte SA-Komponenten) + page-eltern.
+   ============================================================ */
+
+html.page-eltern { scroll-padding-top: 6.5rem; }
+
+/* Hero: etwas wärmerer Fokus auf Kind/Familie */
+.page-eltern .hero-image {
+  object-position: center 35%;
+}
+
+/* Angebots-Hinweis (statt Pooling-Teaser) */
+.ea-offer-note {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem 1.25rem;
+  align-items: start;
+  padding: clamp(1.35rem, 3vw, 1.85rem);
+  border-radius: var(--r-lg);
+  background: rgba(var(--v3-teal-rgb), .07);
+  border: 1.5px solid color-mix(in srgb, var(--v3-teal) 22%, #fff);
+}
+.ea-offer-note-ico {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--v3-teal);
+  color: #fff;
+}
+.ea-offer-note-ico .ico { width: 1.25rem; height: 1.25rem; color: #fff; }
+.ea-offer-note h3 { margin: 0 0 .35rem; font-size: 1.1rem; }
+.ea-offer-note p { margin: 0; color: var(--ink-soft); max-width: 62ch; }
+
+/* ============================================================
+   Zweistufiges Kontaktformular
+   ============================================================ */
+.ea-steps {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin: 0 0 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+.ea-step {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.ea-step-num {
+  width: 1.7rem;
+  height: 1.7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green-25);
+  border: 1.5px solid var(--line-strong);
+  font-size: .82rem;
+  color: var(--v3-teal);
+}
+.ea-step.is-active { color: var(--v3-teal); }
+.ea-step.is-active .ea-step-num {
+  background: var(--v3-teal);
+  border-color: var(--v3-teal);
+  color: #fff;
+}
+.ea-step.is-done { color: var(--v3-teal); }
+.ea-step.is-done .ea-step-num {
+  background: var(--v3-green);
+  border-color: var(--v3-green);
+  color: #fff;
+}
+.ea-step-sep {
+  flex: 1 1 auto;
+  height: 1.5px;
+  background: var(--line-strong);
+  min-width: 1.5rem;
+  max-width: 4rem;
+}
+
+.ea-form-pane[hidden] { display: none !important; }
+
+.ea-form-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .8rem 1rem;
+  margin-top: 1.5rem;
+}
+.ea-form-nav .btn-ghost {
+  order: -1;
+}
+
+@media (max-width: 760px) {
+  html.page-eltern { scroll-padding-top: 5rem; }
+  .ea-steps { margin-bottom: 1rem; }
+}
