@@ -212,27 +212,26 @@
       }
     }
 
-    var processTrack = document.getElementById("pl-process-track");
-    if (processTrack) {
-      var steps = Array.prototype.slice.call(processTrack.querySelectorAll(".pl-process-step"));
-      if (reduceMotion || !("IntersectionObserver" in window)) {
-        processTrack.classList.add("is-drawn");
-        steps.forEach(function (step) { step.classList.add("is-active"); });
-      } else {
-        var processIo = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            var ratio = entry.intersectionRatio;
-            if (ratio > 0.2) processTrack.classList.add("is-drawn");
-            if (!entry.isIntersecting) return;
-            var step = entry.target;
-            steps.forEach(function (s) { s.classList.remove("is-active"); });
-            step.classList.add("is-active");
-          });
-        }, { threshold: [0.35, 0.55, 0.75] });
-        steps.forEach(function (step) { processIo.observe(step); });
-        observeOnce(processTrack, "is-drawn");
+    /* Timeline-Höhen angleichen (wie schulen-aemter.js) */
+    (function equalizeTimeline() {
+      var items = document.querySelectorAll(".pl-process .sa-timeline-item");
+      if (!items.length) return;
+      var equalize = function () {
+        var max = 0;
+        items.forEach(function (item) {
+          item.style.minHeight = "";
+          max = Math.max(max, item.offsetHeight);
+        });
+        items.forEach(function (item) {
+          item.style.minHeight = max + "px";
+        });
+      };
+      equalize();
+      window.addEventListener("resize", equalize, { passive: true });
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(equalize).catch(function () {});
       }
-    }
+    })();
   })();
 
   /* ============================================================
