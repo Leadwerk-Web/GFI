@@ -1,0 +1,360 @@
+/* ============================================================
+   GFI Baden – Unterseite „Leistungen / Unser Angebot“
+   Ergänzung zu styles-v3.css + schulen-aemter.css
+   Wirkt auf <html class="page-leistungen">.
+   ============================================================ */
+
+html.page-leistungen { scroll-padding-top: 6.5rem; }
+
+.page-leistungen .lead,
+.page-leistungen .sec-lead {
+  color: var(--color-dark-deep);
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+}
+
+.page-leistungen .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.page-leistungen .main-nav > ul a.is-active { color: var(--teal-ink); }
+.page-leistungen .site-header:not(.scrolled) .main-nav > ul a.is-active { color: var(--orange); }
+.page-leistungen .main-nav > ul a.is-active::after { width: 100%; }
+
+.page-leistungen .eyebrow { color: var(--color-dark-deep); }
+.page-leistungen .eyebrow-ring {
+  color: var(--v3-orange);
+  filter: none;
+}
+
+/* Keine Kursivschrift auf dieser Seite */
+.page-leistungen em,
+.page-leistungen i,
+.page-leistungen .hero-title em,
+.page-leistungen h2 em,
+.page-leistungen .sa-pullquote em,
+.page-leistungen .loader-mark em {
+  font-style: normal;
+}
+
+.page-leistungen .hero .eyebrow.on-dark { color: #fff; }
+.page-leistungen .hero .eyebrow.on-dark .eyebrow-ring {
+  color: var(--v3-orange);
+  filter: drop-shadow(0 0 6px rgba(var(--v3-orange-rgb), .35));
+}
+
+.page-leistungen .sa-process .eyebrow,
+.page-leistungen .sa-process .eyebrow.light {
+  color: var(--color-dark-deep);
+  font-weight: 800;
+  font-variation-settings: "wght" 850;
+}
+.page-leistungen .sa-process .eyebrow-ring { color: var(--v3-orange); }
+
+.page-leistungen .sa-pooling .eyebrow,
+.page-leistungen .sa-pooling .eyebrow.light {
+  color: #fff;
+}
+.page-leistungen .sa-pooling .eyebrow-ring { color: var(--v3-orange); }
+
+.page-leistungen .sa-request .eyebrow,
+.page-leistungen .sa-request .eyebrow.light { color: #fff; }
+.page-leistungen .sa-request .eyebrow-ring { color: var(--v3-orange); }
+
+/* Entry-Grid: 4 Karten in zwei Reihen */
+.page-leistungen .sa-entry-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+.page-leistungen .sa-entry-grid > .sa-entry-card,
+.page-leistungen .sa-entry-grid > .sa-entry-card:last-child {
+  grid-column: auto;
+}
+.page-leistungen .sa-entry-card--lead::after { background: var(--accent-1); }
+.page-leistungen .sa-entry-grid > .sa-entry-card:nth-child(2)::after { background: var(--accent-2); }
+.page-leistungen .sa-entry-grid > .sa-entry-card:nth-child(3)::after { background: var(--v3-orange); }
+.page-leistungen .sa-entry-grid > .sa-entry-card:nth-child(4)::after { background: var(--accent-3); }
+
+.page-leistungen .sa-entry-grid > .sa-entry-card:nth-child(2) .sa-entry-ico {
+  background: var(--v3-teal);
+  box-shadow: 0 10px 24px rgba(var(--v3-teal-rgb), .28);
+}
+.page-leistungen .sa-entry-grid > .sa-entry-card:nth-child(3) .sa-entry-ico {
+  background: var(--v3-orange);
+  box-shadow: var(--shadow-orange);
+}
+.page-leistungen .sa-entry-grid > .sa-entry-card:nth-child(4) .sa-entry-ico {
+  background: var(--accent-3);
+  box-shadow: 0 10px 24px rgba(70, 100, 90, .22);
+}
+
+/* Leistungs-Detailblöcke */
+.ls-service {
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}
+.ls-service:nth-of-type(even) {
+  background: rgba(255, 255, 255, .55);
+}
+
+.ls-service-layout {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+}
+.ls-service--flip .ls-service-layout {
+  grid-template-columns: .95fr 1.05fr;
+}
+.ls-service--flip .ls-service-media { order: -1; }
+
+.ls-service-copy h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.ls-service-meta {
+  margin: -.35rem 0 1rem;
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  color: var(--v3-orange);
+}
+.ls-service-copy p {
+  margin: 0 0 .9rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.ls-service-copy .lead {
+  color: var(--color-dark-deep);
+  font-size: clamp(1.02rem, 1.5vw, 1.12rem);
+}
+
+.ls-service-list {
+  list-style: none;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  display: grid;
+  gap: .65rem;
+}
+.ls-service-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .7rem;
+  align-items: start;
+  color: var(--color-dark-deep);
+  font-weight: 600;
+  font-size: .96rem;
+  line-height: 1.45;
+}
+.ls-service-list .ico {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: .15rem;
+  color: var(--v3-teal);
+  flex-shrink: 0;
+}
+
+.ls-service-legal {
+  margin: 0 0 1.25rem;
+  padding: .85rem 1rem;
+  border-radius: 14px;
+  background: rgba(var(--v3-teal-rgb), .07);
+  border: 1px solid rgba(var(--v3-teal-rgb), .14);
+  color: var(--ink-soft);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+.ls-service-legal strong {
+  color: var(--color-dark-deep);
+  font-weight: 700;
+}
+
+.ls-service-media .frame-soft {
+  margin: 0;
+  border-radius: clamp(18px, 2vw, 24px);
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(23, 59, 54, .1);
+}
+.ls-service-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Standorte */
+.ls-locations {
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 0%, rgba(var(--v3-teal-rgb), .08), transparent 55%),
+    linear-gradient(180deg, #f4faf7 0%, #eef5f1 100%);
+}
+
+.ls-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.35rem);
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.ls-loc-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  padding: 1.35rem 1.35rem 1.45rem;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid rgba(23, 59, 54, .08);
+  box-shadow: 0 10px 28px rgba(23, 59, 54, .05);
+  transition: transform .25s ease, box-shadow .25s ease;
+  color: inherit;
+  text-decoration: none;
+}
+.ls-loc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(23, 59, 54, .1);
+}
+a.ls-loc-card:focus-visible {
+  outline: 2px solid var(--v3-teal);
+  outline-offset: 3px;
+}
+.ls-loc-card h3 {
+  margin: 0;
+  font-size: 1.12rem;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+}
+.ls-loc-card h3 .ico {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--v3-orange);
+}
+.ls-loc-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: .94rem;
+  line-height: 1.55;
+  flex: 1;
+}
+.ls-loc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: .35rem;
+}
+.ls-loc-tags span {
+  display: inline-block;
+  padding: .28rem .65rem;
+  border-radius: 999px;
+  background: rgba(var(--v3-teal-rgb), .1);
+  color: var(--teal-ink);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+/* Zielgruppen-Teaser (zwei Spalten) */
+.ls-audiences {
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+}
+.ls-audiences-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 2.2vw, 1.5rem);
+}
+.ls-audience-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid rgba(23, 59, 54, .08);
+  box-shadow: 0 14px 34px rgba(23, 59, 54, .06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.ls-audience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px rgba(23, 59, 54, .1);
+}
+.ls-audience-card--schools {
+  background: linear-gradient(165deg, #fff 0%, #eef8f4 100%);
+}
+.ls-audience-card--families {
+  background: linear-gradient(165deg, #fff 0%, #fff6ef 100%);
+}
+.ls-audience-ico {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--v3-teal);
+  box-shadow: var(--shadow-green);
+}
+.ls-audience-card--families .ls-audience-ico {
+  background: var(--v3-orange);
+  box-shadow: var(--shadow-orange);
+}
+.ls-audience-ico .ico { width: 1.35rem; height: 1.35rem; }
+.ls-audience-card h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+.ls-audience-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  flex: 1;
+}
+.ls-audience-card .card-link { margin-top: .25rem; }
+
+/* Stats innerhalb der Leistungsseite */
+.page-leistungen .ls-impact {
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
+  background: var(--orange-50);
+  background-image: var(--spots-orange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page-leistungen .ls-impact .impact-stats {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+@media (max-width: 980px) {
+  .page-leistungen .sa-entry-grid,
+  .ls-service-layout,
+  .ls-service--flip .ls-service-layout,
+  .ls-audiences-grid,
+  .ls-locations-grid {
+    grid-template-columns: 1fr;
+  }
+  .ls-service--flip .ls-service-media { order: 0; }
+  .page-leistungen .ls-impact .impact-stats {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-leistungen .sa-entry-grid {
+    grid-template-columns: 1fr;
+  }
+}
