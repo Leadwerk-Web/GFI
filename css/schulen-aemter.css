@@ -5,7 +5,16 @@
    Wirkt nur auf Seiten mit <html class="page-schulen">.
    ============================================================ */
 
-html.page-schulen { scroll-padding-top: 6.5rem; }
+html.page-schulen {
+  scroll-padding-top: 6.5rem;
+  /* Natives Scrollen – CSS-smooth + JS-Lerp wirkten zusammen träge */
+  scroll-behavior: auto;
+}
+
+/* Weniger Dauereffekte beim Scrollen auf Content-Seiten */
+html.is-light-perf .grain,
+html.is-light-perf .cursor-ring,
+html.is-light-perf .scroll-progress { display: none !important; }
 
 /* Lead-/Introzeilen: etwas kräftiger als der Fließtext */
 .page-schulen .lead,

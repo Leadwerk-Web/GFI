@@ -57,20 +57,6 @@ html.page-karriere {
   backdrop-filter: none !important;
 }
 
-.page-karriere .ka-path,
-.page-karriere .ka-benefit,
-.page-karriere .ka-ladder-item,
-.page-karriere .ka-concept,
-.page-karriere .ka-voice,
-.page-karriere .ka-aside,
-.page-karriere .ka-day-panel,
-.page-karriere .ka-step {
-  transition: none;
-}
-.page-karriere .ka-path:hover {
-  transform: none;
-}
-
 .page-karriere .lead,
 .page-karriere .sec-lead {
   color: var(--color-dark-deep);

@@ -12,8 +12,10 @@
   var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var deskQuery = window.matchMedia("(min-width: 901px)");
   var isLocalFile = location.protocol === "file:";
-  /* Lange Content-Seiten: natives Scrollen + leichtere Motion (weniger Layout-Arbeit) */
-  var lightPerfPage = document.documentElement.classList.contains("page-karriere");
+  /* Content-Seiten: natives Scrollen + weniger Dauereffekte (Parallax/Cursor).
+     Motion-Reveals bleiben aktiv – nur das träge Wheel-Lerp wird abgeschaltet. */
+  var lightPerfPage = document.documentElement.classList.contains("page-schulen")
+    || document.documentElement.classList.contains("page-karriere");
   if (isLocalFile) document.documentElement.classList.add("is-local-file");
   if (lightPerfPage) document.documentElement.classList.add("is-light-perf");
 
@@ -303,9 +305,8 @@
   /* ---------- Weiches Scrollen (Desktop, Mausrad / Trackpad) ---------- */
   var smoothTarget = window.scrollY;
   var smoothAnimating = false;
-  var smoothEase = 0.072;
   var showcaseScrollGain = 1.75;
-  var showcasePinEase = 0.088;
+  var showcasePinEase = 0.14;
   var maxScrollY = function () {
     return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   };
@@ -329,30 +330,20 @@
     return false;
   };
 
-  var scrollToSmooth = function (dest) {
-    smoothTarget = clampScroll(dest);
-    if (reduceMotion || !finePointer) {
-      window.scrollTo(0, smoothTarget);
+  var scrollToAnchor = function (dest) {
+    var top = clampScroll(dest);
+    if (reduceMotion) {
+      window.scrollTo(0, top);
       return;
     }
-    if (!smoothAnimating) {
-      smoothAnimating = true;
-      document.documentElement.classList.add("has-smooth-scroll");
-      requestAnimationFrame(smoothFrame);
-    }
+    window.scrollTo({ top: top, behavior: "smooth" });
   };
 
   var smoothFrame = function () {
     var y = window.scrollY || 0;
     var diff = smoothTarget - y;
-    var ease = smoothEase;
-    var sc = document.getElementById("showcase") || document.getElementById("leistungen");
-    if (sc && deskQuery.matches) {
-      var sRect = sc.getBoundingClientRect();
-      var svh = window.innerHeight;
-      if (sRect.top <= 1 && sRect.bottom >= svh - 1) ease = showcasePinEase;
-    }
-    if (Math.abs(diff) < 0.35) {
+    var ease = showcasePinEase;
+    if (Math.abs(diff) < 0.45) {
       if (Math.abs(diff) > 0.01) window.scrollTo(0, smoothTarget);
       smoothAnimating = false;
       renderScroll();
@@ -365,62 +356,42 @@
 
   var initSmoothScroll = function () {
     if (reduceMotion || !finePointer) return;
-    /* Auf Content-Seiten natives Scrollen – JS-Lerp kostet Frames und fühlt sich träge an */
-    if (lightPerfPage) {
-      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-        var href = link.getAttribute("href");
-        if (!href || href === "#") return;
-        link.addEventListener("click", function (e) {
-          var id = href.slice(1);
-          var dest = document.getElementById(id);
-          if (!dest) return;
-          e.preventDefault();
-          var offset = header && header.classList.contains("scrolled") ? header.offsetHeight + 12 : 24;
-          var top = dest.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: top, behavior: "smooth" });
-        });
-      });
-      return;
-    }
-    document.documentElement.classList.add("has-smooth-scroll");
-    var showcaseGain = showcaseScrollGain;
 
-    window.addEventListener("wheel", function (e) {
-      if (e.ctrlKey || e.metaKey) return;
-      var sc = document.getElementById("showcase") || document.getElementById("leistungen");
-      if (sc && deskQuery.matches) {
+    /* Nur die horizontale Pin-Showcase auf der Startseite braucht Wheel-Hijacking.
+       Überall sonst: natives Browser-Scrollen (fühlbar schneller, weniger träge). */
+    var showcaseEl = document.getElementById("showcase") || document.getElementById("leistungen");
+    var hasShowcasePin = !!(showcaseEl && document.getElementById("showcase-track"));
+
+    if (hasShowcasePin && !lightPerfPage) {
+      document.documentElement.classList.add("has-smooth-scroll");
+      var showcaseGain = showcaseScrollGain;
+
+      window.addEventListener("wheel", function (e) {
+        if (e.ctrlKey || e.metaKey) return;
+        if (!deskQuery.matches) return;
+        var sc = document.getElementById("showcase") || document.getElementById("leistungen");
+        if (!sc) return;
         var rect = sc.getBoundingClientRect();
         var vh = window.innerHeight;
         var pinned = rect.top <= 1 && rect.bottom >= vh - 1;
-        if (pinned) {
-          var delta = e.deltaY;
-          if (Math.abs(e.deltaX) > Math.abs(delta)) delta = e.deltaX;
-          if (wheelInsideScrollable(e.target, delta)) return;
-          if (!smoothAnimating) smoothTarget = window.scrollY || 0;
-          smoothTarget = clampScroll(smoothTarget + delta * showcaseGain);
-          e.preventDefault();
-          if (!smoothAnimating) {
-            smoothAnimating = true;
-            requestAnimationFrame(smoothFrame);
-          }
-          return;
-        }
-      }
-      var delta = e.deltaY;
-      if (Math.abs(e.deltaX) > Math.abs(delta)) delta = e.deltaX;
-      if (wheelInsideScrollable(e.target, delta)) return;
-      if (!smoothAnimating) smoothTarget = window.scrollY || 0;
-      smoothTarget = clampScroll(smoothTarget + delta);
-      e.preventDefault();
-      if (!smoothAnimating) {
-        smoothAnimating = true;
-        requestAnimationFrame(smoothFrame);
-      }
-    }, { passive: false });
+        if (!pinned) return;
 
-    window.addEventListener("scroll", function () {
-      if (!smoothAnimating) smoothTarget = window.scrollY || 0;
-    }, { passive: true });
+        var delta = e.deltaY;
+        if (Math.abs(e.deltaX) > Math.abs(delta)) delta = e.deltaX;
+        if (wheelInsideScrollable(e.target, delta)) return;
+        if (!smoothAnimating) smoothTarget = window.scrollY || 0;
+        smoothTarget = clampScroll(smoothTarget + delta * showcaseGain);
+        e.preventDefault();
+        if (!smoothAnimating) {
+          smoothAnimating = true;
+          requestAnimationFrame(smoothFrame);
+        }
+      }, { passive: false });
+
+      window.addEventListener("scroll", function () {
+        if (!smoothAnimating) smoothTarget = window.scrollY || 0;
+      }, { passive: true });
+    }
 
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       var href = link.getAttribute("href");
@@ -431,7 +402,7 @@
         if (!dest) return;
         e.preventDefault();
         var offset = header && header.classList.contains("scrolled") ? header.offsetHeight + 12 : 24;
-        scrollToSmooth(dest.getBoundingClientRect().top + window.scrollY - offset);
+        scrollToAnchor(dest.getBoundingClientRect().top + window.scrollY - offset);
       });
     });
   };
@@ -546,20 +517,6 @@
   };
 
   var initMotion = function () {
-    /* Content-Seiten: keine Scroll-Motion – verhindert Layout-/Paint-Last */
-    if (lightPerfPage) {
-      document.documentElement.classList.add("no-motion");
-      document.querySelectorAll(".reveal").forEach(function (el) { el.classList.remove("reveal"); });
-      if (hero) {
-        hero.querySelectorAll(".hero-title .line-in").forEach(function (line, li) {
-          splitChars(line);
-          line.style.setProperty("--motion-delay", (li * 180) + "ms");
-          line.classList.add("is-visible");
-        });
-      }
-      return;
-    }
-
     document.querySelectorAll("main h2, .statement-text").forEach(function (el) {
       if (el.closest("#hero") || el.closest("#showcase") || el.closest("#leistungen")) return;
       el.setAttribute("data-motion", "chars");
@@ -641,7 +598,7 @@
     });
   };
 
-  if (reduceMotion || lightPerfPage) {
+  if (reduceMotion) {
     document.documentElement.classList.add("no-motion");
     document.querySelectorAll("[data-motion], [data-motion-group]").forEach(function (el) {
       el.classList.add("is-visible");
@@ -1536,7 +1493,7 @@
   })();
 
   /* Scroll/Load: Medien-Reveals nachziehen (wichtig für file://) */
-  if (!reduceMotion && !lightPerfPage) {
+  if (!reduceMotion) {
     var syncRevealsRaf = null;
     var syncRevealsActive = true;
     var syncReveals = function () {
