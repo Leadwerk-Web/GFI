@@ -12,7 +12,10 @@
   var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var deskQuery = window.matchMedia("(min-width: 901px)");
   var isLocalFile = location.protocol === "file:";
+  /* Lange Content-Seiten: natives Scrollen + leichtere Motion (weniger Layout-Arbeit) */
+  var lightPerfPage = document.documentElement.classList.contains("page-karriere");
   if (isLocalFile) document.documentElement.classList.add("is-local-file");
+  if (lightPerfPage) document.documentElement.classList.add("is-light-perf");
 
   /* ---------- Loader ausblenden, danach Hero-Einblendung auf freiem Bild ---------- */
   var hero = document.getElementById("hero");
@@ -250,15 +253,23 @@
   var bar = document.getElementById("progress-bar");
   var toTopBtn = document.getElementById("to-top");
   var toTopShowAt = 280;
-  var onScrollHeader = function () {
+  var headerFrameMargin = 20;
+  var headerPinAt = 0;
+  var headerScrollRaf = null;
+  var refreshHeaderMetrics = function () {
+    headerFrameMargin = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--hero-frame-margin")) || 20;
+    if (heroShell && header) {
+      headerPinAt = heroShell.offsetTop + heroShell.offsetHeight - header.offsetHeight - headerFrameMargin;
+    }
+  };
+  var applyHeaderScroll = function () {
+    headerScrollRaf = null;
     var y = window.scrollY || document.documentElement.scrollTop;
     if (header) {
       header.classList.toggle("scrolled", y > 40);
       if (heroShell) {
-        var frameMargin = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--hero-frame-margin")) || 20;
-        var shellRect = heroShell.getBoundingClientRect();
-        var pinAt = heroShell.offsetTop + heroShell.offsetHeight - header.offsetHeight - frameMargin;
-        header.classList.toggle("is-pinned", y >= pinAt || shellRect.bottom <= header.offsetHeight + frameMargin);
+        var shellBottom = heroShell.getBoundingClientRect().bottom;
+        header.classList.toggle("is-pinned", y >= headerPinAt || shellBottom <= header.offsetHeight + headerFrameMargin);
       }
     }
     if (toTopBtn) {
@@ -271,9 +282,17 @@
       bar.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
     }
   };
+  var onScrollHeader = function () {
+    if (headerScrollRaf) return;
+    headerScrollRaf = requestAnimationFrame(applyHeaderScroll);
+  };
+  refreshHeaderMetrics();
   window.addEventListener("scroll", onScrollHeader, { passive: true });
-  window.addEventListener("resize", onScrollHeader, { passive: true });
-  onScrollHeader();
+  window.addEventListener("resize", function () {
+    refreshHeaderMetrics();
+    onScrollHeader();
+  }, { passive: true });
+  applyHeaderScroll();
 
   if (toTopBtn) {
     toTopBtn.addEventListener("click", function () {
@@ -346,6 +365,23 @@
 
   var initSmoothScroll = function () {
     if (reduceMotion || !finePointer) return;
+    /* Auf Content-Seiten natives Scrollen – JS-Lerp kostet Frames und fühlt sich träge an */
+    if (lightPerfPage) {
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        var href = link.getAttribute("href");
+        if (!href || href === "#") return;
+        link.addEventListener("click", function (e) {
+          var id = href.slice(1);
+          var dest = document.getElementById(id);
+          if (!dest) return;
+          e.preventDefault();
+          var offset = header && header.classList.contains("scrolled") ? header.offsetHeight + 12 : 24;
+          var top = dest.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: top, behavior: "smooth" });
+        });
+      });
+      return;
+    }
     document.documentElement.classList.add("has-smooth-scroll");
     var showcaseGain = showcaseScrollGain;
 
@@ -477,8 +513,8 @@
     el.querySelectorAll("em").forEach(applyEmGradient);
   };
 
-  var motionGroups = ".paths, .steps, .values-list, .proof-grid, .impact-stats, .news-grid, .check-list, .final-actions, .hp-pooling-benefits, .hp-career-list, .hp-families-list, .hp-final-steps, .hp-knowledge-grid, .hp-benefit-cards, .sa-entry-grid, .sa-role-grid, .sa-schools-tiles, .sa-authorities-tiles, .sa-timeline, .sa-qgrid, .pl-principles, .pl-framework-list, .pl-quality-grid, .pl-extra-grid, .pl-stages";
-  var motionSlides = ".intro-media, .career-media .frame-soft, .frame-arch, .sc-media, .faq-visual-media, .sa-team-media, .sa-schools-media, .sa-authorities-media, .sa-expertise-media";
+  var motionGroups = ".paths, .steps, .values-list, .proof-grid, .impact-stats, .news-grid, .check-list, .final-actions, .hp-pooling-benefits, .hp-career-list, .hp-families-list, .hp-final-steps, .hp-knowledge-grid, .hp-benefit-cards, .sa-entry-grid, .sa-role-grid, .sa-schools-tiles, .sa-authorities-tiles, .sa-timeline, .sa-qgrid, .pl-principles, .pl-framework-list, .pl-quality-grid, .pl-extra-grid, .pl-stages, .ka-path-grid, .ka-benefit-grid, .ka-value-grid, .ka-steps-list, .ka-ladder-list, .ka-voices-grid, .ka-concept-grid, .ka-growth, .ka-aside-grid, .ka-task-list, .ka-profile-list";
+  var motionSlides = ".intro-media, .career-media .frame-soft, .frame-arch, .sc-media, .faq-visual-media, .sa-team-media, .sa-schools-media, .sa-authorities-media, .sa-expertise-media, .ka-video";
   var motionFlow = ".lead, .sec-lead, .intro-head-lead, .intro-foot, .quote, .sa-pullquote, .sa-note, .sa-timeline-text, .sa-contact-fallback, .faq-cta-text, .sa-pooling-copy > p, .sa-team-copy > p:not(.eyebrow), .sa-request-copy > p:not(.eyebrow), .sa-authorities-copy > p:not(.eyebrow), .sa-schools-copy > p:not(.eyebrow), .sa-expertise-copy > p:not(.eyebrow), .sa-quality-copy > p:not(.eyebrow), .sa-role-head-lead > p, .sa-contact-copy > p:not(.eyebrow), .pl-challenge-lead > p, .pl-explain-copy > p:not(.eyebrow), .pl-quality-copy > p:not(.eyebrow), .pl-framework-close, .pl-internal-links, .pl-request-micro";
   var motionRise = ".hero-sub, .eyebrow, .voices-panel, .voices-visual, .accordion, .final-contact, .process-cta, .microcopy, .showcase-hint, .statement-cta, .btn, blockquote:not(.quote):not(.sa-pullquote)";
   var motionMediaWrap = ".intro-media, .career-media .frame-soft, .quality-media, .faq-visual-media, .sa-team-media, .sa-schools-media, .sa-authorities-media, .sa-expertise-media";
@@ -510,6 +546,20 @@
   };
 
   var initMotion = function () {
+    /* Content-Seiten: keine Scroll-Motion – verhindert Layout-/Paint-Last */
+    if (lightPerfPage) {
+      document.documentElement.classList.add("no-motion");
+      document.querySelectorAll(".reveal").forEach(function (el) { el.classList.remove("reveal"); });
+      if (hero) {
+        hero.querySelectorAll(".hero-title .line-in").forEach(function (line, li) {
+          splitChars(line);
+          line.style.setProperty("--motion-delay", (li * 180) + "ms");
+          line.classList.add("is-visible");
+        });
+      }
+      return;
+    }
+
     document.querySelectorAll("main h2, .statement-text").forEach(function (el) {
       if (el.closest("#hero") || el.closest("#showcase") || el.closest("#leistungen")) return;
       el.setAttribute("data-motion", "chars");
@@ -582,7 +632,7 @@
   var revealInViewport = function () {
     if (reduceMotion) return;
     var vh = window.innerHeight || document.documentElement.clientHeight;
-    document.querySelectorAll("[data-motion], [data-motion-group]").forEach(function (el) {
+    document.querySelectorAll("[data-motion]:not(.is-visible), [data-motion-group]:not(.is-visible)").forEach(function (el) {
       if (el.closest("#hero")) return;
       var r = el.getBoundingClientRect();
       if (r.bottom > 24 && r.top < vh - 24) {
@@ -591,7 +641,7 @@
     });
   };
 
-  if (reduceMotion) {
+  if (reduceMotion || lightPerfPage) {
     document.documentElement.classList.add("no-motion");
     document.querySelectorAll("[data-motion], [data-motion-group]").forEach(function (el) {
       el.classList.add("is-visible");
@@ -650,7 +700,7 @@
   /* ============================================================
      SCROLL-ENGINE: Parallax + horizontale Pin-Showcase
      ============================================================ */
-  var parallaxEls = reduceMotion ? [] : Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
+  var parallaxEls = (reduceMotion || lightPerfPage) ? [] : Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
   var parallaxState = parallaxEls.map(function (el) {
     return { el: el, current: 0, speed: parseFloat(el.getAttribute("data-parallax")) || 0 };
   });
@@ -887,7 +937,7 @@
   /* ============================================================
      POINTER-PARALLAX (data-depth) + 3D-TILT (data-tilt)
      ============================================================ */
-  if (finePointer && !reduceMotion) {
+  if (finePointer && !reduceMotion && !lightPerfPage) {
     var depthEls = Array.prototype.slice.call(document.querySelectorAll("[data-depth]"));
     if (depthEls.length) {
       var depthScale = 1;
@@ -958,7 +1008,7 @@
   /* ============================================================
      Magnetische Buttons + Cursor-Ring (Desktop, keine reduced-motion)
      ============================================================ */
-  if (finePointer && !reduceMotion) {
+  if (finePointer && !reduceMotion && !lightPerfPage) {
     var ring = document.querySelector(".cursor-ring");
     if (ring) {
       var rx = 0, ry = 0, tx = 0, ty = 0, active = false;
@@ -1486,10 +1536,22 @@
   })();
 
   /* Scroll/Load: Medien-Reveals nachziehen (wichtig für file://) */
-  if (!reduceMotion) {
+  if (!reduceMotion && !lightPerfPage) {
+    var syncRevealsRaf = null;
+    var syncRevealsActive = true;
     var syncReveals = function () {
-      revealInViewport();
-      if (typeof revealShowcaseMedia === "function") revealShowcaseMedia();
+      if (!syncRevealsActive || syncRevealsRaf) return;
+      syncRevealsRaf = requestAnimationFrame(function () {
+        syncRevealsRaf = null;
+        revealInViewport();
+        if (typeof revealShowcaseMedia === "function") revealShowcaseMedia();
+        /* Listener abschalten, sobald nichts mehr zu enthüllen ist */
+        if (!document.querySelector("[data-motion]:not(.is-visible), [data-motion-group]:not(.is-visible)")) {
+          syncRevealsActive = false;
+          window.removeEventListener("scroll", syncReveals);
+          window.removeEventListener("resize", syncReveals);
+        }
+      });
     };
     window.addEventListener("scroll", syncReveals, { passive: true });
     window.addEventListener("load", syncReveals);
