@@ -14,15 +14,16 @@ html.page-karriere {
 .page-karriere .cursor-ring,
 .page-karriere .scroll-progress { display: none !important; }
 
-.page-karriere .site-header,
+/* Header: ungescrollt transparent, Hintergrund erst nach Scroll */
+.page-karriere .site-header {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: transparent;
+}
 .page-karriere .site-header.scrolled {
   -webkit-backdrop-filter: none !important;
   backdrop-filter: none !important;
   background: rgba(255, 255, 255, 0.96);
-}
-
-.page-karriere .site-header:not(.scrolled) {
-  background: rgba(255, 255, 255, 0.14);
 }
 
 /* Ken-Burns / Filter am Hero-Bild stoppen (läuft sonst dauerhaft) */
@@ -38,16 +39,98 @@ html.page-karriere {
   inset: 0;
 }
 
-/* Spot-Hintergründe / Glas: weniger große Gradients & Blur beim Scrollen */
-.page-karriere .ka-paths,
+/* Spot-Hintergründe / Glas: weniger große Gradients & Blur beim Scrollen.
+   Ausnahme: .audience und .news (Vorteile) – gleicher Look wie index-v3. */
+.page-karriere .intro,
 .page-karriere .ka-benefits,
 .page-karriere .ka-ladder,
 .page-karriere .ka-culture,
 .page-karriere .ka-values,
 .page-karriere .ka-day,
-.page-karriere .faq,
 .page-karriere .sa-team {
   background-image: none !important;
+}
+
+.page-karriere .audience {
+  background: var(--section-grad-audience);
+  overflow: hidden;
+}
+
+.page-karriere .news {
+  background-color: var(--orange-50);
+  background-image: var(--spots-orange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-teamleitung .faq {
+  background-color: var(--orange-50);
+  background-image: var(--spots-orange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Vorteile: Icon im Kachel-Inhalt (kein Bildbereich) */
+.page-karriere #vorteile .news-card--icon .news-body,
+.page-karriere #benefits .news-card--icon .news-body {
+  padding: clamp(1.35rem, 2.4vw, 1.75rem);
+  gap: .55rem;
+}
+.page-karriere #vorteile .news-card-ico,
+.page-karriere #benefits .news-card-ico {
+  --icon-badge-size: clamp(2.85rem, 3.8vw, 3.35rem);
+  --icon-badge-glyph: clamp(1.2rem, 1.6vw, 1.4rem);
+  width: var(--icon-badge-size);
+  height: var(--icon-badge-size);
+  margin: 0 0 .35rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--v3-teal);
+  color: #fff;
+  box-shadow: var(--shadow-teal);
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.34, 1.15, .5, 1), box-shadow .28s ease, background-color .25s ease;
+}
+.page-karriere #vorteile .news-card:nth-child(3n+2) .news-card-ico,
+.page-karriere #benefits .news-card:nth-child(3n+2) .news-card-ico {
+  background: var(--v3-orange);
+  box-shadow: var(--shadow-orange);
+}
+.page-karriere #vorteile .news-card:nth-child(3n) .news-card-ico,
+.page-karriere #benefits .news-card:nth-child(3n) .news-card-ico {
+  background: var(--v3-green);
+  box-shadow: var(--shadow-green);
+}
+.page-karriere #vorteile .news-card-ico .ico,
+.page-karriere #benefits .news-card-ico .ico {
+  width: var(--icon-badge-glyph);
+  height: var(--icon-badge-glyph);
+  color: #fff;
+}
+.page-karriere #vorteile .news-card,
+.page-karriere #benefits .news-card {
+  perspective: 900px;
+}
+.page-karriere #vorteile .news-card:hover .news-card-ico,
+.page-karriere #benefits .news-card:hover .news-card-ico {
+  transform: rotateY(180deg);
+}
+.page-karriere #vorteile .news-card--icon h3,
+.page-karriere #benefits .news-card--icon h3 {
+  margin: 0 0 .15rem;
+  font-size: clamp(1.08rem, 1.5vw, 1.2rem);
+  line-height: 1.28;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Vorteile: 4er-Raster auf großen Screens (8 Karten), sonst wie Wissen 3er */
+@media (min-width: 1101px) {
+  .page-karriere #vorteile .news-grid,
+  .page-karriere #benefits .news-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .page-karriere .sa-form-card,
@@ -116,6 +199,49 @@ html.page-karriere {
 .page-karriere .sa-request .eyebrow-ring { color: var(--v3-orange); }
 
 .page-karriere .hero-image { object-position: center 35%; }
+.page-teamleitung .hero-image {
+  object-position: center 40%;
+}
+
+.page-teamleitung .ka-hero-awards {
+  position: absolute;
+  left: calc(
+    var(--hero-frame-margin, 20px)
+    + max(0px, (100% - 2 * var(--hero-frame-margin, 20px) - var(--maxw)) / 2)
+    + var(--pad)
+  );
+  right: auto;
+  bottom: var(--hero-frame-margin, 20px);
+  z-index: 6;
+  width: min(72%, 42rem);
+  transform: translateY(50%);
+  pointer-events: none;
+  line-height: 0;
+}
+.page-teamleitung .ka-hero-awards img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 24px rgba(20, 74, 69, .18));
+}
+html.js.page-teamleitung .ka-hero-awards {
+  opacity: 0;
+  transform: translateY(calc(50% + 3.5rem));
+}
+html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
+  animation: kaHeroAwardsIn 1.35s var(--ease) both;
+  animation-delay: .75s;
+}
+@keyframes kaHeroAwardsIn {
+  from {
+    opacity: 0;
+    transform: translateY(calc(50% + 3.5rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(50%);
+  }
+}
 
 .page-karriere .ka-crumb {
   display: flex;
@@ -127,68 +253,30 @@ html.page-karriere {
   font-weight: 600;
   color: var(--ink-soft);
 }
+.page-karriere .ka-crumb-bar {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  padding-bottom: 0;
+}
+.page-karriere .ka-crumb-bar .ka-crumb {
+  margin: 0;
+}
 .page-karriere .ka-crumb a {
   color: var(--teal-ink);
   text-decoration: none;
 }
 .page-karriere .ka-crumb a:hover { color: var(--v3-orange); }
 .page-karriere .ka-crumb [aria-current="page"] { color: var(--color-dark-deep); }
-
-/* ---------- Einstiegspfade (Hub) ---------- */
-.ka-paths {
-  background-color: #fff;
-  background-image: var(--spots-white);
-  background-repeat: no-repeat;
-  background-size: cover;
+.page-karriere .ka-crumb--on-dark,
+.page-karriere .ka-crumb--on-dark a,
+.page-karriere .ka-crumb--on-dark [aria-current="page"] {
+  color: rgba(255, 255, 255, 0.88);
 }
+.page-karriere .ka-crumb--on-dark a:hover { color: #fff; }
 
-.ka-paths .sec-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
+/* ---------- Einstiegspfade (Hub): nutzt globale .paths / .path-card aus styles-v3 ---------- */
+.page-karriere .audience .sec-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
 
-.ka-path-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2.4vw, 1.5rem);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.ka-path {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: .85rem;
-  padding: clamp(1.45rem, 2.5vw, 2rem);
-  border-radius: var(--r-lg);
-  background: linear-gradient(165deg, #fff 0%, var(--green-25) 100%);
-  border: 1.5px solid var(--line);
-  box-shadow: var(--shadow-sm);
-  text-decoration: none;
-  color: inherit;
-  overflow: hidden;
-  transition: border-color .3s var(--ease), box-shadow .35s var(--ease-out), transform .35s var(--ease-out);
-}
-
-.ka-path::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 3px;
-  background: var(--v3-teal);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .4s var(--ease-out);
-}
-.ka-path:nth-child(2)::after { background: var(--v3-orange); }
-.ka-path:nth-child(3)::after { background: var(--v3-green); }
-
-.ka-path:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--v3-teal) 28%, #fff);
-  box-shadow: var(--shadow-md);
-}
-.ka-path:hover::after { transform: scaleX(1); }
-
+/* Icon-Badge (z. B. Konzept-Karten auf Job-Unterseiten) ---------- */
 .ka-path-ico {
   width: 2.7rem;
   height: 2.7rem;
@@ -198,34 +286,14 @@ html.page-karriere {
   background: var(--v3-teal);
   color: #fff;
   box-shadow: var(--shadow-teal);
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.34, 1.15, .5, 1), box-shadow .28s ease;
 }
-.ka-path:nth-child(2) .ka-path-ico { background: var(--v3-orange); box-shadow: var(--shadow-orange); }
-.ka-path:nth-child(3) .ka-path-ico { background: var(--v3-green); box-shadow: var(--shadow-green); }
 .ka-path-ico .ico { width: 1.25rem; height: 1.25rem; }
+.ka-concept { perspective: 900px; }
+.ka-concept:hover .ka-path-ico { transform: rotateY(180deg); }
 
-.ka-path h3 {
-  margin: 0;
-  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
-  line-height: 1.25;
-}
-.ka-path p {
-  margin: 0;
-  color: var(--ink-soft);
-  line-height: 1.6;
-  flex: 1;
-}
-.ka-path .card-link { margin-top: .35rem; }
-
-.ka-path-tag {
-  align-self: flex-start;
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  color: var(--teal-ink);
-}
-
-/* ---------- Kultur / Video ---------- */
+/* ---------- Kultur / Video (auch im Intro-Layout der Hub-Seite) ---------- */
 .ka-culture {
   background: var(--section-grad-mint);
   background-image: var(--spots-mint);
@@ -236,6 +304,15 @@ html.page-karriere {
   grid-template-columns: 1.05fr .95fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
+}
+
+.page-karriere .intro-media .ka-video {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(280px, 42vw, 440px);
+  aspect-ratio: auto;
+  border-radius: clamp(1.25rem, 2.4vw, 1.75rem);
 }
 
 .ka-video {
@@ -350,7 +427,9 @@ html.page-karriere {
   margin: 0 0 .65rem;
   font-size: 1.2rem;
 }
-.ka-value .ka-value-contrast {
+.ka-value .ka-value-contrast,
+.ka-culture-copy .ka-value-contrast,
+.ka-aside .ka-value-contrast {
   margin: 0 0 .75rem;
   font-weight: 700;
   color: var(--ink-soft);
@@ -359,6 +438,51 @@ html.page-karriere {
 .ka-value p { margin: 0 0 .75rem; color: var(--ink-soft); line-height: 1.65; }
 .ka-value p:last-child { margin-bottom: 0; }
 .ka-value strong { color: var(--color-dark-deep); font-weight: 700; }
+
+.ka-mid-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.page-teamleitung #bewerbung .sa-request-contact {
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: .85rem;
+}
+.page-teamleitung #bewerbung .sa-request-contact a {
+  perspective: 900px;
+}
+.page-teamleitung #bewerbung .sa-request-contact .ico {
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.34, 1.15, .5, 1), background-color .25s ease;
+}
+.page-teamleitung #bewerbung .sa-request-contact a:hover .ico {
+  transform: rotateY(180deg);
+}
+
+.ka-form-side {
+  margin: 1.25rem 0 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  max-width: 22rem;
+}
+.ka-form-side img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  min-height: 0;
+}
+
+/* Legacy helpers (andere Jobseiten) */
+.ka-culture-block,
+.ka-task-layout,
+.ka-profile-layout { display: grid; gap: clamp(1.5rem, 4vw, 3rem); }
+.ka-culture-block { grid-template-columns: 1.05fr .95fr; align-items: start; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.ka-task-layout,
+.ka-profile-layout { grid-template-columns: 1.1fr .9fr; align-items: start; }
 
 /* ---------- Aufgaben / Profil ---------- */
 .ka-split {
@@ -395,11 +519,21 @@ html.page-karriere {
   background: var(--v3-teal);
   color: #fff;
   flex-shrink: 0;
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.34, 1.15, .5, 1), box-shadow .28s ease;
 }
 .ka-task-list .ka-li-ico .ico,
 .ka-profile-list .ka-li-ico .ico {
   width: 1.05rem;
   height: 1.05rem;
+}
+.ka-task-list li,
+.ka-profile-list li {
+  perspective: 900px;
+}
+.ka-task-list li:hover .ka-li-ico,
+.ka-profile-list li:hover .ka-li-ico {
+  transform: rotateY(180deg);
 }
 
 .ka-task-list h3,
@@ -484,8 +618,8 @@ html.page-karriere {
 
 /* ---------- Karrierestufen ---------- */
 .ka-ladder {
-  background-color: #fff;
-  background-image: var(--spots-white);
+  background: var(--section-grad-mint);
+  background-image: var(--spots-mint);
 }
 
 .ka-ladder-list {
@@ -544,25 +678,60 @@ html.page-karriere {
 }
 
 .ka-voice {
+  display: flex;
+  flex-direction: column;
   padding: clamp(1.35rem, 2.4vw, 1.75rem);
   border-radius: var(--r-lg);
   background: #fff;
   border: 1.5px solid var(--line);
 }
+.ka-voice h3 {
+  margin: 0 0 .85rem;
+  font-size: 1.1rem;
+}
+.ka-voice-quote {
+  position: relative;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+  background: none;
+}
 .ka-voice .ka-voice-mark {
   display: block;
-  width: 1.6rem;
-  height: 1.6rem;
-  color: var(--v3-orange);
-  margin-bottom: .85rem;
+  width: clamp(1.85rem, 2.4vw, 2.25rem);
+  height: auto;
+  margin: 0 0 .65rem;
+  line-height: 0;
 }
-.ka-voice .ka-voice-mark .ico { width: 100%; height: 100%; }
-.ka-voice h3 { margin: 0 0 .65rem; font-size: 1.1rem; }
-.ka-voice p { margin: 0 0 .85rem; color: var(--ink-soft); line-height: 1.65; }
+.ka-voice .ka-voice-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ka-voice-quote p {
+  margin: 0 0 .7rem;
+  color: var(--color-dark-deep);
+  font-size: 1.02rem;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.55;
+}
+.ka-voice-quote p:last-child { margin-bottom: 0; }
 .ka-voice footer {
+  margin-top: auto;
+  padding-top: .35rem;
   font-size: .92rem;
   font-weight: 700;
   color: var(--color-dark-deep);
+}
+.ka-voice footer cite {
+  font-style: normal;
+  font-weight: 700;
+}
+.ka-voice footer cite::before {
+  content: "— ";
+  color: var(--v3-orange);
+  font-weight: 800;
 }
 .ka-voice footer span {
   display: block;
@@ -650,25 +819,729 @@ html.page-karriere {
 .ka-aside h3 { margin: 0 0 .55rem; }
 .ka-aside p { margin: 0; color: var(--ink-soft); line-height: 1.65; }
 
+/* ============================================================
+   Teamleitung: Aufbau analog karriere-gfi.de (GFI-Design)
+   ============================================================ */
+
+/* Hero: Text links + Formular rechts auf Full-Bleed */
+.page-teamleitung .ka-hero-split .hero-inner { display: none; }
+.page-teamleitung .ka-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  width: 100%;
+  padding-block: clamp(5.5rem, 10vw, 7.5rem) clamp(2rem, 4vw, 3rem);
+}
+.page-teamleitung .ka-hero-copy .hero-title {
+  font-size: clamp(2rem, 4.6vw, 3.5rem);
+}
+.page-teamleitung .ka-hero-phone {
+  margin: 1.25rem 0 0;
+}
+.page-teamleitung .ka-hero-phone a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.page-teamleitung .ka-hero-phone .ico {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.page-teamleitung .ka-hero-form-card {
+  max-height: min(78dvh, 760px);
+  overflow: auto;
+  padding: clamp(1.1rem, 2vw, 1.5rem);
+  box-shadow: 0 22px 50px rgba(15, 47, 44, 0.28);
+}
+.page-teamleitung .ka-hero-form-card .sa-form-title {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.3;
+  margin-bottom: .85rem;
+  text-align: center;
+}
+.page-teamleitung .ka-hero-form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .7rem .85rem;
+}
+.page-teamleitung .ka-hero-form-grid .sa-field--full { grid-column: 1 / -1; }
+.page-teamleitung .ka-hero-form-grid .sa-field--half { grid-column: span 1; }
+.page-teamleitung .ka-hero-form-card .sa-field label {
+  font-size: .82rem;
+}
+.page-teamleitung .ka-hero-form-card input,
+.page-teamleitung .ka-hero-form-card select,
+.page-teamleitung .ka-hero-form-card textarea {
+  min-height: 2.55rem;
+  padding: .55rem .7rem;
+  font-size: .92rem;
+}
+.page-teamleitung .ka-hero-form-card .sa-form-foot .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Intro GFI: Headline oben, darunter Text links / Video rechts */
+.ka-intro-stack {
+  background: transparent;
+  background-image: none;
+}
+.ka-intro-stack .sec-head {
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+.ka-intro-split {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.ka-intro-copy .lead {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.ka-intro-video {
+  width: 100%;
+}
+.ka-intro-video .ka-video {
+  width: 100%;
+  min-height: clamp(220px, 32vw, 360px);
+}
+
+/* Kultur: Kacheln untereinander, je Text + Video */
+.ka-culture-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+}
+.ka-culture-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(1.5rem, 3.5vw, 2.75rem);
+  align-items: center;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: clamp(1.25rem, 2.2vw, 1.75rem);
+  background:
+    linear-gradient(165deg, #fff 0%, var(--green-25) 100%);
+  border: 1.5px solid color-mix(in srgb, var(--v3-teal) 14%, #fff);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
+}
+.ka-culture-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--v3-teal);
+}
+.ka-culture-card:nth-child(2)::before {
+  background: var(--v3-orange);
+}
+.ka-culture-card:nth-child(3)::before {
+  background: var(--v3-green);
+}
+.ka-culture-card--flip::before {
+  left: auto;
+  right: 0;
+}
+.ka-culture-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+.ka-culture-card--flip .ka-culture-card-body { order: 2; }
+.ka-culture-card--flip .ka-culture-card-media { order: 1; }
+.ka-culture-card-media {
+  min-width: 0;
+}
+.ka-culture-card .ka-video {
+  width: 100%;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+}
+.ka-culture-card-body {
+  position: relative;
+  padding: 0 .15rem 0 .55rem;
+  min-width: 0;
+}
+.ka-culture-card--flip .ka-culture-card-body {
+  padding: 0 .55rem 0 .15rem;
+}
+.ka-culture-index {
+  margin: 0 0 .55rem;
+}
+.ka-culture-index span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.6rem;
+  height: 2rem;
+  padding: 0 .65rem;
+  border-radius: 999px;
+  background: rgba(var(--v3-teal-rgb), .1);
+  color: var(--v3-teal);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+.ka-culture-card:nth-child(2) .ka-culture-index span {
+  background: rgba(var(--v3-orange-rgb), .14);
+  color: var(--v3-orange);
+}
+.ka-culture-card:nth-child(3) .ka-culture-index span {
+  background: rgba(var(--v3-green-rgb), .16);
+  color: var(--v3-green);
+}
+.ka-culture-card-body h3 {
+  margin: 0 0 1.15rem;
+  font-size: clamp(1.45rem, 2.6vw, 1.95rem);
+  line-height: 1.18;
+  letter-spacing: -.03em;
+  color: var(--v3-teal);
+}
+.ka-culture-card-body > p {
+  margin: 0 0 .85rem;
+  color: var(--ink-soft);
+  font-size: .98rem;
+  line-height: 1.68;
+}
+.ka-culture-card-body > p:last-child { margin-bottom: 0; }
+
+/* Zwischenüberschriften */
+.ka-culture-card-body .ka-value-contrast {
+  margin: 1.15rem 0 .7rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  color: var(--v3-orange);
+  font-size: clamp(1.12rem, 1.8vw, 1.28rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+}
+.ka-culture-card-body h3 + .ka-value-contrast {
+  margin-top: 0;
+}
+
+/* Accordion: FAQ-Styling von styles-v3 (.accordion / .faq-item) */
+.ka-tasks-copy > .accordion,
+.ka-tasks-body > .accordion,
+.ka-ladder-split > .accordion {
+  margin-top: 0;
+}
+.ka-tasks-copy > h2 + .ka-tasks-body {
+  margin-top: 0;
+}
+.page-karriere .faq-answer p + p { margin-top: .75rem; }
+.page-karriere .faq-answer strong { color: var(--color-dark-deep); }
+
+/* Aufgaben + Profil: zwei Zeilen, abwechselnd */
+.ka-tasks-profile {
+  background-color: #fff;
+  background-image: var(--spots-white);
+}
+.ka-tasks-row,
+.ka-profile-row {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+  align-items: start;
+}
+.ka-tasks-row {
+  grid-template-columns: 1fr;
+}
+.ka-tasks-body {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+  align-items: start;
+}
+.ka-profile-row {
+  margin-top: clamp(2.75rem, 6vw, 4.5rem);
+  grid-template-columns: .95fr 1.05fr;
+}
+.ka-tasks-copy h2,
+.ka-profile-copy h2 {
+  margin: 0 0 1.15rem;
+}
+.ka-tasks-copy .eyebrow,
+.ka-profile-copy .eyebrow {
+  margin-bottom: .65rem;
+}
+.ka-tasks-img,
+.ka-profile-hero-img {
+  margin: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.ka-tasks-img img,
+.ka-profile-hero-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  min-height: clamp(280px, 40vw, 460px);
+}
+.ka-profile-copy .ka-profile-list { margin-top: 0; }
+
+/* Arbeitstag: Steps links, Slideshow rechts */
+.ka-day-split {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center;
+}
+.ka-day .sec-head {
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+.ka-day-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+.ka-day-step {
+  display: grid;
+  justify-items: center;
+}
+.ka-day-step-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  width: 100%;
+  padding: clamp(1.1rem, 2vw, 1.4rem);
+  border-radius: var(--r-lg);
+  background: linear-gradient(165deg, #fff 0%, var(--green-25) 100%);
+  border: 1.5px solid color-mix(in srgb, var(--v3-teal) 12%, #fff);
+  box-shadow: var(--shadow-sm);
+}
+.ka-day-step-ico {
+  width: 3.35rem;
+  height: 3.35rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--v3-teal);
+  color: #fff;
+  box-shadow: var(--shadow-teal);
+  flex-shrink: 0;
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.34, 1.15, .5, 1), box-shadow .28s ease, background-color .25s ease;
+}
+.ka-day-step { perspective: 900px; }
+.ka-day-step:hover .ka-day-step-ico {
+  transform: rotateY(180deg);
+}
+.ka-day-step:nth-child(2) .ka-day-step-ico {
+  background: var(--v3-orange);
+  box-shadow: var(--shadow-orange);
+}
+.ka-day-step:nth-child(3) .ka-day-step-ico {
+  background: var(--v3-green);
+  box-shadow: var(--shadow-green);
+}
+.ka-day-step:hover:nth-child(1) .ka-day-step-ico {
+  box-shadow: 0 18px 36px rgba(var(--v3-teal-rgb), .32);
+}
+.ka-day-step:hover:nth-child(2) .ka-day-step-ico {
+  box-shadow: 0 18px 36px rgba(var(--v3-orange-rgb), .34);
+}
+.ka-day-step:hover:nth-child(3) .ka-day-step-ico {
+  box-shadow: 0 18px 36px rgba(var(--v3-green-rgb), .34);
+}
+.ka-day-step-ico .ico {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+.ka-day-step-meta {
+  margin: 0 0 .2rem;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--v3-orange);
+}
+.ka-day-badge {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 .55rem;
+  padding: .28rem .7rem;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--v3-teal);
+  background: rgba(var(--v3-teal-rgb), .12);
+}
+.ka-day-step:nth-child(2) .ka-day-badge {
+  color: #b86d38;
+  background: rgba(var(--v3-orange-rgb), .2);
+}
+.ka-day-step:nth-child(3) .ka-day-badge {
+  color: #2f7a5a;
+  background: rgba(var(--v3-green-rgb), .2);
+}
+.ka-day-step-card h3 {
+  margin: 0 0 .45rem;
+  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+  color: var(--v3-teal);
+  line-height: 1.25;
+}
+.ka-day-step-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+.ka-day-step-arrow {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 1.75rem;
+  color: var(--v3-orange);
+  transform: rotate(90deg);
+}
+.ka-day-step-arrow .ico {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.ka-day-slider {
+  display: grid;
+  gap: .9rem;
+}
+.ka-day-slider-viewport {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid var(--line);
+}
+.ka-day-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .55s var(--ease-out), visibility .55s;
+}
+.ka-day-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+.ka-day-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ka-day-slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+}
+.ka-day-slider-btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border: 1.5px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--v3-teal);
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.ka-day-slider-btn:hover {
+  background: var(--green-25);
+  border-color: color-mix(in srgb, var(--v3-teal) 28%, #fff);
+}
+.ka-day-slider-btn .ico {
+  width: 1rem;
+  height: 1rem;
+}
+.ka-day-slider-btn:not(.ka-day-slider-btn--next) .ico {
+  transform: rotate(180deg);
+}
+.ka-day-slider-dots {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.ka-day-slider-dot {
+  width: .55rem;
+  height: .55rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--v3-teal) 28%, #fff);
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+.ka-day-slider-dot.is-active {
+  background: var(--v3-orange);
+  transform: scale(1.2);
+}
+
+/* Karriere: Accordion links + Grafik rechts */
+.ka-ladder-copy {
+  margin-bottom: clamp(1.35rem, 2.8vw, 2rem);
+  max-width: 52rem;
+}
+.ka-ladder-copy .sec-lead {
+  margin-bottom: 0;
+}
+.ka-ladder-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: start;
+}
+.ka-ladder-media {
+  margin-top: -200px;
+}
+.ka-ladder-media .ka-zoom {
+  margin: 0;
+}
+.ka-ladder-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Zoomable freistehende Bilder + Lightbox */
+.ka-zoom {
+  margin: 0;
+}
+.ka-zoom-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  border-radius: 0;
+  overflow: visible;
+  transition: transform .35s var(--ease-out), filter .35s var(--ease-out);
+}
+.ka-zoom-btn img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  transition: transform .35s var(--ease-out), filter .35s var(--ease-out);
+}
+.ka-zoom-btn:hover,
+.ka-zoom-btn:focus-visible {
+  transform: scale(1.035);
+  filter: brightness(1.04);
+  outline: none;
+}
+.ka-zoom-btn:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--v3-teal) 45%, transparent);
+}
+
+.ka-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  margin: 0;
+  border: 0;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 47, 44, .88);
+  color: #fff;
+}
+.ka-lightbox:not([open]) { display: none; }
+.ka-lightbox::backdrop {
+  background: transparent;
+}
+.ka-lightbox-inner {
+  position: relative;
+  max-width: min(92vw, 56rem);
+  max-height: 88vh;
+}
+.ka-lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.ka-lightbox-close {
+  position: absolute;
+  top: -.35rem;
+  right: -.35rem;
+  z-index: 1;
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--v3-teal);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transform: translate(40%, -40%);
+  transition: transform .25s var(--ease-out), background-color .25s var(--ease);
+}
+.ka-lightbox-close:hover,
+.ka-lightbox-close:focus-visible {
+  background: var(--v3-orange);
+  color: #fff;
+  outline: none;
+}
+.ka-lightbox-close svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* Trainee / Award getrennt */
+.ka-trainee {
+  background-color: var(--orange-50);
+  background-image: var(--spots-orange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ka-split-plain {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center;
+}
+.ka-split-plain .frame-soft {
+  margin: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.ka-trainee-media {
+  margin: 0;
+}
+.ka-trainee-media img,
+.ka-split-plain img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.ka-split-plain p { color: var(--ink-soft); line-height: 1.65; }
+.ka-split-plain .ka-value-contrast {
+  font-weight: 700;
+  color: var(--color-dark-deep);
+}
+
+.ka-award {
+  background-color: #fff;
+  background-image: var(--spots-white);
+}
+.ka-award-inner { max-width: 48rem; margin-inline: auto; }
+.ka-award-img {
+  margin: 0 0 1.25rem;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.ka-award-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.ka-award-text {
+  margin: 0;
+  text-align: center;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.ka-voice .ka-video {
+  margin-bottom: 1rem;
+  aspect-ratio: 16 / 9;
+}
+
+/* Formular-Hinweise */
+  margin: .35rem 0 0;
+  font-size: .86rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+.sa-form input[type="file"] {
+  width: 100%;
+  padding: .65rem .75rem;
+  border: 1.5px dashed var(--line);
+  border-radius: var(--r);
+  background: #fff;
+  font: inherit;
+  color: var(--ink-soft);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
-  .ka-path-grid,
   .ka-benefit-grid,
   .ka-value-grid,
   .ka-voices-grid,
   .ka-concept-grid { grid-template-columns: 1fr 1fr; }
+  .ka-culture-cols { grid-template-columns: 1fr; }
+  .ka-culture-card--flip .ka-culture-card-body,
+  .ka-culture-card--flip .ka-culture-card-media { order: initial; }
   .ka-steps-list,
   .ka-steps-list--5 { grid-template-columns: 1fr 1fr; }
   .ka-benefit-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 860px) {
+  .page-teamleitung .ka-hero-grid,
+  .ka-intro-split,
   .ka-culture-grid,
+  .ka-culture-block,
+  .ka-culture-card,
   .ka-split,
+  .ka-split-plain,
+  .ka-task-layout,
+  .ka-profile-layout,
+  .ka-tasks-profile-grid,
+  .ka-tasks-row,
+  .ka-tasks-body,
+  .ka-profile-row,
+  .ka-day-split,
+  .ka-ladder-split,
   .ka-also-panel,
   .ka-aside-grid { grid-template-columns: 1fr; }
+  .ka-ladder-media { margin-top: 0; }
+  .page-teamleitung .ka-hero-grid {
+    padding-block: clamp(5rem, 12vw, 6.5rem) 1.5rem;
+  }
+  .page-teamleitung .ka-hero-form-card {
+    max-height: none;
+  }
   .ka-also-panel .btn { justify-self: start; }
-  .ka-path-grid,
   .ka-value-grid,
   .ka-voices-grid,
   .ka-concept-grid,
@@ -680,4 +1553,30 @@ html.page-karriere {
   .ka-steps-list,
   .ka-steps-list--5 { grid-template-columns: 1fr; }
   .ka-ladder-item { grid-template-columns: 1fr; }
+  .page-teamleitung .ka-hero-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-teamleitung .ka-hero-form-grid .sa-field--half { grid-column: 1 / -1; }
+  .page-teamleitung .ka-hero-awards {
+    width: min(88%, 28rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js.page-teamleitung .ka-hero-awards,
+  html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
+    opacity: 1;
+    transform: translateY(50%);
+    animation: none;
+  }
+  .page-karriere #vorteile .news-card:hover .news-card-ico,
+  .page-karriere #benefits .news-card:hover .news-card-ico,
+  .ka-day-step:hover .ka-day-step-ico,
+  .ka-task-list li:hover .ka-li-ico,
+  .ka-profile-list li:hover .ka-li-ico,
+  .ka-concept:hover .ka-path-ico,
+  .page-teamleitung #bewerbung .sa-request-contact a:hover .ico,
+  .page-teamleitung .sa-timeline-item:hover .sa-timeline-ico {
+    transform: none;
+  }
 }

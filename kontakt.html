@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/styles-v3.css?v=20260728v3bj" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260731scroll3" />
-  <link rel="stylesheet" href="css/kontakt.css?v=20260731a" />
+  <link rel="stylesheet" href="css/kontakt.css?v=20260810channels1" />
   <style>
     :root { --hero-frame-margin: 20px; --hero-frame-radius: clamp(18px, 2.2vw, 26px); }
     body { background: linear-gradient(180deg, #eef7f2 0%, #eef5f1 100%); }
@@ -176,7 +176,7 @@
       <section class="hero" id="hero" aria-labelledby="hero-title" data-cursor="dark">
       <div class="hero-bg" aria-hidden="true" data-parallax="0.1">
         <div class="hero-video-wrap">
-          <img class="hero-image" src="assets/img/High5.jpeg" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" />
+          <img class="hero-image" src="assets/img/gfi-event-escape.jpg" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" />
         </div>
       </div>
       <div class="hero-veil" aria-hidden="true"></div>
@@ -220,30 +220,36 @@
             <p class="kt-channel-label">Telefon</p>
             <strong>0721/61930339</strong>
             <p>Für kurze Rückfragen und eine erste Orientierung.</p>
-            <svg class="ico kt-channel-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            <span class="card-link"><span>Jetzt anrufen</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </a>
 
-          <a class="kt-channel reveal" href="mailto:info@gfi-baden.de">
+          <a class="kt-channel kt-channel--mail reveal" href="mailto:info@gfi-baden.de">
             <span class="kt-channel-ico" aria-hidden="true"><svg class="ico"><use href="#i-mail"/></svg></span>
             <p class="kt-channel-label">E-Mail</p>
             <strong>info@gfi-baden.de</strong>
             <p>Für Anliegen, die etwas mehr Kontext brauchen.</p>
-            <svg class="ico kt-channel-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            <span class="card-link"><span>E-Mail schreiben</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </a>
 
-          <a class="kt-channel reveal" href="https://maps.google.com/?q=Hirschstraße+12-14,+76133+Karlsruhe" target="_blank" rel="noopener noreferrer">
+          <a class="kt-channel kt-channel--map reveal" href="https://maps.google.com/?q=Hirschstraße+12-14,+76133+Karlsruhe" target="_blank" rel="noopener noreferrer">
             <span class="kt-channel-ico" aria-hidden="true"><svg class="ico"><use href="#i-pin"/></svg></span>
             <p class="kt-channel-label">Adresse</p>
             <strong>Hirschstraße 12-14</strong>
             <p>76133 Karlsruhe – gerne nach Terminvereinbarung.</p>
-            <svg class="ico kt-channel-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            <span class="card-link"><span>Route öffnen</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </a>
         </div>
 
-        <div class="kt-hours reveal">
-          <span><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> Telefonisch erreichbar an <strong>Werktagen</strong></span>
-          <span><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg> Formularanfragen beantworten wir <strong>zeitnah</strong> mit den nächsten Schritten.</span>
-        </div>
+        <ul class="kt-hours reveal" aria-label="Erreichbarkeit">
+          <li>
+            <span class="kt-hours-ico" aria-hidden="true"><svg class="ico"><use href="#i-clock"/></svg></span>
+            <span>Telefonisch erreichbar an <strong>Werktagen</strong></span>
+          </li>
+          <li>
+            <span class="kt-hours-ico" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span>
+            <span>Formularanfragen beantworten wir <strong>zeitnah</strong> mit den nächsten Schritten.</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -254,39 +260,107 @@
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Passender Einstieg</p>
           <h2 id="entry-title" class="reveal">Worum geht es <em>Ihnen?</em></h2>
           <p class="sec-lead reveal">
-            Spezifische Anliegen leiten wir gerne über die passende Seite weiter –
-            so landet Ihre Frage bei der richtigen Fachperson.
+            Wählen Sie Ihren Anlass – und erreichen Sie direkt die zuständigen Ansprechpartnerinnen
+            für Schulen, Familien, Karriere oder allgemeine Fragen.
           </p>
         </header>
 
         <div class="sa-entry-grid">
-          <a class="sa-entry-card sa-entry-card--lead reveal" href="fuer-schulen-aemter.html#kooperation-anfragen">
+          <article class="sa-entry-card sa-entry-card--lead kt-entry-card reveal">
             <span class="sa-entry-ico" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
             <h3>Schulen &amp; Ämter</h3>
             <p>Kooperation, Bedarfsklärung und organisatorische Fragen zur Schulbegleitung.</p>
-            <span class="card-link"><span>Kooperation anfragen</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
+            <div class="kt-entry-person">
+              <p class="kt-entry-person-label">Ihre Ansprechpartnerinnen</p>
+              <strong>Suzanne Mack &amp; Franziska Lang</strong>
+              <span class="kt-entry-person-role">Standortverantwortliche der GFI Baden</span>
+              <ul class="kt-entry-person-lines">
+                <li>
+                  <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+                  <a href="tel:+4972161930339">0721/61930339</a>
+                </li>
+                <li>
+                  <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+                  <a href="mailto:info@gfi-baden.de">info@gfi-baden.de</a>
+                </li>
+              </ul>
+            </div>
+            <a class="card-link" href="#nachricht" data-prefill-rolle="Schule / Kita" data-prefill-thema="Schulbegleitung / Kitabegleitung">
+              <span>Nachricht schreiben</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
 
-          <a class="sa-entry-card reveal" href="fuer-eltern-angehoerige.html#beratung-anfragen">
+          <article class="sa-entry-card kt-entry-card reveal">
             <span class="sa-entry-ico" aria-hidden="true"><svg class="ico"><use href="#i-family"/></svg></span>
             <h3>Eltern &amp; Angehörige</h3>
             <p>Orientierung zu Begleitung, Antragsweg und nächstem Schritt für Ihre Familie.</p>
-            <span class="card-link"><span>Orientierung starten</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
+            <div class="kt-entry-person">
+              <p class="kt-entry-person-label">Ihre Ansprechpartnerinnen</p>
+              <strong>Suzanne Mack &amp; Franziska Lang</strong>
+              <span class="kt-entry-person-role">Standortverantwortliche der GFI Baden</span>
+              <ul class="kt-entry-person-lines">
+                <li>
+                  <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+                  <a href="tel:+4972161930339">0721/61930339</a>
+                </li>
+                <li>
+                  <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+                  <a href="mailto:info@gfi-baden.de">info@gfi-baden.de</a>
+                </li>
+              </ul>
+            </div>
+            <a class="card-link" href="#nachricht" data-prefill-rolle="Elternteil / Angehörige:r" data-prefill-thema="Allgemeine Orientierung">
+              <span>Nachricht schreiben</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
 
-          <a class="sa-entry-card reveal" href="karriere.html">
+          <article class="sa-entry-card kt-entry-card reveal">
             <span class="sa-entry-ico" aria-hidden="true"><svg class="ico"><use href="#i-users"/></svg></span>
             <h3>Karriere</h3>
-            <p>Führung und Verantwortung in der Inklusion – offene Rollen und Schnellbewerbung.</p>
-            <span class="card-link"><span>Karriere entdecken</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
+            <p>Führung und Verantwortung in der Inklusion – offene Rollen und Bewerbungsfragen.</p>
+            <div class="kt-entry-person">
+              <p class="kt-entry-person-label">Ihre Ansprechpartnerinnen</p>
+              <strong>Suzanne Mack &amp; Franziska Lang</strong>
+              <span class="kt-entry-person-role">Standortverantwortliche · Bewerbungsanfragen</span>
+              <ul class="kt-entry-person-lines">
+                <li>
+                  <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+                  <a href="tel:+4972161930339">0721/61930339</a>
+                </li>
+                <li>
+                  <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+                  <a href="mailto:info@gfi-baden.de">info@gfi-baden.de</a>
+                </li>
+              </ul>
+            </div>
+            <a class="card-link" href="#nachricht" data-prefill-rolle="Interessent:in Karriere" data-prefill-thema="Karriere / Bewerbung">
+              <span>Nachricht schreiben</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
 
-          <a class="sa-entry-card reveal" href="#nachricht">
+          <article class="sa-entry-card kt-entry-card reveal">
             <span class="sa-entry-ico" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span>
             <h3>Allgemeine Anfrage</h3>
-            <p>Alles andere – schreiben Sie uns einfach. Wir leiten Sie intern weiter.</p>
-            <span class="card-link"><span>Formular öffnen</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
+            <p>Alles andere – rufen Sie an oder schreiben Sie uns. Wir leiten Sie intern weiter.</p>
+            <div class="kt-entry-person">
+              <p class="kt-entry-person-label">Ihre Ansprechpartnerinnen</p>
+              <strong>Suzanne Mack &amp; Franziska Lang</strong>
+              <span class="kt-entry-person-role">Standortverantwortliche der GFI Baden</span>
+              <ul class="kt-entry-person-lines">
+                <li>
+                  <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>
+                  <a href="tel:+4972161930339">0721/61930339</a>
+                </li>
+                <li>
+                  <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+                  <a href="mailto:info@gfi-baden.de">info@gfi-baden.de</a>
+                </li>
+              </ul>
+            </div>
+            <a class="card-link" href="#nachricht" data-prefill-rolle="Sonstiges" data-prefill-thema="Sonstiges">
+              <span>Nachricht schreiben</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
         </div>
       </div>
     </section>
@@ -323,7 +397,7 @@
 
         <div class="kt-office-media reveal">
           <figure class="frame-soft">
-            <img src="assets/img/team-portrait.jpg" width="1024" height="768" alt="Team der GFI Baden" loading="lazy" decoding="async" />
+            <img src="assets/img/gfi-auszeichnung.jpg" width="1024" height="768" alt="Team der GFI Baden" loading="lazy" decoding="async" />
           </figure>
         </div>
       </div>
@@ -524,6 +598,6 @@
   </button>
 
   <script src="js/main-v3.js?v=20260731scroll3"></script>
-  <script src="js/kontakt.js?v=20260731a"></script>
+  <script src="js/kontakt.js?v=20260810entry1"></script>
 </body>
 </html>

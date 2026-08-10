@@ -373,8 +373,7 @@ img { max-width: 100%; height: auto; display: block; }
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  /* Hintergrund fixieren (nicht mitscrollen) */
-  background-attachment: fixed;
+  /* kein background-attachment: fixed – kollidiert mit sticky Showcase und verursacht Scroll-Jank */
 }
 .showcase{
   margin-inline: 0;
@@ -2091,7 +2090,8 @@ h1.motion-split, h2.motion-split, h3.motion-split,
 
 /* ---------- SHOWCASE (horizontal gepinnt) ---------- */
 .showcase {
-  --showcase-scroll: 128vh;
+  /* Scrollstrecke ≈ Kartenbreite: natives Scrollen ohne Wheel-Hijack */
+  --showcase-scroll: 110vh;
   position: relative;
   height: calc(100vh + var(--showcase-scroll));
   margin-top: 0;

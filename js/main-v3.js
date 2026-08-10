@@ -302,33 +302,11 @@
     });
   }
 
-  /* ---------- Weiches Scrollen (Desktop, Mausrad / Trackpad) ---------- */
-  var smoothTarget = window.scrollY;
-  var smoothAnimating = false;
-  var showcaseScrollGain = 1.75;
-  var showcasePinEase = 0.14;
+  /* ---------- Anker-Navigation (natives Scrollen – kein Wheel-Hijack) ---------- */
   var maxScrollY = function () {
     return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   };
   var clampScroll = function (v) { return v < 0 ? 0 : (v > maxScrollY() ? maxScrollY() : v); };
-
-  var wheelInsideScrollable = function (node, deltaY) {
-    var el = node;
-    while (el && el !== document.documentElement && el !== document.body) {
-      var style = window.getComputedStyle(el);
-      var oy = style.overflowY;
-      var ox = style.overflowX;
-      if ((oy === "auto" || oy === "scroll" || oy === "overlay") && el.scrollHeight > el.clientHeight + 2) {
-        if (deltaY < 0 && el.scrollTop > 0) return true;
-        if (deltaY > 0 && el.scrollTop + el.clientHeight < el.scrollHeight - 1) return true;
-      }
-      if ((ox === "auto" || ox === "scroll" || ox === "overlay") && el.scrollWidth > el.clientWidth + 2) {
-        return true;
-      }
-      el = el.parentElement;
-    }
-    return false;
-  };
 
   var scrollToAnchor = function (dest) {
     var top = clampScroll(dest);
@@ -339,60 +317,7 @@
     window.scrollTo({ top: top, behavior: "smooth" });
   };
 
-  var smoothFrame = function () {
-    var y = window.scrollY || 0;
-    var diff = smoothTarget - y;
-    var ease = showcasePinEase;
-    if (Math.abs(diff) < 0.45) {
-      if (Math.abs(diff) > 0.01) window.scrollTo(0, smoothTarget);
-      smoothAnimating = false;
-      renderScroll();
-      return;
-    }
-    window.scrollTo(0, y + diff * ease);
-    renderScroll();
-    requestAnimationFrame(smoothFrame);
-  };
-
   var initSmoothScroll = function () {
-    if (reduceMotion || !finePointer) return;
-
-    /* Nur die horizontale Pin-Showcase auf der Startseite braucht Wheel-Hijacking.
-       Überall sonst: natives Browser-Scrollen (fühlbar schneller, weniger träge). */
-    var showcaseEl = document.getElementById("showcase") || document.getElementById("leistungen");
-    var hasShowcasePin = !!(showcaseEl && document.getElementById("showcase-track"));
-
-    if (hasShowcasePin && !lightPerfPage) {
-      document.documentElement.classList.add("has-smooth-scroll");
-      var showcaseGain = showcaseScrollGain;
-
-      window.addEventListener("wheel", function (e) {
-        if (e.ctrlKey || e.metaKey) return;
-        if (!deskQuery.matches) return;
-        var sc = document.getElementById("showcase") || document.getElementById("leistungen");
-        if (!sc) return;
-        var rect = sc.getBoundingClientRect();
-        var vh = window.innerHeight;
-        var pinned = rect.top <= 1 && rect.bottom >= vh - 1;
-        if (!pinned) return;
-
-        var delta = e.deltaY;
-        if (Math.abs(e.deltaX) > Math.abs(delta)) delta = e.deltaX;
-        if (wheelInsideScrollable(e.target, delta)) return;
-        if (!smoothAnimating) smoothTarget = window.scrollY || 0;
-        smoothTarget = clampScroll(smoothTarget + delta * showcaseGain);
-        e.preventDefault();
-        if (!smoothAnimating) {
-          smoothAnimating = true;
-          requestAnimationFrame(smoothFrame);
-        }
-      }, { passive: false });
-
-      window.addEventListener("scroll", function () {
-        if (!smoothAnimating) smoothTarget = window.scrollY || 0;
-      }, { passive: true });
-    }
-
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       var href = link.getAttribute("href");
       if (!href || href === "#") return;
@@ -669,10 +594,6 @@
   var scBar = document.getElementById("showcase-bar");
   var hpin = false;
   var showcaseMetrics = { total: 0, maxX: 0, valid: false };
-  var showcaseOffset = 0;
-  var showcaseOffsetTarget = 0;
-  var showcaseLerp = 0.09;
-  var showcaseRaf = 0;
 
   var refreshShowcaseMetrics = function () {
     if (!showcase || !track || !hpin) {
@@ -695,34 +616,17 @@
     if (!hpin) {
       track.style.transform = "";
       if (scBar) scBar.style.width = "";
-      showcaseOffset = 0;
-      showcaseOffsetTarget = 0;
     }
   };
   evalHpin();
 
-  var applyShowcaseTransform = function () {
+  /* Horizontal 1:1 an Scrollposition – kein zweites Lerp (das fühlte sich „klebrig“ an) */
+  var applyShowcaseTransform = function (offset) {
     if (!hpin || !track) return;
-    var diff = showcaseOffsetTarget - showcaseOffset;
-    if (Math.abs(diff) > 0.06) {
-      showcaseOffset += diff * showcaseLerp;
-    } else {
-      showcaseOffset = showcaseOffsetTarget;
-    }
-    track.style.transform = "translate3d(" + (-showcaseOffset).toFixed(2) + "px,0,0)";
+    var x = offset || 0;
+    track.style.transform = "translate3d(" + (-x).toFixed(2) + "px,0,0)";
     if (scBar && showcaseMetrics.maxX > 0) {
-      scBar.style.width = ((showcaseOffset / showcaseMetrics.maxX) * 100).toFixed(1) + "%";
-    }
-    if (Math.abs(showcaseOffsetTarget - showcaseOffset) > 0.35 && !showcaseRaf) {
-      var frame = function () {
-        showcaseRaf = 0;
-        applyShowcaseTransform();
-        revealShowcaseMedia();
-        if (Math.abs(showcaseOffsetTarget - showcaseOffset) > 0.35) {
-          showcaseRaf = requestAnimationFrame(frame);
-        }
-      };
-      showcaseRaf = requestAnimationFrame(frame);
+      scBar.style.width = ((x / showcaseMetrics.maxX) * 100).toFixed(1) + "%";
     }
   };
 
@@ -861,8 +765,7 @@
       var total = showcaseMetrics.total;
       var prog = clamp(-rect.top, 0, total);
       var progress = total > 0 ? prog / total : 0;
-      showcaseOffsetTarget = progress * showcaseMetrics.maxX;
-      applyShowcaseTransform();
+      applyShowcaseTransform(progress * showcaseMetrics.maxX);
       revealShowcaseMedia();
     }
 
@@ -882,10 +785,16 @@
     window.addEventListener("resize", function () {
       initPageBubbles();
       evalHpin();
+      showcaseMetrics.valid = false;
       refreshShowcaseMetrics();
       onScrollEngine();
     });
-    if (deskQuery.addEventListener) deskQuery.addEventListener("change", function () { evalHpin(); refreshShowcaseMetrics(); onScrollEngine(); });
+    if (deskQuery.addEventListener) deskQuery.addEventListener("change", function () { evalHpin(); showcaseMetrics.valid = false; refreshShowcaseMetrics(); onScrollEngine(); });
+    window.addEventListener("load", function () {
+      showcaseMetrics.valid = false;
+      refreshShowcaseMetrics();
+      onScrollEngine();
+    });
     refreshShowcaseMetrics();
     renderScroll();
   }

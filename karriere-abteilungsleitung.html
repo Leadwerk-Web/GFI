@@ -25,8 +25,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/styles-v3.css?v=20260728v3bj" />
-  <link rel="stylesheet" href="css/schulen-aemter.css?v=20260731scroll3" />
-  <link rel="stylesheet" href="css/karriere.css?v=20260731scroll3" />
+  <link rel="stylesheet" href="css/schulen-aemter.css?v=20260804form" />
+  <link rel="stylesheet" href="css/karriere.css?v=20260804nav" />
   <style>
     :root { --hero-frame-margin: 20px; --hero-frame-radius: clamp(18px, 2.2vw, 26px); }
     body { background: linear-gradient(180deg, #eef7f2 0%, #eef5f1 100%); }
@@ -151,7 +151,7 @@
       <section class="hero" id="hero" aria-labelledby="hero-title" data-cursor="dark">
       <div class="hero-bg" aria-hidden="true">
         <div class="hero-video-wrap">
-          <img class="hero-image" src="assets/img/team-portrait.jpg" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" />
+          <img class="hero-image" src="assets/img/gfi-gptw2024.jpg" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" />
         </div>
       </div>
       <div class="hero-veil" aria-hidden="true"></div>
@@ -194,7 +194,7 @@
         </div>
         <div class="sa-team-media reveal">
           <figure class="frame-soft">
-            <img src="assets/img/Gemeinsam_Verantwortung.png" width="1024" height="683" alt="Zusammenarbeit im GFI-Team" loading="lazy" decoding="async" />
+            <img src="assets/img/gfi-event-minigolf-2.jpg" width="1024" height="683" alt="Zusammenarbeit im GFI-Team" loading="lazy" decoding="async" />
           </figure>
         </div>
       </div>
@@ -447,7 +447,7 @@
         <aside class="faq-cta">
           <div class="faq-visual">
             <figure class="faq-visual-media reveal">
-              <img src="assets/img/High5.jpeg" width="600" height="400" alt="Team der GFI bei einem gemeinsamen Moment" loading="lazy" decoding="async" />
+              <img src="assets/img/gfi-gptw2026-1.jpg" width="600" height="400" alt="Team der GFI bei einem gemeinsamen Moment" loading="lazy" decoding="async" />
             </figure>
           </div>
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> FAQ</p>
@@ -503,7 +503,7 @@
               <h3 class="sa-form-title">Schnellbewerbung</h3>
               <input type="hidden" name="stelle" value="abteilungsleitung" />
               <div class="sa-form-grid">
-                <div class="sa-field">
+                <div class="sa-field sa-field--third">
                   <label for="f-anrede">Anrede *</label>
                   <select id="f-anrede" name="anrede" required aria-describedby="err-anrede">
                     <option value="">Bitte wählen</option>
@@ -514,32 +514,31 @@
                   </select>
                   <p class="sa-field-error" id="err-anrede" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--two-third">
                   <label for="f-stelle">Interessierte Stelle *</label>
                   <select id="f-stelle" name="stelle_wahl" required aria-describedby="err-stelle">
                     <option value="abteilungsleitung" selected>Abteilungsleitung Schulbegleitung</option>
                     <option value="teamleitung">Teamleitung Schulbegleitung</option>
-                    <option value="abteilungsleitung">Abteilungsleitung Schulbegleitung</option>
                     <option value="geschaeftsfuehrung">Geschäftsführung / Standorteröffnung</option>
                   </select>
                   <p class="sa-field-error" id="err-stelle" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--half">
                   <label for="f-vorname">Vorname *</label>
                   <input id="f-vorname" name="vorname" type="text" autocomplete="given-name" required aria-describedby="err-vorname" />
                   <p class="sa-field-error" id="err-vorname" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--half">
                   <label for="f-nachname">Nachname *</label>
                   <input id="f-nachname" name="nachname" type="text" autocomplete="family-name" required aria-describedby="err-nachname" />
                   <p class="sa-field-error" id="err-nachname" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--half">
                   <label for="f-email">E-Mail *</label>
                   <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="err-email" />
                   <p class="sa-field-error" id="err-email" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--half">
                   <label for="f-telefon">Telefon</label>
                   <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" aria-describedby="err-telefon" />
                   <p class="sa-field-error" id="err-telefon" hidden></p>
@@ -557,8 +556,7 @@
               </div>
               <p class="sa-form-hint" id="f-datenhinweis">
                 <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>
-                Mit dem Absenden erklären Sie sich mit der Verarbeitung Ihrer Daten gemäß unserer
-                <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> einverstanden.
+                <span>Mit dem Absenden erklären Sie sich mit der Verarbeitung Ihrer Daten gemäß unserer <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> einverstanden.</span>
               </p>
               <p class="sa-field sa-field--full sa-consent">
                 <label class="sa-checkbox">

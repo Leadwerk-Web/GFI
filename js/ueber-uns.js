@@ -80,9 +80,10 @@
     var regionEl = card.querySelector("[data-loc-region]");
     var textEl = card.querySelector("[data-loc-text]");
     var addressEl = card.querySelector("[data-loc-address]");
+    var phoneWrap = card.querySelector("[data-loc-phone-wrap]");
     var phoneEl = card.querySelector("[data-loc-phone]");
     var linkEl = card.querySelector("[data-loc-link]");
-    var emptyEl = card.querySelector("[data-loc-empty]");
+    var emptyEls = card.querySelectorAll("[data-loc-empty]");
     var filledEls = card.querySelectorAll("[data-loc-filled]");
 
     var setActive = function (id) {
@@ -108,7 +109,7 @@
       setActive(id);
       card.classList.add("is-filled");
 
-      if (emptyEl) emptyEl.hidden = true;
+      emptyEls.forEach(function (el) { el.hidden = true; });
       filledEls.forEach(function (el) { el.hidden = false; });
 
       if (titleEl) titleEl.textContent = title;
@@ -117,16 +118,17 @@
 
       if (addressEl) {
         addressEl.hidden = !address;
-        addressEl.querySelector("span").textContent = address;
+        var addressText = addressEl.querySelector("span");
+        if (addressText) addressText.textContent = address;
       }
 
-      if (phoneEl) {
+      if (phoneWrap && phoneEl) {
         if (phone && phoneHref) {
-          phoneEl.hidden = false;
+          phoneWrap.hidden = false;
           phoneEl.href = phoneHref;
-          phoneEl.querySelector("span").textContent = phone;
+          phoneEl.textContent = phone;
         } else {
-          phoneEl.hidden = true;
+          phoneWrap.hidden = true;
         }
       }
 
@@ -134,6 +136,13 @@
         if (href) {
           linkEl.hidden = false;
           linkEl.href = href;
+          if (href.indexOf("http") === 0) {
+            linkEl.setAttribute("target", "_blank");
+            linkEl.setAttribute("rel", "noopener noreferrer");
+          } else {
+            linkEl.removeAttribute("target");
+            linkEl.removeAttribute("rel");
+          }
         } else {
           linkEl.hidden = true;
         }

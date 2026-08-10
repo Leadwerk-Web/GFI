@@ -24,9 +24,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260728v3bj" />
-  <link rel="stylesheet" href="css/schulen-aemter.css?v=20260731scroll3" />
-  <link rel="stylesheet" href="css/karriere.css?v=20260731scroll3" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260804path" />
+  <link rel="stylesheet" href="css/schulen-aemter.css?v=20260804form" />
+  <link rel="stylesheet" href="css/karriere.css?v=20260804nav" />
   <style>
     :root { --hero-frame-margin: 20px; --hero-frame-radius: clamp(18px, 2.2vw, 26px); }
     body { background: linear-gradient(180deg, #eef7f2 0%, #eef5f1 100%); }
@@ -156,7 +156,7 @@
       <section class="hero" id="hero" aria-labelledby="hero-title" data-cursor="dark">
       <div class="hero-bg" aria-hidden="true">
         <div class="hero-video-wrap">
-          <img class="hero-image" src="assets/img/team-event.png" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" />
+          <img class="hero-image" src="assets/img/gfi-event-hochseil-2.jpg" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" />
         </div>
       </div>
       <div class="hero-veil" aria-hidden="true"></div>
@@ -179,122 +179,179 @@
     </div>
     </div>
 
-    <section class="ka-paths section" id="wege" aria-labelledby="paths-title">
+    <section class="audience section" id="wege" aria-labelledby="paths-title">
       <div class="container">
-        <header class="sec-head">
+        <header class="sec-head center">
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Einstieg wählen</p>
           <h2 id="paths-title" class="reveal">Worüber dürfen wir Sie <em>informieren?</em></h2>
           <p class="sec-lead reveal">Drei klare Wege für Führungspersönlichkeiten in der sozialen Arbeit – plus Einblicke in unsere Kultur.</p>
         </header>
-        <div class="ka-path-grid">
-          <a class="ka-path reveal" href="karriere-teamleitung.html">
-            <span class="ka-path-tag">Stufe 1</span>
-            <span class="ka-path-ico" aria-hidden="true"><svg class="ico"><use href="#i-users"/></svg></span>
+
+        <div class="paths">
+          <article class="path-card reveal" data-tilt>
+            <span class="path-ico" aria-hidden="true"><svg class="ico"><use href="#i-users"/></svg></span>
             <h3>Teamleitung in der Schulbegleitung</h3>
-            <p>Eigenverantwortliche Führung eines Teams von ca. 10 Personen – auch ohne vorherige Führungserfahrung, mit Mentoring und stufenweisem Einstieg.</p>
-            <span class="card-link"><span>Zur Stellenbeschreibung</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
-          <a class="ka-path reveal" href="karriere-abteilungsleitung.html">
-            <span class="ka-path-tag">Stufe 2</span>
-            <span class="ka-path-ico" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span>
+            <ul class="path-points">
+              <li>Eigenverantwortliche Führung eines Teams von ca. 10 Personen</li>
+              <li>Auch ohne vorherige Führungserfahrung möglich</li>
+              <li>Mentoring und stufenweiser Einstieg in die Rolle</li>
+            </ul>
+            <a class="card-link" href="karriere-teamleitung.html"><span>Zur Stellenbeschreibung</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="path-card reveal" data-tilt>
+            <span class="path-ico" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span>
             <h3>Abteilungsleitung in der Schulbegleitung</h3>
-            <p>Führung von bis zu 44 Schulbegleiterinnen und Schulbegleitern, Fallbesetzung, Konzeptarbeit und Vorbereitung auf die Fachbereichsleitung.</p>
-            <span class="card-link"><span>Zur Stellenbeschreibung</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
-          <a class="ka-path reveal" href="karriere-geschaeftsfuehrung.html">
-            <span class="ka-path-tag">Expansion</span>
-            <span class="ka-path-ico" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
+            <ul class="path-points">
+              <li>Führung von bis zu 44 Schulbegleiterinnen und Schulbegleitern</li>
+              <li>Fallbesetzung, Konzeptarbeit und Teamsteuerung</li>
+              <li>Vorbereitung auf die Fachbereichsleitung</li>
+            </ul>
+            <a class="card-link" href="karriere-abteilungsleitung.html"><span>Zur Stellenbeschreibung</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="path-card reveal" data-tilt>
+            <span class="path-ico" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
             <h3>Geschäftsführung / Standorteröffnung</h3>
-            <p>Als Businesspartner der GFI einen neuen Standort in Ihrem Wunschgebiet eröffnen – mit Beteiligungsmodell und Gruppenstrukturen im Rücken.</p>
-            <span class="card-link"><span>Zum Konzept</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </a>
+            <ul class="path-points">
+              <li>Neuen Standort in Ihrem Wunschgebiet eröffnen</li>
+              <li>Beteiligungsmodell als Businesspartner der GFI</li>
+              <li>Gruppenstrukturen und Expansion im Rücken</li>
+            </ul>
+            <a class="card-link" href="karriere-geschaeftsfuehrung.html"><span>Zum Konzept</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="ka-culture section" id="kultur" aria-labelledby="culture-title">
-      <div class="container ka-culture-grid">
-        <div>
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Unternehmenskultur</p>
-          <h2 id="culture-title" class="reveal">Das macht die Arbeit bei der <em>GFI</em> aus</h2>
-          <p class="lead reveal">Kommunikation auf Augenhöhe, Vertrauensvorschuss und echte Entwicklungsperspektiven – in einer von Great Place to Work® zertifizierten Arbeitsplatzkultur.</p>
-          <p class="reveal">Kleine Teams als „wendige Schnellboote“, stufenweiser Einstieg in Führung und aktive Mitgestaltung der Strategie: So arbeiten wir als junges Sozialunternehmen in Hessen, Rheinland-Pfalz, Baden-Württemberg und NRW.</p>
-          <div class="sa-actions reveal">
-            <a class="btn btn-primary" href="karriere-teamleitung.html#kultur"><span>Mehr zur Kultur</span><svg class="ico"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-ghost" href="ueber-uns.html"><span>Über uns</span></a>
+    <section class="intro section" id="kultur" aria-labelledby="culture-title">
+      <div class="container intro-shell">
+        <header class="intro-head">
+          <div class="intro-head-copy">
+            <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Unternehmenskultur</p>
+            <h2 id="culture-title" class="reveal">Das macht die Arbeit bei der <em>GFI</em> aus.</h2>
           </div>
-        </div>
-        <div class="ka-video reveal" data-yt="_ENSwmccnCc" data-yt-title="Das macht die Arbeit bei der GFI aus" style="--ka-yt-poster:url('https://i.ytimg.com/vi/_ENSwmccnCc/hqdefault.jpg')">
-          <button type="button" class="ka-video-play" aria-label="Video abspielen: Das macht die Arbeit bei der GFI aus">
-            <span class="ka-video-play-ico" aria-hidden="true"></span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="ka-benefits section" aria-labelledby="benefits-title">
-      <div class="container">
-        <header class="sec-head">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Vorteile</p>
-          <h2 id="benefits-title" class="reveal">Was Führungskräfte bei uns erwartet</h2>
-          <p class="sec-lead reveal">Von Arbeitsplatzkultur bis Vergütung – die wichtigsten Benefits auf einen Blick.</p>
+          <p class="intro-head-lead lead reveal">
+            Kommunikation auf Augenhöhe, Vertrauensvorschuss und echte Entwicklungsperspektiven –
+            in einer von Great Place to Work® zertifizierten Arbeitsplatzkultur.
+          </p>
         </header>
-        <ul class="ka-benefit-grid">
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-award"/></svg>
-            <h3>Ausgezeichnete Arbeitsplatzkultur</h3>
-            <p>zertifiziert durch Great Place to Work®</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-target"/></svg>
-            <h3>Entwicklungsperspektiven</h3>
-            <p>Von der Teamleitung bis zur Standortleitung in 2–4 Jahren</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>
-            <h3>Life-Balance & Flexibilität</h3>
-            <p>Selbstbestimmtes, zielorientiertes Flex-Arbeiten bei Leitungsthemen</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg>
-            <h3>Gesundheitsmanagement</h3>
-            <p>Firmenyoga, Jobrad-Leasing und Co.</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-spark"/></svg>
-            <h3>Unvergessliche Firmenevents</h3>
-            <p>Get (Inclusive)Together, Teambuilding und mehr</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>
-            <h3>Zuschuss zum ÖPNV</h3>
-            <p>Monatliche Zuzahlung zum Deutschlandticket</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>
-            <h3>Mentoring & Weiterbildung</h3>
-            <p>Onboarding durch Mentoring & mind. 5 Fortbildungstage / Jahr</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-checkc"/></svg>
-            <h3>Attraktive Vergütung</h3>
-            <p>TVöD zzgl. leistungsvariable Vergütung u. v. m.</p>
-          </li>
-        </ul>
+
+        <div class="intro-body">
+          <div class="intro-media reveal">
+            <div class="ka-video" data-yt="_ENSwmccnCc" data-yt-title="Das macht die Arbeit bei der GFI aus" style="--ka-yt-poster:url('https://i.ytimg.com/vi/_ENSwmccnCc/hqdefault.jpg')">
+              <button type="button" class="ka-video-play" aria-label="Video abspielen: Das macht die Arbeit bei der GFI aus">
+                <span class="ka-video-play-ico" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="intro-panel-slot">
+            <div class="intro-panel">
+              <dl class="values-list" aria-label="Unsere Unternehmenskultur">
+                <div class="values-row">
+                  <span class="values-ico" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span>
+                  <div class="values-body">
+                    <dt>Kommunikation auf Augenhöhe</dt>
+                    <dd>Vertrauensvorschuss, regelmäßiger Austausch und aktive Mitgestaltung im Team.</dd>
+                  </div>
+                </div>
+                <div class="values-row">
+                  <span class="values-ico" aria-hidden="true"><svg class="ico"><use href="#i-users"/></svg></span>
+                  <div class="values-body">
+                    <dt>Kleine, wendige Teams</dt>
+                    <dd>„Schnellboote“ statt schwerer Tanker – mit stufenweisem Einstieg in Führung.</dd>
+                  </div>
+                </div>
+                <div class="values-row">
+                  <span class="values-ico" aria-hidden="true"><svg class="ico"><use href="#i-award"/></svg></span>
+                  <div class="values-body">
+                    <dt>Ausgezeichnete Kultur</dt>
+                    <dd>Great Place to Work® zertifiziert – gelebte Werte in Hessen, Rheinland-Pfalz, Baden-Württemberg und NRW.</dd>
+                  </div>
+                </div>
+              </dl>
+              <a class="btn btn-ghost intro-panel-cta" href="karriere-teamleitung.html#kultur"><span>Mehr zur Kultur</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <p class="intro-foot reveal">Fragen zur Kultur? Schreiben Sie uns oder rufen Sie an: <a href="tel:+4972161930339">0721/61930339</a></p>
       </div>
     </section>
 
-    <section class="ka-also section" aria-labelledby="also-title">
+    <section class="news section" id="vorteile" aria-labelledby="benefits-title">
       <div class="container">
-        <div class="ka-also-panel reveal">
+        <header class="news-head">
           <div>
-            <h2 id="also-title">Sie suchen eine Stelle in der <em>Schulbegleitung?</em></h2>
-            <p>Neben Führungspositionen besetzen wir laufend Stellen als Schulbegleitung / Inklusionsassistenz (m/w/d) an unseren Standorten.</p>
+            <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Vorteile</p>
+            <h2 id="benefits-title" class="reveal">Was Führungskräfte <em>bei uns erwartet</em></h2>
+            <p class="sec-lead reveal">Von Arbeitsplatzkultur bis Vergütung – die wichtigsten Benefits auf einen Blick.</p>
           </div>
-          <a class="btn btn-accent btn-lg" href="https://www.gfi-baden.de/jobs/" target="_blank" rel="noopener noreferrer"><span>Offene Stellen ansehen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          <a class="card-link reveal" href="#bewerbung"><span>Jetzt bewerben</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+        </header>
+
+        <div class="news-grid">
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-award"/></svg></span>
+              <h3>Ausgezeichnete<br>Arbeitsplatzkultur</h3>
+              <p>Zertifiziert durch Great Place to Work® – Wertschätzung und Vertrauen im Alltag.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span>
+              <h3>Entwicklungs&shy;perspektiven</h3>
+              <p>Von der Teamleitung bis zur Standortleitung in 2–4 Jahren – mit Mentoring und klaren Schritten.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-clock"/></svg></span>
+              <h3>Life-Balance &amp;<br>Flexibilität</h3>
+              <p>Selbstbestimmtes, zielorientiertes Flex-Arbeiten bei Leitungsthemen.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-heart"/></svg></span>
+              <h3>Gesundheits&shy;management</h3>
+              <p>Firmenyoga, Jobrad-Leasing und weitere Angebote für Ihr Wohlbefinden.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span>
+              <h3>Unvergessliche<br>Firmenevents</h3>
+              <p>Get (Inclusive)Together, Teambuilding und gemeinsame Highlights im Jahr.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-pin"/></svg></span>
+              <h3>Zuschuss zum<br>ÖPNV</h3>
+              <p>Monatliche Zuzahlung zum Deutschlandticket für Ihren Arbeitsweg.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-cap"/></svg></span>
+              <h3>Mentoring &amp;<br>Weiterbildung</h3>
+              <p>Onboarding durch Mentoring und mindestens 5 Fortbildungstage pro Jahr.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-checkc"/></svg></span>
+              <h3>Attraktive<br>Vergütung</h3>
+              <p>TVöD zuzüglich leistungsvariabler Vergütung und weiterer Leistungen.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
+
 
     <section class="sa-request section" id="bewerbung" aria-labelledby="apply-title">
       <div class="sa-request-shell">
@@ -320,7 +377,7 @@
               <h3 class="sa-form-title">Schnellbewerbung</h3>
               <input type="hidden" name="stelle" value="fuehrung" />
               <div class="sa-form-grid">
-                <div class="sa-field">
+                <div class="sa-field sa-field--third">
                   <label for="f-anrede">Anrede *</label>
                   <select id="f-anrede" name="anrede" required aria-describedby="err-anrede">
                     <option value="">Bitte wählen</option>
@@ -331,7 +388,7 @@
                   </select>
                   <p class="sa-field-error" id="err-anrede" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--two-third">
                   <label for="f-stelle">Interessierte Stelle *</label>
                   <select id="f-stelle" name="stelle_wahl" required aria-describedby="err-stelle">
                     <option value="fuehrung" selected>Allgemeine Führungsbewerbung</option>
@@ -341,22 +398,22 @@
                   </select>
                   <p class="sa-field-error" id="err-stelle" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--half">
                   <label for="f-vorname">Vorname *</label>
                   <input id="f-vorname" name="vorname" type="text" autocomplete="given-name" required aria-describedby="err-vorname" />
                   <p class="sa-field-error" id="err-vorname" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--half">
                   <label for="f-nachname">Nachname *</label>
                   <input id="f-nachname" name="nachname" type="text" autocomplete="family-name" required aria-describedby="err-nachname" />
                   <p class="sa-field-error" id="err-nachname" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--half">
                   <label for="f-email">E-Mail *</label>
                   <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="err-email" />
                   <p class="sa-field-error" id="err-email" hidden></p>
                 </div>
-                <div class="sa-field">
+                <div class="sa-field sa-field--half">
                   <label for="f-telefon">Telefon</label>
                   <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" aria-describedby="err-telefon" />
                   <p class="sa-field-error" id="err-telefon" hidden></p>
@@ -374,8 +431,7 @@
               </div>
               <p class="sa-form-hint" id="f-datenhinweis">
                 <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>
-                Mit dem Absenden erklären Sie sich mit der Verarbeitung Ihrer Daten gemäß unserer
-                <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> einverstanden.
+                <span>Mit dem Absenden erklären Sie sich mit der Verarbeitung Ihrer Daten gemäß unserer <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> einverstanden.</span>
               </p>
               <p class="sa-field sa-field--full sa-consent">
                 <label class="sa-checkbox">
@@ -385,7 +441,7 @@
                 <span class="sa-field-error" id="err-consent" hidden></span>
               </p>
               <div class="sa-form-foot">
-                <button class="btn btn-accent btn-lg" type="submit"><span>Nachricht absenden</span><svg class="ico"><use href="#i-arrow"/></svg></button>
+                <button class="btn btn-accent btn-lg" type="submit"><span>Bewerbung absenden</span><svg class="ico"><use href="#i-arrow"/></svg></button>
               </div>
               <p class="sa-form-state sa-form-state--error" id="form-error" role="alert" hidden></p>
             </form>

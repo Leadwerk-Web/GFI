@@ -189,4 +189,19 @@
         });
     });
   })();
+
+  (function initEntryPrefill() {
+    var rolle = document.getElementById("f-rolle");
+    var thema = document.getElementById("f-thema");
+    if (!rolle && !thema) return;
+
+    document.querySelectorAll("[data-prefill-rolle], [data-prefill-thema]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        var rolleValue = link.getAttribute("data-prefill-rolle");
+        var themaValue = link.getAttribute("data-prefill-thema");
+        if (rolle && rolleValue) rolle.value = rolleValue;
+        if (thema && themaValue) thema.value = themaValue;
+      });
+    });
+  })();
 })();
