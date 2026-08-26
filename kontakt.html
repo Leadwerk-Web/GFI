@@ -7,7 +7,7 @@
 
   <!-- SEO -->
   <title>Kontakt | GFI Baden</title>
-  <meta name="description" content="Kontakt zur GFI Baden: Telefon, E-Mail, Adresse in Karlsruhe und Formular für Ihre Anfrage zu Schulbegleitung, Leistungen und Kooperation." />
+  <meta name="description" content="Kontakt zur GFI Baden: Telefon, E-Mail, Adresse in Karlsruhe und Formular für Ihre Anfrage zu Schulbegleitung, Familienhilfe, Autismustherapie und Kooperation." />
   <link rel="canonical" href="https://www.gfi-baden.de/kontakt/" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#1F6F68" />
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260826logo" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260826nav2" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260731scroll3" />
   <link rel="stylesheet" href="css/kontakt.css?v=20260810channels1" />
   <style>
@@ -149,7 +149,13 @@
           <ul>
             <li><a href="fuer-schulen-aemter.html">Für Schulen &amp; Ämter</a></li>
             <li><a href="fuer-eltern-angehoerige.html">Für Eltern &amp; Angehörige</a></li>
-            <li><a href="karriere.html">Karriere</a></li>
+            <li class="has-dropdown">
+              <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-karriere-menu" id="nav-karriere-btn">Karriere</button>
+              <ul class="nav-dropdown" id="nav-karriere-menu">
+                <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+                <li><a href="karriere.html">Führungskräfte</a></li>
+              </ul>
+            </li>
             <li><a href="leistungen.html">Leistungen</a></li>
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a class="is-active" href="kontakt.html" aria-current="page">Kontakt</a></li>
@@ -189,8 +195,8 @@
           <span class="line"><span class="line-in"><em>Wunderbar.</em></span></span>
         </h1>
         <p class="hero-sub hero-rise" style="--d:.55s">
-          Ob Beratung zu Leistungen, Kooperation mit Schulen oder ein persönliches Anliegen –
-          wir freuen uns auf Ihren Austausch.
+          Ob Beratung zu Schulbegleitung, Familienhilfe oder Autismustherapie, Kooperation mit Schulen
+          oder ein persönliches Anliegen – wir freuen uns auf Ihren Austausch.
         </p>
         <div class="hero-actions hero-rise" style="--d:.7s">
           <a class="btn btn-accent btn-lg" data-magnetic href="#nachricht"><span>Nachricht senden</span><svg class="ico"><use href="#i-arrow"/></svg></a>
@@ -293,7 +299,7 @@
           <article class="sa-entry-card kt-entry-card reveal">
             <span class="sa-entry-ico" aria-hidden="true"><svg class="ico"><use href="#i-family"/></svg></span>
             <h3>Eltern &amp; Angehörige</h3>
-            <p>Orientierung zu Begleitung, Antragsweg und nächstem Schritt für Ihre Familie.</p>
+            <p>Orientierung zu Schulbegleitung, Familienhilfe, Autismustherapie und dem nächsten Schritt für Ihre Familie.</p>
             <div class="kt-entry-person">
               <p class="kt-entry-person-label">Ihre Ansprechpartnerinnen</p>
               <strong>Suzanne Mack &amp; Franziska Lang</strong>
@@ -454,6 +460,8 @@
                       <option value="">Bitte auswählen</option>
                       <option>Allgemeine Orientierung</option>
                       <option>Schulbegleitung / Kitabegleitung</option>
+                      <option>Familienhilfe</option>
+                      <option>Autismustherapie</option>
                       <option>Pooling</option>
                       <option>Leistungen &amp; Beratung</option>
                       <option>Karriere / Bewerbung</option>
@@ -542,7 +550,7 @@
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <img src="assets/img/GFI-Logo.svg" width="200" height="56" alt="GFI Baden Logo" loading="lazy" />
-        <p>Die GFI unterstützt Schulen, Ämter und Familien bei der verlässlichen Organisation von Schulbegleitung, Inklusionsassistenz und infrastrukturellem Pooling.</p>
+        <p>Die GFI unterstützt Schulen, Ämter und Familien mit Schulbegleitung, Familienhilfe, Autismustherapie und Inklusionsassistenz – bei Bedarf auch mit infrastrukturellem Pooling.</p>
         <div class="footer-social" aria-label="Social Media">
           <a href="https://www.facebook.com/profile.php?id=61550116466430" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
@@ -567,8 +575,8 @@
         </ul>
         <h3 class="footer-subhead">Karriere</h3>
         <ul>
-          <li><a href="karriere.html">Karriere für Führungskräfte</a></li>
-          <li><a href="https://www.gfi-baden.de/jobs/" target="_blank" rel="noopener noreferrer">Offene Stellen</a></li>
+          <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+          <li><a href="karriere.html">Führungskräfte</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -597,7 +605,7 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20260731scroll3"></script>
+  <script src="js/main-v3.js?v=20260826nav"></script>
   <script src="js/kontakt.js?v=20260810entry1"></script>
 </body>
 </html>

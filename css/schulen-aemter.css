@@ -1380,6 +1380,7 @@ html:not(.js) .sa-qcard-toggle { display: none; }
   .sa-role-card,
   .sa-role-card--wide { grid-column: span 2; }
   .sa-role-grid > .sa-role-card:last-child { grid-column: span 4; }
+  .page-eltern .sa-role-grid > .sa-role-card:last-child { grid-column: span 2; }
   .sa-schools-media { order: -1; max-width: 34rem; }
   .sa-authorities-media { order: -1; max-width: 34rem; }
   .sa-schools-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }

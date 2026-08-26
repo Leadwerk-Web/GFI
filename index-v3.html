@@ -6,8 +6,8 @@
   <script>document.documentElement.classList.add('js');</script>
 
   <!-- SEO -->
-  <title>GFI Baden | Partner für Schulen, Ämter und Inklusion</title>
-  <meta name="description" content="Die GFI unterstützt Schulen, Ämter und Schulträger mit verlässlicher Schulbegleitung, klaren Prozessen und abgestimmten Unterstützungsmodellen – inklusive infrastrukturellem Pooling." />
+  <title>GFI Baden | Schulbegleitung, Familienhilfe und Autismustherapie</title>
+  <meta name="description" content="Die GFI unterstützt Schulen, Ämter und Familien mit Schulbegleitung, Familienhilfe und Autismustherapie – mit klaren Prozessen, festen Ansprechpartnern und abgestimmten Unterstützungsmodellen." />
   <link rel="canonical" href="https://www.gfi-baden.de/" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#1F6F68" />
@@ -15,8 +15,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
-  <meta property="og:title" content="GFI Baden | Partner für Schulen, Ämter und Inklusion" />
-  <meta property="og:description" content="Verlässliche Schulbegleitung, klare Zuständigkeiten und strukturierte Zusammenarbeit für Schulen, Ämter und Schulträger – mit individuellen und teamorientierten Modellen." />
+  <meta property="og:title" content="GFI Baden | Schulbegleitung, Familienhilfe und Autismustherapie" />
+  <meta property="og:description" content="Schulbegleitung, Familienhilfe und Autismustherapie für Schulen, Ämter und Familien – mit klaren Zuständigkeiten und strukturierter Zusammenarbeit." />
   <meta property="og:url" content="https://www.gfi-baden.de/" />
   <meta property="og:image" content="https://www.gfi-baden.de/wp-content/uploads/2025/01/DSC00020-1024x683.jpg" />
 
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260826bento12" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260826nav2" />
   <style>
     /* Kritisches Layout – sichtbar auch bei Cache-/file://-Problemen */
     :root { --hero-frame-margin: 20px; --hero-frame-radius: clamp(18px, 2.2vw, 26px); }
@@ -79,7 +79,7 @@
     "name": "GFI – Baden GmbH",
     "url": "https://www.gfi-baden.de/",
     "logo": "https://www.gfi-baden.de/assets/img/GFI-Logo.svg",
-    "description": "Partner für Schulen, Ämter und Schulträger: verlässliche Schulbegleitung, klare Koordination und abgestimmte Unterstützungsmodelle in Karlsruhe und Umgebung.",
+    "description": "Schulbegleitung, Familienhilfe und Autismustherapie für Schulen, Ämter und Familien in Karlsruhe und Umgebung – mit klarer Koordination und abgestimmten Unterstützungsmodellen.",
     "telephone": "+49 721 61930339",
     "email": "info@gfi-baden.de",
     "address": {
@@ -140,7 +140,13 @@
           <ul>
             <li><a href="fuer-schulen-aemter.html">Für Schulen &amp; Ämter</a></li>
             <li><a href="fuer-eltern-angehoerige.html">Für Eltern &amp; Angehörige</a></li>
-            <li><a href="karriere.html">Karriere</a></li>
+            <li class="has-dropdown">
+              <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-karriere-menu" id="nav-karriere-btn">Karriere</button>
+              <ul class="nav-dropdown" id="nav-karriere-menu">
+                <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+                <li><a href="karriere.html">Führungskräfte</a></li>
+              </ul>
+            </li>
             <li><a href="leistungen.html">Leistungen</a></li>
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
@@ -176,16 +182,16 @@
       <div class="hero-veil" aria-hidden="true"></div>
 
       <div class="container hero-inner container-inner-hero">
-        <p class="eyebrow on-dark hero-rise" style="--d:.05s"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Schulbegleitung und Inklusionsassistenz</p>
+        <p class="eyebrow on-dark hero-rise" style="--d:.05s"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Schulbegleitung, Familienhilfe und Autismustherapie</p>
         <h1 id="hero-title" class="hero-title">
           <span class="line"><span class="line-in">Inklusion im</span></span>
-          <span class="line"><span class="line-in">Schulalltag</span></span>
+          <span class="line"><span class="line-in">Alltag</span></span>
           <span class="line"><span class="line-in"><em>verlässlich</em></span></span>
           <span class="line"><span class="line-in"><em>organisieren.</em></span></span>
         </h1>
         <p class="hero-sub hero-rise" style="--d:.55s">
-          Die GFI unterstützt Schulen, Ämter und Schulträger mit abgestimmter Schulbegleitung,
-          klaren Zuständigkeiten und fachlich begleiteten Unterstützungsmodellen.
+          Die GFI unterstützt Schulen, Ämter und Familien mit Schulbegleitung, Familienhilfe
+          und Autismustherapie – mit klaren Zuständigkeiten und fachlich begleiteten Unterstützungsmodellen.
         </p>
         <div class="hero-actions hero-rise" style="--d:.7s">
           <a class="btn btn-accent btn-lg" data-magnetic href="kontakt.html"><span>Kooperation anfragen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
@@ -200,22 +206,22 @@
             <img src="assets/img/gfi-teamevent.jpg" width="48" height="48" alt="" loading="lazy" />
           </span>
           <span class="proof-meta">
-            <span><strong>Für Schulen, Ämter</strong> und Schulträger in der Region</span>
+            <span><strong>Für Schulen, Ämter</strong> und Familien in der Region</span>
           </span>
         </div>
 
         <ul class="hero-trust hero-trust-container hero-rise" style="--d:1s">
           <li>
             <span class="trust-top"><svg class="ico"><use href="#i-check"/></svg> Feste Ansprechpartner</span>
-            <p>Klare Zuständigkeiten für Schulen, Ämter und Leistungsträger – von der Anfrage bis zum laufenden Einsatz.</p>
+            <p>Klare Zuständigkeiten für Schulen, Ämter, Familien und Leistungsträger – von der Anfrage bis zum laufenden Einsatz.</p>
           </li>
           <li>
             <span class="trust-top"><svg class="ico"><use href="#i-check"/></svg> Strukturierte Prozesse</span>
-            <p>Transparente Abstimmung zwischen Schule, Träger und Begleitung mit nachvollziehbaren Kommunikationswegen.</p>
+            <p>Transparente Abstimmung zwischen Familie, Einrichtung und Leistungsträger mit nachvollziehbaren Kommunikationswegen.</p>
           </li>
           <li>
             <span class="trust-top"><svg class="ico"><use href="#i-check"/></svg> Passende Modelle</span>
-            <p>Individuelle Begleitung und infrastrukturelles Pooling – abgestimmt auf Bedarf und schulische Rahmenbedingungen.</p>
+            <p>Schulbegleitung, Familienhilfe, Autismustherapie und bei Bedarf Pooling – abgestimmt auf den jeweiligen Bedarf.</p>
           </li>
         </ul>
       </div>
@@ -251,7 +257,7 @@
             <span class="path-ico"><svg class="ico"><use href="#i-family"/></svg></span>
             <h3>Familien</h3>
             <ul class="path-points">
-              <li>Verständliche Orientierung zur Schulbegleitung</li>
+              <li>Verständliche Orientierung zu Begleitung, Familienhilfe und Therapie</li>
               <li>Hilfe bei Fragen zu Ablauf, Beteiligten und nächsten Schritten</li>
               <li>Persönliche Beratung durch feste Ansprechpartner</li>
             </ul>
@@ -262,7 +268,7 @@
             <span class="path-ico"><svg class="ico"><use href="#i-cap"/></svg></span>
             <h3>Bewerber</h3>
             <ul class="path-points">
-              <li>Sinnstiftende Tätigkeit in der Schulbegleitung</li>
+              <li>Sinnstiftende Tätigkeit in Begleitung, Familienhilfe und Therapie</li>
               <li>Strukturierte Einarbeitung und fachlicher Austausch im Team</li>
               <li>Quereinstieg möglich – mit klarem Bewerbungsprozess</li>
             </ul>
@@ -280,19 +286,19 @@
         <header class="intro-head">
           <div class="intro-head-copy">
             <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> So arbeitet die GFI</p>
-            <h2 id="intro-title" class="reveal">Fachkompetenz, die <em>im Schulalltag ankommt.</em></h2>
+            <h2 id="intro-title" class="reveal">Fachkompetenz, die <em>im Alltag ankommt.</em></h2>
           </div>
           <p class="intro-head-lead lead reveal">
-            Die GFI verbindet praktische Erfahrung in der Schulbegleitung mit klarer Koordination
-            und fachlicher Unterstützung. Schulen, Ämter und Leistungsträger erhalten verlässliche
-            Strukturen – von der Bedarfsklärung bis zur laufenden Abstimmung.
+            Die GFI verbindet praktische Erfahrung in Schulbegleitung, Familienhilfe und Autismustherapie
+            mit klarer Koordination und fachlicher Unterstützung. Schulen, Ämter, Familien und Leistungsträger
+            erhalten verlässliche Strukturen – von der Bedarfsklärung bis zur laufenden Abstimmung.
           </p>
         </header>
 
         <div class="intro-body">
           <div class="intro-media reveal">
             <figure class="vc-photo">
-              <img src="assets/img/gfi-autismus-spiel.jpg" width="1024" height="683" alt="Kinder im gemeinsamen Schulalltag" loading="lazy" />
+              <img src="assets/img/gfi-autismus-spiel.jpg" width="1024" height="683" alt="Kind in einer therapeutischen Spielsituation" loading="lazy" />
             </figure>
           </div>
 
@@ -303,7 +309,7 @@
                 <span class="values-ico" aria-hidden="true"><svg class="ico"><use href="#i-phone"/></svg></span>
                 <div class="values-body">
                   <dt>Feste Koordination</dt>
-                  <dd>Ansprechpartner für Schulen, Ämter und interne Abstimmung im laufenden Betrieb.</dd>
+                  <dd>Ansprechpartner für Schulen, Ämter, Familien und interne Abstimmung im laufenden Betrieb.</dd>
                 </div>
               </div>
               <div class="values-row">
@@ -425,8 +431,8 @@
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Orientierung für Familien</p>
           <h2 id="fsj-title" class="reveal">Informationen für <em>Eltern und Angehörige</em></h2>
           <p class="lead reveal">
-            Du suchst Orientierung zur Schulbegleitung? Wir erklären verständlich, was Begleitung leisten kann,
-            welche Stellen beteiligt sind und welche nächsten Schritte sinnvoll sein können.
+            Du suchst Orientierung zu Schulbegleitung, Familienhilfe oder Autismustherapie? Wir erklären verständlich,
+            was Unterstützung leisten kann, welche Stellen beteiligt sind und welche nächsten Schritte sinnvoll sein können.
           </p>
           <p class="lead reveal">
             Für ein Freiwilliges Soziales Jahr bei der GFI erwartet Dich eine sinnstiftende Aufgabe in einem
@@ -475,10 +481,11 @@
           <p class="lead reveal">
             Ob mit pädagogischer Erfahrung oder als Quereinsteiger: Bei der GFI bekommst Du klare
             Einblicke in Aufgaben, Einarbeitung und Zusammenarbeit. Strukturierte Anleitung, feste
-            Ansprechpartner und fachlicher Austausch begleiten Deinen Einstieg in die Schulbegleitung.
+            Ansprechpartner und fachlicher Austausch begleiten Deinen Einstieg – häufig in der Schulbegleitung,
+            auch in Familienhilfe und Autismustherapie.
           </p>
           <ul class="check-list">
-            <li class="reveal"><svg class="ico"><use href="#i-check"/></svg> Sinnstiftende Tätigkeit im Schulalltag</li>
+            <li class="reveal"><svg class="ico"><use href="#i-check"/></svg> Sinnstiftende Tätigkeit im Alltag von Kindern und Familien</li>
             <li class="reveal"><svg class="ico"><use href="#i-check"/></svg> Strukturierte Einarbeitung und fachlicher Austausch</li>
             <li class="reveal"><svg class="ico"><use href="#i-check"/></svg> Feste Ansprechpartner im Team</li>
             <li class="reveal"><svg class="ico"><use href="#i-check"/></svg> Quereinstieg und verständlicher Bewerbungsprozess</li>
@@ -503,7 +510,7 @@
         <header class="impact-head sec-head center">
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Ihr Nutzen</p>
           <h2 id="impact-title" class="reveal">Strukturen, die <em>Verlässlichkeit schaffen</em></h2>
-          <p class="sec-lead reveal">Konkrete Arbeitsweisen statt allgemeiner Versprechen – nachvollziehbar für Schulen, Ämter und Leistungsträger.</p>
+          <p class="sec-lead reveal">Konkrete Arbeitsweisen statt allgemeiner Versprechen – nachvollziehbar für Schulen, Ämter, Familien und Leistungsträger.</p>
         </header>
 
         <ul class="impact-stats">
@@ -535,12 +542,12 @@
         <header class="sec-head center">
           <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Zusammenarbeit</p>
           <h2 id="process-title" class="reveal">So läuft die Kooperation <em>mit der GFI ab</em></h2>
-          <p class="sec-lead reveal">Vom Erstkontakt bis zur laufenden Begleitung: klare Schritte, feste Ansprechpartner und transparente Abstimmung mit Schule und Leistungsträger.</p>
+          <p class="sec-lead reveal">Vom Erstkontakt bis zur laufenden Begleitung: klare Schritte, feste Ansprechpartner und transparente Abstimmung mit Familie, Einrichtung und Leistungsträger.</p>
         </header>
 
         <ol class="steps">
           <li class="step reveal"><span class="step-num"><span class="step-num-face">01</span></span><div><h3>Bedarf klären</h3><p>Wir erfassen Ausgangslage, Zuständigkeit und die benötigte Unterstützungsform.</p></div></li>
-          <li class="step reveal"><span class="step-num"><span class="step-num-face">02</span></span><div><h3>Rahmen abstimmen</h3><p>Schule, Leistungsträger und GFI klären Rollen, Kommunikation und organisatorische Voraussetzungen.</p></div></li>
+          <li class="step reveal"><span class="step-num"><span class="step-num-face">02</span></span><div><h3>Rahmen abstimmen</h3><p>Familie, Einrichtung, Leistungsträger und GFI klären Rollen, Kommunikation und organisatorische Voraussetzungen.</p></div></li>
           <li class="step reveal"><span class="step-num"><span class="step-num-face">03</span></span><div><h3>Unterstützung planen</h3><p>Individuelle Begleitung oder ein geeignetes Pooling-Modell werden fachlich vorbereitet.</p></div></li>
           <li class="step reveal"><span class="step-num"><span class="step-num-face">04</span></span><div><h3>Einsatz begleiten</h3><p>Feste Ansprechpartner koordinieren Abstimmung, Rückmeldungen und notwendige Anpassungen.</p></div></li>
         </ol>
@@ -565,8 +572,9 @@
           <h2 id="quality-title" class="reveal">Qualität zeigt sich <em>im Alltag.</em></h2>
           <p class="lead reveal">
             Verlässliche Begleitung entsteht durch klare Verantwortung, strukturierte Einarbeitung,
-            feste Koordination und regelmäßige fachliche Abstimmung. Die GFI-Akademie unterstützt
-            die Weiterentwicklung im Bereich Schulbegleitung.
+            feste Koordination und regelmäßige fachliche Abstimmung – in der Schulbegleitung ebenso
+            wie in Familienhilfe und Autismustherapie. Die GFI-Akademie unterstützt ergänzend die
+            Weiterentwicklung im Bereich Schulbegleitung.
           </p>
           <blockquote class="quote reveal">
             <span class="quote-mark" aria-hidden="true"><img src="assets/img/zitat.svg" alt="" class="quote-mark-ico" width="561" height="448" decoding="async" /></span>
@@ -721,7 +729,7 @@
             <figure class="faq-visual-media reveal"><img src="assets/img/Schule2.jpg" width="600" height="400" alt="Schulbegleiterin unterstützt ein Kind im Unterricht" loading="lazy" /></figure>
             <div class="faq-cta-box">
               <h3 class="faq-cta-title">Kooperation anfragen</h3>
-              <p class="faq-cta-text">Sie haben Fragen zu Zusammenarbeit, Unterstützungsmodellen oder Pooling? Unser Team berät Sie persönlich.</p>
+              <p class="faq-cta-text">Sie haben Fragen zu Leistungen, Zusammenarbeit oder Pooling? Unser Team berät Sie persönlich.</p>
               <a class="btn btn-accent faq-cta-btn" href="kontakt.html"><span>Anfrage senden</span><svg class="ico"><use href="#i-arrow"/></svg></a>
             </div>
           </div>
@@ -731,13 +739,17 @@
           <header class="faq-head">
             <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> FAQ</p>
             <h2 id="faq-title" class="reveal">Häufige Fragen <em>zur Zusammenarbeit</em></h2>
-            <p class="sec-lead reveal">Antworten zu Schulbegleitung, Pooling, Zuständigkeiten und Kooperation – kompakt zusammengefasst.</p>
+            <p class="sec-lead reveal">Antworten zu Schulbegleitung, Familienhilfe, Autismustherapie, Pooling und Kooperation – kompakt zusammengefasst.</p>
           </header>
 
           <div class="accordion reveal">
             <details class="faq-item" open>
               <summary><span class="faq-q">Wie beginnt eine Zusammenarbeit mit der GFI?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
-              <div class="faq-answer"><p>Sie nehmen Kontakt auf, wir klären Bedarf, Zuständigkeit und Rahmenbedingungen. Anschließend stimmen wir mit Schule und Leistungsträger die nächsten Schritte ab.</p></div>
+              <div class="faq-answer"><p>Sie nehmen Kontakt auf, wir klären Bedarf, Zuständigkeit und Rahmenbedingungen. Anschließend stimmen wir mit Familie, Einrichtung und Leistungsträger die nächsten Schritte ab.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-q">Welche Leistungen bietet die GFI außer Schulbegleitung?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+              <div class="faq-answer"><p>Zum Angebot gehören Schulbegleitung, Kitabegleitung, Familienhilfe und Autismustherapie sowie Inklusionsassistenz. Welche Leistung passt, klären wir gemeinsam anhand von Bedarf und Bewilligung. Eine Übersicht finden Sie auf der Seite <a href="leistungen.html">Leistungen</a>.</p></div>
             </details>
             <details class="faq-item">
               <summary><span class="faq-q">Wer ist für Schulen und Ämter Ansprechpartner?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
@@ -796,7 +808,7 @@
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <img src="assets/img/GFI-Logo.svg" width="200" height="56" alt="GFI Baden Logo" loading="lazy" />
-        <p>Die GFI unterstützt Schulen, Ämter und Familien bei der verlässlichen Organisation von Schulbegleitung, Inklusionsassistenz und infrastrukturellem Pooling.</p>
+        <p>Die GFI unterstützt Schulen, Ämter und Familien mit Schulbegleitung, Familienhilfe, Autismustherapie und Inklusionsassistenz – bei Bedarf auch mit infrastrukturellem Pooling.</p>
         <div class="footer-social" aria-label="Social Media">
           <a href="https://www.facebook.com/profile.php?id=61550116466430" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
@@ -821,8 +833,8 @@
         </ul>
         <h3 class="footer-subhead">Karriere</h3>
         <ul>
-          <li><a href="karriere.html">Karriere für Führungskräfte</a></li>
-          <li><a href="https://www.gfi-baden.de/jobs/" target="_blank" rel="noopener noreferrer">Offene Stellen</a></li>
+          <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+          <li><a href="karriere.html">Führungskräfte</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -853,7 +865,8 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"Wie beginnt eine Zusammenarbeit mit der GFI?","acceptedAnswer":{"@type":"Answer","text":"Sie nehmen Kontakt auf, wir klären Bedarf, Zuständigkeit und Rahmenbedingungen. Anschließend stimmen wir mit Schule und Leistungsträger die nächsten Schritte ab."}},
+      {"@type":"Question","name":"Wie beginnt eine Zusammenarbeit mit der GFI?","acceptedAnswer":{"@type":"Answer","text":"Sie nehmen Kontakt auf, wir klären Bedarf, Zuständigkeit und Rahmenbedingungen. Anschließend stimmen wir mit Familie, Einrichtung und Leistungsträger die nächsten Schritte ab."}},
+      {"@type":"Question","name":"Welche Leistungen bietet die GFI außer Schulbegleitung?","acceptedAnswer":{"@type":"Answer","text":"Zum Angebot gehören Schulbegleitung, Kitabegleitung, Familienhilfe und Autismustherapie sowie Inklusionsassistenz. Welche Leistung passt, klären wir gemeinsam anhand von Bedarf und Bewilligung."}},
       {"@type":"Question","name":"Wer ist für Schulen und Ämter Ansprechpartner?","acceptedAnswer":{"@type":"Answer","text":"Für institutionelle Anfragen stehen feste Ansprechpersonen bereit. Erreichen Sie uns telefonisch unter 0721/61930339 oder per E-Mail an info@gfi-baden.de."}},
       {"@type":"Question","name":"Was bedeutet infrastrukturelles Pooling?","acceptedAnswer":{"@type":"Answer","text":"Beim Pooling unterstützt ein abgestimmtes Team bedarfsgerecht innerhalb schulischer Strukturen. Schule, Leistungsträger und GFI planen Rollen und Einsatz gemeinsam fachlich."}},
       {"@type":"Question","name":"Ersetzt Pooling eine individuelle 1:1-Begleitung?","acceptedAnswer":{"@type":"Answer","text":"Nein. Pooling ersetzt notwendige Einzelbegleitung nicht pauschal. Ob ein Modell geeignet ist, wird im Einzelfall fachlich und organisatorisch geprüft."}},
@@ -867,6 +880,6 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20260802scroll4"></script>
+  <script src="js/main-v3.js?v=20260826nav"></script>
 </body>
 </html>

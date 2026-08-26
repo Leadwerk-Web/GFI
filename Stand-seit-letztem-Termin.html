@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GFI Baden – Stand seit dem letzten Termin</title>
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --surface: #ffffff;
+      --text: #1c2420;
+      --muted: #5a6660;
+      --line: #d9ddd9;
+      --green: #2f6b4f;
+      --green-soft: #e8f2ec;
+      --amber: #9a6b1f;
+      --amber-soft: #f7efdf;
+      --blue: #2f5f7a;
+      --blue-soft: #e8f0f5;
+      --accent: #c45c26;
+      --purple-soft: #f0ebf5;
+      --purple: #5a4a72;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Calibri, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+    header { margin-bottom: 28px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      max-width: 46rem;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .stat.ok strong { color: var(--green); }
+    .stat.warn strong { color: var(--amber); }
+    .stat.info strong { color: var(--blue); }
+
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .col {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      min-height: 240px;
+    }
+    .col-bar { height: 4px; }
+    .col-bar.green { background: var(--green); }
+    .col-bar.amber { background: var(--amber); }
+    .col-bar.blue { background: var(--blue); }
+    .col-body { padding: 16px 16px 18px; }
+    .col-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 8px;
+    }
+    .col-head h2 { margin: 0; font-size: 16px; }
+    .pill {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #eef1ef;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .col.green .pill { background: var(--green-soft); color: var(--green); }
+    .col.amber .pill { background: var(--amber-soft); color: var(--amber); }
+    .col.blue .pill { background: var(--blue-soft); color: var(--blue); }
+    ul { margin: 0; padding: 0; list-style: none; }
+    li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    li:last-child { margin-bottom: 0; }
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .col.green li::before { background: var(--green); }
+    .col.amber li::before { background: var(--amber); }
+    .col.blue li::before { background: var(--blue); }
+
+    section { margin-bottom: 36px; }
+    section > h2 {
+      margin: 0 0 6px;
+      font-size: 20px;
+    }
+    .section-lede {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 52rem;
+    }
+    h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 650;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 18px 16px;
+      margin-bottom: 14px;
+    }
+    .panel:last-child { margin-bottom: 0; }
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .panel-head h3 { margin: 0; }
+    .tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      white-space: nowrap;
+    }
+    .tag.new { background: var(--purple-soft); color: var(--purple); }
+    .tag.neu { background: #fff0e6; color: var(--accent); }
+    .tag.unchanged { background: #eef1ef; color: var(--muted); }
+
+    .change-list {
+      display: grid;
+      gap: 10px;
+    }
+    .change-item {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      font-size: 13px;
+    }
+    .change-item:first-child { border-top: 0; padding-top: 0; }
+    .change-label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .old { color: var(--muted); text-decoration: line-through; text-decoration-color: #c8ccc8; }
+    .new { color: var(--text); }
+    .bullet-list li {
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .bullet-list li::before { background: var(--green); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      background: #eef1ef;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    tr:last-child td { border-bottom: 0; }
+
+    .karriere-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .karriere-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .karriere-box .top {
+      padding: 14px 16px 12px;
+      border-bottom: 1px solid var(--line);
+      background: #fafaf8;
+    }
+    .karriere-box .top h3 { margin: 0 0 4px; }
+    .karriere-box .top p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .karriere-box .content { padding: 14px 16px 16px; }
+    .karriere-box ul li { font-size: 13px; margin-bottom: 8px; }
+    .karriere-box ul li::before { background: var(--purple); }
+
+    .nav-box {
+      background: var(--blue-soft);
+      border: 1px solid #c8d8e4;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      margin-top: 14px;
+    }
+    .nav-box strong { color: var(--blue); }
+    .nav-tree {
+      margin: 8px 0 0;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 16px;
+    }
+    .step .n {
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .step h3 { margin: 0 0 6px; font-size: 15px; }
+    .step p { margin: 0; font-size: 13px; color: var(--muted); }
+
+    .hint {
+      background: var(--amber-soft);
+      border: 1px solid #ead9b5;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+    .hint strong { color: var(--amber); }
+    .note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .status {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .status.done { background: var(--green-soft); color: var(--green); }
+    .status.new { background: #fff0e6; color: var(--accent); }
+    .status.open { background: var(--blue-soft); color: var(--blue); }
+    .status.neutral { background: #eef1ef; color: var(--muted); }
+
+    .page-group { margin-bottom: 18px; }
+    .page-group:last-child { margin-bottom: 0; }
+    .page-group-title {
+      margin: 0 0 8px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .file {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    td.date {
+      white-space: nowrap;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media (max-width: 860px) {
+      .stats, .cols, .steps, .karriere-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">GFI Baden · Website-Entwurf · 26.08.2026</div>
+      <h1>Stand seit dem letzten Termin</h1>
+      <p class="lede">
+        Übersicht für die Abstimmung: was erledigt ist, welche textuellen Anpassungen und Karriere-Änderungen umgesetzt wurden, was zu klären ist und was noch aussteht.
+      </p>
+    </header>
+
+    <div class="stats">
+      <div class="stat ok"><strong>13</strong><span>Seiten angelegt</span></div>
+      <div class="stat ok"><strong>Fertig</strong><span>Ladebalken angepasst</span></div>
+      <div class="stat warn"><strong>Offen</strong><span>Inhaltliche Textprüfung</span></div>
+      <div class="stat info"><strong>Offen</strong><span>Vorgehen und Zeitplan</span></div>
+    </div>
+
+    <div class="cols">
+      <div class="col green">
+        <div class="col-bar green"></div>
+        <div class="col-body">
+          <div class="col-head">
+            <h2>Erledigt</h2>
+            <span class="pill">6 Bereiche</span>
+          </div>
+          <ul>
+            <li>Alle Seiten der neuen Website angelegt</li>
+            <li>Ladebalken beim Seitenaufruf angepasst</li>
+            <li>Neue Karriereseite für operative Mitarbeiter</li>
+            <li>Neue Standortseite Rhein-Sieg-Kreis (GFI Rheinland)</li>
+            <li>Karriere in zwei Wege getrennt (operativ / Führung)</li>
+            <li>Texte geöffnet: Schulbegleitung, Familienhilfe, Autismustherapie</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col amber">
+        <div class="col-bar amber"></div>
+        <div class="col-body">
+          <div class="col-head">
+            <h2>Zu klären</h2>
+            <span class="pill">3 Punkte</span>
+          </div>
+          <ul>
+            <li>Weiteres Vorgehen nach der Textprüfung</li>
+            <li>Zeitplan: Rückmeldungen, Umsetzung, WordPress-Start</li>
+            <li>Ansprechpartner festlegen / Kontaktdetails</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col blue">
+        <div class="col-bar blue"></div>
+        <div class="col-body">
+          <div class="col-head">
+            <h2>Ausstehend</h2>
+            <span class="pill">6 Punkte</span>
+          </div>
+          <ul>
+            <li>Inhaltliche Prüfung der Texte durch GFI</li>
+            <li>Besonders: Startseite, Eltern-Seite, Kontakt</li>
+            <li>Mobile Optimierung</li>
+            <li>Impressum und Datenschutz</li>
+            <li>Finale Bildzuordnung</li>
+            <li>Feintuning Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEITENÜBERSICHT -->
+    <section>
+      <h2>Angelegte Seiten</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Seite</th>
+            <th>Datei</th>
+            <th>Angelegt am</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Startseite</td>
+            <td class="file">index-v3.html</td>
+            <td class="date">14.07.2026</td>
+          </tr>
+          <tr>
+            <td>Für Schulen &amp; Ämter</td>
+            <td class="file">fuer-schulen-aemter.html</td>
+            <td class="date">27.07.2026</td>
+          </tr>
+          <tr>
+            <td>Pooling</td>
+            <td class="file">pooling.html</td>
+            <td class="date">28.07.2026</td>
+          </tr>
+          <tr>
+            <td>Für Eltern &amp; Angehörige</td>
+            <td class="file">fuer-eltern-angehoerige.html</td>
+            <td class="date">29.07.2026</td>
+          </tr>
+          <tr>
+            <td>Leistungen</td>
+            <td class="file">leistungen.html</td>
+            <td class="date">30.07.2026</td>
+          </tr>
+          <tr>
+            <td>Über uns</td>
+            <td class="file">ueber-uns.html</td>
+            <td class="date">31.07.2026</td>
+          </tr>
+          <tr>
+            <td>Karriere: Führungskräfte</td>
+            <td class="file">karriere.html</td>
+            <td class="date">31.07.2026</td>
+          </tr>
+          <tr>
+            <td>Karriere: Teamleitung</td>
+            <td class="file">karriere-teamleitung.html</td>
+            <td class="date">31.07.2026</td>
+          </tr>
+          <tr>
+            <td>Karriere: Abteilungsleitung</td>
+            <td class="file">karriere-abteilungsleitung.html</td>
+            <td class="date">31.07.2026</td>
+          </tr>
+          <tr>
+            <td>Karriere: Geschäftsführung</td>
+            <td class="file">karriere-geschaeftsfuehrung.html</td>
+            <td class="date">31.07.2026</td>
+          </tr>
+          <tr>
+            <td>Kontakt</td>
+            <td class="file">kontakt.html</td>
+            <td class="date">31.07.2026</td>
+          </tr>
+          <tr>
+            <td>Karriere: Operative Mitarbeiter</td>
+            <td class="file">karriere-operative.html</td>
+            <td class="date">26.08.2026</td>
+          </tr>
+          <tr>
+            <td>Standort Rhein-Sieg-Kreis</td>
+            <td class="file">standort-rhein-sieg-kreis.html</td>
+            <td class="date">26.08.2026</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">
+        Anlegedatum = erstes Anlegen der Datei im Projekt. Spätere inhaltliche Anpassungen sind nicht ausgewiesen.
+      </p>
+    </section>
+
+    <!-- TEXTLICHE ÄNDERUNGEN -->
+    <section>
+      <h2>Textliche Anpassungen</h2>
+      <p class="section-lede">
+        Die Website war bisher sehr stark auf Schulbegleitung ausgerichtet. Schulbegleitung bleibt das Kerngeschäft und steht weiter vorne. In den übergreifenden Texten sind Familienhilfe und Autismustherapie jetzt mitgedacht. Fachlich schulische Seiten (Schulen und Ämter, Pooling, Akademie, Führungsstellen) bleiben bewusst schulisch.
+      </p>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>1. Startseite</h3>
+          <span class="tag">Texte geöffnet</span>
+        </div>
+        <div class="change-list">
+          <div class="change-item">
+            <span class="change-label">Hero-Überschrift</span>
+            <div class="old">Inklusion im Schulalltag verlässlich organisieren.</div>
+            <div class="new">Inklusion im Alltag verlässlich organisieren.</div>
+          </div>
+          <div class="change-item">
+            <span class="change-label">Hero-Zeile</span>
+            <div class="old">Schulbegleitung und Inklusionsassistenz</div>
+            <div class="new">Schulbegleitung, Familienhilfe und Autismustherapie</div>
+          </div>
+          <div class="change-item">
+            <span class="change-label">Intro-Überschrift</span>
+            <div class="old">Fachkompetenz, die im Schulalltag ankommt.</div>
+            <div class="new">Fachkompetenz, die im Alltag ankommt.</div>
+          </div>
+          <div class="change-item">
+            <span class="change-label">Zielgruppen</span>
+            <div class="new">Schulen, Ämter und Familien werden durchgängig mit angesprochen. Vertrauens-, Zusammenarbeits- und Qualitätstexte öffnen sich auf Familienhilfe und Autismustherapie.</div>
+          </div>
+          <div class="change-item">
+            <span class="change-label">Neu ergänzt</span>
+            <div class="new">FAQ: „Welche Leistungen bietet die GFI außer Schulbegleitung?“ mit Verweis auf die Leistungsseite.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>2. Für Eltern und Angehörige</h3>
+          <span class="tag">Texte geöffnet</span>
+        </div>
+        <div class="change-list">
+          <div class="change-item">
+            <span class="change-label">Seitentitel</span>
+            <div class="old">Schulbegleitung für Eltern und Angehörige</div>
+            <div class="new">Unterstützung für Eltern und Angehörige</div>
+          </div>
+          <div class="change-item">
+            <span class="change-label">Neue Leistungskarte</span>
+            <div class="new"><strong>Autismustherapie</strong> – Fachliche Therapie und Begleitung bei Autismus, abgestimmt auf individuelle Bedarfe, den Alltag und familiäre Rahmenbedingungen.</div>
+          </div>
+          <div class="change-item">
+            <span class="change-label">Neu ergänzt</span>
+            <div class="new">FAQ: „Welche Leistungen kommen für Familien infrage?“ (Schulbegleitung, Kitabegleitung, Familienhilfe, Autismustherapie, Inklusionsassistenz, familienentlastender Dienst)</div>
+          </div>
+          <div class="change-item">
+            <span class="change-label">Formular</span>
+            <div class="new">Neue Auswahloption „Autismustherapie“ unter „Wonach suchen Sie?“</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>3. Kontakt</h3>
+          <span class="tag">Texte geöffnet</span>
+        </div>
+        <div class="change-list">
+          <div class="change-item">
+            <span class="change-label">Hero-Fließtext</span>
+            <div class="new">Beratung zu Schulbegleitung, Familienhilfe oder Autismustherapie, Kooperation mit Schulen oder persönliche Anliegen.</div>
+          </div>
+          <div class="change-item">
+            <span class="change-label">Formular: neue Themen</span>
+            <div class="new">Familienhilfe · Autismustherapie</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>4. Über uns</h3>
+          <span class="tag">Texte geöffnet</span>
+        </div>
+        <div class="change-list">
+          <div class="change-item">
+            <span class="change-label">Angebot im Einstieg</span>
+            <div class="old">… von Schulbegleitung und sozialpädagogischer Familienhilfe bis zu ambulanten Angeboten …</div>
+            <div class="new">… von Schulbegleitung und sozialpädagogischer Familienhilfe über Autismustherapie bis zu ambulanten Angeboten …</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>5. Karriere: Operative Mitarbeiter (Texte)</h3>
+          <span class="tag">Texte geöffnet</span>
+        </div>
+        <div class="change-list">
+          <div class="change-item">
+            <span class="change-label">Kurzbeschreibung / Hero</span>
+            <div class="new">Stellen in Schulbegleitung, Kitabegleitung, Familienhilfe und Autismustherapie.</div>
+          </div>
+          <div class="change-item">
+            <span class="change-label">Initiativbewerbung</span>
+            <div class="new">Neue Tätigkeiten: Familienhilfe · Autismustherapie</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>6. Footer (alle Seiten)</h3>
+          <span class="tag">Texte geöffnet</span>
+        </div>
+        <div class="change-list">
+          <div class="change-item">
+            <span class="change-label">Kurztext</span>
+            <div class="old">… Organisation von Schulbegleitung, Inklusionsassistenz und infrastrukturellem Pooling.</div>
+            <div class="new">… mit Schulbegleitung, Familienhilfe, Autismustherapie und Inklusionsassistenz – bei Bedarf auch mit infrastrukturellem Pooling.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Bewusst unverändert</h3>
+          <span class="tag unchanged">Keine Änderung</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Für Schulen und Ämter (Zielgruppe Schule)</li>
+          <li>Infrastrukturelles Pooling</li>
+          <li>GFI-Akademie (Weiterbildung zur Schulbegleitung)</li>
+          <li>Stellenprofile Teamleitung und Abteilungsleitung Schulbegleitung</li>
+          <li>Kundenstimmen und aktuelle Beiträge</li>
+          <li>Leistungsseite im Kern (Angebot war bereits vollständig; nur Footer angepasst)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KARRIERE -->
+    <section>
+      <h2>Karriereseiten: Änderungen</h2>
+      <p class="section-lede">
+        Die bisherige Karriereseite war primär auf Führungskräfte ausgerichtet. Für operative Mitarbeitende (Schulbegleitung, Kitabegleitung, Quereinstieg u. a.) fehlte eine eigene Seite im neuen Design. Stellenangebote lagen bisher vor allem auf der zentralen GFI-Jobs-Seite.
+      </p>
+
+      <div class="karriere-grid">
+        <div class="karriere-box">
+          <div class="top">
+            <h3>Neu: Operative Mitarbeiter</h3>
+            <p>karriere-operative.html</p>
+          </div>
+          <div class="content">
+            <ul>
+              <li><strong>Hero</strong> – Fokus auf operative Tätigkeiten (Schulbegleitung, Kitabegleitung u. a.)</li>
+              <li><strong>Arbeitgeberqualität</strong> – GPTW-Texte, Video „Das macht die Arbeit bei der GFI aus“, GPTW-Siegel „Beste Arbeitgeber Deutschland 2024“ am Video</li>
+              <li><strong>Auf was wir Wert legen</strong> – 3 Kultur-Karten: Kommunikation, Weiterentwicklung, Wertschätzung</li>
+              <li><strong>Warum die GFI?</strong> – 6 Benefit-Karten (Arbeitgeber, Bezahlung, Gesundheit, Weiterbildung, Perspektiven, Verweis Führung)</li>
+              <li><strong>Einblicke</strong> – 3 YouTube-Videos (Lucas/Inklusionsassistenz, Einführung GFI-Baden, Karriere GFI)</li>
+              <li><strong>Offene Stellen</strong> – Live über OnApply, nach Region (Karlsruhe, Rheinland, Rhein-Main, Rhein-Neckar), filterbar</li>
+              <li><strong>Initiativbewerbung</strong> – Formular inkl. Kontakt 0721/61909913</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="karriere-box">
+          <div class="top">
+            <h3>Angepasst: Führungskräfte</h3>
+            <p>karriere.html (Hub-Seite)</p>
+          </div>
+          <div class="content">
+            <ul>
+              <li>Klar als Seite für Führungskräfte positioniert</li>
+              <li>Titel und Meta: „Karriere für Führungskräfte“</li>
+              <li>Hero-Eyebrow: „Führungskräfte“</li>
+              <li>Verlinkung zur operativen Seite: „Zu den operativen Stellen“</li>
+              <li>Einstiegspfade unverändert: Teamleitung, Abteilungsleitung, Geschäftsführung</li>
+              <li>Unterseiten: karriere-teamleitung.html, karriere-abteilungsleitung.html, karriere-geschaeftsfuehrung.html</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-box">
+        <strong>Navigation und Querverweise</strong>
+        <div class="nav-tree">
+          Karriere (Dropdown)<br>
+          &nbsp;&nbsp;├── Operative Mitarbeiter → karriere-operative.html<br>
+          &nbsp;&nbsp;└── Führungskräfte → karriere.html
+        </div>
+        <p class="note" style="margin-top:10px;margin-bottom:0;">
+          Footer: zwei getrennte Einträge. Auf Karriere-Unterseiten zusätzlich Links zu Teamleitung, Abteilungsleitung und Geschäftsführung. Dropdown auf Desktop per Hover/Fokus, mobil per Klick.
+        </p>
+      </div>
+
+      <table style="margin-top:14px;">
+        <thead>
+          <tr>
+            <th>Design-Anpassungen (Karriere operativ)</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Arbeitgeberqualität</td>
+            <td>Headline/Subline volle Breite, Video links (schmaler), Text rechts, GPTW-Badge überlappend am Video</td>
+          </tr>
+          <tr>
+            <td>Vorteile</td>
+            <td>3-Spalten-Layout, 6 Karten in 2 Zeilen, Link „Zu den Stellen“ rechtsbündig</td>
+          </tr>
+          <tr>
+            <td>Kultur-Karten</td>
+            <td>Taglines in Dunkelgrün, semibold</td>
+          </tr>
+          <tr>
+            <td>Stellenbereich</td>
+            <td>Abstände korrigiert, Stellenkarten ans Seitendesign angepasst, OnApply-Integration</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Nächste Schritte</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n">01</div>
+          <h3>Kommentare abwarten</h3>
+          <p>Inhaltliche Prüfung der Texte durch GFI.</p>
+        </div>
+        <div class="step">
+          <div class="n">02</div>
+          <h3>Kommentare umsetzen</h3>
+          <p>Formulierungen nachschärfen, wo nötig.</p>
+        </div>
+        <div class="step">
+          <div class="n">03</div>
+          <h3>WordPress starten</h3>
+          <p>Umsetzung im CMS, sobald der Entwurf steht.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="hint">
+      <strong>Hinweis zur Textprüfung:</strong>
+      Bitte vor allem Startseite (Hero und Intro-Überschrift), Eltern-Seite (neue Autismustherapie-Karte und FAQ) und Kontakt gegenlesen. Wenn Formulierungen zu weit öffnen oder an einzelnen Stellen schulischer bleiben sollen, schärfen wir das gezielt nach.
+    </div>
+  </div>
+</body>
+</html>

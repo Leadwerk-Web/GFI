@@ -1,0 +1,229 @@
+GFI Baden
+Textübersicht Website
+Angepasste Formulierungen: Schulbegleitung, Familienhilfe und Autismustherapie
+Stand: 26. August 2026 | Zur Durchsicht und Freigabe
+
+
+ANLASS UND LEITLINIE
+
+Die Website war inhaltlich sehr stark auf den Schulbegleitungsbereich ausgerichtet. Schulbegleitung bleibt das Kerngeschäft und darf sichtbar vorne stehen. Familienhilfe und Autismustherapie sollen in den übergreifenden Texten aber nicht unter den Tisch fallen.
+
+Deshalb wurden vor allem Startseite, Eltern-Seite, Kontakt, Über uns, Karriere (operative Stellen) und der gemeinsame Footer geöffnet. Seiten, die fachlich schulisch sind, bleiben bewusst schulisch: Für Schulen und Ämter, Pooling, GFI-Akademie und die konkreten Führungsstellen.
+
+
+1. STARTSEITE
+
+Seitentitel (Browser / Google)
+Bisher: GFI Baden | Partner für Schulen, Ämter und Inklusion
+Neu:    GFI Baden | Schulbegleitung, Familienhilfe und Autismustherapie
+
+Kurzbeschreibung (Google / Teilen)
+Bisher: Die GFI unterstützt Schulen, Ämter und Schulträger mit verlässlicher Schulbegleitung, klaren Prozessen und abgestimmten Unterstützungsmodellen – inklusive infrastrukturellem Pooling.
+Neu:    Die GFI unterstützt Schulen, Ämter und Familien mit Schulbegleitung, Familienhilfe und Autismustherapie – mit klaren Prozessen, festen Ansprechpartnern und abgestimmten Unterstützungsmodellen.
+
+Hero-Zeile über der Überschrift
+Bisher: Schulbegleitung und Inklusionsassistenz
+Neu:    Schulbegleitung, Familienhilfe und Autismustherapie
+
+Hero-Überschrift
+Bisher: Inklusion im Schulalltag verlässlich organisieren.
+Neu:    Inklusion im Alltag verlässlich organisieren.
+
+Hero-Fließtext
+Bisher: Die GFI unterstützt Schulen, Ämter und Schulträger mit abgestimmter Schulbegleitung, klaren Zuständigkeiten und fachlich begleiteten Unterstützungsmodellen.
+Neu:    Die GFI unterstützt Schulen, Ämter und Familien mit Schulbegleitung, Familienhilfe und Autismustherapie – mit klaren Zuständigkeiten und fachlich begleiteten Unterstützungsmodellen.
+
+Hinweis unter dem Hero
+Bisher: Für Schulen, Ämter und Schulträger in der Region
+Neu:    Für Schulen, Ämter und Familien in der Region
+
+Vertrauen: Feste Ansprechpartner
+Bisher: Klare Zuständigkeiten für Schulen, Ämter und Leistungsträger – von der Anfrage bis zum laufenden Einsatz.
+Neu:    Klare Zuständigkeiten für Schulen, Ämter, Familien und Leistungsträger – von der Anfrage bis zum laufenden Einsatz.
+
+Vertrauen: Strukturierte Prozesse
+Bisher: Transparente Abstimmung zwischen Schule, Träger und Begleitung mit nachvollziehbaren Kommunikationswegen.
+Neu:    Transparente Abstimmung zwischen Familie, Einrichtung und Leistungsträger mit nachvollziehbaren Kommunikationswegen.
+
+Vertrauen: Passende Modelle
+Bisher: Individuelle Begleitung und infrastrukturelles Pooling – abgestimmt auf Bedarf und schulische Rahmenbedingungen.
+Neu:    Schulbegleitung, Familienhilfe, Autismustherapie und bei Bedarf Pooling – abgestimmt auf den jeweiligen Bedarf.
+
+Einstieg Familien
+Bisher: Verständliche Orientierung zur Schulbegleitung
+Neu:    Verständliche Orientierung zu Begleitung, Familienhilfe und Therapie
+
+Einstieg Bewerber
+Bisher: Sinnstiftende Tätigkeit in der Schulbegleitung
+Neu:    Sinnstiftende Tätigkeit in Begleitung, Familienhilfe und Therapie
+
+Intro-Überschrift
+Bisher: Fachkompetenz, die im Schulalltag ankommt.
+Neu:    Fachkompetenz, die im Alltag ankommt.
+
+Intro-Fließtext
+Bisher: Die GFI verbindet praktische Erfahrung in der Schulbegleitung mit klarer Koordination und fachlicher Unterstützung. Schulen, Ämter und Leistungsträger erhalten verlässliche Strukturen – von der Bedarfsklärung bis zur laufenden Abstimmung.
+Neu:    Die GFI verbindet praktische Erfahrung in Schulbegleitung, Familienhilfe und Autismustherapie mit klarer Koordination und fachlicher Unterstützung. Schulen, Ämter, Familien und Leistungsträger erhalten verlässliche Strukturen – von der Bedarfsklärung bis zur laufenden Abstimmung.
+
+Feste Koordination
+Bisher: Ansprechpartner für Schulen, Ämter und interne Abstimmung im laufenden Betrieb.
+Neu:    Ansprechpartner für Schulen, Ämter, Familien und interne Abstimmung im laufenden Betrieb.
+
+Block Orientierung für Familien
+Bisher: Du suchst Orientierung zur Schulbegleitung? Wir erklären verständlich, was Begleitung leisten kann, welche Stellen beteiligt sind und welche nächsten Schritte sinnvoll sein können.
+Neu:    Du suchst Orientierung zu Schulbegleitung, Familienhilfe oder Autismustherapie? Wir erklären verständlich, was Unterstützung leisten kann, welche Stellen beteiligt sind und welche nächsten Schritte sinnvoll sein können.
+
+Karriere-Teaser
+Bisher: Strukturierte Anleitung, feste Ansprechpartner und fachlicher Austausch begleiten Deinen Einstieg in die Schulbegleitung.
+Neu:    Strukturierte Anleitung, feste Ansprechpartner und fachlicher Austausch begleiten Deinen Einstieg – häufig in der Schulbegleitung, auch in Familienhilfe und Autismustherapie.
+
+Karriere-Punkt
+Bisher: Sinnstiftende Tätigkeit im Schulalltag
+Neu:    Sinnstiftende Tätigkeit im Alltag von Kindern und Familien
+
+Ihr Nutzen
+Bisher: Konkrete Arbeitsweisen statt allgemeiner Versprechen – nachvollziehbar für Schulen, Ämter und Leistungsträger.
+Neu:    Konkrete Arbeitsweisen statt allgemeiner Versprechen – nachvollziehbar für Schulen, Ämter, Familien und Leistungsträger.
+
+Zusammenarbeit: Einleitung
+Bisher: Vom Erstkontakt bis zur laufenden Begleitung: klare Schritte, feste Ansprechpartner und transparente Abstimmung mit Schule und Leistungsträger.
+Neu:    Vom Erstkontakt bis zur laufenden Begleitung: klare Schritte, feste Ansprechpartner und transparente Abstimmung mit Familie, Einrichtung und Leistungsträger.
+
+Zusammenarbeit: Schritt 02 Rahmen abstimmen
+Bisher: Schule, Leistungsträger und GFI klären Rollen, Kommunikation und organisatorische Voraussetzungen.
+Neu:    Familie, Einrichtung, Leistungsträger und GFI klären Rollen, Kommunikation und organisatorische Voraussetzungen.
+
+Qualität
+Bisher: Verlässliche Begleitung entsteht durch klare Verantwortung, strukturierte Einarbeitung, feste Koordination und regelmäßige fachliche Abstimmung. Die GFI-Akademie unterstützt die Weiterentwicklung im Bereich Schulbegleitung.
+Neu:    Verlässliche Begleitung entsteht durch klare Verantwortung, strukturierte Einarbeitung, feste Koordination und regelmäßige fachliche Abstimmung – in der Schulbegleitung ebenso wie in Familienhilfe und Autismustherapie. Die GFI-Akademie unterstützt ergänzend die Weiterentwicklung im Bereich Schulbegleitung.
+
+FAQ-Einleitung
+Bisher: Antworten zu Schulbegleitung, Pooling, Zuständigkeiten und Kooperation – kompakt zusammengefasst.
+Neu:    Antworten zu Schulbegleitung, Familienhilfe, Autismustherapie, Pooling und Kooperation – kompakt zusammengefasst.
+
+FAQ: Wie beginnt eine Zusammenarbeit?
+Bisher: Sie nehmen Kontakt auf, wir klären Bedarf, Zuständigkeit und Rahmenbedingungen. Anschließend stimmen wir mit Schule und Leistungsträger die nächsten Schritte ab.
+Neu:    Sie nehmen Kontakt auf, wir klären Bedarf, Zuständigkeit und Rahmenbedingungen. Anschließend stimmen wir mit Familie, Einrichtung und Leistungsträger die nächsten Schritte ab.
+
+FAQ neu ergänzt
+Frage:  Welche Leistungen bietet die GFI außer Schulbegleitung?
+Antwort: Zum Angebot gehören Schulbegleitung, Kitabegleitung, Familienhilfe und Autismustherapie sowie Inklusionsassistenz. Welche Leistung passt, klären wir gemeinsam anhand von Bedarf und Bewilligung. Eine Übersicht finden Sie auf der Seite Leistungen.
+
+FAQ-Kasten daneben
+Bisher: Sie haben Fragen zu Zusammenarbeit, Unterstützungsmodellen oder Pooling? Unser Team berät Sie persönlich.
+Neu:    Sie haben Fragen zu Leistungen, Zusammenarbeit oder Pooling? Unser Team berät Sie persönlich.
+
+
+2. FÜR ELTERN UND ANGEHÖRIGE
+
+Seitentitel
+Bisher: Schulbegleitung für Eltern und Angehörige | GFI Baden
+Neu:    Unterstützung für Eltern und Angehörige | GFI Baden
+
+Kurzbeschreibung
+Bisher: Orientierung für Eltern und Angehörige: Was Schulbegleitung und Kitassistenz leisten können, wie der Weg zur Unterstützung aussieht und wie die GFI Sie begleitet.
+Neu:    Orientierung für Eltern und Angehörige: Schulbegleitung, Familienhilfe und Autismustherapie – wie der Weg zur Unterstützung aussieht und wie die GFI Sie begleitet.
+
+Hero-Fließtext
+Bisher: Wir stehen Ihnen von Anfang an zur Seite – bei Fragen zur Inklusionsassistenz, bei der Antragstellung und bei der passenden Begleitung für Ihr Kind.
+Neu:    Wir stehen Ihnen von Anfang an zur Seite – bei Fragen zu Schulbegleitung, Familienhilfe und Autismustherapie, bei der Antragstellung und bei der passenden Unterstützung für Ihr Kind.
+
+Einstiegstext
+Bisher: Ob Schulbegleitung, Kitassistenz oder Unterstützung im familiären Umfeld: Wir nehmen uns die Zeit, die Sie und Ihr Kind brauchen.
+Neu:    Ob Schulbegleitung, Familienhilfe, Autismustherapie oder Kitassistenz: Wir nehmen uns die Zeit, die Sie und Ihr Kind brauchen.
+
+Karte Leistungen
+Bisher: Welche Angebote infrage kommen und wie Unterstützung in Schule, Kita oder Familie aussehen kann.
+Neu:    Welche Angebote infrage kommen – von Schulbegleitung über Familienhilfe bis zur Autismustherapie.
+
+Neue Leistungskarte
+Titel:  Autismustherapie
+Text:   Fachliche Therapie und Begleitung bei Autismus – abgestimmt auf individuelle Bedarfe, den Alltag und die familiären Rahmenbedingungen.
+
+Leistungen für Ihr Kind und Ihre Familie
+Bisher: Wir bieten unterschiedliche Leistungen an, um Kinder und Jugendliche mit und ohne Behinderung sowie Familien zu unterstützen – in der Schule, in der Freizeit oder im familiären Umfeld.
+Neu:    Wir bieten unterschiedliche Leistungen an, um Kinder und Jugendliche mit und ohne Behinderung sowie Familien zu unterstützen – in der Schule, in der Therapie, in der Freizeit oder im familiären Umfeld.
+
+FAQ-Kasten
+Bisher: Sie haben Fragen zu Schulbegleitung, Antragstellung oder dem weiteren Weg? Unser Team berät Sie persönlich.
+Neu:    Sie haben Fragen zu Schulbegleitung, Familienhilfe, Autismustherapie oder dem weiteren Weg? Unser Team berät Sie persönlich.
+
+FAQ-Einleitung
+Bisher: Antworten zu Antrag, Auswahl, Austausch und Vertretung – kompakt für Eltern und Angehörige.
+Neu:    Antworten zu Leistungen, Antrag, Auswahl und Austausch – kompakt für Eltern und Angehörige.
+
+FAQ neu ergänzt
+Frage:  Welche Leistungen kommen für Familien infrage?
+Antwort: Je nach Bedarf kommen Schulbegleitung, Kitabegleitung, sozialpädagogische Familienhilfe, Autismustherapie, Inklusionsassistenz oder der familienentlastende Dienst infrage. Welche Leistung passt, klären wir gemeinsam. Eine Übersicht finden Sie auf der Seite Leistungen.
+
+Formular: neue Auswahl
+Neu: Autismustherapie (zusätzliche Option unter „Wonach suchen Sie?“)
+
+
+3. KONTAKT
+
+Kurzbeschreibung
+Bisher: Kontakt zur GFI Baden: Telefon, E-Mail, Adresse in Karlsruhe und Formular für Ihre Anfrage zu Schulbegleitung, Leistungen und Kooperation.
+Neu:    Kontakt zur GFI Baden: Telefon, E-Mail, Adresse in Karlsruhe und Formular für Ihre Anfrage zu Schulbegleitung, Familienhilfe, Autismustherapie und Kooperation.
+
+Hero-Fließtext
+Bisher: Ob Beratung zu Leistungen, Kooperation mit Schulen oder ein persönliches Anliegen – wir freuen uns auf Ihren Austausch.
+Neu:    Ob Beratung zu Schulbegleitung, Familienhilfe oder Autismustherapie, Kooperation mit Schulen oder ein persönliches Anliegen – wir freuen uns auf Ihren Austausch.
+
+Karte Eltern und Angehörige
+Bisher: Orientierung zu Begleitung, Antragsweg und nächstem Schritt für Ihre Familie.
+Neu:    Orientierung zu Schulbegleitung, Familienhilfe, Autismustherapie und dem nächsten Schritt für Ihre Familie.
+
+Formular: neue Themen
+Neu: Familienhilfe
+Neu: Autismustherapie
+
+
+4. ÜBER UNS
+
+Angebot im Einstieg
+Bisher: Unser Angebot reicht von Schulbegleitung und sozialpädagogischer Familienhilfe bis zu ambulanten Angeboten für erwachsene Menschen mit Behinderung.
+Neu:    Unser Angebot reicht von Schulbegleitung und sozialpädagogischer Familienhilfe über Autismustherapie bis zu ambulanten Angeboten für erwachsene Menschen mit Behinderung.
+
+
+5. KARRIERE: OPERATIVE MITARBEITER
+
+Kurzbeschreibung
+Bisher: Offene Stellen in der Schulbegleitung und Kitabegleitung bei der GFI: faire Bezahlung am TVöD, Great Place to Work und klare Entwicklungsperspektiven.
+Neu:    Offene Stellen in Schulbegleitung, Kitabegleitung, Familienhilfe und Autismustherapie bei der GFI: faire Bezahlung am TVöD, Great Place to Work und klare Entwicklungsperspektiven.
+
+Hero-Fließtext
+Bisher: Schulbegleitung, Kitabegleitung und mehr – mit Sinn, Vertrauensvorschuss und Great Place to Work-Kultur.
+Neu:    Schulbegleitung, Familienhilfe, Autismustherapie und mehr – mit Sinn, Vertrauensvorschuss und Great Place to Work-Kultur.
+
+Kultur / Werte
+Bisher: Drei Leitplanken für den Alltag in der Schulbegleitung und den Teams vor Ort.
+Neu:    Drei Leitplanken für den Alltag in der Begleitung und den Teams vor Ort.
+
+Initiativbewerbung: neue Tätigkeiten
+Neu: Familienhilfe
+Neu: Autismustherapie
+
+
+6. FOOTER (ALLE SEITEN)
+
+Kurztext im Footer
+Bisher: Die GFI unterstützt Schulen, Ämter und Familien bei der verlässlichen Organisation von Schulbegleitung, Inklusionsassistenz und infrastrukturellem Pooling.
+Neu:    Die GFI unterstützt Schulen, Ämter und Familien mit Schulbegleitung, Familienhilfe, Autismustherapie und Inklusionsassistenz – bei Bedarf auch mit infrastrukturellem Pooling.
+
+
+UNVERÄNDERT GEBLIEBEN
+
+Diese Bereiche wurden bewusst nicht umgeschrieben, weil sie fachlich schulisch sind oder authentische Inhalte enthalten:
+
+- Seite Für Schulen und Ämter (Zielgruppe Schule)
+- Seite Infrastrukturelles Pooling
+- GFI-Akademie (Weiterbildung zur Schulbegleitung)
+- Stellenprofile Teamleitung und Abteilungsleitung Schulbegleitung
+- Kundenstimmen und aktuelle Beiträge (echte schulische Rückmeldungen bzw. Inhalte)
+- Leistungsseite im Kern: das Angebot war dort bereits vollständig abgebildet. Angepasst wurde dort nur der Footer.
+
+
+HINWEIS ZUR DURCHSICHT
+
+Bitte vor allem Startseite (Hero und Intro-Überschrift), Eltern-Seite (neue Autismustherapie-Karte und FAQ) und Kontakt kurz gegenlesen. Wenn Formulierungen zu weit öffnen oder an einzelnen Stellen zu nah an der Schule bleiben sollen, können wir das gezielt nachschärfen.

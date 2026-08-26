@@ -212,7 +212,8 @@
   var nav = document.getElementById("main-nav");
   var navClose = document.getElementById("nav-close");
   var navOverlay = document.getElementById("nav-overlay");
-  var navLinks = document.querySelectorAll(".main-nav__link, .main-nav__cta");
+  var navLinks = document.querySelectorAll(".main-nav__link, .main-nav__cta, .main-nav a");
+  var dropdownItems = document.querySelectorAll(".main-nav .has-dropdown");
 
   if (toggle && nav) {
     var setOpen = function (open) {
@@ -220,6 +221,13 @@
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
       document.body.style.overflow = open ? "hidden" : "";
+      if (!open) {
+        dropdownItems.forEach(function (item) {
+          item.classList.remove("is-open");
+          var btn = item.querySelector(".nav-dropdown-toggle");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        });
+      }
       if (navOverlay) {
         if (open) {
           navOverlay.hidden = false;
@@ -242,6 +250,24 @@
     navLinks.forEach(function (link) {
       link.addEventListener("click", function () {
         if (nav.classList.contains("open")) closeNav();
+      });
+    });
+    dropdownItems.forEach(function (item) {
+      var btn = item.querySelector(".nav-dropdown-toggle");
+      if (!btn) return;
+      btn.addEventListener("click", function (e) {
+        var isMobile = window.matchMedia("(max-width: 760px)").matches;
+        if (!isMobile) return;
+        e.preventDefault();
+        var willOpen = !item.classList.contains("is-open");
+        dropdownItems.forEach(function (other) {
+          if (other === item) return;
+          other.classList.remove("is-open");
+          var otherBtn = other.querySelector(".nav-dropdown-toggle");
+          if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+        });
+        item.classList.toggle("is-open", willOpen);
+        btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
       });
     });
     document.addEventListener("keydown", function (e) {

@@ -131,6 +131,10 @@ html.page-karriere {
   .page-karriere #benefits .news-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+  /* Operativ: 6 Karten → 3 Spalten */
+  .page-karriere-operative #vorteile .news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .page-karriere .sa-form-card,
@@ -163,6 +167,9 @@ html.page-karriere {
 .page-karriere .main-nav > ul a.is-active { color: var(--teal-ink); }
 .page-karriere .site-header:not(.scrolled) .main-nav > ul a.is-active { color: var(--orange); }
 .page-karriere .main-nav > ul a.is-active::after { width: 100%; }
+.page-karriere .main-nav .has-dropdown.is-active .nav-dropdown-toggle { color: var(--teal-ink); }
+.page-karriere .site-header:not(.scrolled) .main-nav .has-dropdown.is-active .nav-dropdown-toggle { color: var(--orange); }
+.page-karriere .main-nav .has-dropdown.is-active .nav-dropdown-toggle::before { width: 100%; }
 
 .page-karriere .eyebrow { color: var(--color-dark-deep); }
 .page-karriere .eyebrow-ring {
@@ -199,6 +206,7 @@ html.page-karriere {
 .page-karriere .sa-request .eyebrow-ring { color: var(--v3-orange); }
 
 .page-karriere .hero-image { object-position: center 35%; }
+.page-karriere-operative .hero-image { object-position: center 28%; }
 .page-teamleitung .hero-image {
   object-position: center 40%;
 }
@@ -1578,5 +1586,355 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   .page-teamleitung #bewerbung .sa-request-contact a:hover .ico,
   .page-teamleitung .sa-timeline-item:hover .sa-timeline-ico {
     transform: none;
+  }
+}
+
+/* ---------- Operative Mitarbeiter: Werte-Taglines + Job-Feeds ---------- */
+.page-karriere .path-tagline {
+  margin: 1rem 0 0;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--color-dark-deep, #173b36);
+}
+
+.page-karriere-operative #pruefstand .sec-head {
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.page-karriere-operative .op-pruefstand {
+  display: grid;
+  gap: clamp(2rem, 4vw, 2.75rem);
+}
+
+.page-karriere-operative .op-pruefstand-head {
+  max-width: none;
+  width: 100%;
+}
+
+.page-karriere-operative .op-pruefstand-head h2 {
+  margin: 0;
+  line-height: 1.18;
+  max-width: none;
+}
+
+.page-karriere-operative .op-pruefstand-lead {
+  margin: 1rem 0 0;
+  max-width: min(68rem, 100%);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 1.35vw, 1.16rem);
+  line-height: 1.55;
+  color: var(--color-dark-deep, #173b36);
+}
+
+.page-karriere-operative .op-pruefstand-media {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  max-width: 34rem;
+  justify-self: start;
+  overflow: visible;
+  z-index: 2;
+}
+
+.page-karriere-operative .op-pruefstand-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: clamp(1.75rem, 3.5vw, 3rem);
+  align-items: start;
+  overflow: visible;
+  margin-bottom: clamp(.75rem, 1.5vw, 1.25rem);
+}
+
+.page-karriere-operative .op-pruefstand-media .ka-video {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.page-karriere-operative .op-pruefstand-badge {
+  position: absolute;
+  right: clamp(-2.25rem, -4vw, -1.35rem);
+  bottom: clamp(-1.75rem, -3.2vw, -1.1rem);
+  z-index: 4;
+  width: clamp(5.75rem, 11vw, 7.5rem);
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(23, 59, 54, 0.22);
+  pointer-events: none;
+}
+
+.page-karriere-operative .op-pruefstand-aside {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+  padding-top: .15rem;
+}
+
+.page-karriere-operative .op-pruefstand-copy {
+  display: grid;
+  gap: 1.1rem;
+  color: var(--ink-soft, #3d524e);
+  font-size: clamp(1rem, 1.2vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.page-karriere-operative .op-pruefstand-copy p { margin: 0; }
+
+@media (max-width: 900px) {
+  .page-karriere-operative .op-pruefstand-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .page-karriere-operative .op-pruefstand-aside {
+    padding-top: 0;
+  }
+
+  .page-karriere-operative .op-pruefstand-badge {
+    right: -1.1rem;
+    bottom: -1.25rem;
+    width: 5.5rem;
+    border-radius: 10px;
+  }
+
+  .page-karriere-operative .op-pruefstand-media {
+    max-width: none;
+  }
+
+  .page-karriere-operative .op-pruefstand-layout {
+    margin-bottom: 1.1rem;
+  }
+}
+
+.page-karriere-operative #vorteile .news-head > div {
+  width: 100%;
+}
+
+.page-karriere-operative #vorteile .op-vorteile-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: nowrap;
+  margin-top: .75rem;
+  width: 100%;
+}
+
+.page-karriere-operative #vorteile .op-vorteile-meta .sec-lead {
+  margin: 0;
+  max-width: 52ch;
+  flex: 1 1 auto;
+}
+
+.page-karriere-operative #vorteile .op-vorteile-meta .card-link {
+  flex: 0 0 auto;
+  margin-left: auto;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.page-karriere-operative .op-einblicke {
+  background: var(--section-grad-mint, linear-gradient(180deg, #f7fbf9 0%, #eef7f2 100%));
+}
+
+.page-karriere-operative .op-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.1rem, 2.4vw, 1.6rem);
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.page-karriere-operative .op-video-card {
+  display: grid;
+  gap: .75rem;
+  align-content: start;
+}
+
+.page-karriere-operative .op-video-card .ka-video {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.page-karriere-operative .op-video-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-dark-deep, #173b36);
+}
+
+.page-karriere-operative .op-video-card p {
+  margin: 0;
+  color: rgba(23, 59, 54, 0.72);
+  line-height: 1.5;
+  font-size: .95rem;
+}
+
+@media (max-width: 900px) {
+  .page-karriere-operative .op-video-grid {
+    grid-template-columns: 1fr;
+    max-width: 36rem;
+    margin-inline: auto;
+  }
+}
+
+.page-karriere-operative .op-jobs {
+  background: var(--section-grad-audience, linear-gradient(180deg, #f3faf6 0%, #eef7f2 100%));
+}
+
+.page-karriere-operative .op-job-regions {
+  display: grid;
+  gap: 1rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.page-karriere-operative .op-job-region {
+  background: #fff;
+  border: 1px solid rgba(23, 59, 54, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(23, 59, 54, 0.06);
+  overflow: visible;
+}
+
+.page-karriere-operative .op-job-region > summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 750;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  color: var(--color-dark-deep, #173b36);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 18px 18px 0 0;
+}
+.page-karriere-operative .op-job-region > summary::-webkit-details-marker { display: none; }
+.page-karriere-operative .op-job-region > summary::after {
+  content: "";
+  width: .55rem;
+  height: .55rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform .25s ease;
+  flex: 0 0 auto;
+  opacity: .7;
+}
+.page-karriere-operative .op-job-region[open] > summary::after {
+  transform: rotate(225deg);
+}
+.page-karriere-operative .op-job-region > summary:hover {
+  color: var(--v3-teal);
+}
+
+.page-karriere-operative .op-job-region .onapply-career-page-container {
+  padding: 0 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.page-karriere-operative .onapply-career-page-container > select {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0;
+  padding: .7rem .9rem;
+  border: 1px solid rgba(23, 59, 54, 0.18);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--color-dark-deep, #173b36);
+  font: inherit;
+  font-weight: 600;
+  appearance: auto;
+}
+
+.page-karriere-operative .onapply-job-ad-list {
+  display: grid;
+  gap: .75rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  clear: both;
+}
+
+.page-karriere-operative .onapply-job-ad {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .75rem 1rem;
+  align-items: center;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(23, 59, 54, 0.1);
+  border-radius: 14px;
+  background: #f7fbf9;
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+.page-karriere-operative .onapply-job-ad:hover {
+  border-color: rgba(31, 111, 104, 0.35);
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(23, 59, 54, 0.08);
+}
+
+.page-karriere-operative .onapply-job-ad__title {
+  color: var(--color-dark-deep, #173b36) !important;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 0 0 .25rem;
+}
+
+.page-karriere-operative .onapply-job-ad__location {
+  color: rgba(23, 59, 54, 0.68) !important;
+  font-size: .9rem;
+  margin: 0;
+}
+
+.page-karriere-operative .onapply-job-ad__view-button {
+  border: 1px solid rgba(31, 111, 104, 0.35) !important;
+  color: var(--v3-teal) !important;
+  background: transparent;
+  border-radius: 999px;
+  padding: .55rem .95rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.page-karriere-operative .onapply-job-ad__view-button:hover,
+.page-karriere-operative .onapply-job-ad:hover .onapply-job-ad__view-button {
+  background: var(--v3-teal) !important;
+  border-color: var(--v3-teal) !important;
+  color: #fff !important;
+}
+
+.page-karriere-operative .op-jobs-note {
+  max-width: 42rem;
+  margin: 1.75rem auto 0;
+  text-align: center;
+  color: rgba(23, 59, 54, 0.72);
+  line-height: 1.6;
+}
+
+.page-karriere-operative .op-jobs-note a {
+  color: var(--v3-teal);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .page-karriere-operative .onapply-job-ad {
+    grid-template-columns: 1fr;
+  }
+  .page-karriere-operative .onapply-job-ad__view-button {
+    justify-self: start;
   }
 }

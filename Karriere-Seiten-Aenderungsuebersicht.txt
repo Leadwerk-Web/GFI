@@ -1,0 +1,210 @@
+ÜBERSICHT: ÄNDERUNGEN AN DEN KARRIERESEITEN
+GFI Baden – Website (Entwurf / V3)
+Stand: 26.08.2026
+
+================================================================================
+1. AUSGANGSLAGE
+================================================================================
+
+Die bisherige Karriereseite (karriere.html) war inhaltlich und strukturell
+primär auf Führungskräfte ausgerichtet (Teamleitung, Abteilungsleitung,
+Geschäftsführung / Standorteröffnung).
+
+Für operative Mitarbeitende (Schulbegleitung, Kitabegleitung, Quereinstieg
+u. a.) fehlte eine eigene, passende Karriereseite im neuen Website-Design.
+Inhalte und Stellenangebote waren bisher vor allem auf der zentralen
+Jobs-Seite der GFI-Gruppe abgebildet:
+https://gesellschaft-fuer-inklusion.de/jobs/
+
+
+================================================================================
+2. NEUE SEITE: OPERATIVE MITARBEITER
+================================================================================
+
+Datei: karriere-operative.html
+
+Es wurde eine neue Karriereseite für operative Mitarbeitende angelegt.
+Sie orientiert sich am Design der bestehenden Karriereseiten (V3) und an
+den Textinhalten der GFI-Jobs-Seite.
+
+Inhaltliche Bereiche der neuen Seite:
+
+  • Hero-Bereich
+    Fokus auf Arbeit bei der GFI-Gruppe für operative Tätigkeiten
+    (Schulbegleitung, Kitabegleitung u. a.)
+
+  • Arbeitgeberqualität
+    Texte zum regelmäßigen Prüfstand, Great Place to Work® und zur
+    Arbeitsplatzkultur
+    Video: „Das macht die Arbeit bei der GFI aus“
+    Great-Place-to-Work-Badge „Beste Arbeitgeber Deutschland 2024“ als
+    überlappendes Siegel am Video (rechts und unten leicht überstehend,
+    abgerundete Ecken)
+
+  • Auf was wir Wert legen
+    Drei Kultur-Karten:
+    – Kommunikation direkt & auf Augenhöhe
+    – Berufliche Weiterentwicklung
+    – Wertschätzung & Vertrauen
+    Abschlusszeilen in dunkelgrün und semibold
+
+  • Warum die GFI? Darum! (Vorteile)
+    Sechs Benefit-Karten in 3 Spalten, u. a.:
+    – Ausgezeichneter Arbeitgeber
+    – Faire Bezahlung & ÖPNV-Zuschuss
+    – Gesundheitsmanagement
+    – Betriebliche Weiterbildung
+    – Perspektiven und Entwicklung
+    – Verweis zur Führungs-Karriereseite
+
+  • Einblicke (Videos)
+    Drei eingebettete YouTube-Videos (Klick-to-Play, wie auf anderen
+    Karriereseiten):
+    – Lucas zu seiner Arbeit als Inklusionsassistenz
+    – Einführungsveranstaltung bei der GFI-Baden
+    – Karriere bei der Gesellschaft für Inklusion
+
+  • Offene Stellen
+    Live-Stellenangebote über OnApply, nach Region gegliedert:
+    – Stadt/Landkreis Karlsruhe & südliche Pfalz
+    – Rheinland
+    – Rhein-Main-Gebiet
+    – Rhein-Neckar-Gebiet
+    Die Stellen werden dynamisch aus den jeweiligen OnApply-Feeds geladen
+    und sind über „Alle Standorte“ filterbar.
+
+  • Initiativbewerbung
+    Formular für Bewerberinnen und Bewerber ohne passende Stellenanzeige
+    Kontaktdaten: 0721/61909913, info@gesellschaft-fuer-inklusion.de
+
+
+================================================================================
+3. BESTEHENDE SEITE: FÜHRUNGSKRÄFTE
+================================================================================
+
+Datei: karriere.html (weiterhin zentrale Hub-Seite)
+
+Die bisherige Karriereseite bleibt erhalten und ist nun klar als Seite
+für Führungskräfte positioniert:
+
+  • Titel und Meta-Angaben angepasst („Karriere für Führungskräfte“)
+  • Hero-Eyebrow: „Führungskräfte“
+  • Verlinkung zur neuen Seite für operative Mitarbeitende
+    („Zu den operativen Stellen“)
+
+Unverändert bzw. weiterhin vorhanden:
+
+  • Einstiegspfade: Teamleitung, Abteilungsleitung, Geschäftsführung
+  • Unterseiten:
+    – karriere-teamleitung.html
+    – karriere-abteilungsleitung.html
+    – karriere-geschaeftsfuehrung.html
+  • Kultur-, Vorteils- und Bewerbungsbereich für Führungspersönlichkeiten
+
+
+================================================================================
+4. NAVIGATION & QUERVERWEISE
+================================================================================
+
+Hauptnavigation (alle V3-Seiten):
+
+  Der Menüpunkt „Karriere“ wurde zu einem Dropdown-Menü erweitert:
+
+    Karriere
+      ├── Operative Mitarbeiter  →  karriere-operative.html
+      └── Führungskräfte         →  karriere.html
+
+  Das Dropdown funktioniert auf Desktop per Hover bzw. Fokus und auf
+  Mobilgeräten per Klick auf „Karriere“.
+
+Footer (Karriere-Bereich):
+
+  Auf den V3-Seiten erscheinen nun zwei getrennte Einträge:
+    – Operative Mitarbeiter
+    – Führungskräfte
+
+  Auf den Karriere-Unterseiten zusätzlich Verlinkungen zu Teamleitung,
+  Abteilungsleitung und Geschäftsführung / Standort.
+
+
+================================================================================
+5. TECHNISCHE UMSETZUNG (KURZ)
+================================================================================
+
+  • Neue Datei: karriere-operative.html
+  • Ergänzungen in css/karriere.css (Layout, Videos, Stellen, Badge,
+    Vorteile-Raster, Taglines)
+  • Ergänzungen in css/styles-v3.css (Dropdown-Navigation)
+  • Ergänzungen in js/main-v3.js (Dropdown auf Mobilgeräten)
+  • OnApply-Integration für Stellenlisten (CSS + JS von onapply.de)
+  • Neues Bild: assets/img/gptw-beste-arbeitgeber-deutschland-2024.jpg
+
+Hinweis: Beide Karriereseiten sind derzeit mit
+<meta name="robots" content="noindex, nofollow"> versehen (Entwurfsstatus).
+
+
+================================================================================
+6. DESIGN-ANPASSUNGEN (DETAIL)
+================================================================================
+
+Arbeitgeberqualität (operative Seite):
+  – Headline und Subline über volle Breite
+  – Video links, schmaler als zuvor
+  – Fließtext rechts daneben
+  – GPTW-Badge überlappend am Video
+
+Vorteile (operative Seite):
+  – 3-Spalten-Layout (6 Karten in 2 Zeilen)
+  – Lead-Text und Link „Zu den Stellen“ auf einer Zeile,
+    Link rechtsbündig
+
+Kultur-Karten:
+  – Taglines („Starre Strukturen …“, „Der Wurf ins kalte Wasser …“,
+    „Sich Vertrauen erst verdienen …“) in Dunkelgrün, semibold
+
+Stellenbereich:
+  – Abstand zwischen Standortauswahl und erster Stellenanzeige korrigiert
+  – Darstellung der Stellenkarten an das Seitendesign angepasst
+
+
+================================================================================
+7. OFFENE PUNKTE / HINWEISE FÜR DEN LIVE-GANG
+================================================================================
+
+  • Seiten sind noch nicht indexierbar (noindex) – vor Live-Gang prüfen
+  • Bewerbungsformular: Backend-Anbindung (data-endpoint) ggf. noch
+    einzurichten
+  • Canonical-URLs und Verlinkung von der Live-Domain festlegen
+  • Abgleich, ob alle Stellen-Feeds in OnApply aktuell gepflegt werden
+  • Optional: Verlinkung von der Startseite direkt auf beide Karriere-
+    Einstiege prüfen (aktuell weiterhin generischer Link „Karriere“)
+
+
+================================================================================
+8. BETROFFENE DATEIEN (ÜBERSICHT)
+================================================================================
+
+Neu:
+  karriere-operative.html
+  assets/img/gptw-beste-arbeitgeber-deutschland-2024.jpg
+
+Geändert (Auswahl):
+  karriere.html
+  karriere-teamleitung.html
+  karriere-abteilungsleitung.html
+  karriere-geschaeftsfuehrung.html
+  index-v3.html
+  fuer-schulen-aemter.html
+  fuer-eltern-angehoerige.html
+  leistungen.html
+  ueber-uns.html
+  kontakt.html
+  pooling.html
+  css/karriere.css
+  css/styles-v3.css
+  js/main-v3.js
+
+
+================================================================================
+ENDE DER ÜBERSICHT
+================================================================================
