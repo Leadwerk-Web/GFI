@@ -1249,6 +1249,10 @@ html.js .pl-compare.is-active .pl-flow > *:nth-child(5) { transition-delay: .52s
   box-shadow: none;
 }
 
+.page-pooling .faq-visual-media img {
+  object-position: center 28%;
+}
+
 .pl-faq-list {
   display: grid;
   gap: .65rem;

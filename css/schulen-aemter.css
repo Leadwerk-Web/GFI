@@ -154,7 +154,7 @@ html.is-light-perf .scroll-progress { display: none !important; }
   border-radius: var(--r-xl);
 }
 
-/* Zitat als typografisches Element */
+/* Zitat als typografisches Element (heller Mint-Kasten, oranger Linker Rand) */
 .sa-pullquote {
   position: relative;
   margin: clamp(2.5rem, 6vw, 4rem) 0 0;
@@ -162,13 +162,14 @@ html.is-light-perf .scroll-progress { display: none !important; }
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: clamp(1rem, 2.5vw, 1.8rem);
-  align-items: start;
+  align-items: center;
+  background: color-mix(in srgb, var(--green-50, #eef7f2) 82%, #fff);
+  border: 1.5px solid rgba(var(--v3-teal-rgb), .14);
   border-left: 4px solid var(--v3-orange);
   border-radius: 0 var(--r-lg) var(--r-lg) 0;
-  background: linear-gradient(120deg, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, .55) 100%);
-  -webkit-backdrop-filter: blur(14px) saturate(150%);
-  backdrop-filter: blur(14px) saturate(150%);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 10px 28px rgba(23, 59, 54, .06);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 .sa-pullquote-mark { line-height: 0; }
 .sa-pullquote-mark img { width: clamp(2.25rem, 4vw, 3.25rem); height: auto; }
@@ -180,6 +181,12 @@ html.is-light-perf .scroll-progress { display: none !important; }
   letter-spacing: -.02em;
   color: var(--v3-teal);
   max-width: 42ch;
+}
+.sa-pullquote em {
+  color: var(--v3-orange);
+  -webkit-text-fill-color: var(--v3-orange);
+  font-style: normal;
+  font-weight: 800;
 }
 
 /* ============================================================

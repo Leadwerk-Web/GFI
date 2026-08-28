@@ -52,11 +52,6 @@ html.page-standort { scroll-padding-top: 6.5rem; }
   font-style: normal;
 }
 
-.page-standort .sa-pullquote {
-  background: color-mix(in srgb, var(--green-50, #eef7f2) 82%, #fff);
-  border: 1.5px solid rgba(var(--v3-teal-rgb), .14);
-  box-shadow: 0 10px 28px rgba(23, 59, 54, .06);
-}
 .page-standort h1 em,
 .page-standort h2 em,
 .page-standort h3 em,

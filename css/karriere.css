@@ -207,6 +207,7 @@ html.page-karriere {
 
 .page-karriere .hero-image { object-position: center 35%; }
 .page-karriere-operative .hero-image { object-position: center 28%; }
+.page-karriere-stellen .hero-image { object-position: center 28%; }
 .page-teamleitung .hero-image {
   object-position: center 40%;
 }
@@ -284,6 +285,17 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
 /* ---------- Einstiegspfade (Hub): nutzt globale .paths / .path-card aus styles-v3 ---------- */
 .page-karriere .audience .sec-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
 
+.page-karriere .ka-paths-crosslink {
+  margin: 2rem auto 0;
+  text-align: center;
+  max-width: 42rem;
+}
+.page-karriere .ka-paths-crosslink .card-link {
+  display: inline-flex;
+  margin-left: .35rem;
+  vertical-align: baseline;
+}
+
 /* Icon-Badge (z. B. Konzept-Karten auf Job-Unterseiten) ---------- */
 .ka-path-ico {
   width: 2.7rem;
@@ -350,7 +362,7 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   color: #fff;
   background:
     linear-gradient(180deg, rgba(15, 47, 44, 0.15) 0%, rgba(15, 47, 44, 0.55) 100%),
-    center / cover no-repeat var(--ka-yt-poster);
+    center / var(--ka-yt-poster-size, cover) no-repeat var(--ka-yt-poster);
 }
 .ka-video-play:focus-visible {
   outline: 3px solid var(--v3-orange);
@@ -1777,18 +1789,18 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   }
 }
 
-.page-karriere-operative .op-jobs {
+.page-karriere-stellen .op-jobs {
   background: var(--section-grad-audience, linear-gradient(180deg, #f3faf6 0%, #eef7f2 100%));
 }
 
-.page-karriere-operative .op-job-regions {
+.page-karriere-stellen .op-job-regions {
   display: grid;
   gap: 1rem;
   max-width: 56rem;
   margin: 0 auto;
 }
 
-.page-karriere-operative .op-job-region {
+.page-karriere-stellen .op-job-region {
   background: #fff;
   border: 1px solid rgba(23, 59, 54, 0.1);
   border-radius: 18px;
@@ -1796,7 +1808,7 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   overflow: visible;
 }
 
-.page-karriere-operative .op-job-region > summary {
+.page-karriere-stellen .op-job-region > summary {
   list-style: none;
   cursor: pointer;
   font-weight: 750;
@@ -1809,8 +1821,8 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   gap: 1rem;
   border-radius: 18px 18px 0 0;
 }
-.page-karriere-operative .op-job-region > summary::-webkit-details-marker { display: none; }
-.page-karriere-operative .op-job-region > summary::after {
+.page-karriere-stellen .op-job-region > summary::-webkit-details-marker { display: none; }
+.page-karriere-stellen .op-job-region > summary::after {
   content: "";
   width: .55rem;
   height: .55rem;
@@ -1821,14 +1833,14 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   flex: 0 0 auto;
   opacity: .7;
 }
-.page-karriere-operative .op-job-region[open] > summary::after {
+.page-karriere-stellen .op-job-region[open] > summary::after {
   transform: rotate(225deg);
 }
-.page-karriere-operative .op-job-region > summary:hover {
+.page-karriere-stellen .op-job-region > summary:hover {
   color: var(--v3-teal);
 }
 
-.page-karriere-operative .op-job-region .onapply-career-page-container {
+.page-karriere-stellen .op-job-region .onapply-career-page-container {
   padding: 0 1rem 1.15rem;
   display: flex;
   flex-direction: column;
@@ -1837,7 +1849,7 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   z-index: 1;
 }
 
-.page-karriere-operative .onapply-career-page-container > select {
+.page-karriere-stellen .onapply-career-page-container > select {
   display: block;
   position: relative;
   z-index: 3;
@@ -1854,7 +1866,7 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   appearance: auto;
 }
 
-.page-karriere-operative .onapply-job-ad-list {
+.page-karriere-stellen .onapply-job-ad-list {
   display: grid;
   gap: .75rem;
   margin: 0;
@@ -1864,7 +1876,7 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   clear: both;
 }
 
-.page-karriere-operative .onapply-job-ad {
+.page-karriere-stellen .onapply-job-ad {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: .75rem 1rem;
@@ -1876,13 +1888,13 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
 }
 
-.page-karriere-operative .onapply-job-ad:hover {
+.page-karriere-stellen .onapply-job-ad:hover {
   border-color: rgba(31, 111, 104, 0.35);
   background: #fff;
   box-shadow: 0 8px 22px rgba(23, 59, 54, 0.08);
 }
 
-.page-karriere-operative .onapply-job-ad__title {
+.page-karriere-stellen .onapply-job-ad__title {
   color: var(--color-dark-deep, #173b36) !important;
   font-weight: 700;
   font-size: 1rem;
@@ -1890,13 +1902,13 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   margin: 0 0 .25rem;
 }
 
-.page-karriere-operative .onapply-job-ad__location {
+.page-karriere-stellen .onapply-job-ad__location {
   color: rgba(23, 59, 54, 0.68) !important;
   font-size: .9rem;
   margin: 0;
 }
 
-.page-karriere-operative .onapply-job-ad__view-button {
+.page-karriere-stellen .onapply-job-ad__view-button {
   border: 1px solid rgba(31, 111, 104, 0.35) !important;
   color: var(--v3-teal) !important;
   background: transparent;
@@ -1908,33 +1920,37 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 }
 
-.page-karriere-operative .onapply-job-ad__view-button:hover,
-.page-karriere-operative .onapply-job-ad:hover .onapply-job-ad__view-button {
+.page-karriere-stellen .onapply-job-ad__view-button:hover,
+.page-karriere-stellen .onapply-job-ad:hover .onapply-job-ad__view-button {
   background: var(--v3-teal) !important;
   border-color: var(--v3-teal) !important;
   color: #fff !important;
 }
 
-.page-karriere-operative .op-jobs-note {
-  max-width: 42rem;
+.page-karriere-stellen .op-jobs-note {
+  max-width: 56rem;
   margin: 1.75rem auto 0;
   text-align: center;
   color: rgba(23, 59, 54, 0.72);
   line-height: 1.6;
 }
 
-.page-karriere-operative .op-jobs-note a {
+.page-karriere-stellen .op-jobs-note a {
   color: var(--v3-teal);
   font-weight: 650;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
+.page-karriere-stellen .op-jobs-note a[href^="mailto:"] {
+  white-space: nowrap;
+}
+
 @media (max-width: 640px) {
-  .page-karriere-operative .onapply-job-ad {
+  .page-karriere-stellen .onapply-job-ad {
     grid-template-columns: 1fr;
   }
-  .page-karriere-operative .onapply-job-ad__view-button {
+  .page-karriere-stellen .onapply-job-ad__view-button {
     justify-self: start;
   }
 }

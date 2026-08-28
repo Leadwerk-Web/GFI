@@ -193,14 +193,17 @@
   (function initEntryPrefill() {
     var rolle = document.getElementById("f-rolle");
     var thema = document.getElementById("f-thema");
-    if (!rolle && !thema) return;
+    var gesellschaft = document.getElementById("f-gesellschaft");
+    if (!rolle && !thema && !gesellschaft) return;
 
-    document.querySelectorAll("[data-prefill-rolle], [data-prefill-thema]").forEach(function (link) {
+    document.querySelectorAll("[data-prefill-rolle], [data-prefill-thema], [data-prefill-gesellschaft]").forEach(function (link) {
       link.addEventListener("click", function () {
         var rolleValue = link.getAttribute("data-prefill-rolle");
         var themaValue = link.getAttribute("data-prefill-thema");
+        var gesellschaftValue = link.getAttribute("data-prefill-gesellschaft");
         if (rolle && rolleValue) rolle.value = rolleValue;
         if (thema && themaValue) thema.value = themaValue;
+        if (gesellschaft && gesellschaftValue) gesellschaft.value = gesellschaftValue;
       });
     });
   })();
