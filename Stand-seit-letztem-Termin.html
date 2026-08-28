@@ -4,28 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GFI Baden – Stand seit dem letzten Termin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f6f5f2;
+      --bg: #f7fbf9;
       --surface: #ffffff;
-      --text: #1c2420;
-      --muted: #5a6660;
-      --line: #d9ddd9;
-      --green: #2f6b4f;
-      --green-soft: #e8f2ec;
-      --amber: #9a6b1f;
-      --amber-soft: #f7efdf;
-      --blue: #2f5f7a;
-      --blue-soft: #e8f0f5;
-      --accent: #c45c26;
-      --purple-soft: #f0ebf5;
-      --purple: #5a4a72;
+      --text: #243532;
+      --muted: #5f7570;
+      --line: #d4e8de;
+      --green: #1F6F68;
+      --green-mid: #6DB991;
+      --green-soft: #edf6f1;
+      --amber: #c97a42;
+      --amber-soft: #fff6ef;
+      --blue: #1F6F68;
+      --blue-soft: #e6f2f1;
+      --accent: #F29B5B;
+      --accent-deep: #e08849;
+      --purple-soft: #e6f2f1;
+      --purple: #1F6F68;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Segoe UI", Calibri, Arial, sans-serif;
-      background: var(--bg);
+      font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #edf6f1 0%, #f7fbf9 100%);
       color: var(--text);
       line-height: 1.45;
     }
@@ -40,14 +45,16 @@
       font-size: 12px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--green);
+      font-weight: 700;
       margin-bottom: 8px;
     }
     h1 {
       margin: 0 0 8px;
       font-size: 28px;
-      font-weight: 650;
+      font-weight: 800;
       letter-spacing: -0.02em;
+      color: var(--green);
     }
     .lede {
       margin: 0;
@@ -63,18 +70,20 @@
     .stat {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 16px;
+      box-shadow: 0 10px 28px rgba(31, 111, 104, 0.05);
     }
     .stat strong {
       display: block;
       font-size: 22px;
       margin-bottom: 4px;
+      font-weight: 800;
     }
     .stat span { color: var(--muted); font-size: 13px; }
-    .stat.ok strong { color: var(--green); }
-    .stat.warn strong { color: var(--amber); }
-    .stat.info strong { color: var(--blue); }
+    .stat.ok strong { color: var(--green-mid); }
+    .stat.warn strong { color: var(--accent); }
+    .stat.info strong { color: var(--green); }
 
     .cols {
       display: grid;
@@ -85,14 +94,15 @@
     .col {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
       min-height: 240px;
+      box-shadow: 0 10px 28px rgba(31, 111, 104, 0.05);
     }
     .col-bar { height: 4px; }
-    .col-bar.green { background: var(--green); }
-    .col-bar.amber { background: var(--amber); }
-    .col-bar.blue { background: var(--blue); }
+    .col-bar.green { background: var(--green-mid); }
+    .col-bar.amber { background: var(--accent); }
+    .col-bar.blue { background: var(--green); }
     .col-body { padding: 16px 16px 18px; }
     .col-head {
       display: flex;
@@ -101,14 +111,15 @@
       margin-bottom: 14px;
       gap: 8px;
     }
-    .col-head h2 { margin: 0; font-size: 16px; }
+    .col-head h2 { margin: 0; font-size: 16px; color: var(--green); font-weight: 800; }
     .pill {
       font-size: 11px;
       padding: 3px 8px;
       border-radius: 999px;
-      background: #eef1ef;
-      color: var(--muted);
+      background: var(--green-soft);
+      color: var(--green);
       white-space: nowrap;
+      font-weight: 700;
     }
     .col.green .pill { background: var(--green-soft); color: var(--green); }
     .col.amber .pill { background: var(--amber-soft); color: var(--amber); }
@@ -130,14 +141,16 @@
       height: 6px;
       border-radius: 50%;
     }
-    .col.green li::before { background: var(--green); }
-    .col.amber li::before { background: var(--amber); }
-    .col.blue li::before { background: var(--blue); }
+    .col.green li::before { background: var(--green-mid); }
+    .col.amber li::before { background: var(--accent); }
+    .col.blue li::before { background: var(--green); }
 
     section { margin-bottom: 36px; }
     section > h2 {
       margin: 0 0 6px;
       font-size: 20px;
+      color: var(--green);
+      font-weight: 800;
     }
     .section-lede {
       margin: 0 0 16px;
@@ -148,15 +161,17 @@
     h3 {
       margin: 0 0 10px;
       font-size: 15px;
-      font-weight: 650;
+      font-weight: 700;
+      color: var(--green);
     }
 
     .panel {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 18px 18px 16px;
       margin-bottom: 14px;
+      box-shadow: 0 8px 22px rgba(31, 111, 104, 0.04);
     }
     .panel:last-child { margin-bottom: 0; }
     .panel-head {
@@ -175,9 +190,10 @@
       background: var(--green-soft);
       color: var(--green);
       white-space: nowrap;
+      font-weight: 700;
     }
-    .tag.new { background: var(--purple-soft); color: var(--purple); }
-    .tag.neu { background: #fff0e6; color: var(--accent); }
+    .tag.new { background: var(--blue-soft); color: var(--blue); }
+    .tag.neu { background: var(--amber-soft); color: var(--accent-deep); }
     .tag.unchanged { background: #eef1ef; color: var(--muted); }
 
     .change-list {
@@ -197,7 +213,7 @@
       letter-spacing: 0.03em;
       color: var(--muted);
       margin-bottom: 4px;
-      font-weight: 600;
+      font-weight: 700;
     }
     .old { color: var(--muted); text-decoration: line-through; text-decoration-color: #c8ccc8; }
     .new { color: var(--text); }
@@ -205,14 +221,14 @@
       margin-bottom: 8px;
       font-size: 13px;
     }
-    .bullet-list li::before { background: var(--green); }
+    .bullet-list li::before { background: var(--green-mid); }
 
     table {
       width: 100%;
       border-collapse: collapse;
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
       font-size: 14px;
     }
@@ -223,12 +239,12 @@
       vertical-align: top;
     }
     th {
-      background: #eef1ef;
+      background: var(--green-soft);
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.03em;
-      color: var(--muted);
-      font-weight: 600;
+      color: var(--green);
+      font-weight: 700;
     }
     tr:last-child td { border-bottom: 0; }
 
@@ -240,13 +256,14 @@
     .karriere-box {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 8px 22px rgba(31, 111, 104, 0.04);
     }
     .karriere-box .top {
       padding: 14px 16px 12px;
       border-bottom: 1px solid var(--line);
-      background: #fafaf8;
+      background: var(--green-soft);
     }
     .karriere-box .top h3 { margin: 0 0 4px; }
     .karriere-box .top p {
@@ -256,17 +273,17 @@
     }
     .karriere-box .content { padding: 14px 16px 16px; }
     .karriere-box ul li { font-size: 13px; margin-bottom: 8px; }
-    .karriere-box ul li::before { background: var(--purple); }
+    .karriere-box ul li::before { background: var(--green-mid); }
 
     .nav-box {
       background: var(--blue-soft);
-      border: 1px solid #c8d8e4;
-      border-radius: 10px;
+      border: 1px solid #c5ddd9;
+      border-radius: 12px;
       padding: 14px 16px;
       font-size: 14px;
       margin-top: 14px;
     }
-    .nav-box strong { color: var(--blue); }
+    .nav-box strong { color: var(--green); }
     .nav-tree {
       margin: 8px 0 0;
       font-family: Consolas, "Courier New", monospace;
@@ -282,13 +299,14 @@
     .step {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 18px 16px;
+      box-shadow: 0 8px 22px rgba(31, 111, 104, 0.04);
     }
     .step .n {
       color: var(--accent);
       font-size: 22px;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 6px;
     }
     .step h3 { margin: 0 0 6px; font-size: 15px; }
@@ -296,12 +314,12 @@
 
     .hint {
       background: var(--amber-soft);
-      border: 1px solid #ead9b5;
-      border-radius: 10px;
+      border: 1px solid #f5c49a;
+      border-radius: 12px;
       padding: 14px 16px;
       font-size: 14px;
     }
-    .hint strong { color: var(--amber); }
+    .hint strong { color: var(--accent-deep); }
     .note {
       margin-top: 10px;
       font-size: 13px;
@@ -313,11 +331,11 @@
       font-size: 11px;
       padding: 2px 7px;
       border-radius: 999px;
-      font-weight: 600;
+      font-weight: 700;
       white-space: nowrap;
     }
     .status.done { background: var(--green-soft); color: var(--green); }
-    .status.new { background: #fff0e6; color: var(--accent); }
+    .status.new { background: var(--amber-soft); color: var(--accent-deep); }
     .status.open { background: var(--blue-soft); color: var(--blue); }
     .status.neutral { background: #eef1ef; color: var(--muted); }
 
@@ -329,21 +347,39 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--muted);
-      font-weight: 650;
+      font-weight: 700;
     }
     .file {
       font-family: Consolas, "Courier New", monospace;
       font-size: 12px;
       color: var(--muted);
     }
-    td.date {
-      white-space: nowrap;
-      color: var(--muted);
-      font-variant-numeric: tabular-nums;
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .page-chip {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(31, 111, 104, 0.04);
+    }
+    .page-chip strong {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green);
+    }
+    .page-chip .file {
+      font-size: 11px;
     }
 
     @media (max-width: 860px) {
-      .stats, .cols, .steps, .karriere-grid { grid-template-columns: 1fr; }
+      .stats, .cols, .steps, .karriere-grid, .pages-grid { grid-template-columns: 1fr; }
       h1 { font-size: 24px; }
     }
   </style>
@@ -359,7 +395,7 @@
     </header>
 
     <div class="stats">
-      <div class="stat ok"><strong>13</strong><span>Seiten angelegt</span></div>
+      <div class="stat ok"><strong>14</strong><span>Seiten angelegt</span></div>
       <div class="stat ok"><strong>Fertig</strong><span>Ladebalken angepasst</span></div>
       <div class="stat warn"><strong>Offen</strong><span>Inhaltliche Textprüfung</span></div>
       <div class="stat info"><strong>Offen</strong><span>Vorgehen und Zeitplan</span></div>
@@ -371,15 +407,14 @@
         <div class="col-body">
           <div class="col-head">
             <h2>Erledigt</h2>
-            <span class="pill">6 Bereiche</span>
+            <span class="pill">5 Bereiche</span>
           </div>
           <ul>
-            <li>Alle Seiten der neuen Website angelegt</li>
             <li>Ladebalken beim Seitenaufruf angepasst</li>
-            <li>Neue Karriereseite für operative Mitarbeiter</li>
             <li>Neue Standortseite Rhein-Sieg-Kreis (GFI Rheinland)</li>
-            <li>Karriere in zwei Wege getrennt (operativ / Führung)</li>
-            <li>Texte geöffnet: Schulbegleitung, Familienhilfe, Autismustherapie</li>
+            <li>Karriere in drei Unterseiten: Führungskräfte, Operative Mitarbeiter und Stellenausschreibungen</li>
+            <li>Texte bearbeitet</li>
+            <li>Anpassung von Weekly (26.08.) eingearbeitet: Stellenausschreibung-Seite, Gesellschaften bei Kontakt</li>
           </ul>
         </div>
       </div>
@@ -393,7 +428,7 @@
           <ul>
             <li>Weiteres Vorgehen nach der Textprüfung</li>
             <li>Zeitplan: Rückmeldungen, Umsetzung, WordPress-Start</li>
-            <li>Ansprechpartner festlegen / Kontaktdetails</li>
+            <li>Neuen Termin finden</li>
           </ul>
         </div>
       </div>
@@ -406,13 +441,13 @@
           </div>
           <ul>
             <li>Inhaltliche Prüfung der Texte durch GFI</li>
-            <li>Besonders: Startseite, Eltern-Seite, Kontakt</li>
             <li>Mobile Optimierung</li>
             <li>Impressum und Datenschutz</li>
             <li>Finale Bildzuordnung</li>
             <li>Feintuning Design</li>
             <li>Fehlende Führungskräfte-Stellenausschreibungs-Seiten</li>
             <li>Standort-Seiten ausarbeiten</li>
+            <li>Anbindung an OnApply prüfen</li>
           </ul>
         </div>
       </div>
@@ -421,85 +456,64 @@
     <!-- SEITENÜBERSICHT -->
     <section>
       <h2>Angelegte Seiten</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Seite</th>
-            <th>Datei</th>
-            <th>Angelegt am</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Startseite</td>
-            <td class="file">index-v3.html</td>
-            <td class="date">14.07.2026</td>
-          </tr>
-          <tr>
-            <td>Für Schulen &amp; Ämter</td>
-            <td class="file">fuer-schulen-aemter.html</td>
-            <td class="date">27.07.2026</td>
-          </tr>
-          <tr>
-            <td>Pooling</td>
-            <td class="file">pooling.html</td>
-            <td class="date">28.07.2026</td>
-          </tr>
-          <tr>
-            <td>Für Eltern &amp; Angehörige</td>
-            <td class="file">fuer-eltern-angehoerige.html</td>
-            <td class="date">29.07.2026</td>
-          </tr>
-          <tr>
-            <td>Leistungen</td>
-            <td class="file">leistungen.html</td>
-            <td class="date">30.07.2026</td>
-          </tr>
-          <tr>
-            <td>Über uns</td>
-            <td class="file">ueber-uns.html</td>
-            <td class="date">31.07.2026</td>
-          </tr>
-          <tr>
-            <td>Karriere: Führungskräfte</td>
-            <td class="file">karriere.html</td>
-            <td class="date">31.07.2026</td>
-          </tr>
-          <tr>
-            <td>Karriere: Teamleitung</td>
-            <td class="file">karriere-teamleitung.html</td>
-            <td class="date">31.07.2026</td>
-          </tr>
-          <tr>
-            <td>Karriere: Abteilungsleitung</td>
-            <td class="file">karriere-abteilungsleitung.html</td>
-            <td class="date">31.07.2026</td>
-          </tr>
-          <tr>
-            <td>Karriere: Geschäftsführung</td>
-            <td class="file">karriere-geschaeftsfuehrung.html</td>
-            <td class="date">31.07.2026</td>
-          </tr>
-          <tr>
-            <td>Kontakt</td>
-            <td class="file">kontakt.html</td>
-            <td class="date">31.07.2026</td>
-          </tr>
-          <tr>
-            <td>Karriere: Operative Mitarbeiter</td>
-            <td class="file">karriere-operative.html</td>
-            <td class="date">26.08.2026</td>
-          </tr>
-          <tr>
-            <td>Standort Rhein-Sieg-Kreis</td>
-            <td class="file">standort-rhein-sieg-kreis.html</td>
-            <td class="date">26.08.2026</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="note">
-        Anlegedatum = erstes Anlegen der Datei im Projekt. Spätere inhaltliche Anpassungen sind nicht ausgewiesen.
-      </p>
+      <div class="pages-grid">
+        <div class="page-chip">
+          <strong>Startseite</strong>
+          <span class="file">index-v3.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Für Schulen &amp; Ämter</strong>
+          <span class="file">fuer-schulen-aemter.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Pooling</strong>
+          <span class="file">pooling.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Für Eltern &amp; Angehörige</strong>
+          <span class="file">fuer-eltern-angehoerige.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Leistungen</strong>
+          <span class="file">leistungen.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Über uns</strong>
+          <span class="file">ueber-uns.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Kontakt</strong>
+          <span class="file">kontakt.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Karriere: Führungskräfte</strong>
+          <span class="file">karriere-fuehrungskraefte.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Karriere: Operative Mitarbeiter</strong>
+          <span class="file">karriere-operative.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Karriere: Stellenausschreibungen</strong>
+          <span class="file">karriere-stellen.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Karriere: Teamleitung</strong>
+          <span class="file">karriere-teamleitung.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Karriere: Abteilungsleitung</strong>
+          <span class="file">karriere-abteilungsleitung.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Karriere: Geschäftsführung</strong>
+          <span class="file">karriere-geschaeftsfuehrung.html</span>
+        </div>
+        <div class="page-chip">
+          <strong>Standort Rhein-Sieg-Kreis</strong>
+          <span class="file">standort-rhein-sieg-kreis.html</span>
+        </div>
+      </div>
     </section>
 
     <!-- TEXTLICHE ÄNDERUNGEN -->
@@ -649,7 +663,7 @@
     <section>
       <h2>Karriereseiten: Änderungen</h2>
       <p class="section-lede">
-        Die bisherige Karriereseite war primär auf Führungskräfte ausgerichtet. Für operative Mitarbeitende (Schulbegleitung, Kitabegleitung, Quereinstieg u. a.) fehlte eine eigene Seite im neuen Design. Stellenangebote lagen bisher vor allem auf der zentralen GFI-Jobs-Seite.
+        Die bisherige Karriereseite war primär auf Führungskräfte ausgerichtet. Für operative Mitarbeitende (Schulbegleitung, Kitabegleitung, Quereinstieg u. a.) fehlte eine eigene Seite im neuen Design. Stellenangebote lagen bisher vor allem auf der zentralen GFI-Jobs-Seite. Neu hinzugekommen ist eine eigenständige Seite für Stellenausschreibungen.
       </p>
 
       <div class="karriere-grid">
@@ -665,7 +679,6 @@
               <li><strong>Auf was wir Wert legen</strong> – 3 Kultur-Karten: Kommunikation, Weiterentwicklung, Wertschätzung</li>
               <li><strong>Warum die GFI?</strong> – 6 Benefit-Karten (Arbeitgeber, Bezahlung, Gesundheit, Weiterbildung, Perspektiven, Verweis Führung)</li>
               <li><strong>Einblicke</strong> – 3 YouTube-Videos (Lucas/Inklusionsassistenz, Einführung GFI-Baden, Karriere GFI)</li>
-              <li><strong>Offene Stellen</strong> – Live über OnApply, nach Region (Karlsruhe, Rheinland, Rhein-Main, Rhein-Neckar), filterbar</li>
               <li><strong>Initiativbewerbung</strong> – Formular inkl. Kontakt 0721/61909913</li>
             </ul>
           </div>
@@ -674,18 +687,34 @@
         <div class="karriere-box">
           <div class="top">
             <h3>Angepasst: Führungskräfte</h3>
-            <p>karriere.html (Hub-Seite)</p>
+            <p>karriere-fuehrungskraefte.html</p>
           </div>
           <div class="content">
             <ul>
               <li>Klar als Seite für Führungskräfte positioniert</li>
               <li>Titel und Meta: „Karriere für Führungskräfte“</li>
               <li>Hero-Eyebrow: „Führungskräfte“</li>
-              <li>Verlinkung zur operativen Seite: „Zu den operativen Stellen“</li>
-              <li>Einstiegspfade unverändert: Teamleitung, Abteilungsleitung, Geschäftsführung</li>
+              <li>Verlinkung zur operativen Seite und zu den Stellenausschreibungen</li>
+              <li>Einstiegspfade: Teamleitung, Abteilungsleitung, Geschäftsführung</li>
               <li>Unterseiten: karriere-teamleitung.html, karriere-abteilungsleitung.html, karriere-geschaeftsfuehrung.html</li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div class="karriere-box" style="margin-top:14px;">
+        <div class="top">
+          <h3>Neu: Stellenausschreibungen</h3>
+          <p>karriere-stellen.html</p>
+        </div>
+        <div class="content">
+          <ul>
+            <li>Eigenständige Seite für alle offenen Stellen</li>
+            <li>Hero mit Fokus auf aktuelle Ausschreibungen</li>
+            <li>Live-Stellen über OnApply, nach Region filterbar</li>
+            <li>Initiativbewerbung, wenn keine passende Stelle dabei ist</li>
+            <li>In Navigation und Footer als dritter Karriere-Einstieg ergänzt</li>
+          </ul>
         </div>
       </div>
 
@@ -693,11 +722,12 @@
         <strong>Navigation und Querverweise</strong>
         <div class="nav-tree">
           Karriere (Dropdown)<br>
+          &nbsp;&nbsp;├── Führungskräfte → karriere-fuehrungskraefte.html<br>
           &nbsp;&nbsp;├── Operative Mitarbeiter → karriere-operative.html<br>
-          &nbsp;&nbsp;└── Führungskräfte → karriere.html
+          &nbsp;&nbsp;└── Stellenausschreibungen → karriere-stellen.html
         </div>
         <p class="note" style="margin-top:10px;margin-bottom:0;">
-          Footer: zwei getrennte Einträge. Auf Karriere-Unterseiten zusätzlich Links zu Teamleitung, Abteilungsleitung und Geschäftsführung. Dropdown auf Desktop per Hover/Fokus, mobil per Klick.
+          Footer: drei getrennte Einträge (Führungskräfte, Operative Mitarbeiter, Stellenausschreibungen). Auf Karriere-Unterseiten zusätzlich Links zu Teamleitung, Abteilungsleitung und Geschäftsführung. Dropdown auf Desktop per Hover/Fokus, mobil per Klick.
         </p>
       </div>
 
@@ -723,7 +753,7 @@
           </tr>
           <tr>
             <td>Stellenbereich</td>
-            <td>Abstände korrigiert, Stellenkarten ans Seitendesign angepasst, OnApply-Integration</td>
+            <td>Abstände korrigiert, Stellenkarten ans Seitendesign angepasst, OnApply-Integration; eigene Seite karriere-stellen.html</td>
           </tr>
         </tbody>
       </table>
