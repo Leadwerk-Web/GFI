@@ -199,10 +199,12 @@ html.page-standort { scroll-padding-top: 6.5rem; }
   display: flex;
   align-items: center;
   gap: .6rem;
+  min-width: 0;
   font-size: 1.0625rem;
   line-height: 1.5;
   color: var(--ink);
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .st-facts-lines a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -395,6 +397,13 @@ html.page-standort { scroll-padding-top: 6.5rem; }
   box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
 }
 
+.st-lead--duo img {
+  width: 104px;
+  height: 72px;
+  border-radius: 18px;
+  object-position: center 18%;
+}
+
 .st-lead strong {
   display: block;
   color: #fff;
@@ -415,6 +424,11 @@ html.page-standort { scroll-padding-top: 6.5rem; }
   color: rgba(255, 255, 255, .72);
   font-size: 1.0625rem;
   line-height: 1.65;
+}
+
+.page-standort .sa-request-contact a {
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 
 .page-standort .st-statement .statement-cta {

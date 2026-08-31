@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260826nav2" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260831nav" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260827quote2" />
   <link rel="stylesheet" href="css/ueber-uns.css?v=20260810awards15" />
   <style>
@@ -154,7 +154,20 @@
               </ul>
             </li>
             <li><a href="leistungen.html">Leistungen</a></li>
-            <li><a class="is-active" href="ueber-uns.html" aria-current="page">Über uns</a></li>
+            <li class="has-dropdown is-active">
+              <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-ueber-uns-menu" id="nav-ueber-uns-btn">Über uns</button>
+              <ul class="nav-dropdown" id="nav-ueber-uns-menu">
+                <li><a class="is-active" href="ueber-uns.html" aria-current="page">Überblick</a></li>
+                <li><a href="standort-rhein-sieg-kreis.html">Rhein-Sieg-Kreis</a></li>
+                <li><a href="standort-koeln.html">Köln</a></li>
+                <li><a href="standort-bonn.html">Bonn</a></li>
+                <li><a href="standort-euskirchen.html">Euskirchen</a></li>
+                <li><a href="standort-wiesbaden.html">Wiesbaden</a></li>
+                <li><a href="standort-mannheim.html">Mannheim</a></li>
+                <li><a href="standort-karlsruhe.html">Karlsruhe</a></li>
+                <li><a href="standort-suedliche-weinstrasse.html">Südliche Weinstraße</a></li>
+              </ul>
+            </li>
             <li><a href="kontakt.html">Kontakt</a></li>
           </ul>
           <div class="nav-cta-mobile">
@@ -442,14 +455,14 @@
               data-title="Köln" data-region="Nordrhein-Westfalen · GFI Rheinland"
               data-text="Seit 2022 aktiv mit Schulbegleitung und Kitabegleitung in Köln und Umgebung."
               data-address="Weißhausstraße 27, 50939 Köln" data-phone="02224/9840069" data-phone-href="tel:+4922249840069"
-              data-href="https://gesellschaft-fuer-inklusion.de/standort-koeln/"
+              data-href="standort-koeln.html"
               aria-label="Standort Köln anzeigen"><span class="uu-pin-tip">Köln</span></button>
 
             <button type="button" class="uu-pin" style="left:33.8%;top:36.1%" data-loc="bonn"
               data-title="Bonn" data-region="Nordrhein-Westfalen · GFI Rheinland"
               data-text="Seit 2023 mit Schulbegleitung im Bonner Poolmodell und ambulanten Hilfen zur Erziehung."
               data-address="Rheinweg 24, 53113 Bonn" data-phone="02224/9840067" data-phone-href="tel:+4922249840067"
-              data-href="https://gesellschaft-fuer-inklusion.de/standort-bonn/"
+              data-href="standort-bonn.html"
               aria-label="Standort Bonn anzeigen"><span class="uu-pin-tip">Bonn</span></button>
 
             <button type="button" class="uu-pin" style="left:35.4%;top:35.5%" data-loc="rhein-sieg"
@@ -462,36 +475,36 @@
             <button type="button" class="uu-pin" style="left:28.5%;top:37.5%" data-loc="euskirchen"
               data-title="Euskirchen" data-region="Nordrhein-Westfalen · GFI Rheinland"
               data-text="Seit 2022 mit Fokus auf Schulbegleitung in Euskirchen und der Region."
-              data-address="Josef-Ruhr-Straße 30, 53879 Euskirchen" data-phone="02224/9840069" data-phone-href="tel:+4922249840069"
-              data-href="https://gesellschaft-fuer-inklusion.de/standort-euskirchen/"
+              data-address="Josef-Ruhr-Straße 30, 53879 Euskirchen" data-phone="0174/9204548" data-phone-href="tel:+491749204548"
+              data-href="standort-euskirchen.html"
               aria-label="Standort Euskirchen anzeigen"><span class="uu-pin-tip">Euskirchen</span></button>
 
             <button type="button" class="uu-pin" style="left:53.2%;top:47.9%" data-loc="wiesbaden"
               data-title="Wiesbaden" data-region="Hessen · GFI Rhein-Main"
               data-text="Seit 2022 mit Teilhabeassistenz an Schulen und Kitas sowie ambulanten Assistenzleistungen."
               data-address="Bahnstraße 21, 65205 Wiesbaden" data-phone="0611/95019337" data-phone-href="tel:+4961195019337"
-              data-href="https://gesellschaft-fuer-inklusion.de/standort-wiesbaden/"
+              data-href="standort-wiesbaden.html"
               aria-label="Standort Wiesbaden anzeigen"><span class="uu-pin-tip">Wiesbaden</span></button>
 
             <button type="button" class="uu-pin" style="left:57.3%;top:58.4%" data-loc="mannheim"
               data-title="Mannheim" data-region="Baden-Württemberg · GFI Rhein-Neckar"
-              data-text="Seit 2024 mit Schulbegleitung und Autismustherapie in Mannheim und Umgebung."
-              data-address="Seckenheimer Straße 30a, 68165 Mannheim" data-phone="" data-phone-href=""
-              data-href="https://gesellschaft-fuer-inklusion.de/standort-mannheim/"
+              data-text="Seit 2023: Schulbegleitung und Kitabegleitung in Mannheim und Umgebung."
+              data-address="Seckenheimer Straße 30a, 68165 Mannheim" data-phone="0176/73563777" data-phone-href="tel:+4917673563777"
+              data-href="standort-mannheim.html"
               aria-label="Standort Mannheim anzeigen"><span class="uu-pin-tip">Mannheim</span></button>
 
             <button type="button" class="uu-pin" style="left:56.0%;top:67.0%" data-loc="karlsruhe"
               data-title="Karlsruhe" data-region="Baden-Württemberg · GFI Baden"
               data-text="Seit 2021: Schulbegleitung, Kitabegleitung und Hilfen zur Erziehung in Karlsruhe und angrenzenden Kreisen."
               data-address="Hirschstraße 12-14, 76133 Karlsruhe" data-phone="0721/61930339" data-phone-href="tel:+4972161930339"
-              data-href="https://gesellschaft-fuer-inklusion.de/standort-karlsruhe/"
+              data-href="standort-karlsruhe.html"
               aria-label="Standort Karlsruhe anzeigen"><span class="uu-pin-tip">Karlsruhe</span></button>
 
             <button type="button" class="uu-pin" style="left:51.4%;top:62.2%" data-loc="weinstrasse"
-              data-title="Südliche Weinstraße" data-region="Rheinland-Pfalz"
+              data-title="Südliche Weinstraße" data-region="Rheinland-Pfalz · GFI Baden"
               data-text="Seit 2023 in Edenkoben: Schulbegleitung/Integrationsassistenz und ambulante Hilfen zur Erziehung in der Pfalz."
-              data-address="Weinstraße 79, 67480 Edenkoben" data-phone="" data-phone-href=""
-              data-href="https://gesellschaft-fuer-inklusion.de/standort-suedliche-weinstrasse/"
+              data-address="Weinstraße 79, 67480 Edenkoben" data-phone="0152/27960893" data-phone-href="tel:+4915227960893"
+              data-href="standort-suedliche-weinstrasse.html"
               aria-label="Standort Südliche Weinstraße anzeigen"><span class="uu-pin-tip">Südl. Weinstraße</span></button>
 
             <button type="button" class="uu-pin" style="left:46.7%;top:85.2%" data-loc="freiburg"

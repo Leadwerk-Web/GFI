@@ -5,10 +5,8 @@
 (function () {
   "use strict";
 
-  var CENTRAL = {
-    phone: "02224/9840069",
-    phoneHref: "tel:+4922249840069",
-    email: "info@gfi-rheinland.de"
+  var contactPhone = function (form) {
+    return (form && form.getAttribute("data-phone")) || "";
   };
 
   var revealWithin = function (root) {
@@ -179,9 +177,10 @@
           showSuccess();
         })
         .catch(function () {
+          var phone = contactPhone(form);
           showFormError(
-            "Ihre Anfrage konnte gerade nicht übermittelt werden. Bitte versuchen Sie es erneut oder " +
-            "erreichen Sie uns telefonisch unter " + CENTRAL.phone + "."
+            "Ihre Anfrage konnte gerade nicht übermittelt werden. Bitte versuchen Sie es erneut" +
+            (phone ? " oder erreichen Sie uns telefonisch unter " + phone + "." : ".")
           );
         })
         .then(function () {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="theme-v3 page-schulen page-karriere is-light-perf">
+<html lang="de" class="theme-v3 page-schulen page-karriere page-teamleitung page-abteilungsleitung is-light-perf">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,18 +24,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260826nav2" />
-  <link rel="stylesheet" href="css/schulen-aemter.css?v=20260804form" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260831frame10" />
+  <link rel="stylesheet" href="css/schulen-aemter.css?v=20260831frame10" />
   <link rel="stylesheet" href="css/karriere.css?v=20260827poster1" />
   <style>
     :root { --hero-frame-margin: 20px; --hero-frame-radius: clamp(18px, 2.2vw, 26px); }
     body { background: linear-gradient(180deg, #eef7f2 0%, #eef5f1 100%); }
     .hero-frame {
+      position: relative;
       background: #ffffff;
       height: 70dvh;
       max-height: 70dvh;
       padding: var(--hero-frame-margin);
-      overflow: hidden;
+      overflow: visible;
+      margin-bottom: clamp(2.5rem, 5.5vw, 4.25rem);
     }
     .hero-shell {
       margin: 0;
@@ -133,7 +135,20 @@
               </ul>
             </li>
             <li><a href="leistungen.html">Leistungen</a></li>
-            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li class="has-dropdown">
+              <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-ueber-uns-menu" id="nav-ueber-uns-btn">Über uns</button>
+              <ul class="nav-dropdown" id="nav-ueber-uns-menu">
+                <li><a href="ueber-uns.html">Überblick</a></li>
+                <li><a href="standort-rhein-sieg-kreis.html">Rhein-Sieg-Kreis</a></li>
+                <li><a href="standort-koeln.html">Köln</a></li>
+                <li><a href="standort-bonn.html">Bonn</a></li>
+                <li><a href="standort-euskirchen.html">Euskirchen</a></li>
+                <li><a href="standort-wiesbaden.html">Wiesbaden</a></li>
+                <li><a href="standort-mannheim.html">Mannheim</a></li>
+                <li><a href="standort-karlsruhe.html">Karlsruhe</a></li>
+                <li><a href="standort-suedliche-weinstrasse.html">Südliche Weinstraße</a></li>
+              </ul>
+            </li>
             <li><a href="kontakt.html">Kontakt</a></li>
           </ul>
           <div class="nav-cta-mobile">
@@ -156,320 +171,536 @@
     <div class="hero-frame">
     <div class="hero-shell">
       <section class="hero" id="hero" aria-labelledby="hero-title" data-cursor="dark">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-video-wrap">
-          <img class="hero-image" src="assets/img/gfi-gptw2024.jpg" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" />
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-video-wrap">
+            <img class="hero-image" src="assets/img/karriere-abteilungsleitung/hero.png" width="1600" height="900" alt="" fetchpriority="high" decoding="async" />
+          </div>
         </div>
-      </div>
-      <div class="hero-veil" aria-hidden="true"></div>
+        <div class="hero-veil" aria-hidden="true"></div>
 
-      <div class="container hero-inner container-inner-hero">
-        <p class="eyebrow on-dark hero-rise" style="--d:.05s"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Ohne Führungserfahrung zum Top-Job</p>
-        <h1 id="hero-title" class="hero-title">
-          <span class="line"><span class="line-in">Sozialarbeiter,</span></span>
-          <span class="line"><span class="line-in">Sozialpädagogen als</span></span>
-          <span class="line"><span class="line-in"><em>Abteilungsleitung.</em></span></span>
-        </h1>
-        <p class="hero-sub hero-rise" style="--d:.55s">Als Abteilungsleitung (m/w/d) führen Sie bis zu 44 Schulbegleiterinnen und Schulbegleiter – mit Fokus auf Fallbesetzung, Konzept und Weiterentwicklung.</p>
-        <div class="hero-actions hero-rise" style="--d:.7s">
-          <a class="btn btn-accent btn-lg" data-magnetic href="#bewerbung"><span>Lebenslauf senden</span><svg class="ico"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-light btn-lg" href="#aufgaben"><span>Aufgaben & Profil</span></a>
+        <div class="container hero-inner container-inner-hero">
+          <p class="eyebrow on-dark hero-rise" style="--d:.05s"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Ohne Führungserfahrung zum Top-Job</p>
+          <h1 id="hero-title" class="hero-title">
+            <span class="line"><span class="line-in">Sozialarbeiter/</span></span>
+            <span class="line"><span class="line-in">Sozialpädagogen als</span></span>
+            <span class="line"><span class="line-in"><em>Abteilungsleitung</em></span></span>
+            <span class="line"><span class="line-in">in der Schulbegleitung</span></span>
+            <span class="line"><span class="line-in">(m/w/d)</span></span>
+          </h1>
+          <div class="hero-actions hero-rise" style="--d:.7s">
+            <a class="btn btn-accent btn-lg" data-magnetic href="#bewerbung"><span>Schnellbewerbung</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-light btn-lg" href="tel:+4972161930339"><span>Jetzt anrufen 0721/61930339</span></a>
+          </div>
         </div>
-      </div>
-
       </section>
     </div>
+      <div class="ka-hero-awards">
+        <img
+          src="assets/img/karriere-abteilungsleitung/awards.png"
+          width="1200"
+          height="220"
+          alt="Great Place to Work 2024: Beste Arbeitgeber Deutschland, Gesundheit &amp; Soziales, Hessen, Baden-Württemberg und NRW"
+          decoding="async"
+        />
+      </div>
     </div>
 
-    <section class="sa-team section" aria-labelledby="intro-title">
+    <section class="ka-intro-stack section" aria-labelledby="intro-title">
       <div class="container">
-        <nav class="ka-crumb reveal" aria-label="Brotkrumen">
-          <a href="karriere-fuehrungskraefte.html">Karriere</a><span aria-hidden="true">/</span>
-          <span aria-current="page">Abteilungsleitung</span>
-        </nav>
-      </div>
-      <div class="container sa-team-grid">
-        <div class="sa-team-copy">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Die GFI-Gruppe</p>
-          <h2 id="intro-title" class="reveal">Top-Arbeitgeber an <em>acht Standorten</em></h2>
-          <p class="lead reveal">
-            Leidenschaftlich und engagiert bieten wir an mittlerweile acht Standorten vielfältige Leistungen in der Kinder- und Jugendhilfe sowie der Eingliederungshilfe an – z. B. in Sankt Augustin, Köln, Wiesbaden, Karlsruhe oder Mannheim.
-          </p>
-          <p class="reveal">
-            Bei uns finden Sozialarbeiter, Sozialpädagogen o. ä. (m/w/d) als Leitungskraft in der Schulbegleitung einen Job mit Sinn in einer von Great Place to Work® zertifizierten Arbeitsplatzkultur.
-          </p>
-        </div>
-        <div class="sa-team-media reveal">
-          <figure class="frame-soft">
-            <img src="assets/img/gfi-event-minigolf-2.jpg" width="1024" height="683" alt="Zusammenarbeit im GFI-Team" loading="lazy" decoding="async" />
-          </figure>
+        <header class="sec-head reveal">
+          <p class="eyebrow"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Die GFI – Gruppe</p>
+          <h2 id="intro-title">Top-Arbeitgeber in Hessen, Rheinland-Pfalz, <em>Baden-Württemberg und NRW</em></h2>
+        </header>
+        <div class="ka-intro-split">
+          <div class="ka-intro-copy">
+            <p class="lead reveal">Leidenschaftlich und engagiert bieten wir an mittlerweile acht Standorten vielfältige Leistungen in den Bereichen der Kinder- und Jugendhilfe sowie der Eingliederungshilfe an, so z.B. in Sankt Augustin, Köln, Wiesbaden, Karlsruhe oder Mannheim. Bei uns finden Sozialarbeiter, Sozialpädagogen o.ä. (m/w/d) als Leitungskraft in der Schulbegleitung einen Job mit Sinn in einer von Great Place to Work® zertifizierten Arbeitsplatzkultur.</p>
+            <div class="ka-mid-cta reveal" style="justify-content:flex-start;margin-top:1.5rem">
+              <a class="btn btn-accent" href="#bewerbung"><span>Lebenslauf senden &amp; Karriere starten</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="ka-intro-video reveal">
+            <div class="ka-video" data-yt="8l8YEeAy2y8" data-yt-title="Die GFI – Gruppe" style="--ka-yt-poster:url('assets/img/karriere-teamleitung/video-poster-gfi.jpg'); --ka-yt-poster-size: 135% auto">
+              <button type="button" class="ka-video-play" aria-label="Video abspielen: Die GFI – Gruppe">
+                <span class="ka-video-play-ico" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="ka-values section" id="kultur" aria-labelledby="values-title">
+        <section class="ka-values section" id="kultur" aria-labelledby="values-title">
       <div class="container">
-        <header class="sec-head">
+        <header class="sec-head center">
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Unsere Unternehmenskultur</p>
           <h2 id="values-title" class="reveal">Auf was wir <em>Wert legen</em></h2>
         </header>
-        <div class="ka-value-grid">
-          <article class="ka-value reveal">
-            <h3>Wertschätzung</h3>
-            <p class="ka-value-contrast">Unser Schlüssel für Mitarbeiterzufriedenheit</p>
-            <p>Kommunikation auf Augenhöhe, regelmäßiger Austausch, aktive Mitgestaltung und ein uneingeschränkter Vertrauensvorschuss sind unser Schlüssel für ein wertschätzendes Miteinander.</p>
-            <p><strong>„Bester Arbeitgeber“:</strong> Unsere Top-Platzierungen bei Great Place to Work® zeigen, dass diese Werte gelebte Realität sind.</p>
+        <div class="ka-culture-cols">
+          <article class="ka-culture-card reveal">
+            <div class="ka-culture-card-body">
+              <p class="ka-culture-index" aria-hidden="true"><span>01</span></p>
+              <h3>Wertschätzung</h3>
+              <p class="ka-value-contrast">Unser Schlüssel für Mitarbeiterzufriedenheit</p>
+              <p>Kommunikation auf Augenhöhe, regelmäßiger Austausch auf allen Ebenen, aktive Mitgestaltung und ein uneingeschränkter Vertrauensvorschuss sind unser Schlüssel für ein wertschätzendes Miteinander.</p>
+              <p class="ka-value-contrast ka-value-contrast--after">„Bester Arbeitgeber“</p>
+              <p>Dass wir uns diese Werte nicht nur auf die Fahne schreiben, sondern unsere gelebte Realität sind, zeigen unsere Top-Platzierungen bei den Auszeichnungen durch Great Place to Work®.</p>
+            </div>
+            <div class="ka-culture-card-media">
+              <figure class="frame-soft">
+                <img src="assets/img/karriere-abteilungsleitung/tag-2.jpg" width="800" height="1000" alt="Zusammenarbeit und Wertearbeit im Team" loading="lazy" decoding="async" />
+              </figure>
+            </div>
           </article>
-          <article class="ka-value reveal">
-            <h3>Individuelle Karrierechancen</h3>
-            <p class="ka-value-contrast">Horizontale &amp; vertikale Weiterentwicklung</p>
-            <p>Durch intensives Mentoring, Schulungen und Führungskräfteworkshops kann alles im eigenen Tempo erlernt werden.</p>
-            <p><strong>Erfolgsgeschichten:</strong> Sich innerhalb von 1–2 Jahren von der Abteilungsleitung zur Fachbereichs- oder Standortleitung weiterzuentwickeln, ist keine Seltenheit – z. B. Chiara Graca, Geschäftsführerin der GFI Rhein-Neckar GmbH.</p>
+          <article class="ka-culture-card ka-culture-card--flip reveal">
+            <div class="ka-culture-card-body">
+              <p class="ka-culture-index" aria-hidden="true"><span>02</span></p>
+              <h3>Individuelle Karrierechancen</h3>
+              <p class="ka-value-contrast">Horizontale &amp; vertikale Weiterentwicklung</p>
+              <p>Wir bieten jedem Teammitglied individuelle Möglichkeiten der Weiterentwicklung durch sukzessive Verantwortungsübernahme. Durch unser intensives Mentoring, umfangreiche Schulungen und Führungskräfteworkshops kann alles im eigenen Tempo erlernt werden und jeder an das Ziel gelangen, das er anstrebt.</p>
+              <p class="ka-value-contrast ka-value-contrast--after">Erfolgsgeschichten bei der GFI</p>
+              <p>Sich innerhalb von 1–2 Jahren z.&nbsp;B. von der Abteilungsleitung zur Fachbereichs- oder gar Standortleitung weiterzuentwickeln, ist bei der GFI-Gruppe keine Seltenheit. Unsere Geschäftsführerin der GFI – Rhein-Neckar GmbH, Chiara Graca, ist hierfür nur ein Beispiel.</p>
+            </div>
+            <div class="ka-culture-card-media">
+              <figure class="frame-soft">
+                <img src="assets/img/karriere-abteilungsleitung/tag-4.jpg" width="800" height="1000" alt="Führung und Weiterentwicklung bei der GFI" loading="lazy" decoding="async" />
+              </figure>
+            </div>
           </article>
-          <article class="ka-value reveal">
-            <h3>Dynamik &amp; Flexibilität</h3>
-            <p class="ka-value-contrast">Umfangreiche Freiräume in der täglichen Arbeit</p>
-            <p>Mitarbeitende profitieren von Transparenz, eigenverantwortlichem Arbeiten mit hohen Remote-Anteilen und viel Gestaltungsspielraum.</p>
-            <p><strong>Durch Schnelligkeit zum Erfolg:</strong> Das Wachstum der GFI ist Beweis für unsere pragmatische Arbeitsweise – mit zahlreichen Kontaktpunkten, um Dinge zu bewegen.</p>
+          <article class="ka-culture-card reveal">
+            <div class="ka-culture-card-body">
+              <p class="ka-culture-index" aria-hidden="true"><span>03</span></p>
+              <h3>Dynamik &amp; Flexibilität</h3>
+              <p class="ka-value-contrast">Umfangreiche Freiräume in der täglichen Arbeit</p>
+              <p>Starre Strukturen und Bürokratie sind im sozialen Bereich häufig der Hemmschuh für flexibles Arbeiten und persönliches Vorankommen. Unsere Mitarbeitenden profitieren von Transparenz, eigenverantwortlichem Arbeiten mit hohen Remote-Anteilen und viel Gestaltungsspielraum.</p>
+              <p class="ka-value-contrast ka-value-contrast--after">Durch Schnelligkeit zum Erfolg</p>
+              <p>Das schnelle Wachstum der GFI-Gruppe ist der beste Beweis für unsere pragmatische, flexible und dynamische Arbeitsweise. Durch zahlreiche Kontaktpunkte zwischen den Ebenen hat jeder die Möglichkeit, sich einzubringen, Dinge zu bewegen und zu verändern.</p>
+            </div>
+            <div class="ka-culture-card-media">
+              <figure class="frame-soft">
+                <img src="assets/img/karriere-abteilungsleitung/tag-1.jpg" width="800" height="1000" alt="Flexibles Arbeiten bei der GFI" loading="lazy" decoding="async" />
+              </figure>
+            </div>
           </article>
+        </div>
+        <div class="ka-mid-cta reveal">
+          <a class="btn btn-accent" href="#bewerbung"><span>Lebenslauf senden &amp; Karriere starten</span><svg class="ico"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>
 
-    <section class="ka-benefits section" aria-labelledby="benefits-title">
+<section class="news section" id="benefits" aria-labelledby="benefits-title">
       <div class="container">
-        <header class="sec-head">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Vorteile</p>
-          <h2 id="benefits-title" class="reveal">Ihre Benefits</h2>
-          <p class="sec-lead reveal">Was Führungskräfte bei der GFI konkret erwarten dürfen.</p>
+        <header class="news-head">
+          <div>
+            <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Benefits</p>
+            <h2 id="benefits-title" class="reveal">Was Führungskräfte <em>bei uns erwartet</em></h2>
+            <p class="sec-lead reveal">Was Führungskräfte bei der GFI konkret erwarten dürfen – von Arbeitsplatzkultur bis Entwicklungsperspektive.</p>
+          </div>
+          <a class="btn btn-accent reveal" href="#bewerbung"><span>Lebenslauf senden &amp; Karriere starten</span><svg class="ico"><use href="#i-arrow"/></svg></a>
         </header>
-        <ul class="ka-benefit-grid">
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-award"/></svg>
-            <h3>Ausgezeichnete Arbeitsplatzkultur</h3>
-            <p>zertifiziert durch Great Place to Work®</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-target"/></svg>
-            <h3>Entwicklungsperspektiven</h3>
-            <p>Von der Teamleitung bis zur Standortleitung in 2–4 Jahren</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>
-            <h3>Life-Balance & Flexibilität</h3>
-            <p>Selbstbestimmtes, zielorientiertes Flex-Arbeiten bei Leitungsthemen</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg>
-            <h3>Gesundheitsmanagement</h3>
-            <p>Firmenyoga, Jobrad-Leasing und Co.</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-spark"/></svg>
-            <h3>Unvergessliche Firmenevents</h3>
-            <p>Get (Inclusive)Together, Teambuilding und mehr</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>
-            <h3>Zuschuss zum ÖPNV</h3>
-            <p>Monatliche Zuzahlung zum Deutschlandticket</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>
-            <h3>Mentoring & Weiterbildung</h3>
-            <p>Onboarding durch Mentoring & mind. 5 Fortbildungstage / Jahr</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-checkc"/></svg>
-            <h3>Attraktive Vergütung</h3>
-            <p>TVöD zzgl. leistungsvariable Vergütung u. v. m.</p>
-          </li>
-        </ul>
+
+        <div class="news-grid">
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-award"/></svg></span>
+              <h3>Ausgezeichnete<br>Arbeitsplatzkultur</h3>
+              <p>zertifiziert durch Great Place to Work®</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span>
+              <h3>Entwicklungs&shy;perspektiven</h3>
+              <p>Von der Teamleitung bis zur Standortleitung in 2-4 Jahren</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-clock"/></svg></span>
+              <h3>Life-Balance &amp;<br>Flexibilität</h3>
+              <p>Selbstbestimmtes, zielorientiertes Flex-Arbeiten bei Leitungsthemen</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-heart"/></svg></span>
+              <h3>Gesundheits&shy;management</h3>
+              <p>Firmenyoga, Jobrad-Leasing und Co.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span>
+              <h3>Unvergessliche<br>Firmenevents</h3>
+              <p>Get (Inclusive)Together, Teambuildingevents u.v.m.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-pin"/></svg></span>
+              <h3>Zuschuss zum<br>ÖPNV</h3>
+              <p>monatliche Zuzahlung zum Deutschlandticket</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-cap"/></svg></span>
+              <h3>Mentoring &amp;<br>Weiterbildung</h3>
+              <p>Onboarding durch Mentoring &amp; min. 5 Fortbildungstage / Jahr</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-checkc"/></svg></span>
+              <h3>Attraktive<br>Vergütung</h3>
+              <p>TVöD zzgl. leistungsvariable Vergütung u.v.m.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="aufgaben" aria-labelledby="tasks-title">
-      <div class="container ka-split">
-        <div>
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Aufgaben</p>
-          <h2 id="tasks-title" class="reveal">Ihre Aufgaben als <em>Abteilungsleitung</em></h2>
-          <ul class="ka-task-list">
-            <li class="reveal">
-              <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-users"/></svg></span>
-              <div>
-                <h3>Team von bis zu 44 Personen führen</h3>
-                <p>Wertschätzende und zielorientierte Führung eines Teams von bis zu 44 Schulbegleiterinnen und Schulbegleitern in vier Kleinteams à 10–12 Personen – inkl. fachlicher Verantwortung für das pädagogische Angebot.</p>
+    <section class="ka-tasks-profile section" id="aufgaben" aria-labelledby="tasks-title">
+      <div class="container">
+        <div class="ka-tasks-row reveal">
+          <div class="ka-tasks-copy">
+            <p class="eyebrow"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Ihre Aufgaben</p>
+            <h2 id="tasks-title">Abteilungsleitung in der <em>Schulbegleitung</em></h2>
+            <div class="ka-tasks-body">
+              <div class="accordion">
+                <details class="faq-item" open>
+                  <summary><span class="faq-q">Team von bis zu 44 Personen führen</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                  <div class="faq-answer">
+                    <p>Ihre Aufgabe als Leitungskraft in der Inklusionsassistenz / Schulbegleitung beinhaltet die wertschätzende und zielorientierte Anleitung und Führung eines Teams von bis zu 44 engagierten SchulbegleiterInnen, die jeweils in vier Kleinteams à 10–12 Mitarbeitenden organisiert sind. Dabei tragen Sie auch die fachliche Verantwortung für das pädagogische Angebot innerhalb Ihres Teams.</p>
+                    <p>Sie koordinieren die Einsätze der TeamkollegInnen in der Schulbegleitung, leiten die monatlichen Teamsitzungen, führen Mitarbeitergespräche und sind verantwortlich für personalrelevante Verwaltungsaufgaben.</p>
+                    <p>Sie erstellen Berichte und nehmen an Hilfeplan-/Gesamtplan-/Teilhabeplankonferenzen der betreuten KlientInnen teil.</p>
+                  </div>
+                </details>
+                <details class="faq-item">
+                  <summary><span class="faq-q">Fallbesetzung und Mitarbeitergewinnung</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                  <div class="faq-answer"><p>Für die Fallanfragen der Ämter und Personensorgeberechtigten suchen Sie passende KandidatInnen für die Schulbegleitung aus unserem Bewerberpool, führen Bewerbungsgespräche und organisieren Hospitationstermine zum Kennenlernen zwischen zukünftiger Inklusionsassistenz und KlientInnen.</p></div>
+                </details>
+                <details class="faq-item">
+                  <summary><span class="faq-q">Mitwirkung bei Planungs- und Konzeptaufgaben</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                  <div class="faq-answer"><p>Sie wirken mit bei Planungs-, Entwicklungs- und Konzeptaufgaben. Gerade auch bei Interesse an einer perspektivischen Weiterentwicklung zur Fachbereichsleitung ist dies ein wichtiger Bestandteil, um Sie auf den nächsten Karriereschritt vorzubereiten.</p></div>
+                </details>
+                <details class="faq-item">
+                  <summary><span class="faq-q">Netzwerkarbeit &amp; Qualitätssicherung</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                  <div class="faq-answer"><p>Sie betreiben Netzwerkarbeit mit Schulen und Leistungsträgern und stellen unsere Qualitätsstandards sicher – für maximale Klientenzufriedenheit.</p></div>
+                </details>
               </div>
-            </li>
-            <li class="reveal">
-              <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span>
-              <div>
-                <h3>Fallbesetzung und Mitarbeitergewinnung</h3>
-                <p>Passende Kandidatinnen und Kandidaten aus dem Bewerberpool auswählen, Bewerbungsgespräche führen und Hospitationen organisieren.</p>
-              </div>
-            </li>
-            <li class="reveal">
-              <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-doc"/></svg></span>
-              <div>
-                <h3>Mitwirkung bei Planungs- und Konzeptaufgaben</h3>
-                <p>Sie wirken bei Planungs-, Entwicklungs- und Konzeptaufgaben mit – wichtiger Baustein auf dem Weg zur Fachbereichsleitung.</p>
-              </div>
-            </li>
-            <li class="reveal">
-              <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-shield"/></svg></span>
-              <div>
-                <h3>Netzwerkarbeit &amp; Qualitätssicherung</h3>
-                <p>Austausch mit Schulen und Leistungsträgern, Berichte und Teilnahme an Hilfeplan-/Gesamtplan-/Teilhabeplankonferenzen.</p>
-              </div>
-            </li>
-          </ul>
+              <figure class="frame-soft ka-tasks-img">
+                <img src="assets/img/karriere-abteilungsleitung/aufgaben.jpg" width="800" height="1000" alt="" loading="lazy" decoding="async" />
+              </figure>
+            </div>
+          </div>
         </div>
-        <div>
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Profil</p>
-          <h2 class="reveal">Ihr <em>Profil</em></h2>
-          <ul class="ka-profile-list">
-            <li class="reveal">
-              <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
-              <div><h3>Master-Studium</h3><p>Sehr gut abgeschlossenes pädagogisches Master-Studium, z. B. Soziale Arbeit, Sozialpädagogik</p></div>
-            </li>
-            <li class="reveal">
-              <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
-              <div><h3>Berufserfahrung</h3><p>Berufserfahrung in der Arbeit mit Kindern, Jugendlichen oder Menschen mit Behinderung</p></div>
-            </li>
-            <li class="reveal">
-              <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
-              <div><h3>Entwicklungswille</h3><p>Streben nach Weiterentwicklung und danach, etwas bewegen zu können</p></div>
-            </li>
-            <li class="reveal">
-              <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
-              <div><h3>Soft Skills</h3><p>Überzeugende Softskills runden Ihr Profil ab</p></div>
-            </li>
-          </ul>
+
+        <div class="ka-profile-row" id="profil">
+          <figure class="frame-soft ka-profile-hero-img reveal">
+            <img src="assets/img/karriere-abteilungsleitung/profil.jpg" width="800" height="600" alt="" loading="lazy" decoding="async" />
+          </figure>
+          <div class="ka-profile-copy reveal">
+            <p class="eyebrow"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Das bringen Sie mit</p>
+            <h2 id="profile-title">Ihr <em>Profil</em></h2>
+            <ul class="ka-profile-list">
+              <li>
+                <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                <div><p>Sehr gut abgeschlossenes pädagogisches Master-Studium, z.B. Soziale Arbeit, Sozialpädagogik</p></div>
+              </li>
+              <li>
+                <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                <div><p>Berufserfahrung in der Arbeit mit Kindern, Jugendlichen oder Menschen mit Behinderung</p></div>
+              </li>
+              <li>
+                <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                <div><p>Streben nach Weiterentwicklung &amp; danach, etwas bewegen zu können</p></div>
+              </li>
+              <li>
+                <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                <div><p>Überzeugende Softskills runden Ihr Profil ab</p></div>
+              </li>
+            </ul>
+            <div style="margin-top:1.25rem">
+              <a class="btn btn-accent" href="#bewerbung"><span>Lebenslauf senden &amp; Karriere starten</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="ka-day section" aria-labelledby="day-title">
       <div class="container">
-        <header class="sec-head center">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Alltag</p>
+        <header class="sec-head">
           <h2 id="day-title" class="reveal">Ein typischer <em>Arbeitstag</em></h2>
+          <p class="sec-lead reveal">Sie haben viel Freiheit in der Gestaltung Ihrer Aufgaben und Ihres Tagesablaufs – entscheidend ist, dass Sie für Ihr Team ansprechbar sind und gemeinsam die Ziele im Blick behalten.</p>
         </header>
-        <div class="ka-day-panel reveal">
-          <p>Der Tag startet mit der Vertretungsorganisation: Wenn Mitarbeitende oder ein Kind krankheitsbedingt fehlt, sorgen Sie dafür, dass alle gut versorgt sind. Im weiteren Tagesverlauf gestalten Sie Ihre Arbeit sehr flexibel. Den Vormittag nutzen viele Abteilungsleitungen für Bewerbungsgespräche, die Besetzung der Fallanfragen sowie administrative Aufgaben rund um das Team. Je nach Bedarf begleiten Sie Hilfeplangespräche oder stehen im Austausch mit Schulen, Eltern und Leistungsträgern.</p>
-          <p>Da Ihr Team vormittags in den Schulen im Einsatz ist, liegen Termine mit Mitarbeitenden wie Jour fixe und Teamsitzungen am Nachmittag. Dabei stehen wertschätzende Führung, fachliche Qualität und die kontinuierliche Weiterentwicklung des pädagogischen Angebots im Fokus.</p>
-          <p>Was Ihren Arbeitsalltag besonders macht: Sie haben viel Freiheit in der Gestaltung Ihrer Aufgaben und Ihres Tagesablaufs – entscheidend ist, dass Sie für Ihr Team ansprechbar sind und gemeinsam die Ziele im Blick behalten.</p>
+        <div class="ka-day-split">
+          <ol class="ka-day-flow reveal">
+            <li class="ka-day-step">
+              <div class="ka-day-step-card">
+                <span class="ka-day-step-ico" aria-hidden="true"><svg class="ico"><use href="#i-clock"/></svg></span>
+                <div>
+                  <span class="ka-day-badge">Morgen</span>
+                  <h3>Vertretung organisieren</h3>
+                  <p>Der Tag startet mit der Vertretungsorganisation: wenn Mitarbeitende oder ein Kind krankheitsbedingt fehlt, sorgen Sie dafür, dass alle gut versorgt sind. Im weiteren Tagesverlauf gestalten Sie Ihre Arbeit sehr flexibel.</p>
+                </div>
+              </div>
+              <span class="ka-day-step-arrow" aria-hidden="true"><svg class="ico"><use href="#i-chev"/></svg></span>
+            </li>
+            <li class="ka-day-step">
+              <div class="ka-day-step-card">
+                <span class="ka-day-step-ico" aria-hidden="true"><svg class="ico"><use href="#i-users"/></svg></span>
+                <div>
+                  <span class="ka-day-badge">Vormittag</span>
+                  <h3>Besetzung &amp; Administration</h3>
+                  <p>Den Vormittag nutzen viele Abteilungsleitungen für Bewerbungsgespräche, die Besetzung der Fallanfragen sowie für administrative Aufgaben rund um das Team. Je nach Bedarf begleiten Sie Hilfeplangespräche oder stehen im Austausch mit Schulen, Eltern und Leistungsträgern.</p>
+                </div>
+              </div>
+              <span class="ka-day-step-arrow" aria-hidden="true"><svg class="ico"><use href="#i-chev"/></svg></span>
+            </li>
+            <li class="ka-day-step">
+              <div class="ka-day-step-card">
+                <span class="ka-day-step-ico" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span>
+                <div>
+                  <span class="ka-day-badge">Nachmittag</span>
+                  <h3>Führung &amp; Weiterentwicklung</h3>
+                  <p>Da Ihr Team vormittags in den Schulen im Einsatz ist, liegen Termine mit Mitarbeitenden wie Jour Fixe, Teamsitzungen etc. am Nachmittag. Dabei stehen eine wertschätzende Führung, fachliche Qualität und die kontinuierliche Weiterentwicklung des pädagogischen Angebots im Fokus.</p>
+                </div>
+              </div>
+            </li>
+          </ol>
+          <div class="ka-day-slider reveal" data-ka-slider aria-roledescription="Karussell" aria-label="Einblicke in den Arbeitstag">
+            <div class="ka-day-slider-viewport">
+              <figure class="ka-day-slide is-active">
+                <img src="assets/img/karriere-abteilungsleitung/tag-1.jpg" width="800" height="1000" alt="" loading="lazy" decoding="async" />
+              </figure>
+              <figure class="ka-day-slide">
+                <img src="assets/img/karriere-abteilungsleitung/tag-2.jpg" width="800" height="1000" alt="" loading="lazy" decoding="async" />
+              </figure>
+              <figure class="ka-day-slide">
+                <img src="assets/img/karriere-abteilungsleitung/tag-3.jpg" width="800" height="1000" alt="" loading="lazy" decoding="async" />
+              </figure>
+              <figure class="ka-day-slide">
+                <img src="assets/img/karriere-abteilungsleitung/tag-4.jpg" width="800" height="1000" alt="" loading="lazy" decoding="async" />
+              </figure>
+            </div>
+            <div class="ka-day-slider-controls">
+              <button type="button" class="ka-day-slider-btn" data-ka-slider-prev aria-label="Vorheriges Bild">
+                <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+              <div class="ka-day-slider-dots" data-ka-slider-dots role="tablist" aria-label="Folien"></div>
+              <button type="button" class="ka-day-slider-btn ka-day-slider-btn--next" data-ka-slider-next aria-label="Nächstes Bild">
+                <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="process-title">
+    <section class="process sa-process section" id="bewerbungsprozess" aria-labelledby="process-title" data-cursor="dark">
       <div class="container">
-        <header class="sec-head">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Bewerbungsprozess</p>
+        <header class="sec-head center">
+          <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Bewerbungsprozess</p>
           <h2 id="process-title" class="reveal">Der Weg zu Ihrem <em>neuen Arbeitsplatz</em></h2>
         </header>
-        <ol class="ka-steps-list">
-          <li class="ka-step reveal">
-            <h3>Sichtung der Unterlagen</h3>
-            <p>Bei uns lohnt sich die Zeit und Mühe, die Sie in Ihre Unterlagen stecken. Wir sichten diese mit großer Sorgfalt.</p>
+
+        <ol class="sa-timeline">
+          <li class="sa-timeline-item reveal">
+            <div class="sa-timeline-main">
+              <span class="sa-timeline-num" aria-hidden="true">01</span>
+              <h3 class="sa-timeline-title">Sichtung der Unterlagen</h3>
+            </div>
+            <p class="sa-timeline-text">Bei uns lohnt sich die Zeit und Mühe, die Sie in Ihre Unterlagen stecken. Wir sichten diese mit großer Sorgfalt!</p>
+            <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-eye"/></svg></span>
           </li>
-          <li class="ka-step reveal">
-            <h3>Kennenlernen</h3>
-            <p>Das Kennenlernen findet in der Regel vor Ort, in Einzelfällen auch virtuell mit der Fachbereichsleitung statt.</p>
+          <li class="sa-timeline-item reveal">
+            <div class="sa-timeline-main">
+              <span class="sa-timeline-num" aria-hidden="true">02</span>
+              <h3 class="sa-timeline-title">Kennenlernen</h3>
+            </div>
+            <p class="sa-timeline-text">Das Kennenlernen findet in der Regel vor Ort, in Einzelfällen auch virtuell mit der Fachbereichsleitung statt.</p>
+            <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span>
           </li>
-          <li class="ka-step reveal">
-            <h3>Hospitation</h3>
-            <p>Zeigen Sie Ihr Können und lernen Sie unsere Arbeitsweise im Team bei einer Hospitation besser kennen.</p>
+          <li class="sa-timeline-item reveal">
+            <div class="sa-timeline-main">
+              <span class="sa-timeline-num" aria-hidden="true">03</span>
+              <h3 class="sa-timeline-title">Hospitation</h3>
+            </div>
+            <p class="sa-timeline-text">Zeigen Sie Ihr Können und lernen Sie unsere Arbeitsweise im Team bei einer Hospitation besser kennen.</p>
+            <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-users"/></svg></span>
           </li>
-          <li class="ka-step reveal">
-            <h3>Vertragsunterschrift</h3>
-            <p>Nach der Hospitation setzen wir uns zeitnah zusammen und unterschreiben gemeinsam den Vertrag.</p>
+          <li class="sa-timeline-item reveal">
+            <div class="sa-timeline-main">
+              <span class="sa-timeline-num" aria-hidden="true">04</span>
+              <h3 class="sa-timeline-title">Vertragsunterschrift</h3>
+            </div>
+            <p class="sa-timeline-text">Nach der Hospitation setzen wir uns zeitnah zusammen &amp; unterschreiben gemeinsam den Vertrag.</p>
+            <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-doc"/></svg></span>
           </li>
         </ol>
+
+        <div class="process-cta reveal">
+          <a class="btn btn-accent btn-lg" data-magnetic href="#bewerbung"><span>Lebenslauf senden &amp; Karriere starten</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
       </div>
     </section>
+
     <section class="ka-ladder section" aria-labelledby="ladder-title">
       <div class="container">
-        <header class="sec-head">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Zukunftsperspektiven</p>
+        <div class="ka-ladder-copy">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Ihre Zukunftsperspektiven</p>
           <h2 id="ladder-title" class="reveal">Weiterentwicklung bei der <em>GFI-Gruppe</em></h2>
-          <p class="sec-lead reveal">Perspektive für studierte Fachkräfte: Von der Teamleitung zur Standortleitung – in der Regel in 2–4 Jahren.</p>
+          <p class="sec-lead reveal">Perspektive für studierte Fachkräfte: Von der Teamleitung zur Standortleitung</p>
+        </div>
+        <div class="ka-ladder-split">
+          <div class="accordion reveal">
+            <details class="faq-item">
+              <summary><span class="faq-q">Karrierestufe 1: Teamleitung</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+              <div class="faq-answer">
+                <p><strong>Onboarding: Orientierung &amp; „Learning by doing“ (ca. 3 Monate)</strong><br />Kennenlernen des Teams, Einweisung in die täglichen operativen und leitungsspezifischen Themen unter Anleitung Ihres/-r Mentors/-in und weitere Einarbeitung über unsere interne E-Learning-Plattform.</p>
+                <p><strong>Qualifizierung: Führungskräfte-Workshops (nach ca. 4-6 Monaten)</strong><br />Grundlagen zu den Themen Selbstführung, Führung von Mitarbeitenden und Rahmenbedingungen von erfolgreicher Führung (z.B. Führen auf Distanz)</p>
+                <p><strong>Integration: Eigenverantwortliche Teamleitung (nach ca. 6-8 Monaten)</strong><br />Selbständige Führung eines Teams von bis zu 22 Personen, d.h. Koordination der Einsätze in der Schulbegleitung, Teamsitzungen leiten, Abwesenheiten verwalten, weiterer Teamaufbau etc.</p>
+              </div>
+            </details>
+            <details class="faq-item" open>
+              <summary><span class="faq-q">Karrierestufe 2: Abteilungsleitung</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+              <div class="faq-answer">
+                <p>Verantwortung für ein Team von ca. 44 Mitarbeitenden.</p>
+                <p>Zusätzlich zu den Themen aus der Ebene der Teamleitung kommen in der Rolle als Abteilungsleitung die Personalrekrutierung zur Fallbesetzung sowie Mitwirkungstätigkeiten bei konzeptionellen und strukturellen Themen hinzu. Die operativen Tätigkeiten spielen im Vergleich zur Teamleitung nur noch eine untergeordnete Rolle. Die Abteilungsleitung als Zwischenstufe zwischen Teamleitung und Fachbereichsleitung dient der intensiven Vorbereitung auf die nächsthöhere Karrierestufe.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-q">Karrierestufe 3: Fachbereichsleitung</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+              <div class="faq-answer">
+                <p>Verantwortung für ein Team von bis zu 50 Mitarbeitenden inkl. Umsatzbeteiligung.</p>
+                <p>Zusätzlich zu den Themen aus der Ebene der Abteilungsleitung gehören in der Rolle als Fachbereichsleitung z.B. Themen der Personalverwaltung, aktive Mitwirkung in der Konzeptionserstellung, bei der Verhandlungsführung und -vorbereitung sowie bei betriebswirtschaftlichen und arbeitsrechtlichen Themen zum Aufgabengebiet.</p>
+                <p>In dieser Position werden Sie intensiv auf die Übernahme eines eigenen Standortes als pädagogische und gesamtwirtschaftliche Leitung vorbereitet.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-q">Karrierestufe 4: Standortleitung / Geschäftsführung</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+              <div class="faq-answer">
+                <p>Verantwortung für ein Team von über 50 Mitarbeitenden inkl. Umsatzbeteiligung.</p>
+                <p>Der Standortleitung obliegt die alleinige Verantwortung und kontinuierliche Qualitätssicherung für das Leistungsangebot und der weitere Aufbau des Mitarbeiterstamms in Einklang mit den geplanten Wachstumszielen. Daneben zählt die Entwicklung einer vorausschauenden Wachstumsstrategie, die Mitwirkung bei Planungs- und Konzeptaufgaben sowie betriebswirtschaftliche und arbeitsrechtliche Leitungsthemen zum Tätigkeitsfeld der Standortleitung.</p>
+                <p>Je nach Vorqualifikation ist auch die Übernahme der Geschäftsführung des Standortes möglich. Hierbei wird die gesamtwirtschaftliche Leitung und volle Verantwortung für o.g. Aufgaben sowie für die strategische Gesamtausrichtung des Standortes und die Umsatzentwicklung übernommen.</p>
+              </div>
+            </details>
+          </div>
+          <div class="ka-ladder-media reveal">
+            <figure class="ka-zoom">
+              <button type="button" class="ka-zoom-btn" data-ka-lightbox aria-label="Karrierestufen bei der GFI vergrößern">
+                <img src="assets/img/karriere-abteilungsleitung/karriere.jpg" width="640" height="800" alt="Karrierestufe 2: Ihr Weg zur erfolgreichen Abteilungsleitung" loading="lazy" decoding="async" />
+              </button>
+            </figure>
+            <div class="ka-mid-cta" style="justify-content:flex-start;margin-top:1.25rem">
+              <a class="btn btn-accent" href="#bewerbung"><span>Lebenslauf senden &amp; Karriere starten</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ka-award section" aria-labelledby="award-title">
+      <div class="container ka-award-inner">
+        <header class="sec-head center">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Der GFI – Award</p>
+          <h2 id="award-title" class="reveal">Zeichen für herausragendes Engagement</h2>
         </header>
-        <ol class="ka-ladder-list">
-          <li class="ka-ladder-item reveal">
-            <span class="ka-ladder-num" aria-hidden="true">1</span>
-            <div>
-              <span class="ka-ladder-meta">ca. 10 Personen</span>
-              <h3>Karrierestufe 1: Teamleitung</h3>
-              <p>Onboarding, Mentoring und stufenweiser Einstieg in die Führung eines kleinen Teams – inkl. operativem Anteil in der Schulbegleitung.</p>
-            </div>
-          </li>
-          <li class="ka-ladder-item is-current reveal">
-            <span class="ka-ladder-num" aria-hidden="true">2</span>
-            <div>
-              <span class="ka-ladder-meta">ca. 30–44 Mitarbeitende</span>
-              <h3>Karrierestufe 2: Abteilungsleitung</h3>
-              <p>Personalrekrutierung zur Fallbesetzung sowie Mitwirkung bei konzeptionellen und strukturellen Themen. Operative Tätigkeiten rücken in den Hintergrund.</p>
-            </div>
-          </li>
-          <li class="ka-ladder-item reveal">
-            <span class="ka-ladder-num" aria-hidden="true">3</span>
-            <div>
-              <span class="ka-ladder-meta">bis zu 50 Mitarbeitende</span>
-              <h3>Karrierestufe 3: Fachbereichsleitung</h3>
-              <p>Personalverwaltung, Konzeption, Verhandlungsführung sowie betriebswirtschaftliche und arbeitsrechtliche Themen – Vorbereitung auf die Standortleitung.</p>
-            </div>
-          </li>
-          <li class="ka-ladder-item reveal">
-            <span class="ka-ladder-num" aria-hidden="true">4</span>
-            <div>
-              <span class="ka-ladder-meta">über 50 Mitarbeitende</span>
-              <h3>Karrierestufe 4: Standortleitung / Geschäftsführung</h3>
-              <p>Alleinige Verantwortung für Leistungsangebot, Wachstum und Qualität. Je nach Vorqualifikation ist die Übernahme der Geschäftsführung möglich.</p>
-            </div>
-          </li>
-        </ol>
+        <figure class="frame-soft ka-award-img reveal">
+          <img src="assets/img/karriere-abteilungsleitung/award.jpg" width="1000" height="600" alt="" loading="lazy" decoding="async" />
+        </figure>
+        <p class="ka-award-text reveal">Mit dem GFI – Award zeichnen wir KollegInnen aus, die durch ihr überdurchschnittliches Engagement in ihrer Tätigkeit in besonderem Maße dafür Sorge getragen haben, dass Familien im Bereich der ambulanten Hilfen zur Erziehung oder Kinder mit Unterstützungsbedarfen im Bereich der Schulbegleitung durch die GFI unterstützt werden.</p>
       </div>
     </section>
 
-    <section class="ka-culture section" aria-labelledby="video-title">
-      <div class="container ka-culture-grid">
-        <div>
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Einblicke</p>
-          <h2 id="video-title" class="reveal">Das macht die Arbeit bei der <em>GFI</em> aus</h2>
-          <p class="reveal">Stimmen aus dem Team und Einblicke in unsere Arbeitsweise – so fühlt sich Führung bei der GFI an.</p>
-          <a class="btn btn-primary reveal" href="karriere-fuehrungskraefte.html#kultur"><span>Zur Karriere-Übersicht</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+    <section class="section" aria-labelledby="voices-title">
+      <div class="container">
+        <header class="sec-head center">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Stimmen aus dem Team</p>
+          <h2 id="voices-title" class="reveal">Das macht die Arbeit bei der <em>GFI</em> aus</h2>
+        </header>
+        <div class="ka-voices-grid">
+          <article class="ka-voice reveal">
+            <div class="ka-video" data-yt="gKMrGQW58Ms" data-yt-title="Arbeiten auf Augenhöhe – Timo Ivan" style="--ka-yt-poster:url('https://i.ytimg.com/vi/gKMrGQW58Ms/maxresdefault.jpg')">
+              <button type="button" class="ka-video-play" aria-label="Video abspielen: Arbeiten auf Augenhöhe">
+                <span class="ka-video-play-ico" aria-hidden="true"></span>
+              </button>
+            </div>
+            <h3>Arbeiten auf Augenhöhe</h3>
+            <blockquote class="ka-voice-quote">
+              <span class="ka-voice-mark" aria-hidden="true"><img src="assets/img/zitat.svg" alt="" width="48" height="38" decoding="async" /></span>
+              <p>Was uns ausmacht? Ich würde sagen, es ist unser Engagement und das Arbeiten auf Augenhöhe!</p>
+              <p>Wir haben mit der GFI etwas Großartiges geschaffen und ich würde nie wieder woanders tätig sein wollen!</p>
+            </blockquote>
+            <footer><cite>Timo Ivan</cite><span>Gründer &amp; Standortleitung Sankt Augustin</span></footer>
+          </article>
+          <article class="ka-voice reveal">
+            <div class="ka-video" data-yt="LLYzTNoAoCk" data-yt-title="Schnell, pragmatisch, effizient – Fabienne Priess" style="--ka-yt-poster:url('https://i.ytimg.com/vi/LLYzTNoAoCk/maxresdefault.jpg')">
+              <button type="button" class="ka-video-play" aria-label="Video abspielen: Schnell, pragmatisch, effizient">
+                <span class="ka-video-play-ico" aria-hidden="true"></span>
+              </button>
+            </div>
+            <h3>Schnell, pragmatisch, effizient</h3>
+            <blockquote class="ka-voice-quote">
+              <span class="ka-voice-mark" aria-hidden="true"><img src="assets/img/zitat.svg" alt="" width="48" height="38" decoding="async" /></span>
+              <p>Innerhalb von 2 Jahren haben wir den Standort in Karlsruhe von 0 auf 50 KollegInnen aufgebaut.</p>
+              <p>Ich bin sehr stolz auf mein Team und die Entwicklungen, die wir in den letzten Jahren seit der Gründung zusammen durchlaufen durfte!</p>
+            </blockquote>
+            <footer><cite>Fabienne Priess</cite><span>Standortleitung Karlsruhe</span></footer>
+          </article>
+          <article class="ka-voice reveal">
+            <div class="ka-video" data-yt="sB1T93fAUW0" data-yt-title="Nahbarkeit durch flache Hierarchien – Anja Nüchel" style="--ka-yt-poster:url('https://i.ytimg.com/vi/sB1T93fAUW0/maxresdefault.jpg')">
+              <button type="button" class="ka-video-play" aria-label="Video abspielen: Nahbarkeit durch flache Hierarchien">
+                <span class="ka-video-play-ico" aria-hidden="true"></span>
+              </button>
+            </div>
+            <h3>Nahbarkeit durch flache Hierarchien</h3>
+            <blockquote class="ka-voice-quote">
+              <span class="ka-voice-mark" aria-hidden="true"><img src="assets/img/zitat.svg" alt="" width="48" height="38" decoding="async" /></span>
+              <p>Die flachen Hierarchien bei der GFI sorgen für gute Arbeitsbeziehungen auf allen Ebenen.</p>
+              <p>Ich schätze es sehr, meinen persönlichen Ansprechpartner immer schnell und unkompliziert erreichen zu können.</p>
+            </blockquote>
+            <footer><cite>Anja Nüchel</cite><span>Teamleitung Rhein-Sieg-Kreis</span></footer>
+          </article>
         </div>
-        <div class="ka-video reveal" data-yt="_ENSwmccnCc" data-yt-title="Das macht die Arbeit bei der GFI aus" style="--ka-yt-poster:url('https://i.ytimg.com/vi/_ENSwmccnCc/maxresdefault.jpg')">
-          <button type="button" class="ka-video-play" aria-label="Video abspielen: Das macht die Arbeit bei der GFI aus">
-            <span class="ka-video-play-ico" aria-hidden="true"></span>
-          </button>
+        <div class="ka-mid-cta reveal">
+          <a class="btn btn-accent" href="#bewerbung"><span>Lebenslauf senden &amp; Karriere starten</span><svg class="ico"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>
 
-    <section class="faq sa-faq section" aria-labelledby="faq-title">
+    <section class="faq section" aria-labelledby="faq-title">
       <div class="container faq-grid">
         <aside class="faq-cta">
           <div class="faq-visual">
             <figure class="faq-visual-media reveal">
-              <img src="assets/img/gfi-gptw2026-1.jpg" width="600" height="400" alt="Team der GFI bei einem gemeinsamen Moment" loading="lazy" decoding="async" />
+              <img src="assets/img/karriere-abteilungsleitung/profil.jpg" width="600" height="400" alt="Teamsitzung und Zusammenarbeit bei der GFI" loading="lazy" decoding="async" />
             </figure>
+            <div class="faq-cta-box">
+              <h3 class="faq-cta-title">Bewerbung starten</h3>
+              <p class="faq-cta-text">Noch Fragen zur Abteilungsleitung? Senden Sie uns Ihren Lebenslauf – wir melden uns persönlich bei Ihnen.</p>
+              <a class="btn btn-accent faq-cta-btn" href="#bewerbung"><span>Lebenslauf senden</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
           </div>
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> FAQ</p>
-          <h2 id="faq-title" class="reveal">Die häufigsten <em>Fragen</em></h2>
-          <p class="reveal">Noch etwas offen? Schreiben Sie uns – wir melden uns zeitnah zurück.</p>
-          <a class="btn btn-primary reveal" href="#bewerbung"><span>Bewerbung starten</span><svg class="ico"><use href="#i-arrow"/></svg></a>
         </aside>
-        <div class="faq-list">
-            <details class="faq-item" open>
+
+        <div class="faq-main">
+          <header class="faq-head">
+            <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> FAQ</p>
+            <h2 id="faq-title" class="reveal">Die häufigsten <em>Fragen</em></h2>
+            <p class="sec-lead reveal">Antworten zu Einstieg, Bewerbung, Studium und Onboarding in der Abteilungsleitung – kompakt zusammengefasst.</p>
+          </header>
+
+          <div class="accordion reveal">
+            <details class="faq-item">
               <summary><span class="faq-q">Kann ich auch ohne Leitungserfahrung als Führungskraft bei GFI starten?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
               <div class="faq-answer"><p>Ja, das ist möglich. Für die Positionen Teamleitung und Abteilungsleitung suchen wir auch Personen ohne vorherige Führungserfahrung. Mentoring, Führungskräfteschulungen und ein stufenweiser Einstieg unterstützen dabei, erfolgreich in die Führungsrolle hineinzuwachsen.</p></div>
             </details>
             <details class="faq-item">
               <summary><span class="faq-q">Welche Unterlagen sollte ich bei der Bewerbung einreichen?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
-              <div class="faq-answer"><p>Gerne können Sie unser Bewerbungsformular auf dieser Seite nutzen, um einen ersten, unkomplizierten Kontakt herzustellen. Im weiteren Bewerbungsprozess benötigen wir einen vollständigen Lebenslauf sowie die relevanten Zeugnisse zu den wichtigsten Stationen in Ihrem Lebenslauf, insbesondere auch die kompletten Studienabschlussdokumente, d. h. Urkunde und Zeugnis. Ein Anschreiben ist optional.</p></div>
+              <div class="faq-answer"><p>Gerne können Sie unsere Schnellbewerbungsfunktion auf dieser Seite nutzen, um einen ersten, unkomplizierten Kontakt herzustellen. Im weiteren Bewerbungsprozess benötigen wir einen vollständigen Lebenslauf sowie die relevanten Zeugnisse zu den wichtigsten Stationen in Ihrem Lebenslauf, insbesondere auch die kompletten Studienabschlussdokumente, d.h. Urkunde UND Zeugnis. Mit einem Anschreiben können Sie uns gerne weitere Informationen zu Ihrer Person und Ihrer Motivation mitteilen, dies ist jedoch nicht zwingend erforderlich.</p></div>
             </details>
             <details class="faq-item">
               <summary><span class="faq-q">Gibt es Bewerbungsfristen?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
@@ -481,17 +712,19 @@
             </details>
             <details class="faq-item">
               <summary><span class="faq-q">Wie sieht das Onboarding aus, wenn ich eine Führungsrolle übernehme?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
-              <div class="faq-answer"><p>Neue Führungskräfte werden strukturiert eingearbeitet: Mentoring durch eine erfahrene Leitungskraft, Nutzung unserer E-Learning-Plattform mit Modulen zu Schulbegleitung und Führungsthemen sowie Führungskräfteschulungen, z. B. zu Selbstführung, Teamführung und Kommunikation.</p></div>
+              <div class="faq-answer"><p>Neue Führungskräfte werden strukturiert eingearbeitet: Mentoring durch eine erfahrene Leitungskraft · Nutzung unserer E-Learning-Plattform mit Modulen zu Schulbegleitung und Führungsthemen · Führungskräfteschulungen, z. B. zu Selbstführung, Teamführung und Kommunikation</p></div>
             </details>
+          </div>
         </div>
       </div>
     </section>
+
     <section class="sa-request section" id="bewerbung" aria-labelledby="apply-title">
       <div class="sa-request-shell">
         <div class="container sa-request-panel">
           <div class="sa-request-copy">
-            <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Bewerbung</p>
-            <h2 id="apply-title" class="reveal">Lassen Sie uns schauen, ob wir <em>zueinander passen</em></h2>
+            <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Schnellbewerbung</p>
+            <h2 id="apply-title" class="reveal">Lassen Sie uns schauen, ob wir <em>zueinander passen!</em></h2>
             <p class="reveal">
               Nutzen Sie das Formular für eine erste Kontaktaufnahme. Alternativ erreichen Sie uns
               telefonisch oder per E-Mail.
@@ -506,7 +739,7 @@
           </div>
 
           <div class="sa-form-card reveal">
-            <form class="sa-form" id="karriere-form" novalidate data-endpoint="">
+            <form class="sa-form ka-form" id="karriere-form" novalidate data-endpoint="">
               <h3 class="sa-form-title">Schnellbewerbung</h3>
               <input type="hidden" name="stelle" value="abteilungsleitung" />
               <div class="sa-form-grid">
@@ -517,15 +750,15 @@
                     <option value="frau">Frau</option>
                     <option value="herr">Herr</option>
                     <option value="divers">Divers</option>
-                    <option value="keine">Keine Angabe</option>
                   </select>
                   <p class="sa-field-error" id="err-anrede" hidden></p>
                 </div>
                 <div class="sa-field sa-field--two-third">
-                  <label for="f-stelle">Interessierte Stelle *</label>
+                  <label for="f-stelle">Für welche Stelle interessieren Sie sich? *</label>
                   <select id="f-stelle" name="stelle_wahl" required aria-describedby="err-stelle">
-                    <option value="abteilungsleitung" selected>Abteilungsleitung Schulbegleitung</option>
-                    <option value="teamleitung">Teamleitung Schulbegleitung</option>
+                    <option value="">Bitte wählen</option>
+                    <option value="abteilungsleitung" selected>Abteilungsleitung</option>
+                    <option value="teamleitung">Teamleitung</option>
                     <option value="geschaeftsfuehrung">Geschäftsführung / Standorteröffnung</option>
                   </select>
                   <p class="sa-field-error" id="err-stelle" hidden></p>
@@ -550,30 +783,67 @@
                   <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" aria-describedby="err-telefon" />
                   <p class="sa-field-error" id="err-telefon" hidden></p>
                 </div>
-                <div class="sa-field sa-field--full">
+                <div class="sa-field sa-field--half">
+                  <label for="f-studium">Studienabschluss Soziale Arbeit o.ä. *</label>
+                  <select id="f-studium" name="studienabschluss" required aria-describedby="err-studium">
+                    <option value="">Bitte wählen</option>
+                    <option value="bachelor">Bachelor</option>
+                    <option value="diplom">Diplom</option>
+                    <option value="master">Master</option>
+                    <option value="kein">Kein Studienabschluss</option>
+                  </select>
+                  <p class="sa-field-error" id="err-studium" hidden></p>
+                </div>
+                <div class="sa-field sa-field--half">
+                  <label for="f-erfahrung">Erfahrung im sozialen Bereich *</label>
+                  <select id="f-erfahrung" name="erfahrung" required aria-describedby="err-erfahrung">
+                    <option value="">Bitte wählen</option>
+                    <option value="keine">Keine Erfahrung</option>
+                    <option value="1-2">1–2 Jahre</option>
+                    <option value="3-5">3–5 Jahre</option>
+                    <option value="ueber-5">Über 5 Jahre</option>
+                  </select>
+                  <p class="sa-field-error" id="err-erfahrung" hidden></p>
+                </div>
+                <div class="sa-field sa-field--half">
                   <label for="f-ort">Gewünschter Einsatzort *</label>
-                  <input id="f-ort" name="einsatzort" type="text" required aria-describedby="err-ort" placeholder="z. B. Karlsruhe, Köln, Wiesbaden …" />
+                  <select id="f-ort" name="einsatzort" required aria-describedby="err-ort">
+                    <option value="">Bitte wählen</option>
+                    <option value="rhein-sieg">Rhein-Sieg-Kreis</option>
+                    <option value="koeln">Großraum Köln</option>
+                    <option value="euskirchen">Kreis Euskirchen</option>
+                    <option value="rhein-main">Rhein-Main-Gebiet</option>
+                    <option value="rhein-neckar">Rhein-Neckar-Gebiet</option>
+                    <option value="karlsruhe">Raum Karlsruhe</option>
+                    <option value="suedliche-weinstrasse">Südliche Weinstraße</option>
+                  </select>
                   <p class="sa-field-error" id="err-ort" hidden></p>
                 </div>
-                <div class="sa-field sa-field--full">
-                  <label for="f-nachricht">Nachricht / Motivation</label>
-                  <textarea id="f-nachricht" name="nachricht" rows="4" aria-describedby="err-nachricht" placeholder="Was ist Ihnen im Job besonders wichtig?"></textarea>
-                  <p class="sa-field-error" id="err-nachricht" hidden></p>
+                <div class="sa-field sa-field--half">
+                  <label for="f-wichtig">Was ist Ihnen das Wichtigste im Job? *</label>
+                  <select id="f-wichtig" name="wichtigstes" required aria-describedby="err-wichtig">
+                    <option value="">Bitte wählen</option>
+                    <option value="work-life">Ausgewogene Work-Life-Balance</option>
+                    <option value="selbstbestimmt">Selbstbestimmtes Arbeiten</option>
+                    <option value="weiterentwicklung">Berufliche Weiterentwicklung</option>
+                    <option value="wertschaetzung">Wertschätzender Umgang</option>
+                  </select>
+                  <p class="sa-field-error" id="err-wichtig" hidden></p>
                 </div>
               </div>
               <p class="sa-form-hint" id="f-datenhinweis">
                 <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>
-                <span>Mit dem Absenden erklären Sie sich mit der Verarbeitung Ihrer Daten gemäß unserer <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> einverstanden.</span>
+                <span>Mit dem Absenden des Formulars erkläre ich mich einverstanden mit den <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzbestimmungen</a>.</span>
               </p>
               <p class="sa-field sa-field--full sa-consent">
                 <label class="sa-checkbox">
                   <input type="checkbox" id="f-consent" name="consent" required aria-describedby="err-consent" />
-                  <span>Ich habe die <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> gelesen und stimme der Kontaktaufnahme zu. <span class="sa-req" aria-hidden="true">*</span></span>
+                  <span>Datenschutzbestimmungen akzeptieren <span class="sa-req" aria-hidden="true">*</span></span>
                 </label>
                 <span class="sa-field-error" id="err-consent" hidden></span>
               </p>
               <div class="sa-form-foot">
-                <button class="btn btn-accent btn-lg" type="submit"><span>Bewerbung absenden</span><svg class="ico"><use href="#i-arrow"/></svg></button>
+                <button class="btn btn-accent btn-lg" type="submit"><span>Schnellbewerbung absenden</span><svg class="ico"><use href="#i-arrow"/></svg></button>
               </div>
               <p class="sa-form-state sa-form-state--error" id="form-error" role="alert" hidden></p>
             </form>
@@ -587,7 +857,7 @@
       </div>
     </section>
 
-  </main>
+</main>
   <footer class="site-footer" data-cursor="dark">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
@@ -652,6 +922,6 @@
   </button>
 
   <script src="js/main-v3.js?v=20260826nav"></script>
-  <script src="js/karriere.js?v=20260731c"></script>
+  <script src="js/karriere.js?v=20260806tl33"></script>
 </body>
 </html>

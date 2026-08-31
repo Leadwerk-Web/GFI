@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="de" class="theme-v3 page-schulen page-karriere is-light-perf">
+<html lang="de" class="theme-v3 page-schulen page-karriere page-teamleitung page-geschaeftsfuehrung is-light-perf">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add('js');</script>
 
   <title>Geschäftsführung / Standorteröffnung | Karriere GFI</title>
-  <meta name="description" content="Mit der GFI zur Geschäftsführung: Standort in Wohnortnähe eröffnen – mit Beteiligungsmodell, Mentoring und Gruppenstrukturen." />
+  <meta name="description" content="Ergebnisorientierte Führungspersönlichkeiten (m/w/d) mit Unternehmermentalität – Standort in Wohnortnähe eröffnen und als Geschäftsführung verantwortlich führen." />
   <link rel="canonical" href="https://www.gfi-baden.de/karriere/geschaeftsfuehrung/" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#1F6F68" />
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:title" content="Geschäftsführung / Standorteröffnung | Karriere GFI" />
-  <meta property="og:description" content="Mit der GFI zur Geschäftsführung: Standort in Wohnortnähe eröffnen – mit Beteiligungsmodell, Mentoring und Gruppenstrukturen." />
+  <meta property="og:description" content="Ergebnisorientierte Führungspersönlichkeiten (m/w/d) mit Unternehmermentalität – Standort in Wohnortnähe eröffnen und als Geschäftsführung verantwortlich führen." />
   <meta property="og:url" content="https://www.gfi-baden.de/karriere/geschaeftsfuehrung/" />
   <meta property="og:image" content="https://www.gfi-baden.de/wp-content/uploads/2025/01/DSC00020-1024x683.jpg" />
 
@@ -24,18 +24,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260826nav2" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260831nav" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260804form" />
-  <link rel="stylesheet" href="css/karriere.css?v=20260827poster1" />
+  <link rel="stylesheet" href="css/karriere.css?v=20260831check" />
   <style>
     :root { --hero-frame-margin: 20px; --hero-frame-radius: clamp(18px, 2.2vw, 26px); }
     body { background: linear-gradient(180deg, #eef7f2 0%, #eef5f1 100%); }
     .hero-frame {
+      position: relative;
       background: #ffffff;
       height: 70dvh;
       max-height: 70dvh;
       padding: var(--hero-frame-margin);
-      overflow: hidden;
+      overflow: visible;
+      margin-bottom: clamp(2.5rem, 5.5vw, 4.25rem);
     }
     .hero-shell {
       margin: 0;
@@ -76,7 +78,7 @@
     "@type": "WebPage",
     "name": "Geschäftsführung / Standorteröffnung",
     "url": "https://www.gfi-baden.de/karriere/geschaeftsfuehrung/",
-    "description": "Mit der GFI zur Geschäftsführung: Standort in Wohnortnähe eröffnen – mit Beteiligungsmodell, Mentoring und Gruppenstrukturen.",
+    "description": "Ergebnisorientierte Führungspersönlichkeiten (m/w/d) mit Unternehmermentalität – Standort in Wohnortnähe eröffnen und als Geschäftsführung verantwortlich führen.",
     "inLanguage": "de-DE",
     "isPartOf": { "@type": "WebSite", "name": "GFI – Baden GmbH", "url": "https://www.gfi-baden.de/" }
   }
@@ -133,7 +135,20 @@
               </ul>
             </li>
             <li><a href="leistungen.html">Leistungen</a></li>
-            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li class="has-dropdown">
+              <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-ueber-uns-menu" id="nav-ueber-uns-btn">Über uns</button>
+              <ul class="nav-dropdown" id="nav-ueber-uns-menu">
+                <li><a href="ueber-uns.html">Überblick</a></li>
+                <li><a href="standort-rhein-sieg-kreis.html">Rhein-Sieg-Kreis</a></li>
+                <li><a href="standort-koeln.html">Köln</a></li>
+                <li><a href="standort-bonn.html">Bonn</a></li>
+                <li><a href="standort-euskirchen.html">Euskirchen</a></li>
+                <li><a href="standort-wiesbaden.html">Wiesbaden</a></li>
+                <li><a href="standort-mannheim.html">Mannheim</a></li>
+                <li><a href="standort-karlsruhe.html">Karlsruhe</a></li>
+                <li><a href="standort-suedliche-weinstrasse.html">Südliche Weinstraße</a></li>
+              </ul>
+            </li>
             <li><a href="kontakt.html">Kontakt</a></li>
           </ul>
           <div class="nav-cta-mobile">
@@ -156,166 +171,202 @@
     <div class="hero-frame">
     <div class="hero-shell">
       <section class="hero" id="hero" aria-labelledby="hero-title" data-cursor="dark">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-video-wrap">
-          <img class="hero-image" src="assets/img/gfi-gptw2026.jpg" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" />
-        </div>
-      </div>
-      <div class="hero-veil" aria-hidden="true"></div>
-
-      <div class="container hero-inner container-inner-hero">
-        <p class="eyebrow on-dark hero-rise" style="--d:.05s"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Jetzt Standort in Wohnortnähe eröffnen</p>
-        <h1 id="hero-title" class="hero-title">
-          <span class="line"><span class="line-in">Mit der GFI zur</span></span>
-          <span class="line"><span class="line-in"><em>Geschäftsführung</em></span></span>
-          <span class="line"><span class="line-in">im Sozialunternehmen.</span></span>
-        </h1>
-        <p class="hero-sub hero-rise" style="--d:.55s">Ergebnisorientierte Führungspersönlichkeiten (m/w/d) mit Unternehmermentalität – bekannt aus „Wohlfahrt intern“.</p>
-        <div class="hero-actions hero-rise" style="--d:.7s">
-          <a class="btn btn-accent btn-lg" data-magnetic href="#bewerbung"><span>Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-light btn-lg" href="#konzept"><span>Unser Konzept</span></a>
-        </div>
-      </div>
-
-      </section>
-    </div>
-    </div>
-
-    <section class="sa-team section" aria-labelledby="intro-title">
-      <div class="container">
-        <nav class="ka-crumb reveal" aria-label="Brotkrumen">
-          <a href="karriere-fuehrungskraefte.html">Karriere</a><span aria-hidden="true">/</span>
-          <span aria-current="page">Geschäftsführung</span>
-        </nav>
-      </div>
-      <div class="container sa-team-grid">
-        <div class="sa-team-copy">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Die GFI-Gruppe</p>
-          <h2 id="intro-title" class="reveal">Ihr potenzieller Businesspartner für einen Start als <em>Geschäftsführung</em></h2>
-          <p class="lead reveal">
-            Leidenschaftlich und engagiert bieten wir als schnell wachsendes Sozialunternehmen mit Great Place to Work®-Kultur vielfältige Leistungen in der Kinder- und Jugendhilfe sowie der Eingliederungshilfe an.
-          </p>
-          <p class="reveal">
-            Zur weiteren Expansion bieten wir ergebnisorientierten Führungspersönlichkeiten (m/w/d) mit Unternehmermentalität die Möglichkeit, in einem beliebigen erfolgversprechenden Gebiet in Deutschland als Geschäftsführung einen neuen Standort zu eröffnen.
-          </p>
-          <div class="sa-actions reveal">
-            <a class="btn btn-accent" href="#bewerbung"><span>Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-video-wrap">
+            <img class="hero-image" src="assets/img/karriere-geschaeftsfuehrung/hero.jpg?v=mirror1" width="1600" height="900" alt="" fetchpriority="high" decoding="async" />
           </div>
         </div>
-        <div class="sa-team-media reveal">
-          <figure class="frame-soft">
-            <img src="assets/img/team-2025.jpg" width="1024" height="683" alt="GFI-Team bei einem gemeinsamen Event" loading="lazy" decoding="async" />
+        <div class="hero-veil" aria-hidden="true"></div>
+
+        <div class="container hero-inner container-inner-hero">
+          <p class="eyebrow on-dark hero-rise" style="--d:.05s"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Jetzt Standort in Wohnortnähe eröffnen</p>
+          <h1 id="hero-title" class="hero-title">
+            <span class="line"><span class="line-in">Mit der GFI zur</span></span>
+            <span class="line"><span class="line-in"><em>Geschäftsführung</em></span></span>
+            <span class="line"><span class="line-in">in einem erfolgreichen</span></span>
+            <span class="line"><span class="line-in">Sozialunternehmen</span></span>
+          </h1>
+          <p class="hero-lead on-dark hero-rise" style="--d:.45s">Auch bekannt aus „Wohlfahrt intern“</p>
+          <p class="hero-check-hint on-dark hero-rise" style="--d:.55s">Lassen Sie uns schauen, ob wir für Sie der richtige Businesspartner sind.</p>
+          <div class="hero-actions hero-rise" style="--d:.7s">
+            <a class="btn btn-accent btn-lg" data-magnetic href="#bewerbung"><span>Check absenden</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-light btn-lg" href="tel:+4972161930339"><span>Jetzt anrufen 0721/61930339</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+      <div class="ka-hero-awards">
+        <img
+          src="assets/img/karriere-geschaeftsfuehrung/awards.png"
+          width="1200"
+          height="220"
+          alt="Great Place to Work 2024: Beste Arbeitgeber Deutschland, Gesundheit &amp; Soziales, Hessen, Baden-Württemberg und NRW"
+          decoding="async"
+        />
+      </div>
+    </div>
+
+    <section class="ka-intro-stack section" aria-labelledby="intro-title">
+      <div class="container">
+        <header class="sec-head reveal">
+          <p class="eyebrow"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Die GFI – Gruppe</p>
+          <h2 id="intro-title">Ihr potenzieller Businesspartner für einen Start als <em>Geschäftsführung</em></h2>
+        </header>
+        <div class="ka-intro-split">
+          <div class="ka-intro-copy">
+            <p class="lead reveal">Leidenschaftlich und engagiert bieten wir als schnell wachsendes Sozialunternehmen mit einer von Great Place to Work® zertifizierten Arbeitsplatzkultur vielfältige Leistungen in den Bereichen der Kinder- und Jugendhilfe sowie der Eingliederungshilfe an.</p>
+            <p class="reveal">Zur weiteren Expansion bieten wir ergebnisorientierten Führungspersönlichkeiten (m/w/d) mit Unternehmermentalität die Möglichkeit, in einem beliebigen erfolgversprechenden Gebiet in Deutschland als Geschäftsführung einen neuen Standort zu eröffnen.</p>
+            <div class="ka-mid-cta reveal" style="justify-content:flex-start;margin-top:1.5rem">
+              <a class="btn btn-accent" href="#bewerbung"><span>Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="ka-intro-video reveal">
+            <figure class="frame-soft">
+              <img src="assets/img/karriere-geschaeftsfuehrung/intro-lead.jpg" width="1024" height="1280" alt="Führungskraft der GFI" loading="lazy" decoding="async" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ka-tasks-profile section" id="konzept" aria-labelledby="tasks-title">
+      <div class="container">
+        <div class="ka-tasks-row reveal">
+          <div class="ka-tasks-copy">
+            <p class="eyebrow"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Unser Konzept</p>
+            <h2 id="tasks-title">Für angehende <em>GeschäftsführerInnen (m/w/d)</em></h2>
+            <div class="ka-tasks-body">
+              <div class="accordion">
+                <details class="faq-item" open>
+                  <summary><span class="faq-q">Standort in Ihrem Wunschgebiet eröffnen</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                  <div class="faq-answer"><p>Gemeinsam mit Ihnen werten wir die Möglichkeiten einer Standortgründung in dem von Ihnen gewünschten Gebiet aus. Wir kennen die Rahmenbedingungen für die Schulbegleitung in den Kommunen und stellen diese Expertise zur Verfügung, um einen erfolgversprechenden Standort auszuwählen.</p></div>
+                </details>
+                <details class="faq-item">
+                  <summary><span class="faq-q">Von vorhandenen Strukturen der Gruppe profitieren</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                  <div class="faq-answer"><p>Ihr Weg zum Erfolg wird unterstützt durch übergeordnete Strukturen der GFI-Gruppe z.&nbsp;B. für ein professionelles Controlling und Recruiting, sowie durch ein erfahrenes Team an GeschäftsführerInnen an aktuell acht Standorten im Bundesgebiet. Durch einen regelhaften Best-Practice-Austausch mit anderen Leitungskräften in unterschiedlichen Settings bestehen zahlreiche Kontaktpunkte, um auf das vorhandene Know-how und Branchenkenntnisse zurückgreifen zu können.</p></div>
+                </details>
+                <details class="faq-item">
+                  <summary><span class="faq-q">Attraktives Beteiligungsmodell und weitere Expansionsmöglichkeiten</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                  <div class="faq-answer">
+                    <p>Vereinbarung eines Fixgehalts zzgl. einer Gewinnbeteiligung am selbst verantworteten Umsatz. Hinzu kommt die Teilnahme an einem virtuellen Beteiligungsprogramm, durch das Sie auch langfristig an der Unternehmenswertentwicklung partizipieren.</p>
+                    <p>Der spätere Aufbau und Übernahme der Geschäftsführung weiterer Standorte bietet die Möglichkeit, sich auch auf höchster Hierarchieebene weiterentwickeln zu können.</p>
+                  </div>
+                </details>
+              </div>
+              <figure class="frame-soft ka-tasks-img">
+                <img src="assets/img/karriere-geschaeftsfuehrung/konzept-meeting.jpg" width="800" height="1000" alt="Teamsitzung Leitungsteam" loading="lazy" decoding="async" />
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="ka-profile-row" id="profil">
+          <figure class="frame-soft ka-profile-hero-img reveal">
+            <img src="assets/img/karriere-geschaeftsfuehrung/gptw-team.jpg" width="800" height="600" alt="Great Place to Work Auszeichnung mit dem GFI-Team" loading="lazy" decoding="async" />
           </figure>
+          <div class="ka-profile-copy reveal">
+            <p class="eyebrow"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Das bringen Sie mit</p>
+            <h2 id="profile-title">Ihr <em>Profil</em></h2>
+            <ul class="ka-profile-list">
+              <li>
+                <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                <div><p>Studium der Wirtschaftswissenschaften o.ä., z.B. BWL/VWL oder auch Sozialmanagement</p></div>
+              </li>
+              <li>
+                <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                <div><p>Mehrjährige Führungserfahrung</p></div>
+              </li>
+              <li>
+                <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                <div><p>Unternehmermentalität und Vertriebsstärke</p></div>
+              </li>
+              <li>
+                <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                <div><p>Charismatisches Auftreten und gewinnende Rhetorik</p></div>
+              </li>
+            </ul>
+            <div style="margin-top:1.25rem">
+              <a class="btn btn-accent" href="#bewerbung"><span>Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="konzept" aria-labelledby="concept-title">
+    
+    <section class="news section" id="benefits" aria-labelledby="benefits-title">
       <div class="container">
-        <header class="sec-head">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Unser Konzept</p>
-          <h2 id="concept-title" class="reveal">Für angehende <em>Geschäftsführerinnen und Geschäftsführer</em></h2>
+        <header class="news-head">
+          <div>
+            <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Benefits</p>
+            <h2 id="benefits-title" class="reveal">Ihre Benefits <em>im Überblick</em></h2>
+            <p class="sec-lead reveal">Selbständigkeit ohne die typischen Risiken – mit Gruppenstrukturen und klarer Beteiligung.</p>
+          </div>
+          <a class="btn btn-accent reveal" href="#bewerbung"><span>Kontakt aufnehmen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
         </header>
-        <div class="ka-concept-grid">
-          <article class="ka-concept reveal">
-            <span class="ka-path-ico" aria-hidden="true"><svg class="ico"><use href="#i-pin"/></svg></span>
-            <h3>Standort in Ihrem Wunschgebiet eröffnen</h3>
-            <p>Gemeinsam werten wir die Möglichkeiten einer Standortgründung in dem von Ihnen gewünschten Gebiet aus. Wir kennen die Rahmenbedingungen für die Schulbegleitung in den Kommunen und stellen diese Expertise zur Verfügung.</p>
+
+        <div class="news-grid">
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-building"/></svg></span>
+              <h3>Unternehmer im<br>Unternehmen</h3>
+              <p>Vorteile einer Selbständigkeit ohne die dazugehörigen Risiken und Kosten.</p>
+            </div>
           </article>
-          <article class="ka-concept reveal">
-            <span class="ka-path-ico" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span>
-            <h3>Von vorhandenen Strukturen der Gruppe profitieren</h3>
-            <p>Übergeordnete Strukturen für Controlling und Recruiting sowie ein erfahrenes Team an Geschäftsführungen an aktuell acht Standorten. Regelhafter Best-Practice-Austausch mit anderen Leitungskräften.</p>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-checkc"/></svg></span>
+              <h3>Attraktive<br>Konditionen</h3>
+              <p>Fixgehalt zzgl. Gewinnbeteiligung und Teilnahme am virtuellen Beteiligungsprogramm</p>
+            </div>
           </article>
-          <article class="ka-concept reveal">
-            <span class="ka-path-ico" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span>
-            <h3>Attraktives Beteiligungsmodell</h3>
-            <p>Fixgehalt zzgl. Gewinnbeteiligung am selbst verantworteten Umsatz sowie Teilnahme am virtuellen Beteiligungsprogramm. Späterer Aufbau weiterer Standorte möglich.</p>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-cycle"/></svg></span>
+              <h3>Weiterentwicklung<br>durch Expansion</h3>
+              <p>Eröffnung und Übernahme der Geschäftsführung an weiteren Standorten möglich</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-spark"/></svg></span>
+              <h3>Visionen<br>entwickeln</h3>
+              <p>als Teil des schnellstwachsenden Sozialunternehmens Deutschlands</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-cap"/></svg></span>
+              <h3>Mentoring &amp;<br>Weiterbildung</h3>
+              <p>Lernen Sie von erfahrenen GeschäftsführerInnen und UnternehmerInnen</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-network"/></svg></span>
+              <h3>Aktive<br>Mitgestaltung</h3>
+              <p>durch aktive Einbindung in die Strategieentwicklung der GFI-Gruppe</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span>
+              <h3>Leistung, die<br>sich auszahlt</h3>
+              <p>Wir sehen Leistung und honorieren dies auch monetär.</p>
+            </div>
+          </article>
+          <article class="news-card news-card--icon reveal">
+            <div class="news-body">
+              <span class="news-card-ico" aria-hidden="true"><svg class="ico"><use href="#i-heart"/></svg></span>
+              <h3>Unvergessliche<br>Firmenevents</h3>
+              <p>Get (Inclusive)Together, Teambuildingevents u.v.m.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="profile-title">
-      <div class="container">
-        <header class="sec-head">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Profil</p>
-          <h2 id="profile-title" class="reveal">Das bringen Sie <em>mit</em></h2>
-        </header>
-        <ul class="ka-profile-list" style="max-width:52rem">
-          <li class="reveal">
-            <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
-            <div><h3>Studium</h3><p>Studium der Wirtschaftswissenschaften o. ä., z. B. BWL/VWL oder auch Sozialmanagement</p></div>
-          </li>
-          <li class="reveal">
-            <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
-            <div><h3>Führungserfahrung</h3><p>Mehrjährige Führungserfahrung</p></div>
-          </li>
-          <li class="reveal">
-            <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
-            <div><h3>Unternehmermentalität</h3><p>Unternehmermentalität und Vertriebsstärke</p></div>
-          </li>
-          <li class="reveal">
-            <span class="ka-li-ico" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
-            <div><h3>Auftreten</h3><p>Charismatisches Auftreten und gewinnende Rhetorik</p></div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="ka-benefits section" aria-labelledby="benefits-title">
-      <div class="container">
-        <header class="sec-head">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Vorteile</p>
-          <h2 id="benefits-title" class="reveal">Ihre Benefits im Überblick</h2>
-          <p class="sec-lead reveal">Selbständigkeit ohne die typischen Risiken – mit Gruppenstrukturen und klarer Beteiligung.</p>
-        </header>
-        <ul class="ka-benefit-grid">
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-building"/></svg>
-            <h3>Unternehmer im Unternehmen</h3>
-            <p>Vorteile einer Selbständigkeit ohne die dazugehörigen Risiken und Kosten.</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-checkc"/></svg>
-            <h3>Attraktive Konditionen</h3>
-            <p>Fixgehalt zzgl. Gewinnbeteiligung und virtuelles Beteiligungsprogramm</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-cycle"/></svg>
-            <h3>Weiterentwicklung durch Expansion</h3>
-            <p>Eröffnung und Übernahme der Geschäftsführung an weiteren Standorten möglich</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-spark"/></svg>
-            <h3>Visionen entwickeln</h3>
-            <p>Als Teil des schnellstwachsenden Sozialunternehmens Deutschlands</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>
-            <h3>Mentoring & Weiterbildung</h3>
-            <p>Lernen Sie von erfahrenen Geschäftsführerinnen und Unternehmern</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-network"/></svg>
-            <h3>Aktive Mitgestaltung</h3>
-            <p>Einbindung in die Strategieentwicklung der GFI-Gruppe</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-target"/></svg>
-            <h3>Leistung, die sich auszahlt</h3>
-            <p>Wir sehen Leistung und honorieren dies auch monetär.</p>
-          </li>
-          <li class="ka-benefit reveal">
-            <svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg>
-            <h3>Firmenevents</h3>
-            <p>Get (Inclusive)Together, Teambuildingevents u. v. m.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="ka-day section" aria-labelledby="growth-title">
+    <section class="ka-day section" id="wachstum" aria-labelledby="growth-title">
       <div class="container">
         <header class="sec-head center">
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Wachstum</p>
@@ -327,46 +378,77 @@
           <li class="reveal"><strong>500+</strong><span>Mitarbeitende</span></li>
           <li class="reveal"><strong>8+</strong><span>Standorte</span></li>
         </ul>
+        <div class="ka-growth-media reveal">
+          <img src="assets/img/karriere-geschaeftsfuehrung/wachstum-karte.png" width="800" height="900" alt="Standorte der GFI-Gruppe in Deutschland" loading="lazy" decoding="async" />
+          <div class="ka-growth-media__panel">
+            <img src="assets/img/karriere-geschaeftsfuehrung/wachstum-umsatz.png" width="1200" height="700" alt="Umsatzwachstum seit Gründung in t€" loading="lazy" decoding="async" />
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="gf-steps-title">
+    <section class="process sa-process section" id="bewerbungsprozess" aria-labelledby="gf-steps-title" data-cursor="dark">
       <div class="container">
-        <header class="sec-head">
-          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Der Start</p>
+        <header class="sec-head center">
+          <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Der Start</p>
           <h2 id="gf-steps-title" class="reveal">5 Schritte zur <em>Geschäftsführung</em></h2>
         </header>
-        <ol class="ka-steps-list ka-steps-list--5">
-          <li class="ka-step reveal">
-            <h3>Kontaktaufnahme</h3>
-            <p>Nutzen Sie unser Kontaktformular und senden Sie relevante Informationen zu Ihrem beruflichen Hintergrund.</p>
+
+        <ol class="sa-timeline">
+          <li class="sa-timeline-item reveal">
+            <div class="sa-timeline-main">
+              <span class="sa-timeline-num" aria-hidden="true">01</span>
+              <h3 class="sa-timeline-title">Kontaktaufnahme</h3>
+            </div>
+            <p class="sa-timeline-text">Nutzen Sie unser Kontaktformular und senden Sie relevante Informationen zu Ihrem beruflichen Hintergrund zu.</p>
+            <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-mail"/></svg></span>
           </li>
-          <li class="ka-step reveal">
-            <h3>Kennenlernen</h3>
-            <p>Kennenlernen mit den Entscheidungsträgern in drei Schritten: Vorqualifizierung, Interview, Assessment Center.</p>
+          <li class="sa-timeline-item reveal">
+            <div class="sa-timeline-main">
+              <span class="sa-timeline-num" aria-hidden="true">02</span>
+              <h3 class="sa-timeline-title">Kennenlernen</h3>
+            </div>
+            <p class="sa-timeline-text">Kennenlernen mit den Entscheidungsträgern in drei Schritten: Vorqualifizierung, Interview, AC.</p>
+            <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span>
           </li>
-          <li class="ka-step reveal">
-            <h3>Standortwahl</h3>
-            <p>Sofern das Kennenlernen positiv verläuft, erfolgt die gemeinsame Auswertung und Auswahl möglicher Gründungsstandorte.</p>
+          <li class="sa-timeline-item reveal">
+            <div class="sa-timeline-main">
+              <span class="sa-timeline-num" aria-hidden="true">03</span>
+              <h3 class="sa-timeline-title">Standortwahl</h3>
+            </div>
+            <p class="sa-timeline-text">Sofern das Kennenlernen positiv verläuft, erfolgt die gemeinsame Auswertung und Auswahl möglicher Gründungsstandorte.</p>
+            <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-pin"/></svg></span>
           </li>
-          <li class="ka-step reveal">
-            <h3>Vertragsschluss</h3>
-            <p>Es folgen der Vertragsschluss sowie die kaufmännischen und formaljuristischen Vorbereitungen.</p>
+          <li class="sa-timeline-item reveal">
+            <div class="sa-timeline-main">
+              <span class="sa-timeline-num" aria-hidden="true">04</span>
+              <h3 class="sa-timeline-title">Vertragsschluss</h3>
+            </div>
+            <p class="sa-timeline-text">Es folgen der Vertragsschluss sowie die kaufmännischen und formaljuristischen Vorbereitungen.</p>
+            <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-doc"/></svg></span>
           </li>
-          <li class="ka-step reveal">
-            <h3>Start</h3>
-            <p>Mitarbeiterakquise und Übernahme der Verantwortung in Konzepterstellung, Verhandlungen usw.</p>
+          <li class="sa-timeline-item reveal">
+            <div class="sa-timeline-main">
+              <span class="sa-timeline-num" aria-hidden="true">05</span>
+              <h3 class="sa-timeline-title">Start</h3>
+            </div>
+            <p class="sa-timeline-text">Mitarbeiterakquise und Übernahme der Verantwortung in Konzepterstellungen, Verhandlungen etc.</p>
+            <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span>
           </li>
         </ol>
+
+        <div class="process-cta reveal">
+          <a class="btn btn-accent btn-lg" data-magnetic href="#bewerbung"><span>Lebenslauf senden &amp; Karriere starten</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
       </div>
     </section>
 
-    <section class="sa-request section" id="bewerbung" aria-labelledby="apply-title">
+<section class="sa-request section" id="bewerbung" aria-labelledby="apply-title">
       <div class="sa-request-shell">
         <div class="container sa-request-panel">
           <div class="sa-request-copy">
-            <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Bewerbung</p>
-            <h2 id="apply-title" class="reveal">Lassen Sie uns schauen, ob wir <em>zueinander passen</em></h2>
+            <p class="eyebrow light reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Kontakt</p>
+            <h2 id="apply-title" class="reveal">Lassen Sie uns schauen, ob wir für Sie der richtige <em>Businesspartner</em> sind!</h2>
             <p class="reveal">
               Nutzen Sie das Formular für eine erste Kontaktaufnahme. Alternativ erreichen Sie uns
               telefonisch oder per E-Mail.
@@ -381,8 +463,9 @@
           </div>
 
           <div class="sa-form-card reveal">
-            <form class="sa-form" id="karriere-form" novalidate data-endpoint="">
-              <h3 class="sa-form-title">Schnellbewerbung</h3>
+            <form class="sa-form ka-form" id="karriere-form" novalidate data-endpoint="">
+              <h3 class="sa-form-title">Lassen Sie uns schauen, ob wir für Sie der richtige Businesspartner sind!</h3>
+              <p class="sa-form-lead">Kurzer, unverbindlicher Check für eine mögliche Standorteröffnung als Geschäftsführung (m/w/d).</p>
               <input type="hidden" name="stelle" value="geschaeftsfuehrung" />
               <div class="sa-form-grid">
                 <div class="sa-field sa-field--third">
@@ -392,16 +475,16 @@
                     <option value="frau">Frau</option>
                     <option value="herr">Herr</option>
                     <option value="divers">Divers</option>
-                    <option value="keine">Keine Angabe</option>
                   </select>
                   <p class="sa-field-error" id="err-anrede" hidden></p>
                 </div>
                 <div class="sa-field sa-field--two-third">
-                  <label for="f-stelle">Interessierte Stelle *</label>
+                  <label for="f-stelle">Für welche Stelle interessieren Sie sich? *</label>
                   <select id="f-stelle" name="stelle_wahl" required aria-describedby="err-stelle">
+                    <option value="">Bitte wählen</option>
                     <option value="geschaeftsfuehrung" selected>Geschäftsführung / Standorteröffnung</option>
-                    <option value="teamleitung">Teamleitung Schulbegleitung</option>
-                    <option value="abteilungsleitung">Abteilungsleitung Schulbegleitung</option>
+                    <option value="teamleitung">Teamleitung</option>
+                    <option value="abteilungsleitung">Abteilungsleitung</option>
                   </select>
                   <p class="sa-field-error" id="err-stelle" hidden></p>
                 </div>
@@ -425,25 +508,41 @@
                   <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" aria-describedby="err-telefon" />
                   <p class="sa-field-error" id="err-telefon" hidden></p>
                 </div>
-                <div class="sa-field sa-field--full">
-                  <label for="f-ort">Gewünschter Einsatzort *</label>
-                  <input id="f-ort" name="einsatzort" type="text" required aria-describedby="err-ort" placeholder="z. B. Karlsruhe, Köln, Wiesbaden …" />
+                <div class="sa-field sa-field--half">
+                  <label for="f-studium">Höchster Bildungsabschluss / Studienrichtung *</label>
+                  <input id="f-studium" name="studienabschluss" type="text" required aria-describedby="err-studium" placeholder="z. B. BWL, Sozialmanagement …" />
+                  <p class="sa-field-error" id="err-studium" hidden></p>
+                </div>
+                <div class="sa-field sa-field--half">
+                  <label for="f-erfahrung">Führungserfahrung *</label>
+                  <select id="f-erfahrung" name="fuehrungserfahrung" required aria-describedby="err-erfahrung">
+                    <option value="">Bitte wählen</option>
+                    <option value="1-2">1–2 Jahre</option>
+                    <option value="3-5">3–5 Jahre</option>
+                    <option value="6-10">6–10 Jahre</option>
+                    <option value="ueber-10">Über 10 Jahre</option>
+                  </select>
+                  <p class="sa-field-error" id="err-erfahrung" hidden></p>
+                </div>
+                <div class="sa-field sa-field--half">
+                  <label for="f-ort">Wo möchten Sie einen Standort eröffnen? *</label>
+                  <input id="f-ort" name="einsatzort" type="text" required aria-describedby="err-ort" placeholder="z. B. Region, Stadt, Bundesland …" />
                   <p class="sa-field-error" id="err-ort" hidden></p>
                 </div>
-                <div class="sa-field sa-field--full">
-                  <label for="f-nachricht">Nachricht / Motivation</label>
-                  <textarea id="f-nachricht" name="nachricht" rows="4" aria-describedby="err-nachricht" placeholder="Was ist Ihnen im Job besonders wichtig?"></textarea>
-                  <p class="sa-field-error" id="err-nachricht" hidden></p>
+                <div class="sa-field sa-field--half">
+                  <label for="f-wichtig">Welcher Charakterzug zeichnet Sie besonders aus? *</label>
+                  <input id="f-wichtig" name="charakterzug" type="text" required aria-describedby="err-wichtig" />
+                  <p class="sa-field-error" id="err-wichtig" hidden></p>
                 </div>
               </div>
               <p class="sa-form-hint" id="f-datenhinweis">
                 <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>
-                <span>Mit dem Absenden erklären Sie sich mit der Verarbeitung Ihrer Daten gemäß unserer <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> einverstanden.</span>
+                <span>Mit dem Absenden des Formulars erkläre ich mich einverstanden mit den <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzbestimmungen</a>.</span>
               </p>
               <p class="sa-field sa-field--full sa-consent">
                 <label class="sa-checkbox">
                   <input type="checkbox" id="f-consent" name="consent" required aria-describedby="err-consent" />
-                  <span>Ich habe die <a href="https://gesellschaft-fuer-inklusion.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a> gelesen und stimme der Kontaktaufnahme zu. <span class="sa-req" aria-hidden="true">*</span></span>
+                  <span>Datenschutzbestimmungen akzeptieren <span class="sa-req" aria-hidden="true">*</span></span>
                 </label>
                 <span class="sa-field-error" id="err-consent" hidden></span>
               </p>
@@ -462,7 +561,7 @@
       </div>
     </section>
 
-  </main>
+</main>
   <footer class="site-footer" data-cursor="dark">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
@@ -527,6 +626,6 @@
   </button>
 
   <script src="js/main-v3.js?v=20260826nav"></script>
-  <script src="js/karriere.js?v=20260731c"></script>
+  <script src="js/karriere.js?v=20260806tl33"></script>
 </body>
 </html>

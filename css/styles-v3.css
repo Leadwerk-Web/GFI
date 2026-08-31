@@ -1105,6 +1105,8 @@ h1.motion-split, h2.motion-split, h3.motion-split,
   left: 50%;
   transform: translateX(-50%);
   min-width: 15.5rem;
+  max-height: min(72vh, 28rem);
+  overflow-y: auto;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 14px;
