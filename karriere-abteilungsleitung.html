@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260831frame10" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260917navfly" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260831frame10" />
   <link rel="stylesheet" href="css/karriere.css?v=20260827poster1" />
   <style>
@@ -129,8 +129,18 @@
             <li class="has-dropdown is-active">
               <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-karriere-menu" id="nav-karriere-btn">Karriere</button>
               <ul class="nav-dropdown" id="nav-karriere-menu">
-                <li><a class="is-active" href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-                <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+                <li><a href="karriere-operative.html">Mitarbeitende</a></li>
+                <li class="has-submenu is-open">
+                  <div class="nav-submenu-row">
+                    <a href="karriere-fuehrungskraefte.html">Führungskräfte</a>
+                    <button type="button" class="nav-submenu-toggle" aria-expanded="true" aria-controls="nav-fuehrung-submenu" aria-label="Untermenü Führungskräfte"></button>
+                  </div>
+                  <ul class="nav-submenu" id="nav-fuehrung-submenu">
+                    <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+                    <li><a class="is-active" href="karriere-abteilungsleitung.html" aria-current="page">Abteilungsleitung</a></li>
+                    <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
+                  </ul>
+                </li>
                 <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
               </ul>
             </li>
@@ -240,7 +250,7 @@
             <div class="ka-culture-card-body">
               <p class="ka-culture-index" aria-hidden="true"><span>01</span></p>
               <h3>Wertschätzung</h3>
-              <p class="ka-value-contrast">Unser Schlüssel für Mitarbeiterzufriedenheit</p>
+              <p class="ka-value-contrast">Unser Schlüssel für Zufriedenheit der Mitarbeitenden</p>
               <p>Kommunikation auf Augenhöhe, regelmäßiger Austausch auf allen Ebenen, aktive Mitgestaltung und ein uneingeschränkter Vertrauensvorschuss sind unser Schlüssel für ein wertschätzendes Miteinander.</p>
               <p class="ka-value-contrast ka-value-contrast--after">„Bester Arbeitgeber“</p>
               <p>Dass wir uns diese Werte nicht nur auf die Fahne schreiben, sondern unsere gelebte Realität sind, zeigen unsere Top-Platzierungen bei den Auszeichnungen durch Great Place to Work®.</p>
@@ -372,13 +382,13 @@
                   <summary><span class="faq-q">Team von bis zu 44 Personen führen</span><span class="faq-toggle" aria-hidden="true"></span></summary>
                   <div class="faq-answer">
                     <p>Ihre Aufgabe als Leitungskraft in der Inklusionsassistenz / Schulbegleitung beinhaltet die wertschätzende und zielorientierte Anleitung und Führung eines Teams von bis zu 44 engagierten SchulbegleiterInnen, die jeweils in vier Kleinteams à 10–12 Mitarbeitenden organisiert sind. Dabei tragen Sie auch die fachliche Verantwortung für das pädagogische Angebot innerhalb Ihres Teams.</p>
-                    <p>Sie koordinieren die Einsätze der TeamkollegInnen in der Schulbegleitung, leiten die monatlichen Teamsitzungen, führen Mitarbeitergespräche und sind verantwortlich für personalrelevante Verwaltungsaufgaben.</p>
+                    <p>Sie koordinieren die Einsätze der TeamkollegInnen in der Schulbegleitung, leiten die monatlichen Teamsitzungen, führen Mitarbeitendengespräche und sind verantwortlich für personalrelevante Verwaltungsaufgaben.</p>
                     <p>Sie erstellen Berichte und nehmen an Hilfeplan-/Gesamtplan-/Teilhabeplankonferenzen der betreuten KlientInnen teil.</p>
                   </div>
                 </details>
                 <details class="faq-item">
-                  <summary><span class="faq-q">Fallbesetzung und Mitarbeitergewinnung</span><span class="faq-toggle" aria-hidden="true"></span></summary>
-                  <div class="faq-answer"><p>Für die Fallanfragen der Ämter und Personensorgeberechtigten suchen Sie passende KandidatInnen für die Schulbegleitung aus unserem Bewerberpool, führen Bewerbungsgespräche und organisieren Hospitationstermine zum Kennenlernen zwischen zukünftiger Inklusionsassistenz und KlientInnen.</p></div>
+                  <summary><span class="faq-q">Fallbesetzung und Gewinnung von Mitarbeitenden</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+                  <div class="faq-answer"><p>Für die Fallanfragen der Ämter und Personensorgeberechtigten suchen Sie passende KandidatInnen für die Schulbegleitung aus unserem Bewerbendenpool, führen Bewerbungsgespräche und organisieren Hospitationstermine zum Kennenlernen zwischen zukünftiger Inklusionsassistenz und KlientInnen.</p></div>
                 </details>
                 <details class="faq-item">
                   <summary><span class="faq-q">Mitwirkung bei Planungs- und Konzeptaufgaben</span><span class="faq-toggle" aria-hidden="true"></span></summary>
@@ -583,7 +593,7 @@
               <summary><span class="faq-q">Karrierestufe 4: Standortleitung / Geschäftsführung</span><span class="faq-toggle" aria-hidden="true"></span></summary>
               <div class="faq-answer">
                 <p>Verantwortung für ein Team von über 50 Mitarbeitenden inkl. Umsatzbeteiligung.</p>
-                <p>Der Standortleitung obliegt die alleinige Verantwortung und kontinuierliche Qualitätssicherung für das Leistungsangebot und der weitere Aufbau des Mitarbeiterstamms in Einklang mit den geplanten Wachstumszielen. Daneben zählt die Entwicklung einer vorausschauenden Wachstumsstrategie, die Mitwirkung bei Planungs- und Konzeptaufgaben sowie betriebswirtschaftliche und arbeitsrechtliche Leitungsthemen zum Tätigkeitsfeld der Standortleitung.</p>
+                <p>Der Standortleitung obliegt die alleinige Verantwortung und kontinuierliche Qualitätssicherung für das Leistungsangebot und der weitere Aufbau des Mitarbeitendenstamms in Einklang mit den geplanten Wachstumszielen. Daneben zählt die Entwicklung einer vorausschauenden Wachstumsstrategie, die Mitwirkung bei Planungs- und Konzeptaufgaben sowie betriebswirtschaftliche und arbeitsrechtliche Leitungsthemen zum Tätigkeitsfeld der Standortleitung.</p>
                 <p>Je nach Vorqualifikation ist auch die Übernahme der Geschäftsführung des Standortes möglich. Hierbei wird die gesamtwirtschaftliche Leitung und volle Verantwortung für o.g. Aufgaben sowie für die strategische Gesamtausrichtung des Standortes und die Umsatzentwicklung übernommen.</p>
               </div>
             </details>
@@ -887,12 +897,12 @@
         </ul>
         <h3 class="footer-subhead">Karriere</h3>
         <ul>
+          <li><a href="karriere-operative.html">Mitarbeitende</a></li>
           <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-          <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
-          <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
           <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
           <li><a href="karriere-abteilungsleitung.html" aria-current="page">Abteilungsleitung</a></li>
-          <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung / Standort</a></li>
+          <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
+          <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -921,7 +931,7 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20260826nav"></script>
+  <script src="js/main-v3.js?v=20260917navsub"></script>
   <script src="js/karriere.js?v=20260806tl33"></script>
 </body>
 </html>

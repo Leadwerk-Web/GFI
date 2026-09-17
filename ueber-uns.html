@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260831nav" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260917navfly" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260827quote2" />
   <link rel="stylesheet" href="css/ueber-uns.css?v=20260810awards15" />
   <style>
@@ -125,7 +125,6 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <div class="grain" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"><svg class="ico" viewBox="0 0 276.11 279.12"><use href="#i-ring"/></svg></div>
   <div class="scroll-progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
   <div class="loader" id="loader" aria-hidden="true">
@@ -148,8 +147,18 @@
             <li class="has-dropdown">
               <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-karriere-menu" id="nav-karriere-btn">Karriere</button>
               <ul class="nav-dropdown" id="nav-karriere-menu">
-                <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-                <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+                <li><a href="karriere-operative.html">Mitarbeitende</a></li>
+                <li class="has-submenu">
+                  <div class="nav-submenu-row">
+                    <a href="karriere-fuehrungskraefte.html">Führungskräfte</a>
+                    <button type="button" class="nav-submenu-toggle" aria-expanded="false" aria-controls="nav-fuehrung-submenu" aria-label="Untermenü Führungskräfte"></button>
+                  </div>
+                  <ul class="nav-submenu" id="nav-fuehrung-submenu">
+                    <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+                    <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+                    <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
+                  </ul>
+                </li>
                 <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
               </ul>
             </li>
@@ -359,7 +368,7 @@
             <h3 class="sa-qcard-h">
               <button type="button" class="sa-qcard-head" aria-expanded="true">
                 <span class="sa-qcard-ico" aria-hidden="true"><svg class="ico"><use href="#i-users"/></svg></span>
-                <span class="sa-qcard-title">Mitarbeiterauswahl</span>
+                <span class="sa-qcard-title">Personalauswahl</span>
                 <span class="sa-qcard-toggle" aria-hidden="true"></span>
               </button>
             </h3>
@@ -615,7 +624,7 @@
               <span class="uu-article-tag">Freiwilliges Soziales Jahr</span>
               <time datetime="2021-09-27">27. Sep. 2021</time>
               <h3>Berufliche Orientierung und persönliche Weiterentwicklung</h3>
-              <p>Neben fachlich ausgebildetem Personal und Quereinsteigern stärken junge Talente im FSJ unsere Teams.</p>
+              <p>Neben fachlich ausgebildetem Personal und Quereinsteigenden stärken junge Talente im FSJ unsere Teams.</p>
               <span class="card-link"><span>Beitrag lesen</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
             </span>
           </a>
@@ -777,8 +786,11 @@
         </ul>
         <h3 class="footer-subhead">Karriere</h3>
         <ul>
+          <li><a href="karriere-operative.html">Mitarbeitende</a></li>
           <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-          <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+          <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+          <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+          <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
           <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
         </ul>
       </div>
@@ -808,7 +820,7 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20260826nav"></script>
+  <script src="js/main-v3.js?v=20260917navsub"></script>
   <script src="js/ueber-uns.js?v=20260806map4"></script>
 </body>
 </html>

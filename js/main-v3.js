@@ -270,6 +270,20 @@
         btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
       });
     });
+
+    /* Nested submenu (z. B. Führungskräfte → Teamleitung) */
+    nav.querySelectorAll(".has-submenu").forEach(function (sub) {
+      var subBtn = sub.querySelector(".nav-submenu-toggle");
+      if (!subBtn) return;
+      subBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var willOpen = !sub.classList.contains("is-open");
+        sub.classList.toggle("is-open", willOpen);
+        subBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      });
+    });
+
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && nav.classList.contains("open")) { closeNav(); toggle.focus(); }
     });

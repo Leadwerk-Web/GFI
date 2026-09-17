@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260831frame10" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260917navfly" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260831frame10" />
   <link rel="stylesheet" href="css/eltern-angehoerige.css?v=20260729a" />
   <style>
@@ -123,7 +123,6 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <div class="grain" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"><svg class="ico" viewBox="0 0 276.11 279.12"><use href="#i-ring"/></svg></div>
   <div class="scroll-progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
   <div class="loader" id="loader" aria-hidden="true">
@@ -146,8 +145,18 @@
             <li class="has-dropdown">
               <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-karriere-menu" id="nav-karriere-btn">Karriere</button>
               <ul class="nav-dropdown" id="nav-karriere-menu">
-                <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-                <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+                <li><a href="karriere-operative.html">Mitarbeitende</a></li>
+                <li class="has-submenu">
+                  <div class="nav-submenu-row">
+                    <a href="karriere-fuehrungskraefte.html">Führungskräfte</a>
+                    <button type="button" class="nav-submenu-toggle" aria-expanded="false" aria-controls="nav-fuehrung-submenu" aria-label="Untermenü Führungskräfte"></button>
+                  </div>
+                  <ul class="nav-submenu" id="nav-fuehrung-submenu">
+                    <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+                    <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+                    <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
+                  </ul>
+                </li>
                 <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
               </ul>
             </li>
@@ -926,7 +935,7 @@
             </p>
             <div class="sa-request-contact reveal">
               <a href="tel:+4972161930339"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> 0721/61930339</a>
-              <a href="#ansprechpartner"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ansprechpartner finden</a>
+              <a href="#ansprechpartner"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ansprechperson finden</a>
             </div>
           </div>
 
@@ -1107,8 +1116,11 @@
         </ul>
         <h3 class="footer-subhead">Karriere</h3>
         <ul>
+          <li><a href="karriere-operative.html">Mitarbeitende</a></li>
           <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-          <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+          <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+          <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+          <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
           <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
         </ul>
       </div>
@@ -1155,7 +1167,7 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20260826nav"></script>
+  <script src="js/main-v3.js?v=20260917navsub"></script>
   <script src="js/eltern-angehoerige.js?v=20260729a"></script>
 </body>
 </html>

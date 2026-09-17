@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260831frame10" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260917navfly" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260831frame10" />
   <link rel="stylesheet" href="css/leistungen.css?v=20260730a" />
   <style>
@@ -123,7 +123,6 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <div class="grain" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"><svg class="ico" viewBox="0 0 276.11 279.12"><use href="#i-ring"/></svg></div>
   <div class="scroll-progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
   <div class="loader" id="loader" aria-hidden="true">
@@ -146,8 +145,18 @@
             <li class="has-dropdown">
               <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-karriere-menu" id="nav-karriere-btn">Karriere</button>
               <ul class="nav-dropdown" id="nav-karriere-menu">
-                <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-                <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+                <li><a href="karriere-operative.html">Mitarbeitende</a></li>
+                <li class="has-submenu">
+                  <div class="nav-submenu-row">
+                    <a href="karriere-fuehrungskraefte.html">Führungskräfte</a>
+                    <button type="button" class="nav-submenu-toggle" aria-expanded="false" aria-controls="nav-fuehrung-submenu" aria-label="Untermenü Führungskräfte"></button>
+                  </div>
+                  <ul class="nav-submenu" id="nav-fuehrung-submenu">
+                    <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+                    <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+                    <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
+                  </ul>
+                </li>
                 <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
               </ul>
             </li>
@@ -266,7 +275,7 @@
           <a class="sa-entry-card sa-entry-card--lead reveal" href="#schulbegleitung">
             <span class="sa-entry-ico" aria-hidden="true"><svg class="ico"><use href="#i-cap"/></svg></span>
             <h3>Schulbegleitung</h3>
-            <p>Individuelle Unterstützung im Unterricht und im Schulalltag – mit festen Ansprechpartnern und abgestimmter Kommunikation.</p>
+            <p>Individuelle Unterstützung im Unterricht und im Schulalltag – mit festen Ansprechpersonen und abgestimmter Kommunikation.</p>
             <span class="card-link"><span>Zur Schulbegleitung</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </a>
 
@@ -315,7 +324,7 @@
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Im Schulalltag</p>
           <h2 id="sb-title" class="reveal">Schulbegleitung für <em>verlässliche Teilhabe</em></h2>
           <p class="lead reveal">
-            Individuelle Unterstützung im Unterricht und im Schulalltag – mit festen Ansprechpartnern
+            Individuelle Unterstützung im Unterricht und im Schulalltag – mit festen Ansprechpersonen
             und abgestimmter Kommunikation zwischen Schule, Familie und Leistungsträger.
           </p>
           <p class="reveal">
@@ -348,7 +357,7 @@
           <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Im Kita-Alltag</p>
           <h2 id="kita-title" class="reveal">Kitabegleitung im <em>Gruppenalltag</em></h2>
           <p class="lead reveal">
-            Individuelle Unterstützung im Kita- und Gruppenalltag – mit festen Ansprechpartnern und
+            Individuelle Unterstützung im Kita- und Gruppenalltag – mit festen Ansprechpersonen und
             abgestimmter Kommunikation mit Team und Familien.
           </p>
           <p class="reveal">
@@ -659,7 +668,7 @@
             </details>
             <details class="faq-item">
               <summary><span class="faq-q">Wie finde ich die passende Ansprechperson?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
-              <div class="faq-answer"><p>Über die Seiten für <a href="fuer-eltern-angehoerige.html">Eltern &amp; Angehörige</a> bzw. <a href="fuer-schulen-aemter.html">Schulen &amp; Ämter</a> gelangen Sie zum regionalen Ansprechpartner-Finder. Alternativ nutzen Sie das Formular auf dieser Seite.</p></div>
+              <div class="faq-answer"><p>Über die Seiten für <a href="fuer-eltern-angehoerige.html">Eltern &amp; Angehörige</a> bzw. <a href="fuer-schulen-aemter.html">Schulen &amp; Ämter</a> gelangen Sie zum regionalen Ansprechpersonen-Finder. Alternativ nutzen Sie das Formular auf dieser Seite.</p></div>
             </details>
             <details class="faq-item">
               <summary><span class="faq-q">Was ist der Unterschied zu Pooling?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
@@ -828,8 +837,11 @@
         </ul>
         <h3 class="footer-subhead">Karriere</h3>
         <ul>
+          <li><a href="karriere-operative.html">Mitarbeitende</a></li>
           <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-          <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+          <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+          <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+          <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
           <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
         </ul>
       </div>
@@ -863,7 +875,7 @@
       {"@type":"Question","name":"Welche Leistungen bietet die GFI Baden an?","acceptedAnswer":{"@type":"Answer","text":"Zu unserem Angebot gehören Schulbegleitung, Kitabegleitung, Autismus Therapie, Familienhilfe und Inklusionsassistenz. Ergänzend qualifiziert die GFI-Akademie für die Arbeit in der Schulbegleitung."}},
       {"@type":"Question","name":"Wer bewilligt eine Leistung?","acceptedAnswer":{"@type":"Answer","text":"Die Zuständigkeit richtet sich nach dem individuellen Fall – etwa Jugendamt, Eingliederungshilfeträger oder Pflegekasse."}},
       {"@type":"Question","name":"Kann ich mich auch ohne Bewilligung melden?","acceptedAnswer":{"@type":"Answer","text":"Ja. Sie können sich zur Orientierung melden. Auf Wunsch unterstützen wir bereits bei der Antragsstellung."}},
-      {"@type":"Question","name":"Wie finde ich die passende Ansprechperson?","acceptedAnswer":{"@type":"Answer","text":"Über die Seiten für Eltern und Angehörige bzw. Schulen und Ämter gelangen Sie zum regionalen Ansprechpartner-Finder."}},
+      {"@type":"Question","name":"Wie finde ich die passende Ansprechperson?","acceptedAnswer":{"@type":"Answer","text":"Über die Seiten für Eltern und Angehörige bzw. Schulen und Ämter gelangen Sie zum regionalen Ansprechpersonen-Finder."}},
       {"@type":"Question","name":"Was ist der Unterschied zu Pooling?","acceptedAnswer":{"@type":"Answer","text":"Die Leistungen beschreiben individuelle Unterstützungsformen. Infrastrukturelles Pooling ist eine ergänzende Organisationsform für Schulen mit mehreren Bedarfen."}}
     ]
   }
@@ -873,7 +885,7 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20260826nav"></script>
+  <script src="js/main-v3.js?v=20260917navsub"></script>
   <script src="js/leistungen.js?v=20260730a"></script>
 </body>
 </html>

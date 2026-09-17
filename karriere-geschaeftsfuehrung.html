@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260831nav" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260917navfly" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260804form" />
   <link rel="stylesheet" href="css/karriere.css?v=20260831check" />
   <style>
@@ -129,8 +129,18 @@
             <li class="has-dropdown is-active">
               <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-karriere-menu" id="nav-karriere-btn">Karriere</button>
               <ul class="nav-dropdown" id="nav-karriere-menu">
-                <li><a class="is-active" href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-                <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+                <li><a href="karriere-operative.html">Mitarbeitende</a></li>
+                <li class="has-submenu is-open">
+                  <div class="nav-submenu-row">
+                    <a href="karriere-fuehrungskraefte.html">Führungskräfte</a>
+                    <button type="button" class="nav-submenu-toggle" aria-expanded="true" aria-controls="nav-fuehrung-submenu" aria-label="Untermenü Führungskräfte"></button>
+                  </div>
+                  <ul class="nav-submenu" id="nav-fuehrung-submenu">
+                    <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+                    <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+                    <li><a class="is-active" href="karriere-geschaeftsfuehrung.html" aria-current="page">Geschäftsführung</a></li>
+                  </ul>
+                </li>
                 <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
               </ul>
             </li>
@@ -432,7 +442,7 @@
               <span class="sa-timeline-num" aria-hidden="true">05</span>
               <h3 class="sa-timeline-title">Start</h3>
             </div>
-            <p class="sa-timeline-text">Mitarbeiterakquise und Übernahme der Verantwortung in Konzepterstellungen, Verhandlungen etc.</p>
+            <p class="sa-timeline-text">Personalakquise und Übernahme der Verantwortung in Konzepterstellungen, Verhandlungen etc.</p>
             <span class="sa-timeline-ico" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span>
           </li>
         </ol>
@@ -591,12 +601,12 @@
         </ul>
         <h3 class="footer-subhead">Karriere</h3>
         <ul>
+          <li><a href="karriere-operative.html">Mitarbeitende</a></li>
           <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-          <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
-          <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
           <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
           <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
-          <li><a href="karriere-geschaeftsfuehrung.html" aria-current="page">Geschäftsführung / Standort</a></li>
+          <li><a href="karriere-geschaeftsfuehrung.html" aria-current="page">Geschäftsführung</a></li>
+          <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -625,7 +635,7 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20260826nav"></script>
+  <script src="js/main-v3.js?v=20260917navsub"></script>
   <script src="js/karriere.js?v=20260806tl33"></script>
 </body>
 </html>

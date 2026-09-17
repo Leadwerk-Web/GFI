@@ -1416,6 +1416,30 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   height: auto;
 }
 
+/* Führungskräfte-Übersicht: Schaubild oben, Kacheln darunter in einer Reihe */
+.ka-ladder-media--overview {
+  margin-top: 0;
+  max-width: min(52rem, 100%);
+  margin-inline: auto;
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+.ka-ladder-list--row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(.85rem, 1.6vw, 1.15rem);
+}
+.ka-ladder-list--row .ka-ladder-item {
+  grid-template-columns: 1fr;
+  gap: .85rem;
+  align-content: start;
+  height: 100%;
+}
+.ka-ladder-list--row .ka-ladder-item h3 {
+  font-size: clamp(1rem, 1.15vw, 1.08rem);
+}
+.ka-ladder-list--row .ka-ladder-item p {
+  font-size: .9rem;
+}
+
 /* Zoomable freistehende Bilder + Lightbox */
 .ka-zoom {
   margin: 0;
@@ -1623,6 +1647,7 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   .ka-also-panel,
   .ka-aside-grid { grid-template-columns: 1fr; }
   .ka-ladder-media { margin-top: 0; }
+  .ka-ladder-list--row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .page-teamleitung .ka-hero-grid {
     padding-block: clamp(5rem, 12vw, 6.5rem) 1.5rem;
   }
@@ -1642,6 +1667,7 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   .ka-steps-list,
   .ka-steps-list--5 { grid-template-columns: 1fr; }
   .ka-ladder-item { grid-template-columns: 1fr; }
+  .ka-ladder-list--row { grid-template-columns: 1fr; }
   .page-teamleitung .ka-hero-form-grid {
     grid-template-columns: 1fr;
   }

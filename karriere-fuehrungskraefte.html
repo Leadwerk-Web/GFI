@@ -24,9 +24,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260831frame10" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260917navfly" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260831frame10" />
-  <link rel="stylesheet" href="css/karriere.css?v=20260827poster1" />
+  <link rel="stylesheet" href="css/karriere.css?v=20260917ladderrow" />
   <style>
     :root { --hero-frame-margin: 20px; --hero-frame-radius: clamp(18px, 2.2vw, 26px); }
     body { background: linear-gradient(180deg, #eef7f2 0%, #eef5f1 100%); }
@@ -132,8 +132,18 @@
             <li class="has-dropdown is-active">
               <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-karriere-menu" id="nav-karriere-btn">Karriere</button>
               <ul class="nav-dropdown" id="nav-karriere-menu">
-                <li><a class="is-active" href="karriere-fuehrungskraefte.html" aria-current="page">Führungskräfte</a></li>
-                <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+                <li><a href="karriere-operative.html">Mitarbeitende</a></li>
+                <li class="has-submenu">
+                  <div class="nav-submenu-row">
+                    <a class="is-active" href="karriere-fuehrungskraefte.html" aria-current="page">Führungskräfte</a>
+                    <button type="button" class="nav-submenu-toggle" aria-expanded="false" aria-controls="nav-fuehrung-submenu" aria-label="Untermenü Führungskräfte"></button>
+                  </div>
+                  <ul class="nav-submenu" id="nav-fuehrung-submenu">
+                    <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+                    <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+                    <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
+                  </ul>
+                </li>
                 <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
               </ul>
             </li>
@@ -190,14 +200,65 @@
         </h1>
         <p class="hero-sub hero-rise" style="--d:.55s">Führungswege in der Schulbegleitung – mit Sinn, Gestaltungsspielraum und Great Place to Work®-Kultur.</p>
         <div class="hero-actions hero-rise" style="--d:.7s">
-          <a class="btn btn-accent btn-lg" data-magnetic href="#wege"><span>Wege entdecken</span><svg class="ico"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-light btn-lg" href="#kultur"><span>Das macht die Arbeit aus</span></a>
+          <a class="btn btn-accent btn-lg" data-magnetic href="#karrierestufen"><span>Karrierestufen ansehen</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-light btn-lg" href="#wege"><span>Wege entdecken</span></a>
         </div>
       </div>
 
       </section>
     </div>
     </div>
+
+    <section class="ka-ladder section" id="karrierestufen" aria-labelledby="ladder-overview-title">
+      <div class="container">
+        <div class="ka-ladder-copy">
+          <p class="eyebrow reveal"><span class="eyebrow-ring" aria-hidden="true"><svg class="ico"><use href="#i-ring"/></svg></span> Ihre Zukunftsperspektiven</p>
+          <h2 id="ladder-overview-title" class="reveal">Weiterentwicklung bei der <em>GFI-Gruppe</em></h2>
+          <p class="sec-lead reveal">Vier klare Karrierestufen – damit Sie wissen, welche Wege es gibt und wo Sie sich verorten können.</p>
+        </div>
+        <div class="ka-ladder-media ka-ladder-media--overview reveal">
+          <figure class="ka-zoom">
+            <button type="button" class="ka-zoom-btn" data-ka-lightbox aria-label="Karrierestufen bei der GFI vergrößern">
+              <img src="assets/img/karriere-teamleitung/karriere-1.png" width="640" height="800" alt="Schaubild: Karrierestufen bei der GFI-Gruppe" loading="lazy" decoding="async" />
+            </button>
+          </figure>
+        </div>
+        <ol class="ka-ladder-list ka-ladder-list--row reveal">
+          <li class="ka-ladder-item">
+            <span class="ka-ladder-num" aria-hidden="true">1</span>
+            <div>
+              <span class="ka-ladder-meta">Karrierestufe 1</span>
+              <h3>Teamleitung</h3>
+              <p>Eigenverantwortliche Führung kleiner Teams – auch ohne vorherige Leitungserfahrung, mit Mentoring und stufenweisem Einstieg.</p>
+            </div>
+          </li>
+          <li class="ka-ladder-item">
+            <span class="ka-ladder-num" aria-hidden="true">2</span>
+            <div>
+              <span class="ka-ladder-meta">Karrierestufe 2</span>
+              <h3>Abteilungsleitung</h3>
+              <p>Verantwortung für größere Teams, Fallbesetzung und Konzeptarbeit – als Vorbereitung auf die Fachbereichsleitung.</p>
+            </div>
+          </li>
+          <li class="ka-ladder-item">
+            <span class="ka-ladder-num" aria-hidden="true">3</span>
+            <div>
+              <span class="ka-ladder-meta">Karrierestufe 3</span>
+              <h3>Fachbereichsleitung</h3>
+              <p>Strategische und operative Verantwortung inkl. Umsatzbeteiligung – intensiver Weg zur eigenen Standortleitung.</p>
+            </div>
+          </li>
+          <li class="ka-ladder-item">
+            <span class="ka-ladder-num" aria-hidden="true">4</span>
+            <div>
+              <span class="ka-ladder-meta">Karrierestufe 4</span>
+              <h3>Standortleitung / Geschäftsführung</h3>
+              <p>Gesamtverantwortung für einen Standort: Wachstum, Qualität und wirtschaftliche Leitung.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
     <section class="audience section" id="wege" aria-labelledby="paths-title">
       <div class="container">
@@ -510,12 +571,12 @@
         </ul>
         <h3 class="footer-subhead">Karriere</h3>
         <ul>
+          <li><a href="karriere-operative.html">Mitarbeitende</a></li>
           <li><a href="karriere-fuehrungskraefte.html" aria-current="page">Führungskräfte</a></li>
-          <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
-          <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
           <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
           <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
-          <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung / Standort</a></li>
+          <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
+          <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -544,7 +605,7 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20260826nav"></script>
+  <script src="js/main-v3.js?v=20260917navsub"></script>
   <script src="js/karriere.js?v=20260731c"></script>
 </body>
 </html>

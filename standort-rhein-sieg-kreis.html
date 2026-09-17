@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles-v3.css?v=20260831nav" />
+  <link rel="stylesheet" href="css/styles-v3.css?v=20260917navfly" />
   <link rel="stylesheet" href="css/schulen-aemter.css?v=20260827quote2" />
   <link rel="stylesheet" href="css/leistungen.css?v=20260730a" />
   <link rel="stylesheet" href="css/standort.css?v=20260831a" />
@@ -138,7 +138,6 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <div class="grain" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"><svg class="ico" viewBox="0 0 276.11 279.12"><use href="#i-ring"/></svg></div>
   <div class="scroll-progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
   <div class="loader" id="loader" aria-hidden="true">
@@ -161,8 +160,18 @@
             <li class="has-dropdown">
               <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-karriere-menu" id="nav-karriere-btn">Karriere</button>
               <ul class="nav-dropdown" id="nav-karriere-menu">
-                <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-                <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+                <li><a href="karriere-operative.html">Mitarbeitende</a></li>
+                <li class="has-submenu">
+                  <div class="nav-submenu-row">
+                    <a href="karriere-fuehrungskraefte.html">Führungskräfte</a>
+                    <button type="button" class="nav-submenu-toggle" aria-expanded="false" aria-controls="nav-fuehrung-submenu" aria-label="Untermenü Führungskräfte"></button>
+                  </div>
+                  <ul class="nav-submenu" id="nav-fuehrung-submenu">
+                    <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+                    <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+                    <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
+                  </ul>
+                </li>
                 <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
               </ul>
             </li>
@@ -244,7 +253,7 @@
               Unser Standort im Rhein-Sieg-Kreis wurde im Jahr 2020 gegründet. Leidenschaftlich und engagiert bieten wir hier vielfältige Leistungen im Bereich der Inklusionsassistenz an Schulen und Kitas an. Unser Angebot umfasst zudem Leistungen aus dem Bereich der Hilfen zur Erziehung, wie bspw. die Sozialpädagogische Familienhilfe oder die Erziehungsbeistandschaft.
             </p>
             <p class="reveal">
-              So vielfältig wie die Menschen sind, mit denen wir zu tun haben und arbeiten, so unterschiedlich und verschieden müssen auch wir sein. Unser Team besteht daher sowohl aus motivierten Quereinsteigern aus anderen Berufsfeldern mit vielfältigen Vorerfahrungen und Talenten als auch aus fachlich ausgebildetem pädagogischem Personal.
+              So vielfältig wie die Menschen sind, mit denen wir zu tun haben und arbeiten, so unterschiedlich und verschieden müssen auch wir sein. Unser Team besteht daher sowohl aus motivierten Quereinsteigenden aus anderen Berufsfeldern mit vielfältigen Vorerfahrungen und Talenten als auch aus fachlich ausgebildetem pädagogischem Personal.
             </p>
           </div>
 
@@ -431,7 +440,7 @@
               <ul class="st-acc-list">
                 <li>Wir bieten eine Palette unterschiedlichster Leistungen an, um Kinder und/oder Jugendliche mit und ohne Behinderung sowie Familien zu unterstützen.</li>
                 <li>Es kann sich dabei z. B. um Leistungen in der Schule, in der Freizeit oder im familiären Umfeld handeln.</li>
-                <li>Je nach individuellem Bedarf können wir auf eine Vielzahl unterschiedlicher Mitarbeiter mit unterschiedlichsten Qualifikationen zurückgreifen (z. B. Sozialpädagogen, Experten im Bereich der Autismusförderung, pädagogische Mitarbeiter mit einem hohen Fach- und Erfahrungswissen im Bereich herausfordernder Verhaltensweisen, etc.).</li>
+                <li>Je nach individuellem Bedarf können wir auf eine Vielzahl unterschiedlicher Mitarbeitenden mit unterschiedlichsten Qualifikationen zurückgreifen (z. B. Sozialpädagogen, Experten im Bereich der Autismusförderung, pädagogische Mitarbeitende mit einem hohen Fach- und Erfahrungswissen im Bereich herausfordernder Verhaltensweisen, etc.).</li>
                 <li>Unser Methodenkoffer ist vielfältig: In unserer täglichen Arbeit greifen wir häufig auf unser systemisches Repertoire oder Methoden der unterstützten Kommunikation, TEACCH sowie Kommunikationsmaterialien in leichter Sprache zurück.</li>
               </ul>
             </div>
@@ -464,8 +473,8 @@
               <ul class="st-acc-list">
                 <li>Wir nehmen uns die Zeit für Sie und Ihr Kind, die Sie brauchen.</li>
                 <li>Wir hören Ihnen zu und finden gemeinsam mit Ihnen die Lösungen, die Ihr Kind benötigt.</li>
-                <li>Wir beziehen Sie in alle Entscheidungen mit ein, angefangen von der Auswahl des passenden Mitarbeiters bis zur gemeinsamen Abstimmung der benötigten Leistungen.</li>
-                <li>Sollte einmal einer unserer Mitarbeiter erkranken, organisieren wir innerhalb kürzester Zeit eine adäquate und fachlich geeignete Vertretung.</li>
+                <li>Wir beziehen Sie in alle Entscheidungen mit ein, angefangen von der Auswahl der passenden Mitarbeitenden bis zur gemeinsamen Abstimmung der benötigten Leistungen.</li>
+                <li>Sollten Mitarbeitende erkranken, organisieren wir innerhalb kürzester Zeit eine adäquate und fachlich geeignete Vertretung.</li>
                 <li>Wir unterstützen Sie bei Bedarf in der Kommunikation mit Behörden und vermitteln zwischen Eingliederungshilfeträger bzw. Jugendamt und Ihren Interessen.</li>
                 <li>Wir stehen mit unserem Namen für unsere Qualität und unsere Leistungen.</li>
               </ul>
@@ -723,8 +732,11 @@
         </ul>
         <h3 class="footer-subhead">Karriere</h3>
         <ul>
+          <li><a href="karriere-operative.html">Mitarbeitende</a></li>
           <li><a href="karriere-fuehrungskraefte.html">Führungskräfte</a></li>
-          <li><a href="karriere-operative.html">Operative Mitarbeiter</a></li>
+          <li><a href="karriere-teamleitung.html">Teamleitung</a></li>
+          <li><a href="karriere-abteilungsleitung.html">Abteilungsleitung</a></li>
+          <li><a href="karriere-geschaeftsfuehrung.html">Geschäftsführung</a></li>
           <li><a href="karriere-stellen.html">Stellenausschreibungen</a></li>
         </ul>
       </div>
@@ -754,7 +766,7 @@
     <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
   </button>
 
-  <script src="js/main-v3.js?v=20260826nav"></script>
+  <script src="js/main-v3.js?v=20260917navsub"></script>
   <script src="js/standort.js?v=20260831a"></script>
 </body>
 </html>
