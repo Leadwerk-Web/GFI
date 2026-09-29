@@ -137,7 +137,7 @@ Footer (Karriere-Bereich):
   • Ergänzungen in css/styles-v3.css (Dropdown-Navigation)
   • Ergänzungen in js/main-v3.js (Dropdown auf Mobilgeräten)
   • OnApply-Integration für Stellenlisten (CSS + JS von onapply.de)
-  • Neues Bild: assets/img/gptw-beste-arbeitgeber-deutschland-2024.jpg
+  • Neues Bild: assets/img/gptw-beste-arbeitgeber-deutschland-2024.webp
 
 Hinweis: Beide Karriereseiten sind derzeit mit
 <meta name="robots" content="noindex, nofollow"> versehen (Entwurfsstatus).
@@ -186,7 +186,7 @@ Stellenbereich:
 
 Neu:
   karriere-operative.html
-  assets/img/gptw-beste-arbeitgeber-deutschland-2024.jpg
+  assets/img/gptw-beste-arbeitgeber-deutschland-2024.webp
 
 Geändert (Auswahl):
   karriere.html

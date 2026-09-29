@@ -152,7 +152,7 @@ function rectsToSvg(rects, bbox) {
   ].join("\n");
 }
 
-const buf = fs.readFileSync("assets/img/zitat.png");
+const buf = fs.readFileSync("assets/img/zitat.webp");
 const { w, h, bpp, out } = decodePNG(buf);
 const mask = new Uint8Array(w * h);
 
