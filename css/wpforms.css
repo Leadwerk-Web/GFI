@@ -1,0 +1,61 @@
+.leadwerk-wpforms {
+  --wpforms-field-border-radius: 14px;
+  --wpforms-field-background-color: #fff;
+  --wpforms-field-border-color: rgba(23, 59, 54, .22);
+  --wpforms-field-text-color: #173b36;
+  --wpforms-label-color: #173b36;
+  --wpforms-button-background-color: #e86f45;
+  --wpforms-button-border-color: #e86f45;
+  --wpforms-button-text-color: #fff;
+  --wpforms-button-border-radius: 999px;
+  --wpforms-button-size-height: 54px;
+  --wpforms-button-size-padding-h: 26px;
+  --wpforms-button-size-font-size: 16px;
+  --wpforms-field-size-input-height: 52px;
+  --wpforms-field-size-padding-h: 16px;
+  width: 100%;
+}
+
+.leadwerk-wpforms .wpforms-field-container {
+  display: grid;
+  gap: 14px;
+}
+
+.leadwerk-wpforms .wpforms-field {
+  padding: 0;
+}
+
+.leadwerk-wpforms .wpforms-field input:not([type="checkbox"]):not([type="radio"]),
+.leadwerk-wpforms .wpforms-field select,
+.leadwerk-wpforms .wpforms-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(23, 59, 54, .22);
+  border-radius: 14px;
+  background: #fff;
+  color: #173b36;
+  font: inherit;
+}
+
+.leadwerk-wpforms .wpforms-field-label,
+.leadwerk-wpforms .wpforms-field-label-inline {
+  color: #173b36;
+  font: inherit;
+}
+
+.leadwerk-wpforms .wpforms-submit {
+  min-height: 54px;
+  padding: 14px 26px;
+  border: 0;
+  border-radius: 999px;
+  background: #e86f45;
+  color: #fff;
+  font: 700 16px/1 "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+}
+
+.leadwerk-wpforms .wpforms-submit:hover,
+.leadwerk-wpforms .wpforms-submit:focus-visible {
+  background: #c95631;
+}
