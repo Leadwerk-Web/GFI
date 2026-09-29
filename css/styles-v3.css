@@ -714,7 +714,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- Grain (sehr dezent) ---------- */
 .grain { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .25; mix-blend-mode: soft-light;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"); }
+  background-image: url("../assets/img/noise.svg"); }
 
 /* ---------- Cursor ring (Ring.svg) ---------- */
 .cursor-ring { position: fixed; top: 0; left: 0; width: 40px; height: 40px; color: var(--color-primary-green); transform: translate(-50%,-50%); pointer-events: none; z-index: 1500; opacity: 0; line-height: 0; transition: opacity .3s, width .25s var(--ease), height .25s var(--ease), color .35s var(--ease), filter .35s var(--ease); }
@@ -2951,4 +2951,3 @@ h1.motion-split, h2.motion-split, h3.motion-split,
   .showcase-hint .ico { animation: none; }
 }
 @media (hover: none) { .cursor-ring { display: none; } }
-
