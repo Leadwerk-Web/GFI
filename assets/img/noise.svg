@@ -1,4 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
-  <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/></filter>
-  <rect width="160" height="160" filter="url(#noise)" opacity=".06"/>
+  <defs>
+    <pattern id="noise" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="3" r="0.7" fill="#ffffff" opacity=".12"/>
+      <circle cx="11" cy="6" r="0.5" fill="#ffffff" opacity=".08"/>
+      <circle cx="6" cy="13" r="0.6" fill="#000000" opacity=".07"/>
+      <circle cx="15" cy="15" r="0.45" fill="#000000" opacity=".05"/>
+    </pattern>
+  </defs>
+  <rect width="160" height="160" fill="url(#noise)"/>
 </svg>
