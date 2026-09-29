@@ -1,5 +1,8 @@
 import fs from "fs";
 import zlib from "zlib";
+import os from "os";
+import path from "path";
+import { execFileSync } from "child_process";
 
 function paeth(a, b, c) {
   const p = a + b - c;
@@ -152,7 +155,11 @@ function rectsToSvg(rects, bbox) {
   ].join("\n");
 }
 
-const buf = fs.readFileSync("assets/img/zitat.webp");
+const webpSource = "assets/img/zitat.webp";
+const decodedSource = path.join(os.tmpdir(), `gfi-zitat-${process.pid}.png`);
+execFileSync(process.env.DWEBP_BIN || "dwebp", [webpSource, "-o", decodedSource], { stdio: "ignore" });
+const buf = fs.readFileSync(decodedSource);
+fs.unlinkSync(decodedSource);
 const { w, h, bpp, out } = decodePNG(buf);
 const mask = new Uint8Array(w * h);
 
