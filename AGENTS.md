@@ -4,6 +4,12 @@ Copy this file to the root of every **new** customer HTML repository. Cursor and
 humans authoring pages must follow it. The full GTD registry, build commands and
 release rules live in `Global Theme Distribution/AGENTS.md`.
 
+This root `AGENTS.md` is the mandatory first file for every agent session. Before
+editing, importing or publishing a theme, read it completely and then complete
+`THEME-RELEASE-CHECKLIST.md`. If either file is missing, stop: restore both from
+the current Starter Pack before changing the project. Do not rely on remembered
+rules from another customer project.
+
 This repository contains **only** canonical HTML and local assets. WordPress theme
 PHP, importer code, plugins, generated ZIPs and credentials do not belong here.
 WordPress never reads this GitHub repository. GTD compiles a signed theme ZIP;
@@ -367,10 +373,15 @@ WordPress does not serve the HTML files. Import writes the `<body>` fragment int
 frontend look the same only if the source already follows these rules. Do not
 patch WordPress after import to hide a source mistake.
 
-1. **Image filenames must not equal page slugs.** WordPress attachments steal
-   permalinks. `firenze.webp` plus page `/firenze/` becomes `/firenze-2/`. Use a
-   prefix that cannot collide (`assets/cover-firenze.webp`, never
-   `assets/firenze.webp`).
+1. **Attachment filenames must not equal page slugs.** WordPress shares slug
+   uniqueness between hierarchical pages and attachments. Images, SVG, video,
+   PDF and other Media Library files can therefore steal permalinks:
+   `firenze.webp` plus page `/firenze/` becomes `/firenze-2/`. Compare every
+   route's final slug case-insensitively with every content-media basename and
+   use a descriptive prefix (`assets/cover-firenze.webp`, never
+   `assets/firenze.webp`). The importer repairs collisions caused by older
+   importer-owned media, but source must still pass this rule so a fresh import
+   never needs repair. Never rename editor-owned media automatically.
 2. **SVG is ASCII-only.** The importer sanitizer / Latin-1 path rejects umlauts
    in SVG markup. Keep logos and favicons in ASCII (`Gelato`, not `Geläto`).
 3. **Cart and similar JS must store live image URLs.** After import,
@@ -402,6 +413,24 @@ patch WordPress after import to hide a source mistake.
    dequeued by the suite. Brand look stays in the project stylesheet, not in
    the generic `assets/forms.css` (that file is a reset; two-column form grids
    belong only under `.modal`).
+
+9. **A successful build is not the final acceptance test.** Before publishing
+   the first release and after every structural/media/form update, import the
+   signed candidate into a clean or disposable WordPress staging site and compare
+   it with the exact source commit. Check every registered route: expected HTTP
+   status, canonical unsuffixed permalink, title, single H1, visible content,
+   image count/alt, and HTTP 200 for `src`, `srcset`, poster and CSS background
+   media. Compare desktop and mobile screenshots, submit the real WPForms form,
+   verify its Danke redirect, and request one unknown URL to prove a real noindex
+   404. A route such as `/karriere-2/`, a missing image, or a form whose live
+   layout differs from its static shell blocks publication. Fix source/compiler;
+   do not hide the difference with a database-only patch.
+
+10. **Updates preserve editorial ownership.** Existing WordPress field/media
+    changes win over changed seeds. Do not change released `sourceKey`, field
+    identity or repeater item keys. Route repairs must rebuild dependent typed
+    page references so header, footer and body links cannot retain an old
+    suffixed permalink.
 
 Copy-paste helpers live in `templates/project/js/progressive-enhancement.js`.
 
