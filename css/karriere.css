@@ -1876,6 +1876,362 @@ html.js.page-teamleitung .hero-frame:has(.hero.is-in) .ka-hero-awards {
   font-size: .95rem;
 }
 
+/* Hintergrund wie „Auf was wir Wert legen“ über die Klasse .audience;
+   Inhalt liegt über den weichen Farbflecken (::before/::after) */
+.page-karriere-operative .op-sinn > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-karriere-operative .op-sinn-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 4.5rem);
+  align-items: end;
+}
+
+.page-karriere-operative .op-sinn-head h2 {
+  margin: 0;
+  max-width: 18ch;
+  line-height: 1.15;
+}
+
+.page-karriere-operative .op-sinn-copy {
+  display: grid;
+  gap: .85rem;
+  padding-left: clamp(1.1rem, 2vw, 1.6rem);
+  border-left: 3px solid var(--v3-orange);
+}
+
+.page-karriere-operative .op-sinn-copy p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.page-karriere-operative .op-sinn-copy .op-sinn-lead {
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  color: var(--color-dark-deep, #173b36);
+}
+
+/* Große hellgrüne Kachel um Leitsatz + Aussage-Spalten */
+.page-karriere-operative .op-tiles-panel {
+  margin-top: clamp(2.75rem, 5.5vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 3.25rem);
+  border-radius: clamp(22px, 3vw, 34px);
+  background: color-mix(in srgb, var(--v3-green) 14%, #fff);
+  /* Rahmen + Schatten wie die grüne Karte „Gute Einarbeitung“ (.path-card:nth-child(1)) */
+  border: 1.5px solid color-mix(in srgb, var(--accent-1) 48%, #fff);
+  box-shadow:
+    0 22px 52px rgba(var(--v3-green-rgb), 0.18),
+    0 8px 22px rgba(var(--v3-green-rgb), 0.1);
+}
+
+.page-karriere-operative .op-tiles-lead {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  font-weight: 800;
+  font-variation-settings: "wght" 800;
+  color: var(--v3-teal, #1f6f68);
+}
+
+.page-karriere-operative .op-tiles-lead-accent {
+  display: block;
+}
+
+.page-karriere-operative .op-tiles-lead {
+  display: flex;
+  align-items: center;
+  gap: clamp(.9rem, 2vw, 1.35rem);
+}
+
+.page-karriere-operative .op-tiles-lead-ico {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: var(--v3-teal);
+  box-shadow: 0 12px 26px rgba(var(--v3-teal-rgb), .28);
+  color: #fff;
+}
+
+.page-karriere-operative .op-tiles-lead-ico .ico {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+@media (max-width: 600px) {
+  .page-karriere-operative .op-tiles-panel {
+    padding: 1.5rem 1rem 1.25rem;
+  }
+  .page-karriere-operative .op-tiles-lead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .page-karriere-operative .op-tiles-lead-ico {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .page-karriere-operative .op-tiles-lead-ico .ico {
+    width: 2.05rem;
+    height: 2.05rem;
+  }
+}
+
+.page-karriere-operative .op-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  align-items: start;
+}
+
+.page-karriere-operative .op-tile-group {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.page-karriere-operative .op-tile-group-title {
+  margin: 0 0 .25rem;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  color: var(--v3-orange);
+}
+
+/* Sprechblasen: Zipfel zeigt nach unten und schließt bündig an die Außenkante an
+   (Quereinsteigende links, Fachkräfte rechts); diese Ecke ist nicht gerundet.
+   Blase und Zipfel sind eine reine Füllfläche ohne border. Haarlinie und Schatten
+   kommen per drop-shadow aus der Gesamtform – dadurch nahtlos „aus einem Guss“.
+   (::after rendert Chrome an <details> nicht zuverlässig, daher nur ::before.) */
+.page-karriere-operative .op-tile {
+  --tile-bg: #fff;
+  --tile-line: rgba(23, 59, 54, 0.22);
+  /* Orange Kante wird nur über die Deckkraft eingeblendet – kein dunkler Mischton */
+  --tile-accent: rgba(var(--v3-orange-rgb), 0);
+  --tile-shadow: rgba(30, 40, 36, 0.08);
+  position: relative;
+  border-radius: 22px 22px 22px 0;
+  background: var(--tile-bg);
+  filter:
+    drop-shadow(0 0 .75px var(--tile-line))
+    drop-shadow(0 0 .75px var(--tile-accent))
+    drop-shadow(0 0 .75px var(--tile-accent))
+    drop-shadow(0 8px 18px var(--tile-shadow));
+  transition: filter .45s var(--ease-out), background-color .45s var(--ease-out);
+}
+
+.page-karriere-operative .op-tile::before {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  width: 20px;
+  height: 15px;
+  background: var(--tile-bg);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  transition: background-color .25s var(--ease);
+  pointer-events: none;
+}
+
+.page-karriere-operative .op-tile-group:nth-child(2) .op-tile {
+  border-radius: 22px 22px 0 22px;
+}
+
+.page-karriere-operative .op-tile-group:nth-child(2) .op-tile::before {
+  left: auto;
+  right: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.page-karriere-operative .op-tile:hover {
+  --tile-accent: rgba(var(--v3-orange-rgb), 0.8);
+}
+
+/* Offen: ohne JS per [open], mit JS per .is-open (bleibt beim Zuklappen nicht hängen) */
+.page-karriere-operative .op-tiles:not(.is-enhanced) .op-tile[open],
+.page-karriere-operative .op-tile.is-open {
+  --tile-accent: rgba(var(--v3-orange-rgb), 1);
+  --tile-shadow: rgba(var(--v3-orange-rgb), 0.12);
+}
+
+.page-karriere-operative .op-tile summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.05rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.page-karriere-operative .op-tile summary::-webkit-details-marker { display: none; }
+
+.page-karriere-operative .op-tile summary:focus-visible {
+  outline: 2px solid var(--v3-orange);
+  outline-offset: -4px;
+  border-radius: 20px;
+}
+
+.page-karriere-operative .op-tile-q {
+  flex: 1;
+  min-width: 0;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  line-height: 1.45;
+  color: var(--color-dark-deep, #173b36);
+}
+
+.page-karriere-operative .op-tile-toggle {
+  position: relative;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--v3-teal);
+  transition: background .4s var(--ease-out);
+}
+
+.page-karriere-operative .op-tile-toggle::before,
+.page-karriere-operative .op-tile-toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: opacity .4s var(--ease-out), transform .4s var(--ease-out);
+}
+
+.page-karriere-operative .op-tile-toggle::before { width: 12px; height: 2px; }
+.page-karriere-operative .op-tile-toggle::after { width: 2px; height: 12px; }
+
+.page-karriere-operative .op-tiles:not(.is-enhanced) .op-tile[open] .op-tile-toggle,
+.page-karriere-operative .op-tile.is-open .op-tile-toggle { background: var(--v3-orange); }
+
+.page-karriere-operative .op-tiles:not(.is-enhanced) .op-tile[open] .op-tile-toggle::after,
+.page-karriere-operative .op-tile.is-open .op-tile-toggle::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.page-karriere-operative .op-tile-body {
+  display: grid;
+  gap: .75rem;
+  padding: 0 1.25rem;
+}
+
+/* Abstand unten als Margin im Inhalt, damit max-height 0 wirklich 0 ist */
+.page-karriere-operative .op-tile-body p:last-child {
+  margin-bottom: 1.25rem;
+}
+
+/* Weiches Auf-/Zuklappen (karriere.js setzt .is-enhanced und max-height) */
+.page-karriere-operative .op-tiles.is-enhanced .op-tile-body {
+  overflow: hidden;
+  transition:
+    max-height .55s cubic-bezier(.22, .61, .36, 1),
+    opacity .45s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-karriere-operative .op-tiles.is-enhanced .op-tile-body { transition: none; }
+}
+
+.page-karriere-operative .op-tile-body p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: .96rem;
+  line-height: 1.65;
+}
+
+.page-karriere-operative .op-tile-body strong {
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  color: var(--color-dark-deep, #173b36);
+}
+
+.page-karriere-operative .op-tile-body a {
+  color: var(--v3-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .page-karriere-operative .op-tiles,
+  .page-karriere-operative .op-sinn-intro { grid-template-columns: 1fr; }
+  .page-karriere-operative .op-sinn-head h2 { max-width: none; }
+}
+
+.page-karriere-operative .op-cta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+.page-karriere-operative .op-sinn .op-cta {
+  justify-content: flex-start;
+}
+
+.page-karriere-operative .op-werte-intro {
+  display: grid;
+  gap: .9rem;
+  max-width: 64ch;
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+  text-align: center;
+}
+
+.page-karriere-operative .op-werte-intro p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.page-karriere-operative .op-werte-intro .op-werte-lead {
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  color: var(--color-dark-deep, #173b36);
+}
+
+.page-karriere-operative .path-copy {
+  display: grid;
+  align-content: start;
+  gap: .75rem;
+  flex: 1;
+}
+
+.page-karriere-operative #bewerbungsprozess .sa-timeline {
+  margin-bottom: 0;
+}
+
+.page-karriere-operative .path-copy p {
+  margin: 0;
+  font-size: .96rem;
+  line-height: 1.6;
+  color: var(--color-text-main);
+}
+
+.page-karriere-operative .op-faq-main {
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.page-karriere-operative .op-faq .faq-head {
+  text-align: center;
+}
+
+.page-karriere-operative .op-faq .faq-head h2 {
+  max-width: none;
+}
+
 @media (max-width: 900px) {
   .page-karriere-operative .op-video-grid {
     grid-template-columns: 1fr;

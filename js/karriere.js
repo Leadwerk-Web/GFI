@@ -350,4 +350,78 @@
       img.removeAttribute("src");
     });
   })();
+
+  /* Aussage-Kacheln (Mitarbeitende): weiches Öffnen, je Spalte nur eine offen.
+     Ohne JS bleibt das native <details name="…"> mit sofortigem Umschalten. */
+  (function initStatementTiles() {
+    var root = document.querySelector(".op-tiles");
+    if (!root) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var expand = function (tile) {
+      var body = tile.querySelector(".op-tile-body");
+      tile.setAttribute("open", "");
+      tile.classList.add("is-open");
+      body.style.maxHeight = "0px";
+      body.style.opacity = "0";
+      void body.offsetHeight;
+      body.style.maxHeight = body.scrollHeight + "px";
+      body.style.opacity = "1";
+      if (reduceMotion) { body.style.maxHeight = "none"; return; }
+      var onEnd = function (e) {
+        if (e.propertyName !== "max-height") return;
+        body.removeEventListener("transitionend", onEnd);
+        if (tile.classList.contains("is-open")) body.style.maxHeight = "none";
+      };
+      body.addEventListener("transitionend", onEnd);
+    };
+
+    var collapse = function (tile) {
+      var body = tile.querySelector(".op-tile-body");
+      if (!tile.classList.contains("is-open")) return;
+      body.style.maxHeight = body.scrollHeight + "px";
+      void body.offsetHeight;
+      tile.classList.remove("is-open");
+      body.style.maxHeight = "0px";
+      body.style.opacity = "0";
+      if (reduceMotion) { tile.removeAttribute("open"); return; }
+      var onEnd = function (e) {
+        if (e.propertyName !== "max-height") return;
+        body.removeEventListener("transitionend", onEnd);
+        if (!tile.classList.contains("is-open")) tile.removeAttribute("open");
+      };
+      body.addEventListener("transitionend", onEnd);
+    };
+
+    root.querySelectorAll(".op-tile-group").forEach(function (group) {
+      var tiles = Array.prototype.slice.call(group.querySelectorAll(".op-tile"));
+      tiles.forEach(function (tile) {
+        var summary = tile.querySelector("summary");
+        var body = tile.querySelector(".op-tile-body");
+        if (!summary || !body) return;
+
+        /* name-Exklusivität übernimmt jetzt das Skript, sonst schließt der Browser hart */
+        tile.removeAttribute("name");
+        if (tile.hasAttribute("open")) {
+          tile.classList.add("is-open");
+        } else {
+          body.style.maxHeight = "0px";
+          body.style.opacity = "0";
+        }
+
+        summary.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (tile.classList.contains("is-open")) {
+            collapse(tile);
+            return;
+          }
+          tiles.forEach(function (other) { if (other !== tile) collapse(other); });
+          expand(tile);
+        });
+      });
+    });
+
+    root.classList.add("is-enhanced");
+  })();
 })();
